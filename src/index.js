@@ -8,6 +8,7 @@ const assert = require('assert');
 const tz = require('./converters/toZigbee');
 const fs = require('fs');
 const path = require('path');
+const generic = require('./lib/generic');
 
 // key: zigbeeModel, value: array of definitions (most of the times 1)
 const lookup = new Map();
@@ -152,38 +153,44 @@ function findDefinition(device) {
     }
 
     const candidates = getFromLookup(device.modelID);
-    if (!candidates) {
-        return null;
-    } else if (candidates.length === 1 && candidates[0].hasOwnProperty('zigbeeModel')) {
-        return candidates[0];
-    } else {
-        // First try to match based on fingerprint, return the first matching one.
-        const fingerprintMatch = {priority: null, definition: null};
-        for (const candidate of candidates) {
-            if (candidate.hasOwnProperty('fingerprint')) {
-                for (const fingerprint of candidate.fingerprint) {
-                    const priority = fingerprint.hasOwnProperty('priority') ? fingerprint.priority : 0;
-                    if (isFingerprintMatch(fingerprint, device) && (!fingerprintMatch.definition || priority > fingerprintMatch.priority)) {
-                        fingerprintMatch.definition = candidate;
-                        fingerprintMatch.priority = priority;
+    if (candidates) {
+        if (candidates.length === 1 && candidates[0].hasOwnProperty('zigbeeModel')) {
+            return candidates[0];
+        } else {
+            // First try to match based on fingerprint, return the first matching one.
+            const fingerprintMatch = {priority: null, definition: null};
+            for (const candidate of candidates) {
+                if (candidate.hasOwnProperty('fingerprint')) {
+                    for (const fingerprint of candidate.fingerprint) {
+                        const priority = fingerprint.hasOwnProperty('priority') ? fingerprint.priority : 0;
+                        if (isFingerprintMatch(fingerprint, device) && (!fingerprintMatch.definition || priority > fingerprintMatch.priority)) {
+                            fingerprintMatch.definition = candidate;
+                            fingerprintMatch.priority = priority;
+                        }
                     }
                 }
             }
-        }
 
-        if (fingerprintMatch.definition) {
-            return fingerprintMatch.definition;
-        }
+            if (fingerprintMatch.definition) {
+                return fingerprintMatch.definition;
+            }
 
-        // Match based on fingerprint failed, return first matching definition based on zigbeeModel
-        for (const candidate of candidates) {
-            if (candidate.hasOwnProperty('zigbeeModel') && candidate.zigbeeModel.includes(device.modelID)) {
-                return candidate;
+            // Match based on fingerprint failed, return first matching definition based on zigbeeModel
+            for (const candidate of candidates) {
+                if (candidate.hasOwnProperty('zigbeeModel') && candidate.zigbeeModel.includes(device.modelID)) {
+                    return candidate;
+                }
             }
         }
     }
 
-    return null;
+    // try to generate generic dscription
+    const genericDesc = generic(device);
+    if (genericDesc) {
+        addDefinition(genericDesc);
+    }
+
+    return genericDesc;
 }
 
 function isFingerprintMatch(fingerprint, device) {
