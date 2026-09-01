@@ -530,9 +530,6 @@ export const definitions: DefinitionWithExtend[] = [
         // response to a dataQuery. Without polling, `battery` stays null forever. Confirmed
         // on hardware: dp 13 -> 100 only arrives after a dataQuery. Poll periodically and on
         // device announce so the battery level is reported reliably.
-        // respondToMcuVersionResponse is left at its default (false): with it enabled, one
-        // of the units gets stuck in an mcuVersionRequest/Response ping-pong (~3x/s) that
-        // floods the network/MQTT (see https://github.com/Koenkk/zigbee2mqtt/issues/28367).
         extend: [
             tuya.modernExtend.tuyaBase({
                 dp: true,
@@ -549,6 +546,47 @@ export const definitions: DefinitionWithExtend[] = [
                 [3, "position", tuya.valueConverter.coverPositionInverted],
                 [5, "motor_direction", tuya.valueConverterBasic.lookup({normal: false, reversed: true})], // maybe enum ?
                 [13, "battery", tuya.valueConverter.raw],
+            ],
+        },
+    },
+    {
+        // Star Feather dimmer. Shares the same board/firmware family as the
+        // SFL02-Z switches (induction/vibration/indicator), plus the standard
+        // Tuya dimmer datapoints (min/max brightness, light_type, countdown,
+        // power_on_behavior, backlight_mode). Fully confirmed against real
+        // hardware (raw dp capture).
+        fingerprint: tuya.fingerprint("TS0601", ["_TZE284_t88bjhfu"]),
+        model: "SFD02-Z",
+        vendor: "Moes",
+        description: "Star feather smart dimmer switch",
+        extend: [tuya.modernExtend.tuyaBase({dp: true})],
+        exposes: [
+            tuya.exposes.lightBrightnessWithMinMax(),
+            tuya.exposes.lightType(),
+            tuya.exposes.countdown(),
+            e.power_on_behavior().withAccess(ea.STATE_SET),
+            tuya.exposes.backlightModeOffNormalInverted().withAccess(ea.STATE_SET),
+            exposes.enum("induction_mode", ea.ALL, ["ON", "OFF"]).withDescription("Induction mode"),
+            exposes.enum("indicator_status", ea.ALL, ["off", "relay", "invert"]).withDescription("Indicator status"),
+            exposes.enum("vibration_mode", ea.ALL, ["Gear 0", "Gear 1", "Gear 2", "Gear 3"]).withDescription("Vibration"),
+        ],
+        meta: {
+            tuyaDatapoints: [
+                [1, "state", tuya.valueConverter.onOff, {skip: tuya.skip.stateOnAndBrightnessPresent}],
+                [2, "brightness", tuya.valueConverter.scale0_254to0_1000],
+                [3, "min_brightness", tuya.valueConverter.scale0_254to0_1000],
+                [4, "light_type", tuya.valueConverter.lightType],
+                [5, "max_brightness", tuya.valueConverter.scale0_254to0_1000],
+                [6, "countdown", tuya.valueConverter.countdown],
+                [14, "power_on_behavior", tuya.valueConverter.powerOnBehavior],
+                [21, "backlight_mode", tuya.valueConverter.backlightModeOffNormalInverted],
+                [26, "induction_mode", tuya.valueConverter.onOff],
+                [101, "indicator_status", tuya.valueConverterBasic.lookup({off: tuya.enum(0), relay: tuya.enum(1), invert: tuya.enum(2)})],
+                [
+                    102,
+                    "vibration_mode",
+                    tuya.valueConverterBasic.lookup({"Gear 0": tuya.enum(0), "Gear 1": tuya.enum(1), "Gear 2": tuya.enum(2), "Gear 3": tuya.enum(3)}),
+                ],
             ],
         },
     },
