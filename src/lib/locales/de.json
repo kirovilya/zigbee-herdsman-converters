@@ -1,6 +1,146 @@
 {
+    "brightness": {
+        "label": "Helligkeit"
+    },
+    "color_temp": {
+        "label": "Farbtemperatur"
+    },
+    "color_temp_startup": {
+        "label": "Farbtemperatur beim Start"
+    },
+    "hue": {
+        "label": "Farbton"
+    },
+    "saturation": {
+        "label": "Sättigung"
+    },
+    "effect": {
+        "label": "Effekt",
+        "description": "Löst einen Effekt am Licht aus",
+        "values": {
+            "blink": "Blinken",
+            "breathe": "Atmen",
+            "okay": "Okay",
+            "channel_change": "Kanalwechsel",
+            "finish_effect": "Effekt beenden",
+            "stop_effect": "Effekt stoppen"
+        }
+    },
+    "temperature": {
+        "label": "Temperatur",
+        "description": "Gemessene Temperatur"
+    },
+    "humidity": {
+        "label": "Luftfeuchtigkeit",
+        "description": "Gemessene relative Luftfeuchtigkeit"
+    },
+    "pressure": {
+        "label": "Luftdruck",
+        "description": "Gemessener atmosphärischer Druck"
+    },
+    "illuminance": {
+        "label": "Beleuchtungsstärke",
+        "description": "Gemessene Beleuchtungsstärke"
+    },
+    "illuminance_lux": {
+        "label": "Beleuchtungsstärke (lux)"
+    },
+    "illuminance_raw": {
+        "label": "Beleuchtungsstärke (Rohwert)",
+        "description": "Rohwert der Beleuchtungsstärke"
+    },
+    "occupancy": {
+        "label": "Anwesenheit",
+        "description": "Zeigt ob das Gerät Anwesenheit erkannt hat"
+    },
+    "occupancy_level": {
+        "label": "Anwesenheitsniveau",
+        "description": "Gemessener Anwesenheitswert"
+    },
+    "contact": {
+        "label": "Kontakt",
+        "description": "Zeigt ob der Kontakt geschlossen oder geöffnet ist"
+    },
+    "water_leak": {
+        "label": "Wasserleck",
+        "description": "Zeigt ob das Gerät ein Wasserleck erkannt hat"
+    },
+    "smoke": {
+        "label": "Rauch",
+        "description": "Zeigt ob das Gerät Rauch erkannt hat"
+    },
+    "gas": {
+        "label": "Gas",
+        "description": "Zeigt ob das Gerät Gas erkannt hat"
+    },
+    "co2": {
+        "label": "CO2",
+        "description": "Gemessener CO2-Wert"
+    },
+    "voc": {
+        "label": "VOC",
+        "description": "Gemessener VOC-Wert"
+    },
+    "power": {
+        "label": "Leistung",
+        "description": "Gemessene elektrische Leistung"
+    },
+    "energy": {
+        "label": "Energie",
+        "description": "Gesamtverbrauchte Energie"
+    },
+    "voltage": {
+        "label": "Spannung",
+        "description": "Gemessene elektrische Spannung"
+    },
+    "current": {
+        "label": "Strom",
+        "description": "Gemessener elektrischer Strom"
+    },
+    "frequency": {
+        "label": "Frequenz"
+    },
+    "power_factor": {
+        "label": "Leistungsfaktor",
+        "description": "Gemessener Leistungsfaktor"
+    },
+    "battery": {
+        "label": "Batterie",
+        "description": "Verbleibende Batterie in %"
+    },
+    "battery_low": {
+        "label": "Schwache Batterie",
+        "description": "Zeigt ob die Batterie fast leer ist"
+    },
+    "battery_voltage": {
+        "label": "Batteriespannung",
+        "description": "Batteriespannung in Millivolt"
+    },
+    "position": {
+        "label": "Position",
+        "description": "Position"
+    },
+    "tilt": {
+        "label": "Neigung",
+        "description": "Neigung"
+    },
+    "state": {
+        "label": "Status"
+    },
+    "system_mode": {
+        "label": "Systemmodus",
+        "values": {
+            "auto": "Auto",
+            "heat": "Heizen",
+            "cool": "Kühlen",
+            "off": "Aus",
+            "dry": "Trocken",
+            "fan_only": "Nur Lüfter"
+        }
+    },
     "child_lock": {
         "label": "Kindersicherung",
+        "description": "Aktiviert/deaktiviert die physische Eingabe am Gerät",
         "values": {
             "LOCK": "Gesperrt",
             "UNLOCK": "Entsperrt"
@@ -9,13 +149,14 @@
     "running_state": {
         "label": "Betriebszustand",
         "values": {
-            "idle": "Leerlauf",
+            "idle": "Bereitschaft",
             "heat": "Heizen",
             "cool": "Kühlen"
         }
     },
     "power_on_behavior": {
-        "label": "Einschaltverhalten nach Stromausfall",
+        "label": "Verhalten beim Einschalten",
+        "description": "Steuert das Verhalten beim Einschalten nach Stromausfall",
         "values": {
             "on": "Ein",
             "off": "Aus",
@@ -24,13 +165,19 @@
         }
     },
     "occupied_heating_setpoint": {
-        "label": "Heizsollwert"
+        "label": "Heizsollwert (besetzt)"
     },
     "local_temperature": {
-        "label": "Lokale Temperatur"
+        "label": "Lokale Temperatur",
+        "description": "Aktuell am Gerät gemessene Temperatur"
     },
     "open_window": {
-        "label": "Fenster geöffnet"
+        "label": "Fenster geöffnet",
+        "description": "Aktiviert/deaktiviert das geöffnete Fenster",
+        "values": {
+            "ON": "Ein",
+            "OFF": "Aus"
+        }
     },
     "frost_protection": {
         "label": "Frostschutz"
@@ -56,43 +203,58 @@
         "label": "Abwesenheitsmodus"
     },
     "eco_mode": {
-        "label": "Eco-Modus"
+        "label": "Eco-Modus",
+        "description": "ECO-Modus (Energiesparmodus)",
+        "values": {
+            "ON": "Ein",
+            "OFF": "Aus"
+        }
     },
     "boost": {
         "label": "Boost"
     },
     "boost_time": {
-        "label": "Boost-Dauer"
+        "label": "Boost-Dauer",
+        "description": "Boost-Zeit"
     },
     "linkquality": {
         "label": "Verbindungsqualität"
     },
     "action": {
-        "label": "Aktion"
+        "label": "Aktion",
+        "description": "Ausgelöste Aktion (z.B. Tastendruck)"
     },
     "action_duration": {
-        "label": "Aktionsdauer"
+        "label": "Aktionsdauer",
+        "description": "Dauer der ausgelösten Aktion in Sekunden"
     },
     "action_group": {
-        "label": "Aktionsgruppe"
+        "label": "Aktionsgruppe",
+        "description": "Gruppe, auf der die Aktion ausgelöst wurde"
     },
     "tamper": {
-        "label": "Manipulation"
+        "label": "Manipulation",
+        "description": "Zeigt ob das Gerät manipuliert wurde"
     },
     "vibration": {
-        "label": "Vibration"
+        "label": "Vibration",
+        "description": "Zeigt ob das Gerät Vibration erkannt hat"
     },
     "alarm": {
-        "label": "Alarm"
+        "label": "Alarm",
+        "description": "Zeigt ob der Alarm aktiv ist"
     },
     "noise": {
-        "label": "Geräusch"
+        "label": "Geräusch",
+        "description": "Gemessener Geräuschpegel"
     },
     "noise_detected": {
-        "label": "Geräusch erkannt"
+        "label": "Geräusch erkannt",
+        "description": "Zeigt ob das Gerät Geräusch erkannt hat"
     },
     "presence": {
-        "label": "Anwesenheit"
+        "label": "Anwesenheit",
+        "description": "Zeigt ob das Gerät Anwesenheit erkannt hat"
     },
     "motion": {
         "label": "Bewegung"
@@ -101,28 +263,36 @@
         "label": "Bewegungszustand"
     },
     "soil_moisture": {
-        "label": "Bodenfeuchtigkeit"
+        "label": "Bodenfeuchtigkeit",
+        "description": "Gemessene Bodenfeuchtigkeit"
     },
     "co": {
-        "label": "CO"
+        "label": "CO",
+        "description": "Gemessener CO-Wert (Kohlenmonoxid)"
     },
     "aqi": {
-        "label": "Luftqualitätsindex"
+        "label": "Luftqualitätsindex",
+        "description": "Luftqualitätsindex"
     },
     "pm25": {
-        "label": "PM2,5"
+        "label": "PM2,5",
+        "description": "Gemessene PM2.5-Konzentration"
     },
     "pm10": {
-        "label": "PM10"
+        "label": "PM10",
+        "description": "Gemessene PM10-Konzentration"
     },
     "formaldehyde": {
-        "label": "Formaldehyd"
+        "label": "Formaldehyd",
+        "description": "Gemessener Formaldehyd-Wert"
     },
     "hcho": {
-        "label": "Formaldehyd"
+        "label": "Formaldehyd",
+        "description": "Gemessener HCHO-Wert"
     },
     "cube_side": {
-        "label": "Würfelseite"
+        "label": "Würfelseite",
+        "description": "Seite des Würfels"
     },
     "cube_side_1": {
         "label": "Seite 1"
@@ -143,112 +313,173 @@
         "label": "Seite 6"
     },
     "valve_position": {
-        "label": "Ventilposition"
+        "label": "Ventilposition",
+        "description": "Position des Ventils"
     },
     "valve_switch": {
-        "label": "Ventil"
+        "label": "Ventil",
+        "description": "Ventilzustand offen oder geschlossen",
+        "values": {
+            "OPEN": "Geöffnet",
+            "CLOSE": "Geschlossen"
+        }
     },
     "valve_state": {
-        "label": "Ventilzustand"
+        "label": "Ventilstatus",
+        "description": "Ventilzustand offen oder geschlossen",
+        "values": {
+            "OPEN": "Geöffnet",
+            "CLOSED": "Geschlossen"
+        }
     },
     "valve_detection": {
         "label": "Ventilerkennung"
     },
     "valve_detection_bool": {
-        "label": "Ventilerkennung"
+        "label": "Ventilerkennung Bool",
+        "description": "Bestimmt, ob Temperaturkontrollanomalien erkannt werden sollen"
     },
     "valve_alarm": {
         "label": "Ventilalarm"
     },
     "auto_lock": {
-        "label": "Auto-Sperre"
+        "label": "Automatische Sperre",
+        "values": {
+            "AUTO": "Auto",
+            "MANUAL": "Manuell"
+        }
     },
     "auto_off": {
-        "label": "Auto-Aus"
+        "label": "Automatisches Ausschalten",
+        "description": "Schaltet das angeschlossene Gerät automatisch ab, wenn es weniger als 2W verbraucht"
     },
     "auto_relock_time": {
-        "label": "Auto-Sperrzeit"
+        "label": "Wieder-Sperrzeit",
+        "description": "Sekunden bis zur automatischen Wiederverriegelung. 0=deaktiviert"
     },
     "away_preset_days": {
-        "label": "Abwesenheitstage"
+        "label": "Abwesenheits-Voreinstellung Tage",
+        "description": "Abwesenheits-Voreinstellung Tage"
     },
     "away_preset_temperature": {
-        "label": "Abwesenheitstemperatur"
+        "label": "Abwesenheits-Voreinstellung Temperatur",
+        "description": "Abwesenheits-Voreinstellung Temperatur"
     },
     "button_lock": {
-        "label": "Tastensperre"
+        "label": "Tastensperre",
+        "description": "Deaktiviert den physischen Schalter",
+        "values": {
+            "ON": "Ein",
+            "OFF": "Aus"
+        }
     },
     "calibrated": {
-        "label": "Kalibriert"
+        "label": "Kalibriert",
+        "description": "Zeigt ob das Gerät kalibriert ist"
     },
     "carbon_monoxide": {
-        "label": "Kohlenmonoxid"
+        "label": "Kohlenmonoxid",
+        "description": "Zeigt an, ob CO erkannt wurde"
     },
     "comfort_temperature": {
-        "label": "Komforttemperatur"
+        "label": "Komforttemperatur",
+        "description": "Komforttemperatur"
     },
     "consumer_connected": {
-        "label": "Verbunden"
+        "label": "Verbraucher verbunden",
+        "description": "Zeigt an, ob eine Steckdose physisch angeschlossen ist"
     },
     "cover_position": {
-        "label": "Behängeposition"
+        "label": "Jalousieposition"
     },
     "cover_tilt": {
-        "label": "Behängeneigung"
+        "label": "Jalousieneigung"
     },
     "cover_mode": {
-        "label": "Behängemodus"
+        "label": "Jalousiemodus",
+        "description": "Umkehrung der Motorrotationsrichtung"
     },
     "cpu_temperature": {
-        "label": "CPU-Temperatur"
+        "label": "CPU-Temperatur",
+        "description": "Temperatur der CPU"
     },
     "current_phase_b": {
-        "label": "Strom Phase B"
+        "label": "Strom Phase B",
+        "description": "Sofort gemessener Strom auf Phase B"
     },
     "current_phase_c": {
-        "label": "Strom Phase C"
+        "label": "Strom Phase C",
+        "description": "Sofort gemessener Strom auf Phase C"
     },
     "current_neutral": {
-        "label": "Strom Neutralleiter"
+        "label": "Strom Neutralleiter",
+        "description": "Sofort gemessener Strom auf dem Neutralleiter"
     },
     "deadzone_temperature": {
-        "label": "Totzone Temperatur"
+        "label": "Totzone Temperatur",
+        "description": "Differenz zwischen lokaler Temperatur und Heiz-Solltemperatur zum Auslösen der Heizung"
     },
     "detection_interval": {
-        "label": "Erkennungsintervall"
+        "label": "Erkennungsintervall",
+        "description": "Zeitintervall zwischen der Erkennung."
     },
     "device_temperature": {
-        "label": "Gerätetemperatur"
+        "label": "Gerätetemperatur",
+        "description": "Temperatur des Geräts"
     },
     "eco2": {
-        "label": "eCO2"
+        "label": "PPM",
+        "description": "Gemessener eCO2-Wert"
     },
     "eco_temperature": {
-        "label": "Eco-Temperatur"
+        "label": "Eco-Temperatur",
+        "description": "Eco-Temperatur"
     },
     "produced_energy": {
-        "label": "Produzierte Energie"
+        "label": "Erzeugte Energie",
+        "description": "Summe der erzeugten Energie"
     },
     "energy_produced": {
-        "label": "Produzierte Energie"
+        "label": "Erzeugte Energie",
+        "description": "Summe der erzeugten Energie"
     },
     "flip_indicator_light": {
-        "label": "LED-Anzeige umkehren"
+        "label": "Indikatorlicht umkehren",
+        "description": "Nach dem Einschalten leuchtet das Indikatorlicht, wenn der Schalter aus ist",
+        "values": {
+            "ON": "Ein",
+            "OFF": "Aus"
+        }
     },
     "holiday_temperature": {
-        "label": "Urlaubstemperatur"
+        "label": "Feiertags-Temperatur",
+        "description": "Feiertags-Temperatur"
     },
     "brightness_state": {
-        "label": "Helligkeitszustand"
+        "label": "Helligkeitszustand",
+        "description": "Helligkeitszustand",
+        "values": {
+            "low": "Niedrig",
+            "middle": "Mittel",
+            "high": "Hoch",
+            "strong": "Stark"
+        }
     },
     "keypad_lockout": {
-        "label": "Tastatursperre"
+        "label": "Tastatur-Sperre",
+        "description": "Aktiviert/deaktiviert die physische Eingabe",
+        "values": {
+            "unlock": "Entsperrt",
+            "lock1": "Gesperrt1",
+            "lock2": "Gesperrt2"
+        }
     },
     "led_disabled_night": {
-        "label": "LED nachts deaktiviert"
+        "label": "LED nachts deaktiviert",
+        "description": "Aktiviert/deaktiviert die LED nachts"
     },
     "light_brightness": {
-        "label": "Licht Helligkeit"
+        "label": "Licht-Helligkeit"
     },
     "light_brightness_color": {
         "label": "Licht Helligkeit Farbe"
@@ -257,193 +488,315 @@
         "label": "Licht Helligkeit Farbtemperatur"
     },
     "light_color_options": {
-        "label": "Licht Farboptionen"
+        "label": "Licht-Farboptionen",
+        "description": "Erweitertes Farbverhalten"
     },
     "lock": {
         "label": "Schloss"
     },
     "lock_action": {
-        "label": "Schloss Aktion"
+        "label": "Schlossaktion",
+        "description": "Ausgelöste Aktion am Schloss",
+        "values": {
+            "unknown": "Unbekannt",
+            "lock": "Verriegeln",
+            "unlock": "Entriegeln",
+            "lock_failure_invalid_pin_or_id": "Verriegelungsfehler_Ungültige_PIN_ID",
+            "lock_failure_invalid_schedule": "Verriegelungsfehler_Ungültiger_Zeitplan",
+            "unlock_failure_invalid_pin_or_id": "Entriegelungsfehler_Ungültige_PIN_ID",
+            "unlock_failure_invalid_schedule": "Entriegelungsfehler_Ungültiger_Zeitplan",
+            "one_touch_lock": "Ein-Tasten-Verriegelung",
+            "key_lock": "Schlüssel-Verriegelung",
+            "key_unlock": "Schlüssel-Entriegelung",
+            "auto_lock": "Automatische_Verriegelung",
+            "schedule_lock": "Zeitplan-Verriegelung",
+            "schedule_unlock": "Zeitplan-Entriegelung",
+            "manual_lock": "Manuelle_Verriegelung",
+            "manual_unlock": "Manuelle_Entriegelung",
+            "non_access_user_operational_event": "Betriebsereignis_Non-Access-Benutzer"
+        }
     },
     "lock_action_source_name": {
-        "label": "Schloss Aktionsquelle"
+        "label": "Quelle Schlossaktion",
+        "description": "Quelle der ausgelösten Aktion",
+        "values": {
+            "keypad": "Tastatur",
+            "rfid": "RFID",
+            "manual": "Manuell",
+            "rf": "HF"
+        }
     },
     "lock_action_user": {
-        "label": "Schloss Aktionsbenutzer"
+        "label": "Benutzer Schlossaktion",
+        "description": "ID des Benutzers, der die Aktion ausgelöst hat"
     },
     "max_cool_setpoint_limit": {
-        "label": "Max. Kühl-Sollwert"
+        "label": "Max Kühlsollwert-Limit",
+        "description": "Maximale Kühlsollwert-Grenze"
     },
     "min_cool_setpoint_limit": {
-        "label": "Min. Kühl-Sollwert"
+        "label": "Min Kühlsollwert-Limit",
+        "description": "Minimale Kühlsollwert-Grenze"
     },
     "max_heat_setpoint_limit": {
-        "label": "Max. Heiz-Sollwert"
+        "label": "Max Heizsollwert-Limit",
+        "description": "Maximale Heizsollwert-Grenze"
     },
     "min_heat_setpoint_limit": {
-        "label": "Min. Heiz-Sollwert"
+        "label": "Min Heizsollwert-Limit",
+        "description": "Minimale Heizsollwert-Grenze"
     },
     "max_temperature": {
-        "label": "Max. Temperatur"
+        "label": "Max-Temperatur",
+        "description": "Maximale Temperatur"
     },
     "max_temperature_limit": {
-        "label": "Max. Temperaturgrenze"
+        "label": "Max-Temperatur-Grenze",
+        "description": "Maximale Temperaturgrenze."
     },
     "min_temperature_limit": {
-        "label": "Min. Temperaturgrenze"
+        "label": "Min-Temperatur-Grenze",
+        "description": "Minimale Temperaturgrenze für Frostschutz."
     },
     "min_temperature": {
-        "label": "Min. Temperatur"
+        "label": "Min-Temperatur",
+        "description": "Minimale Temperatur"
     },
     "mode_switch_select": {
-        "label": "Modusschalter Auswahl"
+        "label": "Modus-Schalter-Auswahl",
+        "description": "Modus-Schalter zum Verwenden auswählen"
     },
     "motion_sensitivity_select": {
-        "label": "Bewegungsempfindlichkeit Auswahl"
+        "label": "Bewegungsempfindlichkeit",
+        "description": "Bewegungsempfindlichkeit zum Verwenden auswählen"
     },
     "open_window_temperature": {
-        "label": "Fenster offen Temperatur"
+        "label": "Fenster-offen-Temperatur",
+        "description": "Fenster geöffnet Temperatur"
     },
     "operation_mode_select": {
-        "label": "Betriebsmodus Auswahl"
+        "label": "Betriebsmodus auswählen",
+        "description": "Betriebsmodus zum Verwenden auswählen"
     },
     "overload_protection": {
-        "label": "Überlastschutz"
+        "label": "Überlastschutz",
+        "description": "Maximal zulässige Last, schaltet bei Überschreitung ab"
     },
     "pm1": {
-        "label": "PM1"
+        "label": "PM1",
+        "description": "Gemessene PM1-Konzentration"
     },
     "power_phase_b": {
-        "label": "Leistung Phase B"
+        "label": "Leistung Phase B",
+        "description": "Sofort gemessene Leistung auf Phase B"
     },
     "power_phase_c": {
-        "label": "Leistung Phase C"
+        "label": "Leistung Phase C",
+        "description": "Sofort gemessene Leistung auf Phase C"
     },
     "power_factor_phase_b": {
-        "label": "Leistungsfaktor Phase B"
+        "label": "Leistungsfaktor Phase B",
+        "description": "Sofort gemessener Leistungsfaktor auf Phase B"
     },
     "power_factor_phase_c": {
-        "label": "Leistungsfaktor Phase C"
+        "label": "Leistungsfaktor Phase C",
+        "description": "Sofort gemessener Leistungsfaktor auf Phase C"
     },
     "power_apparent": {
-        "label": "Scheinleistung"
+        "label": "Scheinleistung",
+        "description": "Sofort gemessene Scheinleistung"
     },
     "power_apparent_phase_b": {
-        "label": "Scheinleistung Phase B"
+        "label": "Scheinleistung Phase B",
+        "description": "Sofort gemessene Scheinleistung auf Phase B"
     },
     "power_apparent_phase_c": {
-        "label": "Scheinleistung Phase C"
+        "label": "Scheinleistung Phase C",
+        "description": "Sofort gemessene Scheinleistung auf Phase C"
     },
     "power_outage_count": {
-        "label": "Anzahl Stromausfälle"
+        "label": "Anzahl Stromausfälle",
+        "description": "Anzahl der Stromausfälle${resetsWhenPairing ? \" (seit letztem Pairing)\" : \"\"}"
     },
     "power_outage_memory": {
-        "label": "Stromausfall-Speicher"
+        "label": "Stromausfall-Speicher",
+        "description": "Aktiviert/deaktiviert den Stromausfall-Speicher"
     },
     "power_reactive": {
-        "label": "Blindleistung"
+        "label": "Blindleistung",
+        "description": "Sofort gemessene Blindleistung"
     },
     "power_reactive_phase_b": {
-        "label": "Blindleistung Phase B"
+        "label": "Blindleistung Phase B",
+        "description": "Sofort gemessene Blindleistung auf Phase B"
     },
     "power_reactive_phase_c": {
-        "label": "Blindleistung Phase C"
+        "label": "Blindleistung Phase C",
+        "description": "Sofort gemessene Blindleistung auf Phase C"
     },
     "programming_operation_mode": {
-        "label": "Programmierungsmodus"
+        "label": "Programmiermodus",
+        "description": "Steuert, wie die Programmierung den Thermostat beeinflusst."
     },
     "setup": {
-        "label": "Einrichtung"
+        "label": "Einrichtung",
+        "description": "Zeigt an, ob das Gerät im Einrichtungsmodus ist"
     },
     "schedule": {
-        "label": "Zeitplan"
+        "label": "Zeitplan",
+        "description": "Wenn aktiviert, ändert das Gerät seinen Zustand basierend auf Ihrem Zeitplan"
     },
     "schedule_settings": {
-        "label": "Zeitplaneinstellungen"
+        "label": "Zeitplaneinstellungen",
+        "description": "Ermöglicht die Zeitplan-Konfiguration"
     },
     "external_temperature_input": {
-        "label": "Außentemperatur-Eingang"
+        "label": "Externer Temperatureingang",
+        "description": "Eingang für Fern-Temperatursensor"
     },
     "sos": {
-        "label": "SOS"
+        "label": "SOS",
+        "description": "SOS-Alarm"
     },
     "sound_volume": {
-        "label": "Lautstärke"
+        "label": "Lautstärke",
+        "description": "Lautstärke des Schlosses",
+        "values": {
+            "silent_mode": "Silentmodus",
+            "low_volume": "Niedrige_Lautstärke",
+            "high_volume": "Hohe_Lautstärke"
+        }
     },
     "switch_type": {
-        "label": "Schaltertyp"
+        "label": "Schaltertyp",
+        "description": "Wandschaltertyp",
+        "values": {
+            "toggle": "Umschalter",
+            "momentary": "Taster"
+        }
     },
     "door_state": {
-        "label": "Türzustand"
+        "label": "Türzustand",
+        "description": "Zustand der Tür",
+        "values": {
+            "open": "Offen",
+            "closed": "Geschlossen",
+            "error_jammed": "Fehler_Verklemmt",
+            "error_forced_open": "Fehler_Gewaltsam_geöffnet",
+            "error_unspecified": "Fehler_Nicht_spezifiziert",
+            "undefined": "Undefiniert"
+        }
     },
     "temperature_sensor_select": {
-        "label": "Temperatursensor Auswahl"
+        "label": "Temperatursensor-Auswahl",
+        "description": "Temperatursensor zum Verwenden auswählen"
     },
     "test": {
-        "label": "Test"
+        "label": "Test",
+        "description": "Zeigt an, ob das Gerät getestet wird"
     },
     "trigger_count": {
-        "label": "Auslöseranzahl"
+        "label": "Auslösungen",
+        "description": "Zeigt an, wie oft der Sensor ausgelöst wurde${sinceScheduledReport ? \" (seit letztem geplanten Bericht)\" : \"\"}"
     },
     "trigger_indicator": {
-        "label": "Auslöserindikator"
+        "label": "Auslösungsanzeige",
+        "description": "Aktiviert die Auslösungsanzeige"
     },
     "window_detection": {
         "label": "Fenstererkennung"
     },
     "window_detection_bool": {
-        "label": "Fenstererkennung"
+        "label": "Fenstererkennung Bool",
+        "description": "Aktiviert/deaktiviert die Fenstererkennung"
     },
     "window_open": {
-        "label": "Fenster offen"
+        "label": "Fenster offen",
+        "description": "Zeigt an, ob das Fenster geöffnet ist"
     },
     "moving": {
-        "label": "Bewegung"
+        "label": "In Bewegung",
+        "description": "Zeigt an, ob das Gerät sich bewegt"
     },
     "x_axis": {
-        "label": "X-Achse"
+        "label": "X-Achse",
+        "description": "Beschleunigungsmesser X-Wert"
     },
     "y_axis": {
-        "label": "Y-Achse"
+        "label": "Y-Achse",
+        "description": "Beschleunigungsmesser Y-Wert"
     },
     "z_axis": {
-        "label": "Z-Achse"
+        "label": "Z-Achse",
+        "description": "Beschleunigungsmesser Z-Wert"
     },
     "pincode": {
-        "label": "PIN-Code"
-    },
-    "squawk": {
-        "label": "Quaken"
-    },
-    "identify_duration": {
-        "label": "Identifizierungsdauer"
-    },
-    "identify": {
-        "label": "Identifizieren"
-    },
-    "min_brightness": {
-        "label": "Min. Helligkeit"
-    },
-    "max_brightness": {
-        "label": "Max. Helligkeit"
-    },
-    "pilot_wire_mode": {
-        "label": "Pilotdraht-Modus",
+        "label": "PIN-Code",
+        "description": "Benutzer-ID zum Festlegen oder Löschen des PIN-Codes",
         "values": {
-            "comfort": "Komfort",
-            "eco": "Eco",
-            "frost_protection": "Frostschutz",
-            "off": "Aus"
+            "unrestricted": "Uneingeschränkt",
+            "year_day_schedule": "Jahreszeitplan",
+            "week_day_schedule": "Wochenzeitplan",
+            "master": "Meister",
+            "non_access": "Kein_Zugang"
         }
     },
+    "squawk": {
+        "label": "Signalton",
+        "description": "Signalton-Zustand festlegen",
+        "values": {
+            "system_is_armed": "System_aktiviert",
+            "system_is_disarmed": "System_deaktiviert"
+        }
+    },
+    "identify_duration": {
+        "label": "Identifikationsdauer",
+        "description": "Dauer des Blinkens"
+    },
+    "identify": {
+        "label": "Identifizieren",
+        "description": "Geräteidentifikation starten",
+        "values": {
+            "identify": "Identifizieren"
+        }
+    },
+    "min_brightness": {
+        "label": "Min Helligkeit",
+        "description": "Minimale Licht-Helligkeit"
+    },
+    "max_brightness": {
+        "label": "Max Helligkeit",
+        "description": "Maximale Licht-Helligkeit"
+    },
+    "pilot_wire_mode": {
+        "label": "Pilot-Draht-Modus",
+        "description": "Steuert die Solltemperatur des Heizkörpers."
+    },
     "rain": {
-        "label": "Regen"
+        "label": "Regen",
+        "description": "Zeigt an, ob das Gerät Niederschlag erkannt hat"
     },
     "warning": {
-        "label": "Warnung"
+        "label": "Warnung",
+        "description": "Modus der Warnung (Soundeffekt)",
+        "values": {
+            "stop": "Stoppen",
+            "burglar": "Einbruch",
+            "fire": "Feuer",
+            "emergency": "Notfall",
+            "police_panic": "Polizei-Panik",
+            "fire_panic": "Feuer-Panik",
+            "emergency_panic": "Notfall-Panik"
+        }
     },
     "week": {
-        "label": "Woche"
+        "label": "Woche",
+        "description": "Wochenformat für Zeitplan",
+        "values": {
+            "7": "7",
+            "5+2": "5+2",
+            "6+1": "6+1"
+        }
     },
     "last_seen": {
         "label": "Zuletzt gesehen"
@@ -452,16 +805,16 @@
         "label": "Motorrichtung"
     },
     "motor_speed": {
-        "label": "Motordrehzahl"
+        "label": "Motorgeschwindigkeit"
     },
     "target_temperature": {
-        "label": "Solltemperatur"
+        "label": "Zieltemperatur"
     },
     "current_heating_setpoint": {
-        "label": "Aktueller Heizsollwert"
+        "label": "Aktueller Heiz-Sollwert"
     },
     "unoccupied_heating_setpoint": {
-        "label": "Heizsollwert (abwesend)"
+        "label": "Unbesetzter Heiz-Sollwert"
     },
     "preset": {
         "label": "Voreinstellung"
@@ -476,7 +829,7 @@
         "label": "Empfindlichkeit"
     },
     "detection_distance": {
-        "label": "Erkennungsdistanz"
+        "label": "Erkennungsweite"
     },
     "keep_time": {
         "label": "Haltezeit"
@@ -485,16 +838,16 @@
         "label": "Anwesenheits-Timeout"
     },
     "illuminance_above_threshold": {
-        "label": "Beleuchtung über Schwelle"
+        "label": "Beleuchtungsstärke über Schwellwert"
     },
     "opening_state": {
         "label": "Öffnungszustand"
     },
     "alarm_state": {
-        "label": "Alarmstatus"
+        "label": "Alarmzustand"
     },
     "setup_mode": {
-        "label": "Setup Modus"
+        "label": "Einrichtungsmodus"
     },
     "alarm_siren": {
         "label": "Alarmsirene"
@@ -503,13 +856,13 @@
         "label": "Dauer Alarmsirene"
     },
     "vibration_limit": {
-        "label": "Vibrationslimit"
+        "label": "Vibrationsgrenze"
     },
     "vibration_siren": {
-        "label": "Vibrationssirene"
+        "label": "Vibrations-Sirene"
     },
     "vibration_siren_duration": {
-        "label": "Dauer Vibrationssirene"
+        "label": "Dauer Vibrations-Sirene"
     },
     "close_signal": {
         "label": "Schließsignal"
@@ -518,10 +871,10 @@
         "label": "Sendeleistung"
     },
     "magnetic_status": {
-        "label": "Magnetstatus"
+        "label": "Magnetischer Zustand"
     },
     "connection_state": {
-        "label": "Verbindungsstatus"
+        "label": "Verbindungszustand"
     },
     "restart_required": {
         "label": "Neustart erforderlich"
@@ -530,13 +883,13 @@
         "label": "Neustart"
     },
     "update_state": {
-        "label": "Update-Status"
+        "label": "Update-Zustand"
     },
     "update_available": {
         "label": "Update verfügbar"
     },
     "factory_reset": {
-        "label": "Werksreset"
+        "label": "Werkseinstellung"
     },
     "side_up": {
         "label": "Seite oben"
@@ -551,119 +904,106 @@
         "label": "Seite rechts"
     },
     "state_up": {
-        "label": "Status (oben)"
+        "label": "Zustand oben"
     },
     "state_down": {
-        "label": "Status (unten)"
+        "label": "Zustand unten"
     },
     "state_left": {
-        "label": "Status (links)"
+        "label": "Zustand links"
     },
     "state_right": {
-        "label": "Status (rechts)"
+        "label": "Zustand rechts"
     },
     "state_action": {
-        "label": "Status als Aktion veröffentlichen"
+        "label": "Zustandsaktion"
     },
     "led_indicator": {
         "label": "LED-Anzeige"
     },
     "power_calibration": {
-        "label": "Kalibrierung Leistung"
+        "label": "Leistungskalibrierung"
     },
     "power_precision": {
-        "label": "Genauigkeit Leistung"
+        "label": "Leistungsgenauigkeit"
     },
     "current_calibration": {
-        "label": "Kalibrierung Strom"
+        "label": "Stromkalibrierung"
     },
     "current_precision": {
-        "label": "Genauigkeit Strom"
+        "label": "Stromgenauigkeit"
     },
     "energy_calibration": {
-        "label": "Kalibrierung Energie"
+        "label": "Energiekalibrierung"
     },
     "energy_precision": {
-        "label": "Genauigkeit Energie"
+        "label": "Energiegenauigkeit"
     },
     "device_temperature_calibration": {
-        "label": "Kalibrierung Gerätetemperatur"
+        "label": "Gerätetemperatur-Kalibrierung"
     },
     "voltage_calibration": {
-        "label": "Kalibrierung Spannung"
+        "label": "Spannungskalibrierung"
     },
     "voltage_precision": {
-        "label": "Genauigkeit Spannung"
+        "label": "Spannungsgenauigkeit"
     },
     "idle_steps": {
-        "label": "Leerlaufschritte"
+        "label": "Leerlauf-Schritte"
     },
     "closing_steps": {
-        "label": "Schließschritte"
+        "label": "Schließ-Schritte"
     },
     "valve_opening_limit_voltage": {
-        "label": "Grenzspannung Ventilöffnung"
+        "label": "Spannungsgrenze Ventilöffnung"
     },
     "valve_closing_limit_voltage": {
-        "label": "Grenzspannung Ventilschließung"
+        "label": "Spannungsgrenze Ventilschließung"
     },
     "valve_motor_running_voltage": {
-        "label": "Betriebsspannung Ventilmotor"
+        "label": "Spannung Motorlauf Ventil"
     },
     "valve_opening_degree": {
-        "label": "Ventilöffnung"
+        "label": "Öffnungsgrad Ventil"
     },
     "valve_closing_degree": {
-        "label": "Ventilschließung"
+        "label": "Schließgrad Ventil"
     },
     "temperature_accuracy": {
         "label": "Temperaturgenauigkeit"
     },
     "weekly_schedule_sunday": {
-        "label": "Wochenplan Sonntag"
+        "label": "Wochenzeitplan Sonntag"
     },
     "weekly_schedule_monday": {
-        "label": "Wochenplan Montag"
+        "label": "Wochenzeitplan Montag"
     },
     "weekly_schedule_tuesday": {
-        "label": "Wochenplan Dienstag"
+        "label": "Wochenzeitplan Dienstag"
     },
     "weekly_schedule_wednesday": {
-        "label": "Wochenplan Mittwoch"
+        "label": "Wochenzeitplan Mittwoch"
     },
     "weekly_schedule_thursday": {
-        "label": "Wochenplan Donnerstag"
+        "label": "Wochenzeitplan Donnerstag"
     },
     "weekly_schedule_friday": {
-        "label": "Wochenplan Freitag"
+        "label": "Wochenzeitplan Freitag"
     },
     "weekly_schedule_saturday": {
-        "label": "Wochenplan Samstag"
+        "label": "Wochenzeitplan Samstag"
     },
     "smart_temperature_control": {
         "label": "Intelligente Temperaturregelung"
     },
     "thermostat_unit": {
-        "label": "Thermostat-Einheit",
-        "values": {
-            "celsius": "Celsius",
-            "fahrenheit": "Fahrenheit"
-        }
+        "label": "Thermostat-Einheit"
     },
     "operation_mode": {
-        "label": "Betriebsmodus",
-        "values": {
-            "command": "Befehl",
-            "event": "Ereignis"
-        }
+        "label": "Betriebsmodus"
     },
     "indicator_mode": {
-        "label": "LED-Modus",
-        "values": {
-            "on": "Ein",
-            "off": "Aus",
-            "off_on": "Aus/Ein"
-        }
+        "label": "Indikator-Modus"
     },
     "timer_mode_target_temp": {
         "label": "Solltemperatur im Timer-Modus"
@@ -675,7 +1015,7 @@
         "label": "Temporärer Modus"
     },
     "open_window_detection": {
-        "label": "Offenes-Fenster-Erkennung"
+        "label": "Fenstererkennung"
     },
     "frost_protection_temperature": {
         "label": "Frostschutz-Temperatur"
@@ -684,153 +1024,1325 @@
         "label": "Farbe"
     },
     "color_mode": {
-        "label": "Farbmodus",
-        "values": {
-            "xy": "XY",
-            "hs": "HS",
-            "color_temp": "Farbtemperatur"
-        }
+        "label": "Farbmodus"
     },
     "color_xy": {
-        "label": "Farbe (xy)"
+        "label": "Farbe xy"
     },
     "color_hs": {
-        "label": "Farbe (hs)"
+        "label": "Farbe HS"
     },
     "transition": {
         "label": "Übergang"
     },
     "device_mode": {
-        "label": "Gerätemodus",
-        "values": {
-            "single_relay": "Einzelrelais",
-            "single_dimmer": "Einzeldimmer",
-            "dual_relay": "Doppelrelais",
-            "dual_dimmer": "Doppeldimmer"
-        }
+        "label": "Gerätemodus"
     },
     "battery_state": {
-        "label": "Batteriestatus",
-        "values": {
-            "normal": "Normal",
-            "low": "Schwach",
-            "empty": "Leer"
-        }
+        "label": "Batteriezustand"
     },
     "internal_temperature": {
-        "label": "Innentemperatur"
+        "label": "Interne Temperatur"
     },
-    "brightness": {
-        "label": "Helligkeit",
-        "description": "Helligkeitsstufe"
+    "ac_connected": {
+        "label": "Netzbetrieb",
+        "description": "Zeigt an, ob das Gerät am Netz angeschlossen ist"
     },
-    "color_temp": {
-        "label": "Farbtemperatur",
-        "description": "Farbtemperatur"
+    "ac_frequency": {
+        "label": "Netzfrequenz",
+        "description": "Gemessene elektrische Netzfrequenz"
     },
-    "color_temp_startup": {
-        "label": "Farbtemperatur beim Start"
+    "ac_status": {
+        "label": "Netzstatus",
+        "description": "Zeigt an, ob das Gerät Meldungen über Alarmstatus sendet"
     },
-    "hue": {
-        "label": "Farbton"
+    "action_rotation_angle": {
+        "label": "Rotationswinkel",
+        "description": "Rotationswinkel"
     },
-    "saturation": {
-        "label": "Sättigung"
+    "action_rotation_angle_speed": {
+        "label": "Winkelgeschwindigkeit",
+        "description": "Winkelgeschwindigkeit"
     },
-    "effect": {
-        "label": "Effekt"
-    },
-    "temperature": {
-        "label": "Temperatur",
-        "description": "Gemessene Temperatur"
-    },
-    "humidity": {
-        "label": "Luftfeuchtigkeit",
-        "description": "Gemessene Luftfeuchtigkeit"
-    },
-    "pressure": {
-        "label": "Luftdruck",
-        "description": "Atmosphärischer Druck"
-    },
-    "illuminance": {
-        "label": "Beleuchtungsstärke"
-    },
-    "illuminance_lux": {
-        "label": "Beleuchtungsstärke (lux)"
-    },
-    "illuminance_raw": {
-        "label": "Beleuchtungsstärke (Rohwert)"
-    },
-    "occupancy": {
-        "label": "Anwesenheit"
-    },
-    "occupancy_level": {
-        "label": "Anwesenheitsniveau"
-    },
-    "contact": {
-        "label": "Kontakt"
-    },
-    "water_leak": {
-        "label": "Wasserleck"
-    },
-    "smoke": {
-        "label": "Rauch"
-    },
-    "gas": {
-        "label": "Gas"
-    },
-    "co2": {
-        "label": "CO2"
-    },
-    "voc": {
-        "label": "VOC"
-    },
-    "power": {
-        "label": "Leistung"
-    },
-    "energy": {
-        "label": "Energie"
-    },
-    "voltage": {
-        "label": "Spannung"
-    },
-    "current": {
-        "label": "Strom"
-    },
-    "frequency": {
-        "label": "Frequenz"
-    },
-    "power_factor": {
-        "label": "Leistungsfaktor"
-    },
-    "battery": {
-        "label": "Batterie",
-        "description": "Ladezustand"
-    },
-    "battery_low": {
-        "label": "Schwache Batterie"
-    },
-    "battery_voltage": {
-        "label": "Batteriespannung"
-    },
-    "position": {
-        "label": "Position"
-    },
-    "tilt": {
-        "label": "Neigung"
-    },
-    "state": {
-        "label": "Status"
-    },
-    "system_mode": {
-        "label": "Systemmodus",
+    "action_rotation_button_state": {
+        "label": "Tastenzustand Rotation",
+        "description": "Tastenzustand der Rotation",
         "values": {
-            "auto": "Auto",
-            "heat": "Heizen",
-            "cool": "Kühlen",
-            "off": "Aus",
-            "dry": "Trocken",
-            "fan_only": "Nur Lüfter"
+            "released": "Losgelassen",
+            "pressed": "Gedrückt"
         }
+    },
+    "action_rotation_percent": {
+        "label": "Rotationsprozent",
+        "description": "Rotationsprozent"
+    },
+    "action_rotation_percent_speed": {
+        "label": "Prozentgeschwindigkeit",
+        "description": "Prozentuale Rotationsgeschwindigkeit"
+    },
+    "action_rotation_time": {
+        "label": "Rotationszeit",
+        "description": "Rotationszeit",
+        "values": {
+            "released": "Losgelassen",
+            "pressed": "Gedrückt"
+        }
+    },
+    "air_quality": {
+        "label": "Luftqualität",
+        "description": "Berechnete Luftqualität",
+        "values": {
+            "excellent": "Ausgezeichnet",
+            "good": "Gut",
+            "moderate": "Mäßig",
+            "poor": "Schlecht",
+            "unhealthy": "Ungesund",
+            "hazardous": "Gefährlich",
+            "out_of_range": "Außer Reichweite",
+            "unknown": "Unbekannt"
+        }
+    },
+    "alarm_1": {
+        "label": "Alarm 1",
+        "description": "Zeigt an, ob der Alarm ausgelöst wurde"
+    },
+    "alarm_2": {
+        "label": "Alarm 2",
+        "description": "Zeigt an, ob das Gerät Gas erkannt hat"
+    },
+    "alarm_mode": {
+        "label": "Alarmmodus",
+        "description": "Alarmzeit",
+        "values": {
+            "arm": "Aktivieren",
+            "silent": "Lautlos",
+            "disarm": "Deaktivieren"
+        }
+    },
+    "alarm_set_1": {
+        "label": "Alarm-Einstellung 1",
+        "description": "Energiemessungen auf Null setzen",
+        "values": {
+            "RESET": "Zurücksetzen"
+        }
+    },
+    "alarm_set_2": {
+        "label": "Alarm-Einstellung 2",
+        "description": "Leistungsgrenze (Standard 25 kW)"
+    },
+    "alarm_set_3": {
+        "label": "Alarm-Einstellung 3",
+        "description": "Zeitüberschreitung vor Abschaltung (Standard 0s)"
+    },
+    "alarm_status": {
+        "label": "Alarmstatus",
+        "description": "Alarmbetriebsmodus",
+        "values": {
+            "arm": "Aktivieren",
+            "silent": "Lautlos",
+            "disarm": "Deaktivieren"
+        }
+    },
+    "alarm_time": {
+        "label": "Alarmzeit",
+        "description": "Alarmzeit",
+        "values": {
+            "arm": "Aktivieren",
+            "silent": "Lautlos",
+            "disarm": "Deaktivieren"
+        }
+    },
+    "area1Occupancy": {
+        "label": "Anwesenheit Bereich 1",
+        "description": "Zeigt an, ob Anwesenheit in Bereich 1 erkannt wurde"
+    },
+    "area2Occupancy": {
+        "label": "Anwesenheit Bereich 2",
+        "description": "Zeigt an, ob Anwesenheit in Bereich 2 erkannt wurde"
+    },
+    "area3Occupancy": {
+        "label": "Anwesenheit Bereich 3",
+        "description": "Zeigt an, ob Anwesenheit in Bereich 3 erkannt wurde"
+    },
+    "area4Occupancy": {
+        "label": "Anwesenheit Bereich 4",
+        "description": "Zeigt an, ob Anwesenheit in Bereich 4 erkannt wurde"
+    },
+    "auto_off_enabled": {
+        "label": "Auto-Aus aktiviert",
+        "description": "Aktiviert/deaktiviert die automatische Abschaltung"
+    },
+    "auto_off_time": {
+        "label": "Auto-Aus Zeit",
+        "description": "Verzögerung bis zur automatischen Abschaltung"
+    },
+    "auto_settings": {
+        "label": "Auto-Einstellungen",
+        "description": "Automatisch EIN/AUS schalten, manuellen Modus deaktivieren"
+    },
+    "automatic_valve_adapt": {
+        "label": "Automatische Ventilanpassung",
+        "description": "Gibt den aktuellen Status der Ventilanpassung an"
+    },
+    "backlight_mode": {
+        "label": "Hintergrundbeleuchtungsmodus",
+        "description": "Bestimmt, wann die Taste reagiert",
+        "values": {
+            "release": "Loslassen",
+            "press": "Drücken"
+        }
+    },
+    "battery_defect": {
+        "label": "Batteriedefekt",
+        "description": "Zeigt an, ob das Gerät Probleme hat"
+    },
+    "boost_heating": {
+        "label": "Heiz-Boost",
+        "description": "Heiz-Boost aktivieren (öffnet TRV für 5 Minuten)"
+    },
+    "break_function_enabled": {
+        "label": "Pausefunktion"
+    },
+    "break_function_state": {
+        "label": "Pausefunktionszustand",
+        "description": "Zeigt an, ob das Gerät im Pausenmodus ist"
+    },
+    "break_function_timeout": {
+        "label": "Automatische Pausenzeitbegrenzung"
+    },
+    "broadcast_alarms": {
+        "label": "Alarme senden",
+        "description": "Zeigt an, ob die Einbruchalarmsirene manuell aktiviert wurde"
+    },
+    "calibrate": {
+        "label": "Kalibrieren",
+        "description": "Jalousie kalibrieren (Motor lernt Grenzen automatisch)",
+        "values": {
+            "calibrate": "Kalibrieren"
+        }
+    },
+    "calibration": {
+        "label": "Kalibrierung"
+    },
+    "calibration_mode": {
+        "label": "Kalibrierungsmodus",
+        "description": "Definiert den Kalibrierungsmodus des Schalters."
+    },
+    "clear_schedule": {
+        "label": "Zeitplan löschen",
+        "description": "Wochenzeitplan an Thermostat senden",
+        "values": {
+            "trigger": "Auslösen"
+        }
+    },
+    "click_control": {
+        "label": "Klick-Steuerung",
+        "description": "Aktuelle Position als Grenze setzen",
+        "values": {
+            "set_up": "Oben setzen",
+            "set_down": "Unten setzen",
+            "delete_up": "Oben löschen",
+            "delete_down": "Unten löschen",
+            "delete_both": "Beide löschen"
+        }
+    },
+    "climate": {
+        "label": "Klimaanlage",
+        "description": "Aqara Badezimmer-Heizung Klimasteuerung"
+    },
+    "color_power_on_behavior": {
+        "label": "Farbverhalten nach Stromausfall",
+        "description": "Verhalten nach Stromausfall: falsch = ein, wahr = vorherigen Zustand wiederherstellen",
+        "values": {
+            "initial": "Initial",
+            "previous": "Vorherig",
+            "customized": "Benutzerdefiniert"
+        }
+    },
+    "color_sync": {
+        "label": "Farbsynchronisation"
+    },
+    "constant_temperature_mode": {
+        "label": "Konstanttemperaturmodus"
+    },
+    "contact_last_changed": {
+        "label": "Letzte Kontaktänderung",
+        "description": "Zeit (in Sekunden) seit letzter Kontaktänderung."
+    },
+    "countdown": {
+        "label": "Countdown",
+        "description": "Gerät nach Einstellung umschalten (Einmalaktion)"
+    },
+    "countdown_left": {
+        "label": "Countdown verbleibend",
+        "description": "Bewässerung einschalten und Countdown starten"
+    },
+    "cover_limit": {
+        "label": "Jalousie-Grenzen",
+        "description": "Bevorzugte Jalousieposition speichern",
+        "values": {
+            "set_up": "Oben setzen",
+            "set_down": "Unten setzen",
+            "delete_up": "Oben löschen",
+            "delete_down": "Unten löschen",
+            "delete_both": "Beide löschen"
+        }
+    },
+    "cover_position_percent_fix": {
+        "label": "Jalousiepositions-Korrektur",
+        "description": "Korrigiert invertierte Jalousiepositionswerte."
+    },
+    "cover_position_tilt_disable_report": {
+        "label": "Jalousiepositionsbericht deaktivieren"
+    },
+    "cover_type": {
+        "label": "Jalousietyp",
+        "description": "Motor langsamer und leiser als normal betreiben",
+        "values": {
+            "roman_pole": "Römische Stange",
+            "roller_blind": "Rollo",
+            "canopy_curtain": "Markisenstoff",
+            "roman_blind": "Römischer Jalousie",
+            "honeycomb_curtain": "Bienenwabenstoff"
+        }
+    },
+    "data_reporting_interval": {
+        "label": "Datenübertragungsintervall",
+        "description": "Wie oft Messungen gemeldet werden (Standard 5s)"
+    },
+    "detection_range": {
+        "label": "Erkennungsbereich"
+    },
+    "detection_range_composite": {
+        "label": "Verbundener Erkennungsbereich",
+        "description": "Definiert den Erkennungsbereich über boole'sche Einstellungen."
+    },
+    "device_age": {
+        "label": "Filteralter",
+        "description": "Dauer der Filterverwendung"
+    },
+    "device_temperature_alarm": {
+        "label": "Gerätetemperatur-Alarm",
+        "description": "Leckstromgrenze (Standard 50mA)"
+    },
+    "device_temperature_threshold": {
+        "label": "Gerätetemperatur-Schwellwert",
+        "description": "Temperaturgrenze (Standard 80°C)"
+    },
+    "dismiss_alarm": {
+        "label": "Alarm ablehnen",
+        "description": "Zeigt an, wenn Vibration erkannt wird",
+        "values": {
+            "normal": "Normal",
+            "alarm": "Alarm"
+        }
+    },
+    "do_not_disturb": {
+        "label": "Nicht stören",
+        "description": "Batteriezustand",
+        "values": {
+            "low": "Niedrig",
+            "medium": "Mittel",
+            "high": "Hoch"
+        }
+    },
+    "effect_color": {
+        "label": "Effektfarbe"
+    },
+    "effect_color_mode": {
+        "label": "Effekt-Farbmodus"
+    },
+    "effect_colors": {
+        "label": "Effektfarben",
+        "description": "Grün (0-255)"
+    },
+    "effect_segments": {
+        "label": "Effekt-Segmente"
+    },
+    "effect_speed": {
+        "label": "Effektgeschwindigkeit",
+        "description": "Animationsgeschwindigkeit (0=langsamster, 1=schnellster)"
+    },
+    "enabled": {
+        "label": "Aktiviert",
+        "description": "Automatisch EIN/AUS schalten",
+        "values": {
+            "ON": "Ein",
+            "OFF": "Aus"
+        }
+    },
+    "energy_balance": {
+        "label": "Energiebilanz",
+        "description": "Schaltet automatisch ab, wenn Energiebilanz null erreicht"
+    },
+    "energy_balance_add": {
+        "label": "Energiebilanz hinzufügen",
+        "description": "Betrag zur Bilanz hinzufügen",
+        "values": {
+            "RESET": "Zurücksetzen"
+        }
+    },
+    "energy_balance_reset": {
+        "label": "Energiebilanz zurücksetzen",
+        "description": "Energiebilanz zurücksetzen",
+        "values": {
+            "RESET": "Zurücksetzen"
+        }
+    },
+    "energy_reset": {
+        "label": "Energie zurücksetzen",
+        "description": "Bestätigung einer abgeschlossenen Benachrichtigung.",
+        "values": {
+            "reset": "Zurücksetzen"
+        }
+    },
+    "energy_saving_mode_enabled": {
+        "label": "Energiesparmodus aktiviert",
+        "description": "Energiesparmodus aktivieren/deaktivieren"
+    },
+    "energy_saving_mode_threshold": {
+        "label": "Energiespar-Schwellwert",
+        "description": "Schwellwert des Energiesparmodus"
+    },
+    "energy_saving_mode_timer": {
+        "label": "Energiespar-Timer",
+        "description": "Zeit bis zum Abschalten nach Erreichen des Schwellwerts"
+    },
+    "error_state": {
+        "label": "Fehlerzustand",
+        "description": "Zeigt an, ob Fehler vorliegen"
+    },
+    "error_status": {
+        "label": "Fehlerstatus",
+        "description": "Fehlerstatus"
+    },
+    "expose_pin": {
+        "label": "PIN anzeigen"
+    },
+    "external_humidity": {
+        "label": "Externe Luftfeuchtigkeit",
+        "description": "Wert für externen Feuchtesensor"
+    },
+    "external_switch_type": {
+        "label": "Externer Schaltertyp",
+        "values": {
+            "push_button": "Taster",
+            "normal_on_off": "Ein/Aus normal",
+            "three_way": "Dreiwege"
+        }
+    },
+    "external_temperature": {
+        "label": "Außentemperatur",
+        "description": "Wert für externen Temperatursensor"
+    },
+    "external_trigger": {
+        "label": "Externer Auslösestatus"
+    },
+    "fan": {
+        "label": "Lüfter",
+        "description": "Aktuelle Lüftergeschwindigkeit"
+    },
+    "fan_speed": {
+        "label": "Lüftergeschwindigkeit",
+        "description": "Aktuelle Lüftergeschwindigkeit"
+    },
+    "fault": {
+        "label": "Defekt",
+        "description": "Ergebnis des Selbsttests",
+        "values": {
+            "checking": "Überprüfung",
+            "success": "Erfolg",
+            "failure": "Fehlschlag",
+            "others": "Sonstiges"
+        }
+    },
+    "fault_alarm": {
+        "label": "Defekt-Alarm",
+        "description": "Zeigt an, ob ein Defekt erkannt wurde"
+    },
+    "favorite_position": {
+        "label": "Lieblingsposition",
+        "description": "Installierter Jalousietyp",
+        "values": {
+            "set_up": "Oben setzen",
+            "set_down": "Unten setzen",
+            "delete_up": "Oben löschen",
+            "delete_down": "Unten löschen",
+            "delete_both": "Beide löschen"
+        }
+    },
+    "filter_age": {
+        "label": "Filteralter",
+        "description": "Zeigt an, ob der Filter älter als 6 Monate ist"
+    },
+    "flow_switch": {
+        "label": "Durchflussschalter",
+        "description": "Dauer der letzten Bewässerung"
+    },
+    "force": {
+        "label": "Kraft",
+        "description": "Nach Einschalten leuchtet das Indikatorlicht, wenn Schalter aus ist",
+        "values": {
+            "normal": "Normal",
+            "open": "Geöffnet",
+            "close": "Geschlossen"
+        }
+    },
+    "gas_value": {
+        "label": "Gaswert"
+    },
+    "gradient": {
+        "label": "Farbverlauf",
+        "description": "Farbe im RGB HEX-Format (z.B. #663399)"
+    },
+    "gradient_offset": {
+        "label": "Verlauf-Versatz",
+        "description": "Farbverlauf-Versatz (0=beginnt mit erster Farbe)"
+    },
+    "gradient_scale": {
+        "label": "Verlauf-Skalierung",
+        "description": "Farbverlauf-Skala (0=automatisch, 1.0+=Anzahl sichtbarer Farben)"
+    },
+    "gradient_scene": {
+        "label": "Verlauf-Szene"
+    },
+    "gradient_style": {
+        "label": "Verlauf-Stil",
+        "values": {
+            "linear": "Linear",
+            "scattered": "Verteilt",
+            "mirrored": "Gespiegelt"
+        }
+    },
+    "heater_power": {
+        "label": "Heizungsleistung",
+        "description": "Aqara Badezimmer-Heizung Klimasteuerung",
+        "values": {
+            "off": "Aus"
+        }
+    },
+    "hex": {
+        "label": "HEX",
+        "description": "Farbe im RGB HEX-Format (z.B. #663399)"
+    },
+    "high_power_alarm": {
+        "label": "Hochleistungs-Alarm",
+        "description": "Alarm bei Überschreitung der Leistungsgrenze",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "high_power_threshold": {
+        "label": "Hochleistungs-Schwellwert",
+        "description": "Leistungsgrenze (Standard 25 kW)"
+    },
+    "homeassistant_climate_modes": {
+        "label": "Home Assistant Klimamodi"
+    },
+    "hue_native_control": {
+        "label": "Natives Hue-Steuerung"
+    },
+    "humidity_calibration": {
+        "label": "Feuchtigkeitskalibrierung",
+        "description": "Temperaturkalibrierung"
+    },
+    "identify_timeout": {
+        "label": "Identifikationszeit"
+    },
+    "identity_effect": {
+        "label": "Identifikationseffekt",
+        "description": "Definiert den Identifikationseffekt zur vereinfachten Geräteidentifikation."
+    },
+    "illuminance_below_threshold_check": {
+        "label": "Schwellenwertprüfung Beleuchtung",
+        "description": "Auf falsch setzen, um auch bei Beleuchtung über Schwellwert zu senden."
+    },
+    "inching": {
+        "label": "Inching",
+        "description": "Inching-Konfiguration"
+    },
+    "inching_control": {
+        "label": "Inching-Steuerung"
+    },
+    "inching_control_set": {
+        "label": "Inching-Steuerungs-Set"
+    },
+    "inching_time": {
+        "label": "Inching-Zeit"
+    },
+    "indicate_faults": {
+        "label": "Fehler anzeigen",
+        "description": "LED-Anzeige für Fehler aktivieren/deaktivieren"
+    },
+    "indicate_mains_power": {
+        "label": "Netzstrom anzeigen",
+        "description": "LED-Anzeige für Netzstrom aktivieren/deaktivieren"
+    },
+    "indicator_light": {
+        "label": "LED-Anzeige",
+        "description": "LED-Indikator aktivieren/deaktivieren",
+        "values": {
+            "on": "Ein",
+            "off": "Aus"
+        }
+    },
+    "installation_height": {
+        "label": "Installationshöhe",
+        "description": "Abstand vom Sensor zur Oberfläche"
+    },
+    "invert_cover": {
+        "label": "Jalousie umkehren",
+        "description": "Invertiert Jalousieposition und -zustand."
+    },
+    "ir_code_to_send": {
+        "label": "IR-Code zum Senden",
+        "description": "Vom Gerät erlernte IR-Zeitabstände"
+    },
+    "ir_emitter": {
+        "label": "IR-Emittent",
+        "description": "IR-Code oder Zeitabstände zum Senden"
+    },
+    "leakage_current": {
+        "label": "Leckstrom",
+        "description": "Aktueller Betriebsstatus",
+        "values": {
+            "off": "Aus",
+            "consumption": "Verbrauch",
+            "production": "Produktion"
+        }
+    },
+    "leakage_current_alarm": {
+        "label": "Leckstrom-Alarm",
+        "description": "Konfiguration für Leckstrom- und Temperaturalarme"
+    },
+    "leakage_current_threshold": {
+        "label": "Leckstrom-Schwellwert",
+        "description": "Leckstromgrenze (Standard 50mA)"
+    },
+    "learn_ir_code": {
+        "label": "IR-Code lernen",
+        "description": "Einschalten, um neuen IR-Code zu lernen"
+    },
+    "learned_ir_code": {
+        "label": "Erlernter IR-Code",
+        "description": "Einschalten, um neuen IR-Code zu lernen"
+    },
+    "learned_ir_timings": {
+        "label": "Erlernte IR-Zeitabstände",
+        "description": "Vom Gerät erlernter IR-Code"
+    },
+    "led_control": {
+        "label": "LED-Steuerung",
+        "description": "Grüne LED für Netzstromstatus aktivieren/deaktivieren"
+    },
+    "led_enable": {
+        "label": "LED aktivieren",
+        "description": "LED steuern",
+        "values": {
+            "ON": "Ein",
+            "OFF": "Aus"
+        }
+    },
+    "led_if_on": {
+        "label": "LED bei Einschalten",
+        "description": "Aktiviert die integrierte LED, um den Schalter im Dunkeln zu sehen"
+    },
+    "led_in_dark": {
+        "label": "LED im Dunkeln",
+        "description": "Blinkt die LED zur besseren Identifikation",
+        "values": {
+            "identify": "Identifizieren"
+        }
+    },
+    "light_mode": {
+        "label": "Lichtmodus",
+        "values": {
+            "normal": "Normal",
+            "on": "Ein",
+            "off": "Aus",
+            "flash": "Blinken"
+        }
+    },
+    "light_type": {
+        "label": "Lichttyp",
+        "description": "Empfindlichkeitsstufe des Sensors",
+        "values": {
+            "low": "Niedrig",
+            "middle": "Mittel",
+            "high": "Hoch"
+        }
+    },
+    "limits_calibration": {
+        "label": "Grenzen kalibrieren",
+        "description": "Positionsgrenzen reklibrieren",
+        "values": {
+            "calibrated": "Kalibriert",
+            "recalibrate": "Rekalibrieren",
+            "open": "Öffnen",
+            "close": "Schließen"
+        }
+    },
+    "liquid_depth": {
+        "label": "Flüssigkeitstiefe"
+    },
+    "liquid_depth_max": {
+        "label": "Max Flüssigkeitstiefe"
+    },
+    "liquid_level_percent": {
+        "label": "Flüssigkeitsstand %"
+    },
+    "liquid_state": {
+        "label": "Flüssigkeitszustand",
+        "values": {
+            "low": "Niedrig",
+            "normal": "Normal",
+            "high": "Hoch"
+        }
+    },
+    "local_temperature_based_on_sensor": {
+        "label": "Lokale Temperatur basierend auf Sensor",
+        "description": "Korrigiert invertierte Jalousiepositionswerte."
+    },
+    "local_temperature_internal": {
+        "label": "Manuelle Überschreibung"
+    },
+    "lost_flow_alarm": {
+        "label": "Verlust-Alarm",
+        "description": "Konfiguration für Verlust-Alarm"
+    },
+    "lost_flow_threshold": {
+        "label": "Verlust-Schwellwert"
+    },
+    "lost_flow_threshold_time": {
+        "label": "Verlust-Schwellzeit"
+    },
+    "manual_burglar_alarm": {
+        "label": "Manueller Einbruchalarm",
+        "description": "Zeigt an, ob Einbruchalarmsirene manuell aktiviert wurde"
+    },
+    "manual_smoke_alarm": {
+        "label": "Manueller Rauchalarm",
+        "description": "Zeigt an, ob Rauchalarmsirene manuell aktiviert wurde"
+    },
+    "max_set": {
+        "label": "Max Einstellung",
+        "description": "Minimaler Flüssigkeitsprozentsatz"
+    },
+    "maximum_brightness": {
+        "label": "Maximale Helligkeit",
+        "description": "Erhöht die Mindesthelligkeit der Lampe"
+    },
+    "measurement_poll_interval": {
+        "label": "Messintervall"
+    },
+    "min_set": {
+        "label": "Min Einstellung",
+        "description": "Abstand vom Sensor zum Behälterboden"
+    },
+    "minimum_brightness": {
+        "label": "Minimale Helligkeit",
+        "description": "Erhöht die Mindesthelligkeit der Lampe"
+    },
+    "minimum_pwm": {
+        "label": "PWM Minimum",
+        "description": "Gerät ausschalten und 3 Sekunden warten."
+    },
+    "minutes": {
+        "label": "Minuten",
+        "description": "Minutenkomponente der Dauer"
+    },
+    "mmwave_detection_areas": {
+        "label": "mmWave-Erkennungsbereiche",
+        "description": "Definiert den Bereich vor dem Schalter"
+    },
+    "mmwave_interference_areas": {
+        "label": "mmWave-Störungsbereiche"
+    },
+    "mmwave_stay_areas": {
+        "label": "mmWave-Bleibebereiche"
+    },
+    "mmwave_targets": {
+        "label": "mmWave-Ziele",
+        "description": "Z-Koordinate des Ziels in Zentimetern"
+    },
+    "motor_clb_position": {
+        "label": "Motor-Kalibrierung nach Position",
+        "description": "Motor-Kalibrierung nach Position",
+        "values": {
+            "open": "Öffnen",
+            "close": "Schließen",
+            "other": "Sonstiges",
+            "clear": "Löschen"
+        }
+    },
+    "motor_clb_position_result": {
+        "label": "Motor-Kalibrierungsergebnis",
+        "description": "Motor-Kalibrierung nach Position",
+        "values": {
+            "open": "Öffnen",
+            "close": "Schließen",
+            "other": "Sonstiges",
+            "clear": "Löschen"
+        }
+    },
+    "motor_info": {
+        "label": "Motor-Info",
+        "description": "Aktualisierte Motorinformationen"
+    },
+    "motor_mode": {
+        "label": "Motor-Modus",
+        "description": "Motor-Modus"
+    },
+    "motor_state": {
+        "label": "Motorzustand",
+        "description": "Aktueller Motorbewegungszustand",
+        "values": {
+            "opening": "Öffnet",
+            "closing": "Schließt",
+            "stopped": "Gestoppt"
+        }
+    },
+    "mute_prompt_end_time": {
+        "label": "Stumm-Endzeit",
+        "description": "Stumm-Endzeit im Format HH:MM"
+    },
+    "mute_prompt_start_time": {
+        "label": "Stumm-Startzeit",
+        "description": "Stumm-Startzeit im Format HH:MM"
+    },
+    "mute_prompt_tone": {
+        "label": "Stummsignal",
+        "description": "Geplanten Nachtlichtmodus aktivieren"
+    },
+    "negative_active_power_alarm": {
+        "label": "Negativer Leistungs-Alarm",
+        "description": "Alarm bei Ausfall einer Phase (Standard OFF)"
+    },
+    "night_light_mode": {
+        "label": "Nachtlicht-Modus",
+        "description": "Badezimmer-Heizung Betriebsmodus",
+        "values": {
+            "off": "Aus"
+        }
+    },
+    "no_occupancy_since_false": {
+        "label": "Keine Anwesenheit seit falsch"
+    },
+    "no_occupancy_since_true": {
+        "label": "Keine Anwesenheit seit wahr"
+    },
+    "no_position_support": {
+        "label": "Keine Positionsunterstützung",
+        "description": "Verzögerung in Sekunden bis zum Löschen der Anwesenheit (Standard 100s)."
+    },
+    "notificationComplete": {
+        "label": "Benachrichtigung abgeschlossen",
+        "description": "Welches mmWave-Steuerungsbefehl gesendet werden soll",
+        "values": {
+            "reset": "Zurücksetzen"
+        }
+    },
+    "occupancy_timeout_2": {
+        "label": "Anwesenheits-Timeout 2"
+    },
+    "on_with_countdown": {
+        "label": "Einschalten mit Countdown",
+        "description": "Bewässerung nach Verzögerung ausschalten (Einmalaktion)"
+    },
+    "operating_mode": {
+        "label": "Betriebsmodus",
+        "description": "Aqara Badezimmer-Heizung Klimasteuerung",
+        "values": {
+            "off": "Aus"
+        }
+    },
+    "over_current_alarm": {
+        "label": "Überstrom-Alarm",
+        "description": "Konfiguration für Strom- und Spannungsalarme"
+    },
+    "over_current_threshold": {
+        "label": "Überstrom-Schwellwert",
+        "description": "Obere Stromgrenze (Standard 63A)"
+    },
+    "over_current_threshold_time": {
+        "label": "Überstrom-Schwellzeit",
+        "description": "Verzögerung bis zur Abschaltung bei Überstrom (Standard 0s)"
+    },
+    "over_voltage_alarm": {
+        "label": "Überspannungs-Alarm",
+        "description": "Obere Stromgrenze (Standard 63A)"
+    },
+    "over_voltage_threshold": {
+        "label": "Überspannungs-Schwellwert",
+        "description": "Obere Spannungsgrenze (Standard 275V)"
+    },
+    "override_active": {
+        "label": "Manuelle Überschreibung aktiv",
+        "description": "Dauer der manuellen Überschreibung in Minuten. 0 = bis zum nächsten Zeitplanereignis."
+    },
+    "phase_loss_alarm": {
+        "label": "Phasenverlust-Alarm",
+        "description": "Untere Leistungsfaktor-Grenze (Standard 15%)"
+    },
+    "precision": {
+        "label": "Genauigkeit"
+    },
+    "prepayment": {
+        "label": "Vorauszahlung",
+        "description": "Anzahl erlaubter Wiederanschlussversuche pro Defekt"
+    },
+    "presence_timeout": {
+        "label": "Anwesenheits-Timeout",
+        "description": "Verzögerung in Sekunden bis zum Löschen der Anwesenheit (Standard 100s)."
+    },
+    "pulse_length": {
+        "label": "Pulslänge",
+        "description": "Gewünschte Impulslänge für das Relais in Sekunden."
+    },
+    "quantitative_watering": {
+        "label": "Quantitative Bewässerung",
+        "description": "Bewässerung mit festem Wassermenge einschalten"
+    },
+    "reclosing": {
+        "label": "Wiederanschluss",
+        "description": "Gemessener Stromunterschied zwischen Leiter und Neutralleiter"
+    },
+    "reclosing_count": {
+        "label": "Wiederanschluss-Zähler",
+        "description": "Wartezeit vor Wiederanschlussversuch nach Fehlerbehebung"
+    },
+    "reclosing_delay": {
+        "label": "Wiederanschluss-Verzögerung",
+        "description": "Wartezeit vor Wiederanschlussversuch nach Fehlerbehebung"
+    },
+    "refresh": {
+        "label": "Aktualisieren",
+        "description": "Bewässerungsmenge auf 0 zurücksetzen",
+        "values": {
+            "reset": "Zurücksetzen"
+        }
+    },
+    "replace_filter": {
+        "label": "Filter ersetzen",
+        "description": "Physische Eingabe steuern"
+    },
+    "reset_energy_meters": {
+        "label": "Energiezähler zurücksetzen",
+        "description": "Setzt alle Energiezähler auf 0 kWh zurück",
+        "values": {
+            "reset": "Zurücksetzen"
+        }
+    },
+    "restart_device": {
+        "label": "Gerät neu starten",
+        "description": "Startet das Gerät neu.",
+        "values": {
+            "Restart Device": "Gerät neu starten"
+        }
+    },
+    "restore_reports": {
+        "label": "Berichte wiederherstellen",
+        "description": "Zeigt an, ob Betriebsstatus gemeldet wird"
+    },
+    "rs485_address": {
+        "label": "RS485-Adresse"
+    },
+    "rs485_address_enabled": {
+        "label": "RS485-Baudrate",
+        "values": {
+            "2400": "2400",
+            "4800": "4800",
+            "9600": "9600",
+            "19200": "19200",
+            "38400": "38400"
+        }
+    },
+    "rs485_baud_rate": {
+        "label": "RS485-Baudrate",
+        "values": {
+            "2400": "2400",
+            "4800": "4800",
+            "9600": "9600",
+            "19200": "19200",
+            "38400": "38400"
+        }
+    },
+    "rs485_baud_rate_enabled": {
+        "label": "RS485-Baudrate",
+        "description": "Konfiguration für RS485-Kommunikation und Hochleistungs-Alarm",
+        "values": {
+            "2400": "2400",
+            "4800": "4800",
+            "9600": "9600",
+            "19200": "19200",
+            "38400": "38400"
+        }
+    },
+    "rs485_data_format": {
+        "label": "RS485-Datenformat",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "rs485_data_format_enabled": {
+        "label": "RS485-Adresse",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "save_schedule": {
+        "label": "Zeitplan speichern",
+        "description": "Wochenzeitplan an Thermostat senden",
+        "values": {
+            "trigger": "Auslösen"
+        }
+    },
+    "schedule_end_time": {
+        "label": "LED-Zeitplan-Ende",
+        "description": "LED-Deaktivierungs-Startzeit (HH:MM)"
+    },
+    "schedule_start_time": {
+        "label": "LED-Zeitplan-Start",
+        "description": "LED-Deaktivierungs-Startzeit (HH:MM)"
+    },
+    "schedule_upload_status": {
+        "label": "Zeitplan-Upload-Status"
+    },
+    "seconds": {
+        "label": "Sekunden",
+        "description": "Sekundenkomponente der Dauer"
+    },
+    "segment_colors": {
+        "label": "Segmentfarben",
+        "description": "Grün (0-255)"
+    },
+    "self_test": {
+        "label": "Selbsttest",
+        "description": "Zeigt ob das Gerät im Selbsttest ist",
+        "values": {
+            "off": "Aus",
+            "on_auto": "Auto ein",
+            "button_locked": "Taste gesperrt",
+            "on_manual_app": "Manuell App",
+            "on_manual_button": "Manuell Taste"
+        }
+    },
+    "self_test_result": {
+        "label": "Selbsttest-Ergebnis",
+        "description": "Zeigt an, ob das Gerät getestet wird",
+        "values": {
+            "checking": "Überprüfung",
+            "success": "Erfolg",
+            "failure": "Fehlschlag",
+            "others": "Sonstiges"
+        }
+    },
+    "sensitivity_level": {
+        "label": "Empfindlichkeitsstufe",
+        "description": "Empfindlichkeitsstufe auf der Rückseite des Geräts."
+    },
+    "sensor": {
+        "label": "Sensor",
+        "description": "Sensoranzeigemodus wählen: intern oder beide mit extern",
+        "values": {
+            "internal": "Intern",
+            "external": "Extern"
+        }
+    },
+    "silence": {
+        "label": "Stumm",
+        "description": "Zeigt an, ob ein Defekt erkannt wurde"
+    },
+    "silent_mode": {
+        "label": "Stiller Modus",
+        "description": "Zeigt an, ob ein Defekt erkannt wurde"
+    },
+    "simulated_brightness": {
+        "label": "Simulierte Helligkeit",
+        "description": "Delta pro Intervall, Standard 20"
+    },
+    "single_watering_amount": {
+        "label": "Bewässerungsmenge",
+        "description": "Bewässerung mit festem Wassermenge einschalten"
+    },
+    "single_watering_duration": {
+        "label": "Bewässerungsdauer",
+        "description": "Verbleibende Zeit im Countdown"
+    },
+    "slow_mode": {
+        "label": "Langsamer Modus",
+        "description": "Motorseite",
+        "values": {
+            "left": "Links",
+            "right": "Rechts"
+        }
+    },
+    "soil_calibration": {
+        "label": "Bodenkalibrierung",
+        "description": "Feuchtigkeitskalibrierung"
+    },
+    "soil_sampling": {
+        "label": "Bodenmessung",
+        "description": "Temperatur- und Feuchtigkeitsmessung"
+    },
+    "soil_warning": {
+        "label": "Bodenwarnung",
+        "description": "Bodenfeuchtigkeitsmessung"
+    },
+    "solar_panel_voltage": {
+        "label": "Solarpanelspannung",
+        "description": "Aktuelle Spannung des integrierten Solarpanels"
+    },
+    "spatial_learning": {
+        "label": "Raumlernen",
+        "description": "KI-Raumlernen starten.",
+        "values": {
+            "Start Learning": "Lernen starten"
+        }
+    },
+    "status": {
+        "label": "Status",
+        "description": "Gerätestatus aktualisieren",
+        "values": {
+            "refresh": "Aktualisieren"
+        }
+    },
+    "stop_alarm": {
+        "label": "Alarm stoppen",
+        "description": "Alarm am Gerät auslösen",
+        "values": {
+            "trigger": "Auslösen"
+        }
+    },
+    "supervision_reports": {
+        "label": "Überwachungsberichte",
+        "description": "Zeigt an, ob Batterie fast leer ist"
+    },
+    "supported_max_motor_speed": {
+        "label": "Max Motor-Geschwindigkeit",
+        "description": "Motorgeschwindigkeit einstellen"
+    },
+    "surplus_flow": {
+        "label": "Restdurchfluss",
+        "description": "Menge der letzten Bewässerung"
+    },
+    "switch_mode": {
+        "label": "Schaltermodus"
+    },
+    "switch_type_button": {
+        "label": "Schaltertyp Taste",
+        "description": "Externer Schaltertyp",
+        "values": {
+            "flip-switch": "Kippschalter",
+            "sync-switch": "Synchroschalter",
+            "button-switch": "Tastenschalter",
+            "button2-switch": "Tastenschalter2"
+        }
+    },
+    "switch_type_curtain": {
+        "label": "Schaltertyp Jalousie",
+        "description": "Schaltertyp",
+        "values": {
+            "toggle": "Umschalter",
+            "state": "Zustand",
+            "momentary": "Taster"
+        }
+    },
+    "tamper_last_changed": {
+        "label": "Letzte Manipulationsänderung",
+        "description": "Zeit (in Sekunden) seit letzter Änderung."
+    },
+    "temp_greater_then": {
+        "label": "Temp größer als",
+        "description": "Auto-Einstellungen aktivieren",
+        "values": {
+            "ON": "Ein",
+            "OFF": "Aus"
+        }
+    },
+    "temp_greater_value": {
+        "label": "Höherer Wert",
+        "description": "Höhere Aktion",
+        "values": {
+            "ON": "Ein",
+            "OFF": "Aus"
+        }
+    },
+    "temp_lower_then": {
+        "label": "Temp kleiner als",
+        "description": "Temperatur größer als Wert",
+        "values": {
+            "ON": "Ein",
+            "OFF": "Aus"
+        }
+    },
+    "temp_lower_value": {
+        "label": "Niedrigerer Wert",
+        "description": "Niedrigere Aktion"
+    },
+    "temperature_calibration": {
+        "label": "Temperaturkalibrierung",
+        "description": "Temperatureinheit",
+        "values": {
+            "celsius": "Celsius",
+            "fahrenheit": "Fahrenheit"
+        }
+    },
+    "temperature_sampling": {
+        "label": "Temperaturmessung",
+        "description": "Bodenfeuchtigkeitskalibrierung"
+    },
+    "temperature_setpoint_hold_duration": {
+        "label": "Sollwert-Haltedauer",
+        "description": "Dauer der manuellen Überschreibung in Minuten."
+    },
+    "temperature_unit": {
+        "label": "Temperatureinheit",
+        "description": "Temperatureinheit",
+        "values": {
+            "celsius": "Celsius",
+            "fahrenheit": "Fahrenheit"
+        }
+    },
+    "test_mode": {
+        "label": "Testmodus"
+    },
+    "test_mode_timeout": {
+        "label": "Testmodus-Timeout"
+    },
+    "time_start": {
+        "label": "Startzeit",
+        "values": {
+            "1970": "1970",
+            "2000": "2000",
+            "off": "Aus"
+        }
+    },
+    "track_target_distance": {
+        "label": "Zieldistanz verfolgen",
+        "description": "Aktuelle Zieldistanz-Verfolgung starten.",
+        "values": {
+            "start_tracking_distance": "Distanzverfolgung starten"
+        }
+    },
+    "trigger": {
+        "label": "Auslöser",
+        "description": "Impulsdauer.",
+        "values": {
+            "press": "Drücken"
+        }
+    },
+    "trigger_alarm": {
+        "label": "Alarm auslösen",
+        "description": "Alarm am Gerät auslösen",
+        "values": {
+            "trigger": "Auslösen"
+        }
+    },
+    "trouble": {
+        "label": "Störung",
+        "description": "Zeigt an, ob das Gerät getestet wird"
+    },
+    "tx_power": {
+        "label": "TX-Leistung",
+        "description": "TX-Leistungsmodus für regulatorische Konformität.",
+        "values": {
+            "CE": "CE",
+            "FCC": "FCC"
+        }
+    },
+    "unbalanced_load_alarm": {
+        "label": "Unsymmetrie-Alarm",
+        "description": "Untere Spannungsgrenze (Standard 180V)"
+    },
+    "unbalanced_load_threshold": {
+        "label": "Unsymmetrie-Schwellwert",
+        "description": "Untere Leistungsfaktor-Grenze (Standard 15%)"
+    },
+    "under_voltage_alarm": {
+        "label": "Unterspannungs-Alarm",
+        "description": "Obere Spannungsgrenze (Standard 275V)"
+    },
+    "under_voltage_threshold": {
+        "label": "Unterspannungs-Schwellwert",
+        "description": "Untere Spannungsgrenze (Standard 175V)"
+    },
+    "unfreeze_support": {
+        "label": "Auftaustütze",
+        "description": "Lokale Temperatur basierend auf Sensorwahl."
+    },
+    "vacation_mode": {
+        "label": "Urlaubsmodus",
+        "description": "Im Urlaubsmodus wird der Zeitplan deaktiviert."
+    },
+    "valve_adapt_process": {
+        "label": "Ventilanpassungsprozess",
+        "description": "Ventilanpassung auslösen.",
+        "values": {
+            "adapt": "Anpassen"
+        }
+    },
+    "valve_adapt_status": {
+        "label": "Ventilanpassungsstatus",
+        "description": "Aktueller Status der Ventilanpassung"
+    },
+    "vibration_detection_enabled": {
+        "label": "Vibrationserkennung aktiviert",
+        "description": "Vibrationserkennung an Fenster oder Tür aktivieren"
+    },
+    "vibration_detection_sensitivity": {
+        "label": "Vibrationserkennungsempfindlichkeit",
+        "description": "Vibrationserkennung an Fenster oder Tür aktivieren"
+    },
+    "vibration_timeout": {
+        "label": "Vibrations-Timeout",
+        "description": "Verzögerung in Sekunden bis zum Löschen der Vibration (Standard 90s)."
+    },
+    "voltage_phase_b": {
+        "label": "Spannung Phase B",
+        "description": "Gemessene Spannung auf Phase B"
+    },
+    "voltage_phase_c": {
+        "label": "Spannung Phase C",
+        "description": "Gemessene Spannung auf Phase C"
+    },
+    "water": {
+        "label": "Wasser",
+        "description": "Zeigt an, ob Wasser erkannt wurde"
+    },
+    "water_current": {
+        "label": "Aktueller Durchfluss",
+        "description": "Gesamte Bewässerungsmenge",
+        "values": {
+            "reset": "Zurücksetzen"
+        }
+    },
+    "water_leak_alarm_control": {
+        "label": "Wasserleck-Alarm stummschalten",
+        "description": "Bei Wasserleck Alarm stummschalten"
+    },
+    "water_total": {
+        "label": "Gesamtwassermenge",
+        "description": "Verbleibende Menge"
+    },
+    "water_total_reset": {
+        "label": "Gesamtwasser zurücksetzen",
+        "description": "Aktueller Durchfluss",
+        "values": {
+            "reset": "Zurücksetzen"
+        }
+    },
+    "zone_status_interval": {
+        "label": "Zonenstatus-Intervall",
+        "description": "Heartbeat-Intervall in Sekunden (Standard 300s)"
     }
 }

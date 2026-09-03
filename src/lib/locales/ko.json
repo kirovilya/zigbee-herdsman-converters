@@ -1,255 +1,2312 @@
 {
-    "brightness": {},
-    "color_temp": {},
-    "color_temp_startup": {},
-    "hue": {},
-    "saturation": {},
-    "effect": {},
-    "temperature": {},
-    "humidity": {},
-    "pressure": {},
-    "illuminance": {},
-    "illuminance_lux": {},
-    "illuminance_raw": {},
-    "occupancy": {},
-    "occupancy_level": {},
-    "contact": {},
-    "water_leak": {},
-    "smoke": {},
-    "gas": {},
-    "co2": {},
-    "voc": {},
-    "power": {},
-    "energy": {},
-    "voltage": {},
-    "current": {},
-    "frequency": {},
-    "power_factor": {},
-    "battery": {},
-    "battery_low": {},
-    "battery_voltage": {},
-    "position": {},
-    "tilt": {},
-    "state": {},
-    "system_mode": {},
-    "child_lock": {},
-    "running_state": {},
-    "power_on_behavior": {},
-    "occupied_heating_setpoint": {},
-    "local_temperature": {},
-    "open_window": {},
-    "frost_protection": {},
-    "fan_mode": {},
-    "swing_mode": {},
-    "away_mode": {},
-    "eco_mode": {},
-    "boost": {},
-    "boost_time": {},
-    "linkquality": {},
-    "action": {},
-    "action_duration": {},
-    "action_group": {},
-    "tamper": {},
-    "vibration": {},
-    "alarm": {},
-    "noise": {},
-    "noise_detected": {},
-    "presence": {},
-    "motion": {},
-    "motion_state": {},
-    "soil_moisture": {},
-    "co": {},
-    "aqi": {},
-    "pm25": {},
-    "pm10": {},
-    "formaldehyde": {},
-    "hcho": {},
-    "cube_side": {},
-    "cube_side_1": {},
-    "cube_side_2": {},
-    "cube_side_3": {},
-    "cube_side_4": {},
-    "cube_side_5": {},
-    "cube_side_6": {},
-    "valve_position": {},
-    "valve_switch": {},
-    "valve_state": {},
-    "valve_detection": {},
-    "valve_detection_bool": {},
-    "valve_alarm": {},
-    "auto_lock": {},
-    "auto_off": {},
-    "auto_relock_time": {},
-    "away_preset_days": {},
-    "away_preset_temperature": {},
-    "button_lock": {},
-    "calibrated": {},
-    "carbon_monoxide": {},
-    "comfort_temperature": {},
-    "consumer_connected": {},
-    "cover_position": {},
-    "cover_tilt": {},
-    "cover_mode": {},
-    "cpu_temperature": {},
-    "current_phase_b": {},
-    "current_phase_c": {},
-    "current_neutral": {},
-    "deadzone_temperature": {},
-    "detection_interval": {},
-    "device_temperature": {},
-    "eco2": {},
-    "eco_temperature": {},
-    "produced_energy": {},
-    "energy_produced": {},
-    "flip_indicator_light": {},
-    "holiday_temperature": {},
-    "brightness_state": {},
-    "keypad_lockout": {},
-    "led_disabled_night": {},
-    "light_brightness": {},
-    "light_brightness_color": {},
-    "light_brightness_colortemp": {},
-    "light_color_options": {},
-    "lock": {},
-    "lock_action": {},
-    "lock_action_source_name": {},
-    "lock_action_user": {},
-    "max_cool_setpoint_limit": {},
-    "min_cool_setpoint_limit": {},
-    "max_heat_setpoint_limit": {},
-    "min_heat_setpoint_limit": {},
-    "max_temperature": {},
-    "max_temperature_limit": {},
-    "min_temperature_limit": {},
-    "min_temperature": {},
-    "mode_switch_select": {},
-    "motion_sensitivity_select": {},
-    "open_window_temperature": {},
-    "operation_mode_select": {},
-    "overload_protection": {},
-    "pm1": {},
-    "power_phase_b": {},
-    "power_phase_c": {},
-    "power_factor_phase_b": {},
-    "power_factor_phase_c": {},
-    "power_apparent": {},
-    "power_apparent_phase_b": {},
-    "power_apparent_phase_c": {},
-    "power_outage_count": {},
-    "power_outage_memory": {},
-    "power_reactive": {},
-    "power_reactive_phase_b": {},
-    "power_reactive_phase_c": {},
-    "programming_operation_mode": {},
-    "setup": {},
-    "schedule": {},
-    "schedule_settings": {},
-    "external_temperature_input": {},
-    "sos": {},
-    "sound_volume": {},
-    "switch_type": {},
-    "door_state": {},
-    "temperature_sensor_select": {},
-    "test": {},
-    "trigger_count": {},
-    "trigger_indicator": {},
-    "window_detection": {},
-    "window_detection_bool": {},
-    "window_open": {},
-    "moving": {},
-    "x_axis": {},
-    "y_axis": {},
-    "z_axis": {},
-    "pincode": {},
-    "squawk": {},
-    "identify_duration": {},
-    "identify": {},
-    "min_brightness": {},
-    "max_brightness": {},
-    "pilot_wire_mode": {},
-    "rain": {},
-    "warning": {},
-    "week": {},
-    "last_seen": {},
-    "motor_direction": {},
-    "motor_speed": {},
-    "target_temperature": {},
-    "current_heating_setpoint": {},
-    "unoccupied_heating_setpoint": {},
-    "preset": {},
-    "mode": {},
-    "duration": {},
-    "sensitivity": {},
-    "detection_distance": {},
-    "keep_time": {},
-    "occupancy_timeout": {},
-    "illuminance_above_threshold": {},
-    "opening_state": {},
-    "alarm_state": {},
-    "setup_mode": {},
-    "alarm_siren": {},
-    "alarm_siren_duration": {},
-    "vibration_limit": {},
-    "vibration_siren": {},
-    "vibration_siren_duration": {},
-    "close_signal": {},
-    "transmission_power": {},
-    "magnetic_status": {},
-    "connection_state": {},
-    "restart_required": {},
-    "restart": {},
-    "update_state": {},
-    "update_available": {},
-    "factory_reset": {},
-    "side_up": {},
-    "side_down": {},
-    "side_left": {},
-    "side_right": {},
-    "state_up": {},
-    "state_down": {},
-    "state_left": {},
-    "state_right": {},
-    "state_action": {},
-    "led_indicator": {},
-    "power_calibration": {},
-    "power_precision": {},
-    "current_calibration": {},
-    "current_precision": {},
-    "energy_calibration": {},
-    "energy_precision": {},
-    "device_temperature_calibration": {},
-    "voltage_calibration": {},
-    "voltage_precision": {},
-    "idle_steps": {},
-    "closing_steps": {},
-    "valve_opening_limit_voltage": {},
-    "valve_closing_limit_voltage": {},
-    "valve_motor_running_voltage": {},
-    "valve_opening_degree": {},
-    "valve_closing_degree": {},
-    "temperature_accuracy": {},
-    "weekly_schedule_sunday": {},
-    "weekly_schedule_monday": {},
-    "weekly_schedule_tuesday": {},
-    "weekly_schedule_wednesday": {},
-    "weekly_schedule_thursday": {},
-    "weekly_schedule_friday": {},
-    "weekly_schedule_saturday": {},
-    "smart_temperature_control": {},
-    "thermostat_unit": {},
-    "operation_mode": {},
-    "indicator_mode": {},
-    "timer_mode_target_temp": {},
-    "temporary_mode_duration": {},
-    "temporary_mode_select": {},
-    "open_window_detection": {},
-    "frost_protection_temperature": {},
-    "color": {},
-    "color_mode": {},
-    "color_xy": {},
-    "color_hs": {},
-    "transition": {},
-    "device_mode": {},
-    "battery_state": {},
-    "internal_temperature": {}
+    "brightness": {
+        "label": "밝기"
+    },
+    "color_temp": {
+        "label": "색온도"
+    },
+    "color_temp_startup": {
+        "label": "시작 색온도"
+    },
+    "hue": {
+        "label": "색상"
+    },
+    "saturation": {
+        "label": "채도"
+    },
+    "effect": {
+        "label": "효과",
+        "description": "Triggers an effect on the light (e.g. make light blink for a few seconds)",
+        "values": {
+            "blink": "Blink",
+            "breathe": "Breathe",
+            "okay": "Okay",
+            "channel_change": "Channel_change",
+            "finish_effect": "Finish_effect",
+            "stop_effect": "Stop_effect"
+        }
+    },
+    "temperature": {
+        "label": "온도",
+        "description": "측정된 온도"
+    },
+    "humidity": {
+        "label": "습도",
+        "description": "측정된 상대 습도"
+    },
+    "pressure": {
+        "label": "기압",
+        "description": "측정된 대기압"
+    },
+    "illuminance": {
+        "label": "조도",
+        "description": "측정된 조도"
+    },
+    "illuminance_lux": {
+        "label": "조도 럭스"
+    },
+    "illuminance_raw": {
+        "label": "원시 조도",
+        "description": "Raw measured illuminance"
+    },
+    "occupancy": {
+        "label": "재실",
+        "description": "장치가 재실을 감지했는지 여부"
+    },
+    "occupancy_level": {
+        "label": "재실 레벨",
+        "description": "The measured occupancy value"
+    },
+    "contact": {
+        "label": "접촉",
+        "description": "접촉이 닫혔는지 열렸는지 여부"
+    },
+    "water_leak": {
+        "label": "누수",
+        "description": "장치가 누수를 감지했는지 여부"
+    },
+    "smoke": {
+        "label": "연기",
+        "description": "장치가 연기를 감지했는지 여부"
+    },
+    "gas": {
+        "label": "가스",
+        "description": "장치가 가스를 감지했는지 여부"
+    },
+    "co2": {
+        "label": "CO2",
+        "description": "측정된 CO2 값"
+    },
+    "voc": {
+        "label": "VOC",
+        "description": "측정된 VOC 값"
+    },
+    "power": {
+        "label": "전력",
+        "description": "측정된 전력"
+    },
+    "energy": {
+        "label": "에너지",
+        "description": "총 소비 에너지"
+    },
+    "voltage": {
+        "label": "전압",
+        "description": "측정된 전압"
+    },
+    "current": {
+        "label": "전류",
+        "description": "측정된 전류"
+    },
+    "frequency": {
+        "label": "주파수"
+    },
+    "power_factor": {
+        "label": "역률",
+        "description": "측정된 역률"
+    },
+    "battery": {
+        "label": "배터리",
+        "description": "잔여 배터리 %"
+    },
+    "battery_low": {
+        "label": "배터리 부족",
+        "description": "배터리가 거의 없는지 여부"
+    },
+    "battery_voltage": {
+        "label": "배터리 전압",
+        "description": "배터리 전압 (밀리볼트)"
+    },
+    "position": {
+        "label": "위치",
+        "description": "위치"
+    },
+    "tilt": {
+        "label": "기울기",
+        "description": "기울기"
+    },
+    "state": {
+        "label": "상태"
+    },
+    "system_mode": {
+        "label": "시스템 모드",
+        "values": {
+            "auto": "자동",
+            "heat": "난방",
+            "cool": "냉방",
+            "off": "끄기",
+            "dry": "제습",
+            "fan_only": "팬만"
+        }
+    },
+    "child_lock": {
+        "label": "아동 잠금",
+        "description": "장치의 물리적 입력을 활성화/비활성화",
+        "values": {
+            "LOCK": "잠금",
+            "UNLOCK": "잠금 해제"
+        }
+    },
+    "running_state": {
+        "label": "작동 상태",
+        "values": {
+            "idle": "대기",
+            "heat": "난방",
+            "cool": "냉방"
+        }
+    },
+    "power_on_behavior": {
+        "label": "전원 켤 때 동작",
+        "description": "Controls the behavior when the device is powered on after power loss",
+        "values": {
+            "on": "켬",
+            "off": "끔",
+            "toggle": "전환",
+            "previous": "이전"
+        }
+    },
+    "occupied_heating_setpoint": {
+        "label": "점유 시 난방 설정"
+    },
+    "local_temperature": {
+        "label": "지역 온도",
+        "description": "Current temperature measured on the device"
+    },
+    "open_window": {
+        "label": "창문 열림",
+        "description": "창문 열림을 활성화/비활성화",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "frost_protection": {
+        "label": "동결 방지"
+    },
+    "fan_mode": {
+        "label": "팬 모드",
+        "values": {
+            "low": "약",
+            "medium": "중",
+            "high": "강",
+            "auto": "자동",
+            "off": "끄기"
+        }
+    },
+    "swing_mode": {
+        "label": "스윙 모드",
+        "values": {
+            "on": "睃",
+            "off": "끄기"
+        }
+    },
+    "away_mode": {
+        "label": "외출 모드"
+    },
+    "eco_mode": {
+        "label": "에코 모드",
+        "description": "ECO mode (energy saving mode)",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "boost": {
+        "label": "부스트"
+    },
+    "boost_time": {
+        "label": "부스트 시간",
+        "description": "Boost time"
+    },
+    "linkquality": {
+        "label": "링크 품질"
+    },
+    "action": {
+        "label": "동작",
+        "description": "Triggered action (e.g. a button click)"
+    },
+    "action_duration": {
+        "label": "동작 지속 시간",
+        "description": "Triggered action duration in seconds"
+    },
+    "action_group": {
+        "label": "동작 그룹",
+        "description": "Group where the action was triggered on"
+    },
+    "tamper": {
+        "label": "변경",
+        "description": "장치가 변경되었는지 여부"
+    },
+    "vibration": {
+        "label": "진동",
+        "description": "장치가 진동을 감지했는지 여부"
+    },
+    "alarm": {
+        "label": "알람",
+        "description": "알람이 활성화되어 있는지 여부"
+    },
+    "noise": {
+        "label": "소음",
+        "description": "The measured noise value"
+    },
+    "noise_detected": {
+        "label": "소음 감지",
+        "description": "장치가 소음을 감지했는지 여부"
+    },
+    "presence": {
+        "label": "재실",
+        "description": "장치가 재실을 감지했는지 여부"
+    },
+    "motion": {
+        "label": "움직임"
+    },
+    "motion_state": {
+        "label": "움직임 상태"
+    },
+    "soil_moisture": {
+        "label": "토양 수분",
+        "description": "측정된 토양 수분"
+    },
+    "co": {
+        "label": "CO",
+        "description": "The measured CO (carbon monoxide) value"
+    },
+    "aqi": {
+        "label": "공기질 지수",
+        "description": "Air quality index"
+    },
+    "pm25": {
+        "label": "PM2.5",
+        "description": "Measured PM2.5 (particulate matter) concentration"
+    },
+    "pm10": {
+        "label": "PM10",
+        "description": "Measured PM10 (particulate matter) concentration"
+    },
+    "formaldehyde": {
+        "label": "포름알데히드",
+        "description": "The measured formaldehyd value"
+    },
+    "hcho": {
+        "label": "포름알데히드",
+        "description": "Measured HCHO value"
+    },
+    "cube_side": {
+        "label": "큐브 면",
+        "description": "Side of the cube"
+    },
+    "cube_side_1": {
+        "label": "Cube side 1"
+    },
+    "cube_side_2": {
+        "label": "Cube side 2"
+    },
+    "cube_side_3": {
+        "label": "Cube side 3"
+    },
+    "cube_side_4": {
+        "label": "Cube side 4"
+    },
+    "cube_side_5": {
+        "label": "Cube side 5"
+    },
+    "cube_side_6": {
+        "label": "Cube side 6"
+    },
+    "valve_position": {
+        "label": "밸브 위치",
+        "description": "Position of the valve"
+    },
+    "valve_switch": {
+        "label": "밸브",
+        "description": "Valve state if open or closed",
+        "values": {
+            "OPEN": "열림",
+            "CLOSE": "닫힘"
+        }
+    },
+    "valve_state": {
+        "label": "밸브 상태",
+        "description": "Valve state if open or closed",
+        "values": {
+            "OPEN": "열림",
+            "CLOSED": "닫힘"
+        }
+    },
+    "valve_detection": {
+        "label": "밸브 감지"
+    },
+    "valve_detection_bool": {
+        "label": "밸브 감지 부울",
+        "description": "Determines if temperature control abnormalities should be detected"
+    },
+    "valve_alarm": {
+        "label": "밸브 알람"
+    },
+    "auto_lock": {
+        "label": "자동 잠금",
+        "values": {
+            "AUTO": "자동",
+            "MANUAL": "수동"
+        }
+    },
+    "auto_off": {
+        "label": "자동 끄기",
+        "description": "Turn the device automatically off when attached device consumes less than 2W for ${offTime} minutes"
+    },
+    "auto_relock_time": {
+        "label": "재잠금 시간",
+        "description": "The number of seconds to wait after unlocking a lock before it automatically locks again. 0=disabled"
+    },
+    "away_preset_days": {
+        "label": "외출 사전설정 일수",
+        "description": "Away preset days"
+    },
+    "away_preset_temperature": {
+        "label": "외출 사전설정 온도",
+        "description": "Away preset temperature"
+    },
+    "button_lock": {
+        "label": "버튼 잠금",
+        "description": "물리적 버튼을 비활성화",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "calibrated": {
+        "label": "보정됨",
+        "description": "장치가 보정되었는지 여부"
+    },
+    "carbon_monoxide": {
+        "label": "일산화탄소",
+        "description": "Indicates if CO (carbon monoxide) is detected"
+    },
+    "comfort_temperature": {
+        "label": "쾌적 온도",
+        "description": "Comfort temperature"
+    },
+    "consumer_connected": {
+        "label": "소비자 연결됨",
+        "description": "Indicates whether a plug is physically attached. Device does not have to pull power or even be connected electrically (state of this binary switch can be ON even if main power switch is OFF)"
+    },
+    "cover_position": {
+        "label": "커튼 위치"
+    },
+    "cover_tilt": {
+        "label": "커튼 기울기"
+    },
+    "cover_mode": {
+        "label": "커튼 모드",
+        "description": "Reversal of the motor rotating direction"
+    },
+    "cpu_temperature": {
+        "label": "CPU 온도",
+        "description": "Temperature of the CPU"
+    },
+    "current_phase_b": {
+        "label": "전류 위상 B",
+        "description": "Instantaneous measured electrical current on phase B"
+    },
+    "current_phase_c": {
+        "label": "전류 위상 C",
+        "description": "Instantaneous measured electrical current on phase C"
+    },
+    "current_neutral": {
+        "label": "중성선 전류",
+        "description": "Instantaneous measured electrical current on neutral"
+    },
+    "deadzone_temperature": {
+        "label": "데드존 온도",
+        "description": "The delta between local_temperature and current_heating_setpoint to trigger Heat"
+    },
+    "detection_interval": {
+        "label": "감지 간격",
+        "description": "Time interval between action detection."
+    },
+    "device_temperature": {
+        "label": "장치 온도",
+        "description": "Temperature of the device"
+    },
+    "eco2": {
+        "label": "PPM",
+        "description": "Measured eCO2 value"
+    },
+    "eco_temperature": {
+        "label": "에코 온도",
+        "description": "Eco temperature"
+    },
+    "produced_energy": {
+        "label": "발전량",
+        "description": "Sum of produced energy"
+    },
+    "energy_produced": {
+        "label": "발전량",
+        "description": "Sum of produced energy"
+    },
+    "flip_indicator_light": {
+        "label": "指示灯 반전",
+        "description": "After turn on, the indicator light turns on while switch is off, and vice versa",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "holiday_temperature": {
+        "label": "휴일 온도",
+        "description": "Holiday temperature"
+    },
+    "brightness_state": {
+        "label": "밝기 상태",
+        "description": "Brightness state",
+        "values": {
+            "low": "Low",
+            "middle": "Middle",
+            "high": "High",
+            "strong": "Strong"
+        }
+    },
+    "keypad_lockout": {
+        "label": "키패드 잠금",
+        "description": "Enables/disables physical input on the device",
+        "values": {
+            "unlock": "Unlock",
+            "lock1": "Lock1",
+            "lock2": "Lock2"
+        }
+    },
+    "led_disabled_night": {
+        "label": "밤에 LED 비활성화",
+        "description": "Enable/disable the LED at night"
+    },
+    "light_brightness": {
+        "label": "조명 밝기"
+    },
+    "light_brightness_color": {
+        "label": "Light brightness color"
+    },
+    "light_brightness_colortemp": {
+        "label": "Light brightness colortemp"
+    },
+    "light_color_options": {
+        "label": "조명 색상 옵션",
+        "description": "Advanced color behavior"
+    },
+    "lock": {
+        "label": "잠금"
+    },
+    "lock_action": {
+        "label": "잠금 동작",
+        "description": "Triggered action on the lock",
+        "values": {
+            "unknown": "Unknown",
+            "lock": "Lock",
+            "unlock": "Unlock",
+            "lock_failure_invalid_pin_or_id": "Lock_failure_invalid_pin_or_id",
+            "lock_failure_invalid_schedule": "Lock_failure_invalid_schedule",
+            "unlock_failure_invalid_pin_or_id": "Unlock_failure_invalid_pin_or_id",
+            "unlock_failure_invalid_schedule": "Unlock_failure_invalid_schedule",
+            "one_touch_lock": "One_touch_lock",
+            "key_lock": "Key_lock",
+            "key_unlock": "Key_unlock",
+            "auto_lock": "Auto_lock",
+            "schedule_lock": "Schedule_lock",
+            "schedule_unlock": "Schedule_unlock",
+            "manual_lock": "Manual_lock",
+            "manual_unlock": "Manual_unlock",
+            "non_access_user_operational_event": "Non_access_user_operational_event"
+        }
+    },
+    "lock_action_source_name": {
+        "label": "잠금 동작 소스",
+        "description": "Source of the triggered action on the lock",
+        "values": {
+            "keypad": "Keypad",
+            "rfid": "Rfid",
+            "manual": "Manual",
+            "rf": "Rf"
+        }
+    },
+    "lock_action_user": {
+        "label": "잠금 동작 사용자",
+        "description": "ID of user that triggered the action on the lock"
+    },
+    "max_cool_setpoint_limit": {
+        "label": "냉방 설정 상한",
+        "description": "Maximum Cooling set point limit"
+    },
+    "min_cool_setpoint_limit": {
+        "label": "냉방 설정 하한",
+        "description": "Minimum Cooling point limit"
+    },
+    "max_heat_setpoint_limit": {
+        "label": "난방 설정 상한",
+        "description": "Maximum Heating set point limit"
+    },
+    "min_heat_setpoint_limit": {
+        "label": "난방 설정 하한",
+        "description": "Minimum Heating set point limit"
+    },
+    "max_temperature": {
+        "label": "최고 온도",
+        "description": "Maximum temperature"
+    },
+    "max_temperature_limit": {
+        "label": "최고 온도 제한",
+        "description": "Maximum temperature limit. Cuts the thermostat out regardless of air temperature if the external floor sensor exceeds this temperature. Only used by the thermostat when in AL sensor mode."
+    },
+    "min_temperature_limit": {
+        "label": "최저 온도 제한",
+        "description": "Minimum temperature limit for frost protection. Turns the thermostat on regardless of setpoint if the temperature drops below this."
+    },
+    "min_temperature": {
+        "label": "최저 온도",
+        "description": "Minimum temperature"
+    },
+    "mode_switch_select": {
+        "label": "모드 스위치 선택",
+        "description": "Select mode switch to use"
+    },
+    "motion_sensitivity_select": {
+        "label": "움직임 감도 선택",
+        "description": "Select motion sensitivity to use"
+    },
+    "open_window_temperature": {
+        "label": "창문 열림 온도",
+        "description": "Open window temperature"
+    },
+    "operation_mode_select": {
+        "label": "작동 모드 선택",
+        "description": "Select operation mode to use"
+    },
+    "overload_protection": {
+        "label": "과부하 보호",
+        "description": "Maximum allowed load, turns off if exceeded"
+    },
+    "pm1": {
+        "label": "PM1",
+        "description": "Measured PM1 (particulate matter) concentration"
+    },
+    "power_phase_b": {
+        "label": "B상 전력",
+        "description": "Instantaneous measured power on phase B"
+    },
+    "power_phase_c": {
+        "label": "C상 전력",
+        "description": "Instantaneous measured power on phase C"
+    },
+    "power_factor_phase_b": {
+        "label": "B상 역률",
+        "description": "Instantaneous measured power factor on phase B"
+    },
+    "power_factor_phase_c": {
+        "label": "C상 역률",
+        "description": "Instantaneous measured power factor on phase C"
+    },
+    "power_apparent": {
+        "label": "피상 전력",
+        "description": "Instantaneous measured apparent power"
+    },
+    "power_apparent_phase_b": {
+        "label": "B상 피상 전력",
+        "description": "Instantaneous measured apparent power on phase B"
+    },
+    "power_apparent_phase_c": {
+        "label": "C상 피상 전력",
+        "description": "Instantaneous measured apparent power on phase C"
+    },
+    "power_outage_count": {
+        "label": "정전 횟수",
+        "description": "Number of power outages${resetsWhenPairing ? \" (since last pairing)\" : \"\"}"
+    },
+    "power_outage_memory": {
+        "label": "정전 메모리",
+        "description": "Enable/disable the power outage memory, this recovers the on/off mode after power failure"
+    },
+    "power_reactive": {
+        "label": "무효 전력",
+        "description": "Instantaneous measured reactive power"
+    },
+    "power_reactive_phase_b": {
+        "label": "B상 무효 전력",
+        "description": "Instantaneous measured reactive power on phase B"
+    },
+    "power_reactive_phase_c": {
+        "label": "C상 무효 전력",
+        "description": "Instantaneous measured reactive power on phase C"
+    },
+    "programming_operation_mode": {
+        "label": "프로그래밍 작동 모드",
+        "description": "Controls how programming affects the thermostat. Possible values: setpoint (only use specified setpoint), schedule (follow programmed setpoint schedule), schedule_with_preheat (follow programmed setpoint schedule with pre-heating). Changing this value does not clear programmed schedules."
+    },
+    "setup": {
+        "label": "설정",
+        "description": "Indicates if the device is in setup mode"
+    },
+    "schedule": {
+        "label": "스케줄",
+        "description": "When enabled, the device will change its state based on your schedule settings"
+    },
+    "schedule_settings": {
+        "label": "스케줄 설정",
+        "description": "Allows schedule configuration"
+    },
+    "external_temperature_input": {
+        "label": "외부 온도 입력",
+        "description": "Input for remote temperature sensor"
+    },
+    "sos": {
+        "label": "SOS",
+        "description": "SOS alarm"
+    },
+    "sound_volume": {
+        "label": "음량",
+        "description": "Sound volume of the lock",
+        "values": {
+            "silent_mode": "Silent_mode",
+            "low_volume": "Low_volume",
+            "high_volume": "High_volume"
+        }
+    },
+    "switch_type": {
+        "label": "스위치 유형",
+        "description": "Wall switch type",
+        "values": {
+            "toggle": "Toggle",
+            "momentary": "Momentary"
+        }
+    },
+    "door_state": {
+        "label": "문 상태",
+        "description": "State of the door",
+        "values": {
+            "open": "Open",
+            "closed": "Closed",
+            "error_jammed": "Error_jammed",
+            "error_forced_open": "Error_forced_open",
+            "error_unspecified": "Error_unspecified",
+            "undefined": "Undefined"
+        }
+    },
+    "temperature_sensor_select": {
+        "label": "온도 센서 선택",
+        "description": "Select temperature sensor to use"
+    },
+    "test": {
+        "label": "테스트",
+        "description": "Indicates whether the device is being tested"
+    },
+    "trigger_count": {
+        "label": "트리거 횟수",
+        "description": "Indicates how many times the sensor was triggered${sinceScheduledReport ? \" (since last scheduled report)\" : \"\"}"
+    },
+    "trigger_indicator": {
+        "label": "트리거 표시기",
+        "description": "Enables trigger indication"
+    },
+    "window_detection": {
+        "label": "창문 감지"
+    },
+    "window_detection_bool": {
+        "label": "창문 감지 부울",
+        "description": "Enables/disables window detection on the device"
+    },
+    "window_open": {
+        "label": "창문 열림",
+        "description": "Indicates if window is open"
+    },
+    "moving": {
+        "label": "이동 중",
+        "description": "Indicates if the device is moving"
+    },
+    "x_axis": {
+        "label": "X축",
+        "description": "Accelerometer X value"
+    },
+    "y_axis": {
+        "label": "Y축",
+        "description": "Accelerometer Y value"
+    },
+    "z_axis": {
+        "label": "Z축",
+        "description": "Accelerometer Z value"
+    },
+    "pincode": {
+        "label": "PIN 코드",
+        "description": "User ID to set or clear the pincode for",
+        "values": {
+            "unrestricted": "Unrestricted",
+            "year_day_schedule": "Year_day_schedule",
+            "week_day_schedule": "Week_day_schedule",
+            "master": "Master",
+            "non_access": "Non_access"
+        }
+    },
+    "squawk": {
+        "label": "알람 소리",
+        "description": "Set Squawk state",
+        "values": {
+            "system_is_armed": "System_is_armed",
+            "system_is_disarmed": "System_is_disarmed"
+        }
+    },
+    "identify_duration": {
+        "label": "식별 지속시간",
+        "description": "Duration of flashing"
+    },
+    "identify": {
+        "label": "식별",
+        "description": "Ititiate device identification",
+        "values": {
+            "identify": "Identify"
+        }
+    },
+    "min_brightness": {
+        "label": "최소 밝기",
+        "description": "Minimum light brightness"
+    },
+    "max_brightness": {
+        "label": "최대 밝기",
+        "description": "Maximum light brightness"
+    },
+    "pilot_wire_mode": {
+        "label": "파일럿 와이어 모드",
+        "description": "Controls the target temperature of the heater, with respect to the temperature set on that heater. Possible values: comfort (target temperature = heater set temperature) eco (target temperature = heater set temperature - 3.5°C), frost_protection (target temperature = 7 to 8°C), off (heater stops heating), and the less commonly used comfort_-1 (target temperature = heater set temperature - 1°C), comfort_-2 (target temperature = heater set temperature - 2°C),."
+    },
+    "rain": {
+        "label": "비",
+        "description": "Indicates whether the device detected rainfall"
+    },
+    "warning": {
+        "label": "경고",
+        "description": "Mode of the warning (sound effect)",
+        "values": {
+            "stop": "Stop",
+            "burglar": "Burglar",
+            "fire": "Fire",
+            "emergency": "Emergency",
+            "police_panic": "Police_panic",
+            "fire_panic": "Fire_panic",
+            "emergency_panic": "Emergency_panic"
+        }
+    },
+    "week": {
+        "label": "주",
+        "description": "Week format user for schedule",
+        "values": {
+            "7": "7",
+            "5+2": "5+2",
+            "6+1": "6+1"
+        }
+    },
+    "last_seen": {
+        "label": "마지막 확인"
+    },
+    "motor_direction": {
+        "label": "모터 방향"
+    },
+    "motor_speed": {
+        "label": "모터 속도"
+    },
+    "target_temperature": {
+        "label": "목표 온도"
+    },
+    "current_heating_setpoint": {
+        "label": "현재 난방 설정온도"
+    },
+    "unoccupied_heating_setpoint": {
+        "label": "미사용 난방 설정온도"
+    },
+    "preset": {
+        "label": "프리셋"
+    },
+    "mode": {
+        "label": "모드"
+    },
+    "duration": {
+        "label": "지속시간"
+    },
+    "sensitivity": {
+        "label": "감도"
+    },
+    "detection_distance": {
+        "label": "감지 거리"
+    },
+    "keep_time": {
+        "label": "유지 시간"
+    },
+    "occupancy_timeout": {
+        "label": "재실 타임아웃"
+    },
+    "illuminance_above_threshold": {
+        "label": "조도 임계값 이상"
+    },
+    "opening_state": {
+        "label": "열림 상태"
+    },
+    "alarm_state": {
+        "label": "알람 상태"
+    },
+    "setup_mode": {
+        "label": "설정 모드"
+    },
+    "alarm_siren": {
+        "label": "알람 사이렌"
+    },
+    "alarm_siren_duration": {
+        "label": "사이렌 지속시간"
+    },
+    "vibration_limit": {
+        "label": "진동 제한"
+    },
+    "vibration_siren": {
+        "label": "진동 사이렌"
+    },
+    "vibration_siren_duration": {
+        "label": "진동 사이렌 지속시간"
+    },
+    "close_signal": {
+        "label": "닫힘 신호"
+    },
+    "transmission_power": {
+        "label": "송신 전력"
+    },
+    "magnetic_status": {
+        "label": "자기 상태"
+    },
+    "connection_state": {
+        "label": "연결 상태"
+    },
+    "restart_required": {
+        "label": "재시작 필요"
+    },
+    "restart": {
+        "label": "재시작"
+    },
+    "update_state": {
+        "label": "업데이트 상태"
+    },
+    "update_available": {
+        "label": "업데이트 가능"
+    },
+    "factory_reset": {
+        "label": "공장 초기화"
+    },
+    "side_up": {
+        "label": "위쪽"
+    },
+    "side_down": {
+        "label": "아래쪽"
+    },
+    "side_left": {
+        "label": "왼쪽"
+    },
+    "side_right": {
+        "label": "오른쪽"
+    },
+    "state_up": {
+        "label": "상태 위"
+    },
+    "state_down": {
+        "label": "상태 아래"
+    },
+    "state_left": {
+        "label": "상태 왼쪽"
+    },
+    "state_right": {
+        "label": "상태 오른쪽"
+    },
+    "state_action": {
+        "label": "상태 동작"
+    },
+    "led_indicator": {
+        "label": "LED 표시기"
+    },
+    "power_calibration": {
+        "label": "전력 보정"
+    },
+    "power_precision": {
+        "label": "전력 정밀도"
+    },
+    "current_calibration": {
+        "label": "전류 보정"
+    },
+    "current_precision": {
+        "label": "전류 정밀도"
+    },
+    "energy_calibration": {
+        "label": "에너지 보정"
+    },
+    "energy_precision": {
+        "label": "에너지 정밀도"
+    },
+    "device_temperature_calibration": {
+        "label": "기기 온도 보정"
+    },
+    "voltage_calibration": {
+        "label": "전압 보정"
+    },
+    "voltage_precision": {
+        "label": "전압 정밀도"
+    },
+    "idle_steps": {
+        "label": "대기 스텝"
+    },
+    "closing_steps": {
+        "label": "닫힘 스텝"
+    },
+    "valve_opening_limit_voltage": {
+        "label": "밸브 개방 제한 전압"
+    },
+    "valve_closing_limit_voltage": {
+        "label": "밸브 폐쇄 제한 전압"
+    },
+    "valve_motor_running_voltage": {
+        "label": "밸브 모터 작동 전압"
+    },
+    "valve_opening_degree": {
+        "label": "밸브 개도"
+    },
+    "valve_closing_degree": {
+        "label": "밸브 폐도"
+    },
+    "temperature_accuracy": {
+        "label": "온도 정밀도"
+    },
+    "weekly_schedule_sunday": {
+        "label": "주간 일정 일요일"
+    },
+    "weekly_schedule_monday": {
+        "label": "주간 일정 월요일"
+    },
+    "weekly_schedule_tuesday": {
+        "label": "주간 일정 화요일"
+    },
+    "weekly_schedule_wednesday": {
+        "label": "주간 일정 수요일"
+    },
+    "weekly_schedule_thursday": {
+        "label": "주간 일정 목요일"
+    },
+    "weekly_schedule_friday": {
+        "label": "주간 일정 금요일"
+    },
+    "weekly_schedule_saturday": {
+        "label": "주간 일정 토요일"
+    },
+    "smart_temperature_control": {
+        "label": "스마트 온도 제어"
+    },
+    "thermostat_unit": {
+        "label": "온도조절기 단위"
+    },
+    "operation_mode": {
+        "label": "작동 모드"
+    },
+    "indicator_mode": {
+        "label": "표시기 모드"
+    },
+    "timer_mode_target_temp": {
+        "label": "Timer mode target temp"
+    },
+    "temporary_mode_duration": {
+        "label": "Temporary mode duration"
+    },
+    "temporary_mode_select": {
+        "label": "Temporary mode select"
+    },
+    "open_window_detection": {
+        "label": "창문 열림 감지"
+    },
+    "frost_protection_temperature": {
+        "label": "Frost protection temperature"
+    },
+    "color": {
+        "label": "색상"
+    },
+    "color_mode": {
+        "label": "색상 모드"
+    },
+    "color_xy": {
+        "label": "색상 xy"
+    },
+    "color_hs": {
+        "label": "색상 HS"
+    },
+    "transition": {
+        "label": "전환"
+    },
+    "device_mode": {
+        "label": "기기 모드"
+    },
+    "battery_state": {
+        "label": "배터리 상태"
+    },
+    "internal_temperature": {
+        "label": "내부 온도"
+    },
+    "ac_connected": {
+        "label": "Ac Connected",
+        "description": "Indicates whether the device is connected to AC mains power"
+    },
+    "ac_frequency": {
+        "label": "AC frequency",
+        "description": "Measured electrical AC frequency"
+    },
+    "ac_status": {
+        "label": "Ac Status",
+        "description": "Indicates whether the device issues reports on alarm no longer being present"
+    },
+    "action_rotation_angle": {
+        "label": "Action Rotation Angle",
+        "description": "Rotation angle"
+    },
+    "action_rotation_angle_speed": {
+        "label": "Action Rotation Angle Speed",
+        "description": "Rotation angle"
+    },
+    "action_rotation_button_state": {
+        "label": "Action Rotation Button State",
+        "description": "Rotation time",
+        "values": {
+            "released": "Released",
+            "pressed": "Pressed"
+        }
+    },
+    "action_rotation_percent": {
+        "label": "Action Rotation Percent",
+        "description": "Rotation angle speed"
+    },
+    "action_rotation_percent_speed": {
+        "label": "Action Rotation Percent Speed",
+        "description": "Rotation percent"
+    },
+    "action_rotation_time": {
+        "label": "Action Rotation Time",
+        "description": "Rotation percent speed"
+    },
+    "air_quality": {
+        "label": "Air Quality",
+        "description": "Measured air quality",
+        "values": {
+            "excellent": "Excellent",
+            "good": "Good",
+            "moderate": "Moderate",
+            "poor": "Poor",
+            "unhealthy": "Unhealthy",
+            "out_of_range": "Out Of Range",
+            "unknown": "Unknown"
+        }
+    },
+    "alarm_1": {
+        "label": "Alarm 1",
+        "description": "Indicates whether the device detected vibration"
+    },
+    "alarm_2": {
+        "label": "Alarm 2",
+        "description": "Indicates whether the alarm is triggered"
+    },
+    "alarm_mode": {
+        "label": "Alarm Mode",
+        "description": "Alarm time",
+        "values": {
+            "arm": "Arm",
+            "silent": "Silent",
+            "disarm": "Disarm"
+        }
+    },
+    "alarm_set_1": {
+        "label": "Alarm Set 1",
+        "description": "Set the energy measurements to zero",
+        "values": {
+            "RESET": "Reset"
+        }
+    },
+    "alarm_set_2": {
+        "label": "Alarm Set 2",
+        "description": "Power limit (Default 25 kW)"
+    },
+    "alarm_set_3": {
+        "label": "Alarm Set 3",
+        "description": "Time overcurrent is allowed before the circuit is switched OFF (Default 0s)"
+    },
+    "alarm_status": {
+        "label": "Alarm Status",
+        "description": "Alarm time",
+        "values": {
+            "arm": "Arm",
+            "silent": "Silent",
+            "disarm": "Disarm"
+        }
+    },
+    "alarm_time": {
+        "label": "Alarm Time",
+        "description": "Alarm time"
+    },
+    "area1Occupancy": {
+        "label": "Area1Occupancy",
+        "description": "Reset energy meter",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "area2Occupancy": {
+        "label": "Area2Occupancy",
+        "description": "Indicates whether the device detected occupancy in Area 1"
+    },
+    "area3Occupancy": {
+        "label": "Area3Occupancy",
+        "description": "Indicates whether the device detected occupancy in Area 2"
+    },
+    "area4Occupancy": {
+        "label": "Area4Occupancy",
+        "description": "Indicates whether the device detected occupancy in Area 3"
+    },
+    "auto_off_enabled": {
+        "label": "Enable auto-off",
+        "description": "Enable/disable the automatic turn-off feature"
+    },
+    "auto_off_time": {
+        "label": "Enable auto-off",
+        "description": "Enable/disable the automatic turn-off feature"
+    },
+    "auto_settings": {
+        "label": "Auto Settings",
+        "description": "Automatically switch ON/OFF, make sure manual mode is turned OFF otherwise auto settings are not applied."
+    },
+    "automatic_valve_adapt": {
+        "label": "Valve adaptation status",
+        "description": "Specifies the current status of the valve adaptation"
+    },
+    "backlight_mode": {
+        "label": "Backlight Mode",
+        "description": "Determines when the button actuates",
+        "values": {
+            "release": "Release",
+            "press": "Press"
+        }
+    },
+    "battery_defect": {
+        "label": "Battery Defect",
+        "description": "Indicates whether the device is currently having trouble"
+    },
+    "boost_heating": {
+        "label": "Activate boost heating",
+        "description": "Activate boost heating (opens TRV for 5 minutes)"
+    },
+    "break_function_enabled": {
+        "label": "Break function"
+    },
+    "break_function_state": {
+        "label": "Break function state",
+        "description": "Indicates whether the device is in break mode or not"
+    },
+    "break_function_timeout": {
+        "label": "Automatic time limit for breaks"
+    },
+    "broadcast_alarms": {
+        "label": "Broadcast alarms",
+        "description": "Indicates whether the burglar alarm siren is being manually activated on the device"
+    },
+    "calibrate": {
+        "label": "Calibrate",
+        "description": "Calibrate curtain (motor will learn travel limits automatically)",
+        "values": {
+            "calibrate": "Calibrate"
+        }
+    },
+    "calibration": {
+        "label": "Calibration"
+    },
+    "calibration_mode": {
+        "label": "Calibration Mode",
+        "description": "Tilt percentage of that cover"
+    },
+    "clear_schedule": {
+        "label": "Save schedule",
+        "description": "Upload the weekly schedule to the thermostat",
+        "values": {
+            "trigger": "Trigger"
+        }
+    },
+    "click_control": {
+        "label": "Click Control",
+        "description": "Store the preferred cover position",
+        "values": {
+            "set_up": "Set Up",
+            "set_down": "Set Down",
+            "delete_up": "Delete Up",
+            "delete_down": "Delete Down",
+            "delete_both": "Delete Both"
+        }
+    },
+    "climate": {
+        "label": "Climate",
+        "description": "Aqara bathroom heater climate controls"
+    },
+    "color_power_on_behavior": {
+        "label": "Color Power On Behavior",
+        "description": "Controls state after power outage: false = on, true = restore previous state",
+        "values": {
+            "initial": "Initial",
+            "previous": "Previous",
+            "customized": "Customized"
+        }
+    },
+    "color_sync": {
+        "label": "Color Sync",
+        "description": "Expose the raw illuminance value."
+    },
+    "constant_temperature_mode": {
+        "label": "Constant Temperature Mode",
+        "description": "Prompt-tone mute end time in HH:MM format"
+    },
+    "contact_last_changed": {
+        "label": "Contact Last Changed",
+        "description": "Time (in seconds) since when contact was last changed."
+    },
+    "countdown": {
+        "label": "Countdown",
+        "description": "Toggle the device after a set duration (one time action)"
+    },
+    "countdown_left": {
+        "label": "Countdown Left",
+        "description": "Turn on the sprinkler and start countdown"
+    },
+    "cover_limit": {
+        "label": "Cover Limit",
+        "description": "Store the preferred cover position",
+        "values": {
+            "set_up": "Set Up",
+            "set_down": "Set Down",
+            "delete_up": "Delete Up",
+            "delete_down": "Delete Down",
+            "delete_both": "Delete Both"
+        }
+    },
+    "cover_position_percent_fix": {
+        "label": "Cover Position Percent Fix",
+        "description": "Fixes inverted cover position values on affected modules when enabled."
+    },
+    "cover_position_tilt_disable_report": {
+        "label": "Cover Position Tilt Disable Report"
+    },
+    "cover_type": {
+        "label": "Cover Type",
+        "description": "Operate the motor slower and quieter than normal",
+        "values": {
+            "roman_pole": "Roman Pole",
+            "roller_blind": "Roller Blind",
+            "canopy_curtain": "Canopy Curtain",
+            "roman_blind": "Roman Blind",
+            "honeycomb_curtain": "Honeycomb Curtain"
+        }
+    },
+    "data_reporting_interval": {
+        "label": "Data Reporting Interval",
+        "description": "How often the device should report measurements (Default 5s)"
+    },
+    "detection_range": {
+        "label": "Detection Range"
+    },
+    "detection_range_composite": {
+        "label": "Detection Range Composite",
+        "description": "Specifies the detection range using set of boolean settings."
+    },
+    "device_age": {
+        "label": "Device Age",
+        "description": "Duration the filter has been used"
+    },
+    "device_temperature_alarm": {
+        "label": "Device Temperature Alarm",
+        "description": "Leakage current limit (Default 50mA)"
+    },
+    "device_temperature_threshold": {
+        "label": "Device Temperature Threshold",
+        "description": "Automatically switch OFF the circuit when the measured temperature exceeds the limit (Default ON)"
+    },
+    "dismiss_alarm": {
+        "label": "Dismiss Alarm",
+        "description": "Alarm work mode",
+        "values": {
+            "normal": "Normal",
+            "alarm": "Alarm"
+        }
+    },
+    "do_not_disturb": {
+        "label": "Do Not Disturb",
+        "description": "State of the battery",
+        "values": {
+            "low": "Low",
+            "medium": "Medium",
+            "high": "High"
+        }
+    },
+    "effect_color": {
+        "label": "Effect Color"
+    },
+    "effect_color_mode": {
+        "label": "Effect Color Mode"
+    },
+    "effect_colors": {
+        "label": "Effect Colors",
+        "description": "Red (0-255)"
+    },
+    "effect_segments": {
+        "label": "Effect Segments"
+    },
+    "effect_speed": {
+        "label": "Effect Speed",
+        "description": "Animation speed for the active effect (0=slowest, 1=fastest)"
+    },
+    "enabled": {
+        "label": "Enabled",
+        "description": "Automatically switch ON/OFF, make sure manual mode is turned OFF otherwise auto settings are not applied."
+    },
+    "energy_balance": {
+        "label": "Energy Balance",
+        "description": "Automatically switch OFF the circuit when the energy balance reaches zero"
+    },
+    "energy_balance_add": {
+        "label": "Energy Balance Add",
+        "description": "Amount of energy allowed for consumption (Decreases when Prepayment is enabled)"
+    },
+    "energy_balance_reset": {
+        "label": "Energy Balance Reset",
+        "description": "Add an amount of energy to the balance",
+        "values": {
+            "RESET": "Reset"
+        }
+    },
+    "energy_reset": {
+        "label": "Energy Reset",
+        "description": "Which mmWave Control command to send",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "energy_saving_mode_enabled": {
+        "label": "Enable energy-saving mode",
+        "description": "Here you can enable/disable the energy-saving mode"
+    },
+    "energy_saving_mode_threshold": {
+        "label": "Enable energy-saving mode",
+        "description": "Here you can enable/disable the energy-saving mode"
+    },
+    "energy_saving_mode_timer": {
+        "label": "Energy-saving timer"
+    },
+    "error_state": {
+        "label": "Error State",
+        "description": "Indicates whether the device encounters any errors or not"
+    },
+    "error_status": {
+        "label": "Error Status",
+        "description": "Mute the buzzer for all alarms"
+    },
+    "expose_pin": {
+        "label": "PIN 표시",
+        "description": "Controls which modes are exposed in Home Assistant climate discovery (default heat)."
+    },
+    "external_humidity": {
+        "label": "External Humidity",
+        "description": "Value for external temperature sensor"
+    },
+    "external_switch_type": {
+        "label": "외부 스위치 유형",
+        "values": {
+            "push_button": "Push Button",
+            "normal_on_off": "Normal On Off",
+            "three_way": "Three Way"
+        }
+    },
+    "external_temperature": {
+        "label": "외부 온도",
+        "description": "Select mode to display sensor: internal or both with external"
+    },
+    "external_trigger": {
+        "label": "외부 트리거 상태"
+    },
+    "fan": {
+        "label": "팬"
+    },
+    "fan_speed": {
+        "label": "팬 속도",
+        "description": "Current fan speed"
+    },
+    "fault": {
+        "label": "Fault",
+        "description": "Indicates whether the device is being self-tested",
+        "values": {
+            "checking": "Checking",
+            "success": "Success",
+            "failure": "Failure",
+            "others": "Others"
+        }
+    },
+    "fault_alarm": {
+        "label": "Fault Alarm",
+        "description": "Result of the self-test"
+    },
+    "favorite_position": {
+        "label": "Favorite Position",
+        "description": "Type of window covers installed",
+        "values": {
+            "roman_pole": "Roman Pole",
+            "roller_blind": "Roller Blind",
+            "canopy_curtain": "Canopy Curtain",
+            "roman_blind": "Roman Blind",
+            "honeycomb_curtain": "Honeycomb Curtain"
+        }
+    },
+    "filter_age": {
+        "label": "Filter Age",
+        "description": "Indicates if the filter is older than 6 months and needs replacing"
+    },
+    "flow_switch": {
+        "label": "Flow Switch",
+        "description": "Duration of last watering"
+    },
+    "force": {
+        "label": "힘",
+        "description": "Sum of produced energy",
+        "values": {
+            "normal": "보통",
+            "open": "열림",
+            "close": "닫힘"
+        }
+    },
+    "gas_value": {
+        "label": "Gas Value",
+        "description": "Soil humidity sampling"
+    },
+    "gradient": {
+        "label": "Gradient",
+        "description": "Color in RGB HEX format (eg #663399)"
+    },
+    "gradient_offset": {
+        "label": "그라디언트 오프셋",
+        "description": "Gradient color offset (0=start from first color)"
+    },
+    "gradient_scale": {
+        "label": "그라디언트 스케일",
+        "description": "Gradient scale (0=auto fit, 1.0+=number of colors visible)"
+    },
+    "gradient_scene": {
+        "label": "그라디언트 씬"
+    },
+    "gradient_style": {
+        "label": "그라디언트 스타일",
+        "values": {
+            "linear": "Linear",
+            "scattered": "Scattered",
+            "mirrored": "Mirrored"
+        }
+    },
+    "heater_power": {
+        "label": "히터 전력",
+        "description": "Aqara bathroom heater climate controls"
+    },
+    "hex": {
+        "label": "Hex",
+        "description": "Color in RGB HEX format (eg #663399)"
+    },
+    "high_power_alarm": {
+        "label": "RS485 data format",
+        "description": "Trigger alarm when power draw exceeds the limit (Default OFF)",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "high_power_threshold": {
+        "label": "High Power Threshold",
+        "description": "Trigger alarm when power draw exceeds the limit (Default OFF)"
+    },
+    "homeassistant_climate_modes": {
+        "label": "Home Assistant climate modes",
+        "description": "Controls the temperature unit of the thermostat (default celsius)."
+    },
+    "hue_native_control": {
+        "label": "Hue 네이티브 제어"
+    },
+    "humidity_calibration": {
+        "label": "Humidity Calibration",
+        "description": "Temperature calibration"
+    },
+    "identify_timeout": {
+        "label": "식별 타임아웃"
+    },
+    "identity_effect": {
+        "label": "Effect",
+        "description": "Defines the identification effect to simplify the device identification."
+    },
+    "illuminance_below_threshold_check": {
+        "label": "조도 임계값 확인",
+        "description": "Set to false to also send messages when illuminance is above threshold in night mode (default true)."
+    },
+    "inching": {
+        "label": "Inching",
+        "description": "Inching configuration"
+    },
+    "inching_control": {
+        "label": "Inching Control"
+    },
+    "inching_control_set": {
+        "label": "Inching Control Set"
+    },
+    "inching_time": {
+        "label": "Inching Time"
+    },
+    "indicate_faults": {
+        "label": "Indicate Faults",
+        "description": "Enable/disable LED indication for faults (e.g., lost connection to gateway)"
+    },
+    "indicate_mains_power": {
+        "label": "Indicate Mains Power",
+        "description": "Enable/disable LED indication for faults (e.g., lost connection to gateway)"
+    },
+    "indicator_light": {
+        "label": "LED 표시기",
+        "description": "Enable/disable the LED indicator",
+        "values": {
+            "on": "On",
+            "off": "Off"
+        }
+    },
+    "installation_height": {
+        "label": "Installation Height",
+        "description": "Distance from sensor to liquid surface"
+    },
+    "invert_cover": {
+        "label": "커튼 반전",
+        "description": "Inverts the cover position and state, false: open=100,close=0, true: open=0,close=100 (default false)."
+    },
+    "ir_code_to_send": {
+        "label": "Ir Code To Send",
+        "description": "The IR code learned by device"
+    },
+    "ir_emitter": {
+        "label": "Ir Emitter",
+        "description": "The IR code or timings to send by device"
+    },
+    "leakage_current": {
+        "label": "Leakage Current",
+        "description": "Current operating status",
+        "values": {
+            "off": "Off",
+            "consumption": "Consumption",
+            "production": "Production"
+        }
+    },
+    "leakage_current_alarm": {
+        "label": "Leakage Current Alarm",
+        "description": "Leakage current and temperature alarms configuration"
+    },
+    "leakage_current_threshold": {
+        "label": "Leakage Current Threshold",
+        "description": "Automatically switch OFF the circuit when the leakage current is above the limit (Default ON)"
+    },
+    "learn_ir_code": {
+        "label": "Learn Ir Code",
+        "description": "Turn on to learn new IR code"
+    },
+    "learned_ir_code": {
+        "label": "Learned Ir Code",
+        "description": "Turn on to learn new IR code"
+    },
+    "learned_ir_timings": {
+        "label": "Learned Ir Timings",
+        "description": "The IR code learned by device"
+    },
+    "led_control": {
+        "label": "LED 제어",
+        "description": "Enable/disable LED indication for faults (e.g., lost connection to gateway)"
+    },
+    "led_enable": {
+        "label": "LED 활성화",
+        "description": "Measured PM2.5 (particulate matter) concentration",
+        "values": {
+            "excellent": "Excellent",
+            "good": "Good",
+            "moderate": "Moderate",
+            "poor": "Poor",
+            "unhealthy": "Unhealthy",
+            "hazardous": "Hazardous",
+            "out_of_range": "Out Of Range",
+            "unknown": "Unknown"
+        }
+    },
+    "led_if_on": {
+        "label": "睃 시 LED",
+        "description": "Enables the built-in LED allowing to see the switch in the dark"
+    },
+    "led_in_dark": {
+        "label": "黑暗中 LED",
+        "description": "Blinks the built-in LED to make it easier to identify the device",
+        "values": {
+            "identify": "Identify"
+        }
+    },
+    "light_mode": {
+        "label": "Light Mode",
+        "values": {
+            "normal": "Normal",
+            "on": "On",
+            "off": "Off",
+            "flash": "Flash"
+        }
+    },
+    "light_type": {
+        "label": "Light Type",
+        "description": "Stop the buzzer for the current alarm",
+        "values": {
+            "low": "Low",
+            "middle": "Middle",
+            "high": "High"
+        }
+    },
+    "limits_calibration": {
+        "label": "한계 보정",
+        "description": "Recalibrate the position limits",
+        "values": {
+            "calibrated": "Calibrated",
+            "recalibrate": "Recalibrate",
+            "open": "Open",
+            "close": "Close"
+        }
+    },
+    "liquid_depth": {
+        "label": "Liquid Depth",
+        "description": "Unknown (Default 0s)"
+    },
+    "liquid_depth_max": {
+        "label": "Liquid Depth Max",
+        "description": "Liquid level ratio"
+    },
+    "liquid_level_percent": {
+        "label": "Liquid Level Percent",
+        "description": "Unknown (Default 0s)"
+    },
+    "liquid_state": {
+        "label": "Liquid State",
+        "description": "Liquid maximum percentage",
+        "values": {
+            "low": "Low",
+            "normal": "Normal",
+            "high": "High"
+        }
+    },
+    "local_temperature_based_on_sensor": {
+        "label": "센서 기반 지역 온도",
+        "description": "Fixes inverted cover position values on affected modules when enabled."
+    },
+    "local_temperature_internal": {
+        "label": "Manual Override",
+        "description": "Temporary manual override active"
+    },
+    "lost_flow_alarm": {
+        "label": "Lost Flow Alarm",
+        "description": "Time overcurrent is allowed before the circuit is switched OFF (Default 0s)"
+    },
+    "lost_flow_threshold": {
+        "label": "Lost Flow Threshold",
+        "description": "Unknown"
+    },
+    "lost_flow_threshold_time": {
+        "label": "Lost Flow Threshold Time",
+        "description": "Unknown"
+    },
+    "manual_burglar_alarm": {
+        "label": "Manual Burglar Alarm",
+        "description": "Indicates whether the smoke alarm siren is being manually activated on the device"
+    },
+    "manual_smoke_alarm": {
+        "label": "Manual Smoke Alarm",
+        "description": "Indicates whether the smoke alarm siren is being manually activated on the device"
+    },
+    "max_set": {
+        "label": "Max Set",
+        "description": "Liquid minimum percentage"
+    },
+    "maximum_brightness": {
+        "label": "최대 밝기",
+        "description": "This raises the minimum brightness level of the connected light"
+    },
+    "measurement_poll_interval": {
+        "label": "Measurement Poll Interval"
+    },
+    "min_set": {
+        "label": "Min Set",
+        "description": "Distance from sensor to bottom of the tank"
+    },
+    "minimum_brightness": {
+        "label": "최소 밝기"
+    },
+    "minimum_pwm": {
+        "label": "Minimum PWM",
+        "description": "Power off the device and wait for 3 seconds before reconnecting to apply the settings."
+    },
+    "minutes": {
+        "label": "Minutes",
+        "description": "Whenever the device is switched ON, switch it OFF automatically after the configured delay"
+    },
+    "mmwave_detection_areas": {
+        "label": "Mmwave Detection Areas",
+        "description": "Defines the area in front of the switch"
+    },
+    "mmwave_interference_areas": {
+        "label": "Mmwave Interference Areas"
+    },
+    "mmwave_stay_areas": {
+        "label": "Mmwave Stay Areas"
+    },
+    "mmwave_targets": {
+        "label": "Mmwave Targets",
+        "description": "Y-axis coordinate of the target in centimeters"
+    },
+    "motor_clb_position": {
+        "label": "Motor Clb Position",
+        "description": "Motor Calibration By Position",
+        "values": {
+            "open": "Open",
+            "close": "Close",
+            "other": "Other",
+            "clear": "Clear"
+        }
+    },
+    "motor_clb_position_result": {
+        "label": "Motor Clb Position Result",
+        "description": "Motor Calibration By Position",
+        "values": {
+            "open": "Open",
+            "close": "Close",
+            "other": "Other",
+            "clear": "Clear"
+        }
+    },
+    "motor_info": {
+        "label": "Motor Info",
+        "description": "Motor Updated Info"
+    },
+    "motor_mode": {
+        "label": "Motor Mode",
+        "description": "Motor Mode"
+    },
+    "motor_state": {
+        "label": "Motor State",
+        "description": "Current motor movement status",
+        "values": {
+            "opening": "Opening",
+            "closing": "Closing",
+            "stopped": "Stopped"
+        }
+    },
+    "mute_prompt_end_time": {
+        "label": "Mute Prompt End Time",
+        "description": "Prompt-tone mute start time in HH:MM format"
+    },
+    "mute_prompt_start_time": {
+        "label": "Mute Prompt Start Time",
+        "description": "Mute device operation prompt tones"
+    },
+    "mute_prompt_tone": {
+        "label": "Mute Prompt Tone",
+        "description": "Bathroom heater operating mode"
+    },
+    "negative_active_power_alarm": {
+        "label": "Negative Active Power Alarm",
+        "description": "Trigger alarm when one phase is unavailable (Default OFF)"
+    },
+    "night_light_mode": {
+        "label": "Night Light Mode",
+        "description": "Bathroom heater power",
+        "values": {
+            "off": "Off"
+        }
+    },
+    "no_occupancy_since_false": {
+        "label": "No Occupancy Since False"
+    },
+    "no_occupancy_since_true": {
+        "label": "No Occupancy Since True",
+        "description": "Interval duration"
+    },
+    "no_position_support": {
+        "label": "No Position Support",
+        "description": "Time in seconds after which presence is cleared after detecting it (default 100 seconds)."
+    },
+    "notificationComplete": {
+        "label": "Notificationcomplete",
+        "description": "Which mmWave Control command to send"
+    },
+    "occupancy_timeout_2": {
+        "label": "Occupancy Timeout 2"
+    },
+    "on_with_countdown": {
+        "label": "On With Countdown",
+        "description": "Turn off the sprinkler after set duration (one time action)"
+    },
+    "operating_mode": {
+        "label": "Operating Mode",
+        "description": "Aqara bathroom heater climate controls",
+        "values": {
+            "off": "Off"
+        }
+    },
+    "over_current_alarm": {
+        "label": "Over Current Alarm",
+        "description": "Current and voltage alarms configuration"
+    },
+    "over_current_threshold": {
+        "label": "Over Current Threshold",
+        "description": "Automatically switch OFF the circuit when the circuit draws more current than the limit (Default ON)"
+    },
+    "over_current_threshold_time": {
+        "label": "Over Current Threshold Time",
+        "description": "How often the device should report measurements (Default 5s)"
+    },
+    "over_voltage_alarm": {
+        "label": "Over Voltage Alarm",
+        "description": "Current upper limit (Default 63A)"
+    },
+    "over_voltage_threshold": {
+        "label": "Over Voltage Threshold",
+        "description": "Automatically switch OFF the circuit when the voltage is above the limit (Default ON)"
+    },
+    "override_active": {
+        "label": "Manual Override Duration",
+        "description": "Duration in minutes for the current manual override. 0 means until next schedule event, 65535 means indefinitely."
+    },
+    "phase_loss_alarm": {
+        "label": "Phase Loss Alarm",
+        "description": "Power factor lower limit (Default 15%)"
+    },
+    "precision": {
+        "label": "Precision"
+    },
+    "prepayment": {
+        "label": "Prepayment",
+        "description": "Number of allowed reclosing attempts per fault"
+    },
+    "presence_timeout": {
+        "label": "재실 타임아웃",
+        "description": "Time in seconds after which presence is cleared after detecting it (default 100 seconds)."
+    },
+    "pulse_length": {
+        "label": "펄스 길이",
+        "description": "Set the desired pulse length for the relay in seconds."
+    },
+    "quantitative_watering": {
+        "label": "Quantitative Watering",
+        "description": "Enables water flow measurement, and automatically turn off the sprinkler when flow is 0 for ~30s"
+    },
+    "reclosing": {
+        "label": "Reclosing",
+        "description": "Measured current difference between live and neutral wires"
+    },
+    "reclosing_count": {
+        "label": "Reclosing Count",
+        "description": "Time to wait after the fault is cleared, before attempting reclose"
+    },
+    "reclosing_delay": {
+        "label": "Reclosing Delay",
+        "description": "Automatically attempt switching ON the circuit after it was turned OFF by a detected fault"
+    },
+    "refresh": {
+        "label": "새로고침",
+        "description": "Current water flow",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "replace_filter": {
+        "label": "Replace Filter",
+        "description": "Controls physical input on the device"
+    },
+    "reset_energy_meters": {
+        "label": "에너지 미터 초기화",
+        "description": "Triggers the reset of all energy meters on the device to 0 kWh",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "restart_device": {
+        "label": "Restart Device",
+        "description": "Restarts the device.",
+        "values": {
+            "Restart Device": "Restart Device"
+        }
+    },
+    "restore_reports": {
+        "label": "Restore Reports",
+        "description": "Indicates whether the device issues reports on zone operational status"
+    },
+    "rs485_address": {
+        "label": "RS485 address"
+    },
+    "rs485_address_enabled": {
+        "label": "RS485 baud rate"
+    },
+    "rs485_baud_rate": {
+        "label": "RS485 baud rate"
+    },
+    "rs485_baud_rate_enabled": {
+        "label": "RS485 baud rate",
+        "description": "Configuration for RS485 wired communication (if supported by device) and high power alarm"
+    },
+    "rs485_data_format": {
+        "label": "RS485 address",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "rs485_data_format_enabled": {
+        "label": "RS485 address"
+    },
+    "save_schedule": {
+        "label": "Schedule upload status",
+        "description": "Upload the weekly schedule to the thermostat"
+    },
+    "schedule_end_time": {
+        "label": "Schedule End Time",
+        "description": "LED disable schedule start time (HH:MM format)"
+    },
+    "schedule_start_time": {
+        "label": "Schedule Start Time",
+        "description": "LED disable schedule start time (HH:MM format)"
+    },
+    "schedule_upload_status": {
+        "label": "Schedule upload status"
+    },
+    "seconds": {
+        "label": "Seconds",
+        "description": "Minutes component of the delay duration"
+    },
+    "segment_colors": {
+        "label": "Segment Colors",
+        "description": "Green (0-255)"
+    },
+    "self_test": {
+        "label": "자가 검사",
+        "description": "장치가 자기 검사 모드인지 여부",
+        "values": {
+            "off": "Off",
+            "on_auto": "On Auto",
+            "button_locked": "Button Locked",
+            "on_manual_app": "On Manual App",
+            "on_manual_button": "On Manual Button"
+        }
+    },
+    "self_test_result": {
+        "label": "Self Test Result",
+        "description": "Status",
+        "values": {
+            "checking": "Checking",
+            "success": "Success",
+            "failure": "Failure",
+            "others": "Others"
+        }
+    },
+    "sensitivity_level": {
+        "label": "감도 레벨",
+        "description": "Specifies the selected sensitivity level on the back of the device (either 'pet immunity' or 'sneak-by guard')."
+    },
+    "sensor": {
+        "label": "센서",
+        "description": "Select mode to display sensor: internal or both with external",
+        "values": {
+            "internal": "Internal",
+            "external": "External"
+        }
+    },
+    "silence": {
+        "label": "무음",
+        "description": "Indicates whether a fault was detected"
+    },
+    "silent_mode": {
+        "label": "무음 모드",
+        "description": "Indicates whether a fault was detected"
+    },
+    "simulated_brightness": {
+        "label": "시뮬레이션 밝기",
+        "description": "Delta per interval, 20 by default"
+    },
+    "single_watering_amount": {
+        "label": "Single Watering Amount",
+        "description": "Turn on the sprinkler with a set amount of water"
+    },
+    "single_watering_duration": {
+        "label": "Single Watering Duration",
+        "description": "Time left in the countdown"
+    },
+    "slow_mode": {
+        "label": "Slow Mode",
+        "description": "Motor rotation direction",
+        "values": {
+            "left": "Left",
+            "right": "Right"
+        }
+    },
+    "soil_calibration": {
+        "label": "Soil Calibration",
+        "description": "Humidity calibration"
+    },
+    "soil_sampling": {
+        "label": "Soil Sampling",
+        "description": "Air temperature and humidity sampling"
+    },
+    "soil_warning": {
+        "label": "Soil Warning",
+        "description": "Soil humidity sampling"
+    },
+    "solar_panel_voltage": {
+        "label": "Solar Panel Voltage",
+        "description": "Current voltage level received from the integrated solar panel"
+    },
+    "spatial_learning": {
+        "label": "Spatial Learning",
+        "description": "Initiate AI Spatial Learning.",
+        "values": {
+            "Start Learning": "Start Learning"
+        }
+    },
+    "status": {
+        "label": "Status",
+        "description": "Reset the stored watering amount to 0",
+        "values": {
+            "refresh": "Refresh"
+        }
+    },
+    "stop_alarm": {
+        "label": "알람 중지",
+        "description": "Trigger an alarm on the device",
+        "values": {
+            "trigger": "Trigger"
+        }
+    },
+    "supervision_reports": {
+        "label": "감시 보고서",
+        "description": "Indicates whether the battery of the device is almost empty"
+    },
+    "supported_max_motor_speed": {
+        "label": "Supported Max Motor Speed",
+        "description": "Set the motor speed"
+    },
+    "surplus_flow": {
+        "label": "Surplus Flow",
+        "description": "Turn on the sprinkler with a set amount of water"
+    },
+    "switch_mode": {
+        "label": "스위치 모드"
+    },
+    "switch_type_button": {
+        "label": "Switch Type Button",
+        "description": "External switch type",
+        "values": {
+            "flip-switch": "Flip-Switch",
+            "sync-switch": "Sync-Switch",
+            "button-switch": "Button-Switch",
+            "button2-switch": "Button2-Switch"
+        }
+    },
+    "switch_type_curtain": {
+        "label": "Switch Type Curtain",
+        "description": "Type of the switch",
+        "values": {
+            "toggle": "Toggle",
+            "state": "State",
+            "momentary": "Momentary"
+        }
+    },
+    "tamper_last_changed": {
+        "label": "Tamper Last Changed",
+        "description": "Time (in seconds) since when contact was last changed."
+    },
+    "temp_greater_then": {
+        "label": "Temp Greater Then",
+        "description": "Automatically switch ON/OFF, make sure manual mode is turned OFF otherwise auto settings are not applied.",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "temp_greater_value": {
+        "label": "Temp Greater Value",
+        "description": "Greater action",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "temp_lower_then": {
+        "label": "Temp Lower Then",
+        "description": "Temperature greater than value",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "temp_lower_value": {
+        "label": "Temp Lower Value",
+        "description": "Lower action",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "temperature_calibration": {
+        "label": "Temperature Calibration",
+        "description": "Temperature unit",
+        "values": {
+            "celsius": "Celsius",
+            "fahrenheit": "Fahrenheit"
+        }
+    },
+    "temperature_sampling": {
+        "label": "Temperature Sampling",
+        "description": "Soil Humidity calibration"
+    },
+    "temperature_setpoint_hold_duration": {
+        "label": "Manual Override Duration",
+        "description": "Duration in minutes for the current manual override. 0 means until next schedule event, 65535 means indefinitely."
+    },
+    "temperature_unit": {
+        "label": "Temperature Unit",
+        "description": "Temperature unit",
+        "values": {
+            "celsius": "Celsius",
+            "fahrenheit": "Fahrenheit"
+        }
+    },
+    "test_mode": {
+        "label": "테스트 모드"
+    },
+    "test_mode_timeout": {
+        "label": "테스트 모드 타임아웃"
+    },
+    "time_start": {
+        "label": "Time Start",
+        "values": {
+            "1970": "1970",
+            "2000": "2000",
+            "off": "Off"
+        }
+    },
+    "track_target_distance": {
+        "label": "Track Target Distance",
+        "description": "Initiate current target distance tracking.",
+        "values": {
+            "start_tracking_distance": "Start Tracking Distance"
+        }
+    },
+    "trigger": {
+        "label": "Pulse duration",
+        "description": "Duration of the pulse.",
+        "values": {
+            "press": "Press"
+        }
+    },
+    "trigger_alarm": {
+        "label": "알람 트리거",
+        "description": "Trigger an alarm on the device",
+        "values": {
+            "trigger": "Trigger"
+        }
+    },
+    "trouble": {
+        "label": "고장",
+        "description": "Indicates whether the device mains voltage supply is at fault"
+    },
+    "tx_power": {
+        "label": "TX 전력",
+        "description": "TX power mode for regulatory compliance (CE or FCC). Requires device rejoin to apply.",
+        "values": {
+            "CE": "Ce",
+            "FCC": "Fcc"
+        }
+    },
+    "unbalanced_load_alarm": {
+        "label": "Unbalanced Load Alarm",
+        "description": "Voltage lower limit (Default 180V)"
+    },
+    "unbalanced_load_threshold": {
+        "label": "Unbalanced Load Threshold",
+        "description": "Trigger alarm when power factor is below the limit (Default 15%)"
+    },
+    "under_voltage_alarm": {
+        "label": "Under Voltage Alarm",
+        "description": "Voltage upper limit (Default 275V)"
+    },
+    "under_voltage_threshold": {
+        "label": "Under Voltage Threshold",
+        "description": "Automatically switch OFF the circuit when the voltage is below the limit (Default ON)"
+    },
+    "unfreeze_support": {
+        "label": "해동 지원",
+        "description": "Base local temperature on sensor choice (default false)."
+    },
+    "vacation_mode": {
+        "label": "휴가 모드",
+        "description": "When Vacation Mode is active the schedule is disabled and unoccupied_heating_setpoint is used."
+    },
+    "valve_adapt_process": {
+        "label": "밸브 적응 프로세스",
+        "values": {
+            "adapt": "Adapt"
+        }
+    },
+    "valve_adapt_status": {
+        "label": "밸브 적응 상태",
+        "description": "Specifies the current status of the valve adaptation"
+    },
+    "vibration_detection_enabled": {
+        "label": "진동 감지 활성화"
+    },
+    "vibration_detection_sensitivity": {
+        "label": "진동 감지 감도",
+        "description": "Activate the vibration detection to detect vibrations at the window or door via the integrated sensor as well"
+    },
+    "vibration_timeout": {
+        "label": "진동 타임아웃",
+        "description": "Time in seconds after which vibration is cleared after detecting it (default 90 seconds)."
+    },
+    "voltage_phase_b": {
+        "label": "VOC",
+        "description": "Measured VOC value"
+    },
+    "voltage_phase_c": {
+        "label": "Voltage phase B",
+        "description": "Measured electrical potential value on phase B"
+    },
+    "water": {
+        "label": "Water",
+        "description": "Indicates whether the device is opened or closed"
+    },
+    "water_current": {
+        "label": "Water Current",
+        "description": "Total watering amount"
+    },
+    "water_leak_alarm_control": {
+        "label": "Mute water leak alarm"
+    },
+    "water_total": {
+        "label": "Water Total",
+        "description": "Quantity of last watering"
+    },
+    "water_total_reset": {
+        "label": "Water Total Reset",
+        "description": "Total watering amount",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "zone_status_interval": {
+        "label": "영역 상태 간격",
+        "description": "Heartbeat interval in seconds. Controls the periodic interval between ZoneStatusChange commands (default 300s)"
+    }
 }

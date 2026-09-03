@@ -1,255 +1,838 @@
 {
-    "brightness": {},
-    "color_temp": {},
-    "color_temp_startup": {},
-    "hue": {},
-    "saturation": {},
-    "effect": {},
-    "temperature": {},
-    "humidity": {},
-    "pressure": {},
-    "illuminance": {},
-    "illuminance_lux": {},
-    "illuminance_raw": {},
-    "occupancy": {},
-    "occupancy_level": {},
-    "contact": {},
-    "water_leak": {},
-    "smoke": {},
-    "gas": {},
-    "co2": {},
-    "voc": {},
-    "power": {},
-    "energy": {},
-    "voltage": {},
-    "current": {},
-    "frequency": {},
-    "power_factor": {},
-    "battery": {},
-    "battery_low": {},
-    "battery_voltage": {},
-    "position": {},
-    "tilt": {},
-    "state": {},
-    "system_mode": {},
-    "child_lock": {},
-    "running_state": {},
-    "power_on_behavior": {},
-    "occupied_heating_setpoint": {},
-    "local_temperature": {},
-    "open_window": {},
-    "frost_protection": {},
-    "fan_mode": {},
-    "swing_mode": {},
-    "away_mode": {},
-    "eco_mode": {},
-    "boost": {},
-    "boost_time": {},
-    "linkquality": {},
-    "action": {},
-    "action_duration": {},
-    "action_group": {},
-    "tamper": {},
-    "vibration": {},
-    "alarm": {},
-    "noise": {},
-    "noise_detected": {},
-    "presence": {},
-    "motion": {},
-    "motion_state": {},
-    "soil_moisture": {},
-    "co": {},
-    "aqi": {},
-    "pm25": {},
-    "pm10": {},
-    "formaldehyde": {},
-    "hcho": {},
-    "cube_side": {},
-    "cube_side_1": {},
-    "cube_side_2": {},
-    "cube_side_3": {},
-    "cube_side_4": {},
-    "cube_side_5": {},
-    "cube_side_6": {},
-    "valve_position": {},
-    "valve_switch": {},
-    "valve_state": {},
-    "valve_detection": {},
-    "valve_detection_bool": {},
-    "valve_alarm": {},
-    "auto_lock": {},
-    "auto_off": {},
-    "auto_relock_time": {},
-    "away_preset_days": {},
-    "away_preset_temperature": {},
-    "button_lock": {},
-    "calibrated": {},
-    "carbon_monoxide": {},
-    "comfort_temperature": {},
-    "consumer_connected": {},
-    "cover_position": {},
-    "cover_tilt": {},
-    "cover_mode": {},
-    "cpu_temperature": {},
-    "current_phase_b": {},
-    "current_phase_c": {},
-    "current_neutral": {},
-    "deadzone_temperature": {},
-    "detection_interval": {},
-    "device_temperature": {},
-    "eco2": {},
-    "eco_temperature": {},
-    "produced_energy": {},
-    "energy_produced": {},
-    "flip_indicator_light": {},
-    "holiday_temperature": {},
-    "brightness_state": {},
-    "keypad_lockout": {},
-    "led_disabled_night": {},
-    "light_brightness": {},
-    "light_brightness_color": {},
-    "light_brightness_colortemp": {},
-    "light_color_options": {},
-    "lock": {},
-    "lock_action": {},
-    "lock_action_source_name": {},
-    "lock_action_user": {},
-    "max_cool_setpoint_limit": {},
-    "min_cool_setpoint_limit": {},
-    "max_heat_setpoint_limit": {},
-    "min_heat_setpoint_limit": {},
-    "max_temperature": {},
-    "max_temperature_limit": {},
-    "min_temperature_limit": {},
-    "min_temperature": {},
-    "mode_switch_select": {},
-    "motion_sensitivity_select": {},
-    "open_window_temperature": {},
-    "operation_mode_select": {},
-    "overload_protection": {},
-    "pm1": {},
-    "power_phase_b": {},
-    "power_phase_c": {},
-    "power_factor_phase_b": {},
-    "power_factor_phase_c": {},
-    "power_apparent": {},
-    "power_apparent_phase_b": {},
-    "power_apparent_phase_c": {},
-    "power_outage_count": {},
-    "power_outage_memory": {},
-    "power_reactive": {},
-    "power_reactive_phase_b": {},
-    "power_reactive_phase_c": {},
-    "programming_operation_mode": {},
-    "setup": {},
-    "schedule": {},
-    "schedule_settings": {},
-    "external_temperature_input": {},
-    "sos": {},
-    "sound_volume": {},
-    "switch_type": {},
-    "door_state": {},
-    "temperature_sensor_select": {},
-    "test": {},
-    "trigger_count": {},
-    "trigger_indicator": {},
-    "window_detection": {},
-    "window_detection_bool": {},
-    "window_open": {},
-    "moving": {},
-    "x_axis": {},
-    "y_axis": {},
-    "z_axis": {},
-    "pincode": {},
-    "squawk": {},
-    "identify_duration": {},
-    "identify": {},
-    "min_brightness": {},
-    "max_brightness": {},
-    "pilot_wire_mode": {},
-    "rain": {},
-    "warning": {},
-    "week": {},
-    "last_seen": {},
-    "motor_direction": {},
-    "motor_speed": {},
-    "target_temperature": {},
-    "current_heating_setpoint": {},
-    "unoccupied_heating_setpoint": {},
-    "preset": {},
-    "mode": {},
-    "duration": {},
-    "sensitivity": {},
-    "detection_distance": {},
-    "keep_time": {},
-    "occupancy_timeout": {},
-    "illuminance_above_threshold": {},
-    "opening_state": {},
-    "alarm_state": {},
-    "setup_mode": {},
-    "alarm_siren": {},
-    "alarm_siren_duration": {},
-    "vibration_limit": {},
-    "vibration_siren": {},
-    "vibration_siren_duration": {},
-    "close_signal": {},
-    "transmission_power": {},
-    "magnetic_status": {},
-    "connection_state": {},
-    "restart_required": {},
-    "restart": {},
-    "update_state": {},
-    "update_available": {},
-    "factory_reset": {},
-    "side_up": {},
-    "side_down": {},
-    "side_left": {},
-    "side_right": {},
-    "state_up": {},
-    "state_down": {},
-    "state_left": {},
-    "state_right": {},
-    "state_action": {},
-    "led_indicator": {},
-    "power_calibration": {},
-    "power_precision": {},
-    "current_calibration": {},
-    "current_precision": {},
-    "energy_calibration": {},
-    "energy_precision": {},
-    "device_temperature_calibration": {},
-    "voltage_calibration": {},
-    "voltage_precision": {},
-    "idle_steps": {},
-    "closing_steps": {},
-    "valve_opening_limit_voltage": {},
-    "valve_closing_limit_voltage": {},
-    "valve_motor_running_voltage": {},
-    "valve_opening_degree": {},
-    "valve_closing_degree": {},
-    "temperature_accuracy": {},
-    "weekly_schedule_sunday": {},
-    "weekly_schedule_monday": {},
-    "weekly_schedule_tuesday": {},
-    "weekly_schedule_wednesday": {},
-    "weekly_schedule_thursday": {},
-    "weekly_schedule_friday": {},
-    "weekly_schedule_saturday": {},
-    "smart_temperature_control": {},
-    "thermostat_unit": {},
-    "operation_mode": {},
-    "indicator_mode": {},
-    "timer_mode_target_temp": {},
-    "temporary_mode_duration": {},
-    "temporary_mode_select": {},
-    "open_window_detection": {},
-    "frost_protection_temperature": {},
-    "color": {},
-    "color_mode": {},
-    "color_xy": {},
-    "color_hs": {},
-    "transition": {},
-    "device_mode": {},
-    "battery_state": {},
-    "internal_temperature": {}
+    "brightness": {
+        "label": "Distira"
+    },
+    "color_temp": {
+        "label": "Kolore-tenperatura"
+    },
+    "color_temp_startup": {
+        "label": "Color Temp Startup"
+    },
+    "hue": {
+        "label": "Hue"
+    },
+    "saturation": {
+        "label": "Saturation"
+    },
+    "effect": {
+        "label": "Effect"
+    },
+    "temperature": {
+        "label": "Tenperatura",
+        "description": "Neurtutako tenperatura"
+    },
+    "humidity": {
+        "label": "Hezetasuna",
+        "description": "Neurtutako hezetasun erlatiboa"
+    },
+    "pressure": {
+        "label": "Presio atmosferikoa",
+        "description": "Neurtutako presio atmosferikoa"
+    },
+    "illuminance": {
+        "label": "Argiztapen intentsitatea",
+        "description": "Neurtutako argiztapen intentsitatea"
+    },
+    "illuminance_lux": {
+        "label": "Illuminance Lux"
+    },
+    "illuminance_raw": {
+        "label": "Illuminance Raw"
+    },
+    "occupancy": {
+        "label": "Presentzia",
+        "description": "Gailuak presentzia detektatu duen adierazten du"
+    },
+    "occupancy_level": {
+        "label": "Occupancy Level"
+    },
+    "contact": {
+        "label": "Kontaktu",
+        "description": "Kontaktu itxita edo irekita dagoen adierazten du"
+    },
+    "water_leak": {
+        "label": "Ura isuri",
+        "description": "Gailuak ura isuri detektatu duen adierazten du"
+    },
+    "smoke": {
+        "label": "Ke",
+        "description": "Gailuak ke detektatu duen adierazten du"
+    },
+    "gas": {
+        "label": "Gasa",
+        "description": "Gailuak gasa detektatu duen adierazten du"
+    },
+    "co2": {
+        "label": "CO2",
+        "description": "Neurtutako CO2 balioa"
+    },
+    "voc": {
+        "label": "VOC",
+        "description": "Neurtutako VOC balioa"
+    },
+    "power": {
+        "label": "Potentzia",
+        "description": "Neurtutako potentzia elektrikoa"
+    },
+    "energy": {
+        "label": "Energia",
+        "description": "Guztira kontsumitutako energia"
+    },
+    "voltage": {
+        "label": "Tentsioa",
+        "description": "Neurtutako tentsio elektrikoa"
+    },
+    "current": {
+        "label": "Korrontea",
+        "description": "Neurtutako korronte elektrikoa"
+    },
+    "frequency": {
+        "label": "Maiztasuna"
+    },
+    "power_factor": {
+        "label": "Potentzia faktorea",
+        "description": "Neurtutako potentzia faktorea"
+    },
+    "battery": {
+        "label": "Bateria",
+        "description": "Bateria geldikorra %-tara"
+    },
+    "battery_low": {
+        "label": "Bateria baxua",
+        "description": "Bateria ia hutsik dagoen adierazten du"
+    },
+    "battery_voltage": {
+        "label": "Bateria tentsioa",
+        "description": "Bateria tentsioa milivoltetan"
+    },
+    "position": {
+        "label": "Posizioa",
+        "description": "Posizioa"
+    },
+    "tilt": {
+        "label": "Etzatzea",
+        "description": "Etzatzea"
+    },
+    "state": {
+        "label": "Egoera"
+    },
+    "system_mode": {
+        "label": "Sistema modua",
+        "values": {
+            "auto": "Automatikoa",
+            "heat": "Beroketa",
+            "cool": "Hozketa",
+            "off": "Itzali",
+            "dry": "Lehorra",
+            "fan_only": "Haizgailua soilik"
+        }
+    },
+    "child_lock": {
+        "label": "Haurra blokeatzea",
+        "description": "Sarrera fisikoa aktibatu/desaktibatu gailuan",
+        "values": {
+            "LOCK": "Blokeatuta",
+            "UNLOCK": "Desblokeatuta"
+        }
+    },
+    "running_state": {
+        "label": "Funtzionamendu egoera",
+        "values": {
+            "idle": "Prest egoera",
+            "heat": "Beroketa",
+            "cool": "Hozketa"
+        }
+    },
+    "power_on_behavior": {
+        "label": "Piztean jokabidea",
+        "values": {
+            "on": "Piztuta",
+            "off": "Itzalita",
+            "toggle": "Aldatu",
+            "previous": "Aurrekoa"
+        }
+    },
+    "occupied_heating_setpoint": {
+        "label": "Beroketa helburua (okupatua)"
+    },
+    "local_temperature": {
+        "label": "Tenperatura lokala"
+    },
+    "open_window": {
+        "label": "Leihoa irekia",
+        "description": "Leihoa irekia aktibatu/desaktibatu"
+    },
+    "frost_protection": {
+        "label": "Frosten babesa"
+    },
+    "fan_mode": {
+        "label": "Haizgailua modua",
+        "values": {
+            "low": "Baxua",
+            "medium": "Ertaina",
+            "high": "Goi",
+            "auto": "Automatikoa",
+            "off": "Itzali"
+        }
+    },
+    "swing_mode": {
+        "label": "Ozilazio modua",
+        "values": {
+            "on": "Piztuta",
+            "off": "Itzalita"
+        }
+    },
+    "away_mode": {
+        "label": "Ausentzia modua"
+    },
+    "eco_mode": {
+        "label": "Eco modua"
+    },
+    "boost": {
+        "label": "Boost"
+    },
+    "boost_time": {
+        "label": "Boost denbora"
+    },
+    "linkquality": {
+        "label": "Lotura kalitatea"
+    },
+    "action": {
+        "label": "Ekintza"
+    },
+    "action_duration": {
+        "label": "Ekintzaren iraupena"
+    },
+    "action_group": {
+        "label": "Action Group"
+    },
+    "tamper": {
+        "label": "Sabotajea",
+        "description": "Gailua saboteatu den adierazten du"
+    },
+    "vibration": {
+        "label": "Bibrazioa",
+        "description": "Gailuak bibrazioa detektatu duen adierazten du"
+    },
+    "alarm": {
+        "label": "Alarma",
+        "description": "Alarma aktibatuta dagoen adierazten du"
+    },
+    "noise": {
+        "label": "Zarata"
+    },
+    "noise_detected": {
+        "label": "Zarata detektatua",
+        "description": "Gailuak zarata detektatu duen adierazten du"
+    },
+    "presence": {
+        "label": "Presentzia",
+        "description": "Gailuak presentzia detektatu duen adierazten du"
+    },
+    "motion": {
+        "label": "Mugimendua"
+    },
+    "motion_state": {
+        "label": "Mugimendu egoera"
+    },
+    "soil_moisture": {
+        "label": "Lur hezetasuna",
+        "description": "Neurtutako lur hezetasuna"
+    },
+    "co": {
+        "label": "CO"
+    },
+    "aqi": {
+        "label": "Aire kalitate indizea"
+    },
+    "pm25": {
+        "label": "PM2,5"
+    },
+    "pm10": {
+        "label": "PM10"
+    },
+    "formaldehyde": {
+        "label": "Formaldehidoa"
+    },
+    "hcho": {
+        "label": "Formaldehidoa"
+    },
+    "cube_side": {
+        "label": "Cube Side"
+    },
+    "cube_side_1": {
+        "label": "Cube Side 1"
+    },
+    "cube_side_2": {
+        "label": "Cube Side 2"
+    },
+    "cube_side_3": {
+        "label": "Cube Side 3"
+    },
+    "cube_side_4": {
+        "label": "Cube Side 4"
+    },
+    "cube_side_5": {
+        "label": "Cube Side 5"
+    },
+    "cube_side_6": {
+        "label": "Cube Side 6"
+    },
+    "valve_position": {
+        "label": "Balbularen posizioa"
+    },
+    "valve_switch": {
+        "label": "Balbula",
+        "values": {
+            "OPEN": "Irekita",
+            "CLOSE": "Itxita"
+        }
+    },
+    "valve_state": {
+        "label": "Balbularen egoera",
+        "values": {
+            "OPEN": "Irekita",
+            "CLOSED": "Itxita"
+        }
+    },
+    "valve_detection": {
+        "label": "Valve Detection"
+    },
+    "valve_detection_bool": {
+        "label": "Valve Detection Bool"
+    },
+    "valve_alarm": {
+        "label": "Balbularen alarma"
+    },
+    "auto_lock": {
+        "label": "Blokeo automatikoa",
+        "values": {
+            "AUTO": "Automatikoa",
+            "MANUAL": "Eskuzkoa"
+        }
+    },
+    "auto_off": {
+        "label": "Itzaltze automatikoa"
+    },
+    "auto_relock_time": {
+        "label": "Berriro blokeatze denbora"
+    },
+    "away_preset_days": {
+        "label": "Away Preset Days"
+    },
+    "away_preset_temperature": {
+        "label": "Away Preset Temperature"
+    },
+    "button_lock": {
+        "label": "Botoi blokeoa",
+        "description": "Fiziko botoia desaktibatzen du"
+    },
+    "calibrated": {
+        "label": "Kalibratua",
+        "description": "Gailua kalibratuta dagoen adierazten du"
+    },
+    "carbon_monoxide": {
+        "label": "Carbon Monoxide"
+    },
+    "comfort_temperature": {
+        "label": "Erakusle tenperatura"
+    },
+    "consumer_connected": {
+        "label": "Kontsumitzailea konektatuta"
+    },
+    "cover_position": {
+        "label": "Estalkiaren posizioa"
+    },
+    "cover_tilt": {
+        "label": "Estalkiaren etzatzea"
+    },
+    "cover_mode": {
+        "label": "Estalkiaren modua"
+    },
+    "cpu_temperature": {
+        "label": "CPU tenperatura"
+    },
+    "current_phase_b": {
+        "label": "Korrontea Fase B"
+    },
+    "current_phase_c": {
+        "label": "Korrontea Fase C"
+    },
+    "current_neutral": {
+        "label": "Korrontea neutrala"
+    },
+    "deadzone_temperature": {
+        "label": "Gune hila tenperatura"
+    },
+    "detection_interval": {
+        "label": "Detekzio tartea"
+    },
+    "device_temperature": {
+        "label": "Gailu tenperatura"
+    },
+    "eco2": {
+        "label": "Eco2"
+    },
+    "eco_temperature": {
+        "label": "Eco tenperatura"
+    },
+    "produced_energy": {
+        "label": "Produced Energy"
+    },
+    "energy_produced": {
+        "label": "Energy Produced"
+    },
+    "flip_indicator_light": {
+        "label": "Flip Indicator Light"
+    },
+    "holiday_temperature": {
+        "label": "Holiday Temperature"
+    },
+    "brightness_state": {
+        "label": "Brightness State"
+    },
+    "keypad_lockout": {
+        "label": "Keypad Lockout"
+    },
+    "led_disabled_night": {
+        "label": "LED gauean desaktibatuta"
+    },
+    "light_brightness": {
+        "label": "Light Brightness"
+    },
+    "light_brightness_color": {
+        "label": "Light Brightness Color"
+    },
+    "light_brightness_colortemp": {
+        "label": "Light Brightness Colortemp"
+    },
+    "light_color_options": {
+        "label": "Light Color Options"
+    },
+    "lock": {
+        "label": "Lock"
+    },
+    "lock_action": {
+        "label": "Lock Action"
+    },
+    "lock_action_source_name": {
+        "label": "Lock Action Source Name"
+    },
+    "lock_action_user": {
+        "label": "Lock Action User"
+    },
+    "max_cool_setpoint_limit": {
+        "label": "Max Cool Setpoint Limit"
+    },
+    "min_cool_setpoint_limit": {
+        "label": "Min Cool Setpoint Limit"
+    },
+    "max_heat_setpoint_limit": {
+        "label": "Max Heat Setpoint Limit"
+    },
+    "min_heat_setpoint_limit": {
+        "label": "Min Heat Setpoint Limit"
+    },
+    "max_temperature": {
+        "label": "Max Temperature"
+    },
+    "max_temperature_limit": {
+        "label": "Max Temperature Limit"
+    },
+    "min_temperature_limit": {
+        "label": "Min Temperature Limit"
+    },
+    "min_temperature": {
+        "label": "Min Temperature"
+    },
+    "mode_switch_select": {
+        "label": "Mode Switch Select"
+    },
+    "motion_sensitivity_select": {
+        "label": "Motion Sensitivity Select"
+    },
+    "open_window_temperature": {
+        "label": "Leiho irekia tenperatura"
+    },
+    "operation_mode_select": {
+        "label": "Operation Mode Select"
+    },
+    "overload_protection": {
+        "label": "Gainkarga babesa"
+    },
+    "pm1": {
+        "label": "Pm1"
+    },
+    "power_phase_b": {
+        "label": "Power Phase B"
+    },
+    "power_phase_c": {
+        "label": "Power Phase C"
+    },
+    "power_factor_phase_b": {
+        "label": "Power Factor Phase B"
+    },
+    "power_factor_phase_c": {
+        "label": "Power Factor Phase C"
+    },
+    "power_apparent": {
+        "label": "Power Apparent"
+    },
+    "power_apparent_phase_b": {
+        "label": "Power Apparent Phase B"
+    },
+    "power_apparent_phase_c": {
+        "label": "Power Apparent Phase C"
+    },
+    "power_outage_count": {
+        "label": "Power Outage Count"
+    },
+    "power_outage_memory": {
+        "label": "Power Outage Memory"
+    },
+    "power_reactive": {
+        "label": "Power Reactive"
+    },
+    "power_reactive_phase_b": {
+        "label": "Power Reactive Phase B"
+    },
+    "power_reactive_phase_c": {
+        "label": "Power Reactive Phase C"
+    },
+    "programming_operation_mode": {
+        "label": "Programming Operation Mode"
+    },
+    "setup": {
+        "label": "Setup"
+    },
+    "schedule": {
+        "label": "Ordutegia"
+    },
+    "schedule_settings": {
+        "label": "Ordutegia ezarpenak"
+    },
+    "external_temperature_input": {
+        "label": "External Temperature Input"
+    },
+    "sos": {
+        "label": "Sos"
+    },
+    "sound_volume": {
+        "label": "Sound Volume"
+    },
+    "switch_type": {
+        "label": "Kommutatzaile mota"
+    },
+    "door_state": {
+        "label": "Door State"
+    },
+    "temperature_sensor_select": {
+        "label": "Temperature Sensor Select"
+    },
+    "test": {
+        "label": "Test"
+    },
+    "trigger_count": {
+        "label": "Trigger Count"
+    },
+    "trigger_indicator": {
+        "label": "Trigger Indicator"
+    },
+    "window_detection": {
+        "label": "Window Detection"
+    },
+    "window_detection_bool": {
+        "label": "Window Detection Bool"
+    },
+    "window_open": {
+        "label": "Window Open"
+    },
+    "moving": {
+        "label": "Moving"
+    },
+    "x_axis": {
+        "label": "X Axis"
+    },
+    "y_axis": {
+        "label": "Y Axis"
+    },
+    "z_axis": {
+        "label": "Z Axis"
+    },
+    "pincode": {
+        "label": "Pincode"
+    },
+    "squawk": {
+        "label": "Squawk"
+    },
+    "identify_duration": {
+        "label": "Identify Duration"
+    },
+    "identify": {
+        "label": "Identify"
+    },
+    "min_brightness": {
+        "label": "Min Brightness"
+    },
+    "max_brightness": {
+        "label": "Max Brightness"
+    },
+    "pilot_wire_mode": {
+        "label": "Pilot Wire Mode"
+    },
+    "rain": {
+        "label": "Rain"
+    },
+    "warning": {
+        "label": "Warning"
+    },
+    "week": {
+        "label": "Week"
+    },
+    "last_seen": {
+        "label": "Last Seen"
+    },
+    "motor_direction": {
+        "label": "Motor Direction"
+    },
+    "motor_speed": {
+        "label": "Motor Speed"
+    },
+    "target_temperature": {
+        "label": "Target Temperature"
+    },
+    "current_heating_setpoint": {
+        "label": "Current Heating Setpoint"
+    },
+    "unoccupied_heating_setpoint": {
+        "label": "Unoccupied Heating Setpoint"
+    },
+    "preset": {
+        "label": "Preset"
+    },
+    "mode": {
+        "label": "Mode"
+    },
+    "duration": {
+        "label": "Duration"
+    },
+    "sensitivity": {
+        "label": "Sensitivity"
+    },
+    "detection_distance": {
+        "label": "Detection Distance"
+    },
+    "keep_time": {
+        "label": "Keep Time"
+    },
+    "occupancy_timeout": {
+        "label": "Presentzia denbora-muga"
+    },
+    "illuminance_above_threshold": {
+        "label": "Illuminance Above Threshold"
+    },
+    "opening_state": {
+        "label": "Opening State"
+    },
+    "alarm_state": {
+        "label": "Alarm State"
+    },
+    "setup_mode": {
+        "label": "Setup Mode"
+    },
+    "alarm_siren": {
+        "label": "Alarm Siren"
+    },
+    "alarm_siren_duration": {
+        "label": "Alarm Siren Duration"
+    },
+    "vibration_limit": {
+        "label": "Vibration Limit"
+    },
+    "vibration_siren": {
+        "label": "Vibration Siren"
+    },
+    "vibration_siren_duration": {
+        "label": "Vibration Siren Duration"
+    },
+    "close_signal": {
+        "label": "Close Signal"
+    },
+    "transmission_power": {
+        "label": "Transmission Power"
+    },
+    "magnetic_status": {
+        "label": "Magnetic Status"
+    },
+    "connection_state": {
+        "label": "Connection State"
+    },
+    "restart_required": {
+        "label": "Restart Required"
+    },
+    "restart": {
+        "label": "Restart"
+    },
+    "update_state": {
+        "label": "Update State"
+    },
+    "update_available": {
+        "label": "Update Available"
+    },
+    "factory_reset": {
+        "label": "Factory Reset"
+    },
+    "side_up": {
+        "label": "Side Up"
+    },
+    "side_down": {
+        "label": "Side Down"
+    },
+    "side_left": {
+        "label": "Side Left"
+    },
+    "side_right": {
+        "label": "Side Right"
+    },
+    "state_up": {
+        "label": "State Up"
+    },
+    "state_down": {
+        "label": "State Down"
+    },
+    "state_left": {
+        "label": "State Left"
+    },
+    "state_right": {
+        "label": "State Right"
+    },
+    "state_action": {
+        "label": "State Action"
+    },
+    "led_indicator": {
+        "label": "LED adierazlea"
+    },
+    "power_calibration": {
+        "label": "Power Calibration"
+    },
+    "power_precision": {
+        "label": "Power Precision"
+    },
+    "current_calibration": {
+        "label": "Current Calibration"
+    },
+    "current_precision": {
+        "label": "Current Precision"
+    },
+    "energy_calibration": {
+        "label": "Energy Calibration"
+    },
+    "energy_precision": {
+        "label": "Energy Precision"
+    },
+    "device_temperature_calibration": {
+        "label": "Device Temperature Calibration"
+    },
+    "voltage_calibration": {
+        "label": "Voltage Calibration"
+    },
+    "voltage_precision": {
+        "label": "Voltage Precision"
+    },
+    "idle_steps": {
+        "label": "Idle Steps"
+    },
+    "closing_steps": {
+        "label": "Closing Steps"
+    },
+    "valve_opening_limit_voltage": {
+        "label": "Valve Opening Limit Voltage"
+    },
+    "valve_closing_limit_voltage": {
+        "label": "Valve Closing Limit Voltage"
+    },
+    "valve_motor_running_voltage": {
+        "label": "Valve Motor Running Voltage"
+    },
+    "valve_opening_degree": {
+        "label": "Valve Opening Degree"
+    },
+    "valve_closing_degree": {
+        "label": "Valve Closing Degree"
+    },
+    "temperature_accuracy": {
+        "label": "Temperature Accuracy"
+    },
+    "weekly_schedule_sunday": {
+        "label": "Weekly Schedule Sunday"
+    },
+    "weekly_schedule_monday": {
+        "label": "Weekly Schedule Monday"
+    },
+    "weekly_schedule_tuesday": {
+        "label": "Weekly Schedule Tuesday"
+    },
+    "weekly_schedule_wednesday": {
+        "label": "Weekly Schedule Wednesday"
+    },
+    "weekly_schedule_thursday": {
+        "label": "Weekly Schedule Thursday"
+    },
+    "weekly_schedule_friday": {
+        "label": "Weekly Schedule Friday"
+    },
+    "weekly_schedule_saturday": {
+        "label": "Weekly Schedule Saturday"
+    },
+    "smart_temperature_control": {
+        "label": "Smart Temperature Control"
+    },
+    "thermostat_unit": {
+        "label": "Thermostat Unit"
+    },
+    "operation_mode": {
+        "label": "Operation Mode"
+    },
+    "indicator_mode": {
+        "label": "Indicator Mode"
+    },
+    "timer_mode_target_temp": {
+        "label": "Timer Mode Target Temp"
+    },
+    "temporary_mode_duration": {
+        "label": "Temporary Mode Duration"
+    },
+    "temporary_mode_select": {
+        "label": "Temporary Mode Select"
+    },
+    "open_window_detection": {
+        "label": "Leiho irekia detekzioa"
+    },
+    "frost_protection_temperature": {
+        "label": "Frost Protection Temperature"
+    },
+    "color": {
+        "label": "Color"
+    },
+    "color_mode": {
+        "label": "Color Mode"
+    },
+    "color_xy": {
+        "label": "Color Xy"
+    },
+    "color_hs": {
+        "label": "Color Hs"
+    },
+    "transition": {
+        "label": "Transition"
+    },
+    "device_mode": {
+        "label": "Device Mode"
+    },
+    "battery_state": {
+        "label": "Battery State"
+    },
+    "internal_temperature": {
+        "label": "Internal Temperature"
+    }
 }

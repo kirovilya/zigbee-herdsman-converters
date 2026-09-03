@@ -832,5 +832,1301 @@
     },
     "internal_temperature": {
         "label": "Внутренняя температура"
+    },
+    "ac_connected": {
+        "label": "Сеть",
+        "description": "Указывает, подключено ли устройство к сети переменного тока"
+    },
+    "ac_frequency": {
+        "label": "Частота сети",
+        "description": "Измеренная частота переменного тока"
+    },
+    "ac_status": {
+        "label": "Статус сети",
+        "description": "Указывает, отправляет ли устройство отчёты об отсутствии аварий"
+    },
+    "action_rotation_angle": {
+        "label": "Угол поворота",
+        "description": "Угол поворота"
+    },
+    "action_rotation_angle_speed": {
+        "label": "Скорость угла",
+        "description": "Скорость углового поворота"
+    },
+    "action_rotation_button_state": {
+        "label": "Состояние кнопки поворота",
+        "description": "Состояние кнопки поворота",
+        "values": {
+            "released": "Отпущена",
+            "pressed": "Нажата"
+        }
+    },
+    "action_rotation_percent": {
+        "label": "Процент поворота",
+        "description": "Процент поворота"
+    },
+    "action_rotation_percent_speed": {
+        "label": "Скорость процента",
+        "description": "Процентная скорость поворота"
+    },
+    "action_rotation_time": {
+        "label": "Время поворота",
+        "description": "Время поворота",
+        "values": {
+            "released": "Отпущена",
+            "pressed": "Нажата"
+        }
+    },
+    "air_quality": {
+        "label": "Качество воздуха",
+        "description": "Рассчитанное качество воздуха",
+        "values": {
+            "excellent": "Отличное",
+            "good": "Хорошее",
+            "moderate": "Умеренное",
+            "poor": "Плохое",
+            "unhealthy": "Вредное",
+            "hazardous": "Опасное",
+            "out_of_range": "Вне диапазона",
+            "unknown": "Неизвестно"
+        }
+    },
+    "alarm_1": {
+        "label": "Тревога 1",
+        "description": "Указывает, сработала ли тревога"
+    },
+    "alarm_2": {
+        "label": "Тревога 2",
+        "description": "Указывает, обнаружено ли устройством газ"
+    },
+    "alarm_mode": {
+        "label": "Режим тревоги",
+        "description": "Время тревоги",
+        "values": {
+            "arm": "Включить",
+            "silent": "Тихий",
+            "disarm": "Выключить"
+        }
+    },
+    "alarm_set_1": {
+        "label": "Установка тревоги 1",
+        "description": "Сбросить показания энергии в ноль",
+        "values": {
+            "RESET": "Сброс"
+        }
+    },
+    "alarm_set_2": {
+        "label": "Установка тревоги 2",
+        "description": "Лимит мощности (по умолчанию 25 кВт)"
+    },
+    "alarm_set_3": {
+        "label": "Установка тревоги 3",
+        "description": "Время перегрузки до отключения (по умолчанию 0с)"
+    },
+    "alarm_status": {
+        "label": "Статус тревоги",
+        "description": "Режим работы тревоги",
+        "values": {
+            "arm": "Включить",
+            "silent": "Тихий",
+            "disarm": "Выключить"
+        }
+    },
+    "alarm_time": {
+        "label": "Время тревоги",
+        "description": "Время тревоги",
+        "values": {
+            "arm": "Включить",
+            "silent": "Тихий",
+            "disarm": "Выключить"
+        }
+    },
+    "area1Occupancy": {
+        "label": "Присутствие зона 1",
+        "description": "Указывает, обнаружено ли присутствие в зоне 1"
+    },
+    "area2Occupancy": {
+        "label": "Присутствие зона 2",
+        "description": "Указывает, обнаружено ли присутствие в зоне 2"
+    },
+    "area3Occupancy": {
+        "label": "Присутствие зона 3",
+        "description": "Указывает, обнаружено ли присутствие в зоне 3"
+    },
+    "area4Occupancy": {
+        "label": "Присутствие зона 4",
+        "description": "Указывает, обнаружено ли присутствие в зоне 4"
+    },
+    "auto_off_enabled": {
+        "label": "Авто-выкл. включено",
+        "description": "Включить/отключить функцию автоматического выключения"
+    },
+    "auto_off_time": {
+        "label": "Время авто-выкл.",
+        "description": "Задержка до автоматического выключения"
+    },
+    "auto_settings": {
+        "label": "Авто-настройки",
+        "description": "Автоматическое ВКЛ/ВЫКЛ, отключите ручной режим"
+    },
+    "automatic_valve_adapt": {
+        "label": "Авто-адаптация клапана",
+        "description": "Указывает текущий статус адаптации клапана"
+    },
+    "backlight_mode": {
+        "label": "Режим подсветки",
+        "description": "Определяет, когда срабатывает кнопка",
+        "values": {
+            "release": "Отпускание",
+            "press": "Нажатие"
+        }
+    },
+    "battery_defect": {
+        "label": "Дефект батареи",
+        "description": "Указывает, есть ли у устройства проблемы"
+    },
+    "boost_heating": {
+        "label": "Ускоренный нагрев",
+        "description": "Активировать ускоренный нагрев (открывает TRV на 5 минут)"
+    },
+    "break_function_enabled": {
+        "label": "Функция паузы"
+    },
+    "break_function_state": {
+        "label": "Состояние паузы",
+        "description": "Указывает, находится ли устройство в режиме паузы"
+    },
+    "break_function_timeout": {
+        "label": "Автоматическое время пауз"
+    },
+    "broadcast_alarms": {
+        "label": "Трансляция тревог",
+        "description": "Указывает, включена ли сиренаANTIburglar вручную"
+    },
+    "calibrate": {
+        "label": "Калибровать",
+        "description": "Калибровка шторы (мотор автоматически определит пределы)",
+        "values": {
+            "calibrate": "Калибровать"
+        }
+    },
+    "calibration": {
+        "label": "Калибровка"
+    },
+    "calibration_mode": {
+        "label": "Режим калибровки",
+        "description": "Определяет режим калибровки выключателя."
+    },
+    "clear_schedule": {
+        "label": "Очистить расписание",
+        "description": "Загрузить недельное расписание в термостат",
+        "values": {
+            "trigger": "Запустить"
+        }
+    },
+    "click_control": {
+        "label": "Управление кликом",
+        "description": "Установить текущую позицию как предел",
+        "values": {
+            "set_up": "Установить верх",
+            "set_down": "Установить низ",
+            "delete_up": "Удалить верх",
+            "delete_down": "Удалить низ",
+            "delete_both": "Удалить оба"
+        }
+    },
+    "climate": {
+        "label": "Климат",
+        "description": "Управление климатом обогревателя Aqara для ванной"
+    },
+    "color_power_on_behavior": {
+        "label": "Поведение цвета после включения",
+        "description": "Управление состоянием после отключения: false = вкл, true = восстановить предыдущее",
+        "values": {
+            "initial": "Начальное",
+            "previous": "Предыдущее",
+            "customized": "Пользовательское"
+        }
+    },
+    "color_sync": {
+        "label": "Синхронизация цвета"
+    },
+    "constant_temperature_mode": {
+        "label": "Режим постоянной температуры"
+    },
+    "contact_last_changed": {
+        "label": "Последнее изменение контакта",
+        "description": "Время (в секундах) с момента последнего изменения контакта."
+    },
+    "countdown": {
+        "label": "Обратный отсчёт",
+        "description": "Переключить устройство через установленное время (однократное действие)"
+    },
+    "countdown_left": {
+        "label": "Осталось времени",
+        "description": "Включить полив и начать обратный отсчёт"
+    },
+    "cover_limit": {
+        "label": "Пределы шторы",
+        "description": "Сохранить предпочтительную позицию шторы",
+        "values": {
+            "set_up": "Установить верх",
+            "set_down": "Установить низ",
+            "delete_up": "Удалить верх",
+            "delete_down": "Удалить низ",
+            "delete_both": "Удалить оба"
+        }
+    },
+    "cover_position_percent_fix": {
+        "label": "Исправление позиции шторы",
+        "description": "Исправляет инвертированные значения позиции шторы."
+    },
+    "cover_position_tilt_disable_report": {
+        "label": "Отключить отчёт позиции шторы"
+    },
+    "cover_type": {
+        "label": "Тип шторы",
+        "description": "Управление мотором медленнее и тише",
+        "values": {
+            "roman_pole": "Римский стержень",
+            "roller_blind": "Рулонная штора",
+            "canopy_curtain": "Навесная штора",
+            "roman_blind": "Римская штора",
+            "honeycomb_curtain": "Сотовая штора"
+        }
+    },
+    "data_reporting_interval": {
+        "label": "Интервал передачи данных",
+        "description": "Как часто устройство передаёт измерения (по умолчанию 5с)"
+    },
+    "detection_range": {
+        "label": "Дальность обнаружения"
+    },
+    "detection_range_composite": {
+        "label": "Составная дальность",
+        "description": "Определяет дальность обнаружения с помощью логических настроек."
+    },
+    "device_age": {
+        "label": "Возраст фильтра",
+        "description": "Время использования фильтра"
+    },
+    "device_temperature_alarm": {
+        "label": "Тревога температуры",
+        "description": "Лимит тока утечки (по умолчанию 50мА)"
+    },
+    "device_temperature_threshold": {
+        "label": "Порог температуры",
+        "description": "Лимит температуры (по умолчанию 80°C)"
+    },
+    "dismiss_alarm": {
+        "label": "Отменить тревогу",
+        "description": "Указывает, обнаружена ли вибрация",
+        "values": {
+            "normal": "Норма",
+            "alarm": "Тревога"
+        }
+    },
+    "do_not_disturb": {
+        "label": "Не беспокоить",
+        "description": "Состояние батареи",
+        "values": {
+            "low": "Низкий",
+            "medium": "Средний",
+            "high": "Высокий"
+        }
+    },
+    "effect_color": {
+        "label": "Цвет эффекта"
+    },
+    "effect_color_mode": {
+        "label": "Режим цвета эффекта"
+    },
+    "effect_colors": {
+        "label": "Цвета эффекта",
+        "description": "Зелёный (0-255)"
+    },
+    "effect_segments": {
+        "label": "Сегменты эффекта"
+    },
+    "effect_speed": {
+        "label": "Скорость эффекта",
+        "description": "Скорость анимации для активного эффекта (0=самая медленная, 1=самая быстрая)"
+    },
+    "enabled": {
+        "label": "Включено",
+        "description": "Автоматическое ВКЛ/ВЫКЛ",
+        "values": {
+            "ON": "Вкл",
+            "OFF": "Выкл"
+        }
+    },
+    "energy_balance": {
+        "label": "Баланс энергии",
+        "description": "Автоматически отключает цепь при достижении нулевого баланса"
+    },
+    "energy_balance_add": {
+        "label": "Добавить к балансу",
+        "description": "Добавить сумму к балансу",
+        "values": {
+            "RESET": "Сброс"
+        }
+    },
+    "energy_balance_reset": {
+        "label": "Сбросить баланс",
+        "description": "Сбросить баланс энергии",
+        "values": {
+            "RESET": "Сброс"
+        }
+    },
+    "energy_reset": {
+        "label": "Сброс энергии",
+        "description": "Уведомление о завершении конкретного уведомления.",
+        "values": {
+            "reset": "Сброс"
+        }
+    },
+    "energy_saving_mode_enabled": {
+        "label": "Энергосбережение включено",
+        "description": "Включить/отключить режим энергосбережения"
+    },
+    "energy_saving_mode_threshold": {
+        "label": "Порог энергосбережения",
+        "description": "Порог режима энергосбережения"
+    },
+    "energy_saving_mode_timer": {
+        "label": "Таймер энергосбережения",
+        "description": "Время для достижения порога перед отключением"
+    },
+    "error_state": {
+        "label": "Состояние ошибки",
+        "description": "Указывает, есть ли ошибки у устройства"
+    },
+    "error_status": {
+        "label": "Статус ошибки",
+        "description": "Статус ошибки"
+    },
+    "expose_pin": {
+        "label": "PIN-код"
+    },
+    "external_humidity": {
+        "label": "Внешняя влажность",
+        "description": "Значение для внешнего датчика влажности"
+    },
+    "external_switch_type": {
+        "label": "Тип внешнего выключателя",
+        "values": {
+            "push_button": "Кнопка",
+            "normal_on_off": "Вкл/Выкл обычный",
+            "three_way": "Трёхпозиционный"
+        }
+    },
+    "external_temperature": {
+        "label": "Внешняя температура",
+        "description": "Значение для внешнего датчика температуры"
+    },
+    "external_trigger": {
+        "label": "Состояние внешнего триггера"
+    },
+    "fan": {
+        "label": "Вентилятор",
+        "description": "Текущая скорость вентилятора"
+    },
+    "fan_speed": {
+        "label": "Скорость вентилятора",
+        "description": "Текущая скорость вентилятора"
+    },
+    "fault": {
+        "label": "Неисправность",
+        "description": "Результат самотестирования",
+        "values": {
+            "checking": "Проверка",
+            "success": "Успех",
+            "failure": "Ошибка",
+            "others": "Прочее"
+        }
+    },
+    "fault_alarm": {
+        "label": "Тревога неисправности",
+        "description": "Указывает, обнаружена ли неисправность"
+    },
+    "favorite_position": {
+        "label": "Избранная позиция",
+        "description": "Тип установленных штор",
+        "values": {
+            "set_up": "Установить верх",
+            "set_down": "Установить низ",
+            "delete_up": "Удалить верх",
+            "delete_down": "Удалить низ",
+            "delete_both": "Удалить оба"
+        }
+    },
+    "filter_age": {
+        "label": "Возраст фильтра",
+        "description": "Указывает, старше ли фильтр 6 месяцев"
+    },
+    "flow_switch": {
+        "label": "Переключатель потока",
+        "description": "Длительность последнего полива"
+    },
+    "force": {
+        "label": "Принудительно",
+        "description": "После включения индикатор горит, когда выключатель выключен"
+    },
+    "gas_value": {
+        "label": "Значение газа"
+    },
+    "gradient": {
+        "label": "Градиент",
+        "description": "Цвет в формате RGB HEX (например #663399)"
+    },
+    "gradient_offset": {
+        "label": "Смещение градиента",
+        "description": "Смещение цвета градиента (0=начинается с первого цвета)"
+    },
+    "gradient_scale": {
+        "label": "Масштаб градиента",
+        "description": "Масштаб градиента (0=авто, 1.0+=количество видимых цветов)"
+    },
+    "gradient_scene": {
+        "label": "Сцена градиента"
+    },
+    "gradient_style": {
+        "label": "Стиль градиента",
+        "values": {
+            "linear": "Линейный",
+            "scattered": "Рассеянный",
+            "mirrored": "Зеркальный"
+        }
+    },
+    "heater_power": {
+        "label": "Мощность обогрева",
+        "description": "Управление климатом обогревателя Aqara",
+        "values": {
+            "off": "Выкл"
+        }
+    },
+    "hex": {
+        "label": "HEX",
+        "description": "Цвет в формате RGB HEX (например #663399)"
+    },
+    "high_power_alarm": {
+        "label": "Тревога высокой мощности",
+        "description": "Тревога при превышении лимита мощности",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "high_power_threshold": {
+        "label": "Порог высокой мощности",
+        "description": "Лимит мощности (по умолчанию 25 кВт)"
+    },
+    "homeassistant_climate_modes": {
+        "label": "Режимы климата Home Assistant"
+    },
+    "hue_native_control": {
+        "label": "Нативное управление оттенком"
+    },
+    "humidity_calibration": {
+        "label": "Калибровка влажности",
+        "description": "Калибровка температуры"
+    },
+    "identify_timeout": {
+        "label": "Тайм-аут идентификации"
+    },
+    "identity_effect": {
+        "label": "Эффект идентификации",
+        "description": "Определяет эффект идентификации для упрощения распознавания устройства."
+    },
+    "illuminance_below_threshold_check": {
+        "label": "Проверка порога освещённости",
+        "description": "Установить false для отправки сообщений при превышении порога."
+    },
+    "inching": {
+        "label": "Инчинг",
+        "description": "Конфигурация инчинга"
+    },
+    "inching_control": {
+        "label": "Управление инчингом"
+    },
+    "inching_control_set": {
+        "label": "Набор управления инчингом"
+    },
+    "inching_time": {
+        "label": "Время инчинга"
+    },
+    "indicate_faults": {
+        "label": "Индикация неисправностей",
+        "description": "Включить/отключить LED-индикацию для неисправностей"
+    },
+    "indicate_mains_power": {
+        "label": "Индикация сети",
+        "description": "Включить/отключить LED-индикацию для сети"
+    },
+    "indicator_light": {
+        "label": "Индикатор",
+        "description": "Включить/отключить LED-индикатор",
+        "values": {
+            "on": "Вкл",
+            "off": "Выкл"
+        }
+    },
+    "installation_height": {
+        "label": "Высота установки",
+        "description": "Расстояние от датчика до поверхности жидкости"
+    },
+    "invert_cover": {
+        "label": "Инвертировать штору",
+        "description": "Инвертирует позицию и состояние шторы."
+    },
+    "ir_code_to_send": {
+        "label": "IR-код для отправки",
+        "description": "Интервалы IR, изученные устройством"
+    },
+    "ir_emitter": {
+        "label": "IR-излучатель",
+        "description": "IR-код или интервалы для отправки устройством"
+    },
+    "leakage_current": {
+        "label": "Ток утечки",
+        "description": "Текущий статус работы",
+        "values": {
+            "off": "Выкл",
+            "consumption": "Потребление",
+            "production": "Производство"
+        }
+    },
+    "leakage_current_alarm": {
+        "label": "Тревога тока утечки",
+        "description": "Конфигурация тревог тока утечки и температуры"
+    },
+    "leakage_current_threshold": {
+        "label": "Порог тока утечки",
+        "description": "Лимит тока утечки (по умолчанию 50мА)"
+    },
+    "learn_ir_code": {
+        "label": "Изучить IR-код",
+        "description": "Включить для изучения нового IR-кода"
+    },
+    "learned_ir_code": {
+        "label": "Изученный IR-код",
+        "description": "Включить для изучения нового IR-кода"
+    },
+    "learned_ir_timings": {
+        "label": "Изученные интервалы IR",
+        "description": "IR-код, изученный устройством"
+    },
+    "led_control": {
+        "label": "Управление LED",
+        "description": "Включить/отключить зелёную LED для статуса сети"
+    },
+    "led_enable": {
+        "label": "Включить LED",
+        "description": "Управление LED",
+        "values": {
+            "ON": "Вкл",
+            "OFF": "Выкл"
+        }
+    },
+    "led_if_on": {
+        "label": "LED если вкл",
+        "description": "Включает встроенную LED для видимости выключателя в темноте"
+    },
+    "led_in_dark": {
+        "label": "LED в темноте",
+        "description": "Мигает встроенной LED для идентификации устройства",
+        "values": {
+            "identify": "Идентифицировать"
+        }
+    },
+    "light_mode": {
+        "label": "Режим освещения",
+        "values": {
+            "normal": "Обычный",
+            "on": "Вкл",
+            "off": "Выкл",
+            "flash": "Мигание"
+        }
+    },
+    "light_type": {
+        "label": "Тип освещения",
+        "description": "Уровень чувствительности датчика",
+        "values": {
+            "low": "Низкий",
+            "middle": "Средний",
+            "high": "Высокий"
+        }
+    },
+    "limits_calibration": {
+        "label": "Калибровка пределов",
+        "description": "Перекалибровать пределы позиции",
+        "values": {
+            "calibrated": "Откалибровано",
+            "recalibrate": "Перекалибровать",
+            "open": "Открыть",
+            "close": "Закрыть"
+        }
+    },
+    "liquid_depth": {
+        "label": "Глубина жидкости"
+    },
+    "liquid_depth_max": {
+        "label": "Макс. глубина жидкости"
+    },
+    "liquid_level_percent": {
+        "label": "Уровень жидкости %"
+    },
+    "liquid_state": {
+        "label": "Состояние жидкости",
+        "values": {
+            "low": "Низкий",
+            "normal": "Норма",
+            "high": "Высокий"
+        }
+    },
+    "local_temperature_based_on_sensor": {
+        "label": "Датчик температуры",
+        "description": "Исправляет инвертированные значения позиции шторы."
+    },
+    "local_temperature_internal": {
+        "label": "Ручное управление"
+    },
+    "lost_flow_alarm": {
+        "label": "Тревога потери потока",
+        "description": "Конфигурация тревоги потери потока"
+    },
+    "lost_flow_threshold": {
+        "label": "Порог потери потока"
+    },
+    "lost_flow_threshold_time": {
+        "label": "Время порога потери потока"
+    },
+    "manual_burglar_alarm": {
+        "label": "Ручная тревога проникновения",
+        "description": "Указывает, включена ли сирена от проникновения вручную"
+    },
+    "manual_smoke_alarm": {
+        "label": "Ручная тревога дыма",
+        "description": "Указывает, включена ли сирена от дыма вручную"
+    },
+    "max_set": {
+        "label": "Макс. установка",
+        "description": "Минимальный процент жидкости"
+    },
+    "maximum_brightness": {
+        "label": "Макс. яркость",
+        "description": "Повышает минимальный уровень яркости лампы"
+    },
+    "measurement_poll_interval": {
+        "label": "Интервал опроса измерений"
+    },
+    "min_set": {
+        "label": "Мин. установка",
+        "description": "Расстояние от датчика до дна резервуара"
+    },
+    "minimum_brightness": {
+        "label": "Мин. яркость",
+        "description": "Повышает минимальный уровень яркости лампы"
+    },
+    "minimum_pwm": {
+        "label": "Мин. ШИМ",
+        "description": "Выключить устройство и подождать 3 секунды."
+    },
+    "minutes": {
+        "label": "Минуты",
+        "description": "Компонент минут длительности"
+    },
+    "mmwave_detection_areas": {
+        "label": "Зоны обнаружения mmWave",
+        "description": "Определяет зону перед выключателем"
+    },
+    "mmwave_interference_areas": {
+        "label": "Зоны помех mmWave"
+    },
+    "mmwave_stay_areas": {
+        "label": "Зоны пребывания mmWave"
+    },
+    "mmwave_targets": {
+        "label": "Цели mmWave",
+        "description": "Z-координата цели в сантиметрах"
+    },
+    "motor_clb_position": {
+        "label": "Калибровка мотора по позиции",
+        "description": "Калибровка мотора по позиции",
+        "values": {
+            "open": "Открыть",
+            "close": "Закрыть",
+            "other": "Прочее",
+            "clear": "Очистить"
+        }
+    },
+    "motor_clb_position_result": {
+        "label": "Результат калибровки мотора",
+        "description": "Калибровка мотора по позиции",
+        "values": {
+            "open": "Открыть",
+            "close": "Закрыть",
+            "other": "Прочее",
+            "clear": "Очистить"
+        }
+    },
+    "motor_info": {
+        "label": "Инфо мотора",
+        "description": "Обновлённая информация о моторе"
+    },
+    "motor_mode": {
+        "label": "Режим мотора",
+        "description": "Режим мотора"
+    },
+    "motor_state": {
+        "label": "Состояние мотора",
+        "description": "Текущий статус движения мотора",
+        "values": {
+            "opening": "Открывается",
+            "closing": "Закрывается",
+            "stopped": "Остановлен"
+        }
+    },
+    "mute_prompt_end_time": {
+        "label": "Конец тишины",
+        "description": "Время окончания тишины в формате ЧЧ:ММ"
+    },
+    "mute_prompt_start_time": {
+        "label": "Начало тишины",
+        "description": "Время начала тишины в формате ЧЧ:ММ"
+    },
+    "mute_prompt_tone": {
+        "label": "Звук тишины",
+        "description": "Включить запланированный ночной режим"
+    },
+    "negative_active_power_alarm": {
+        "label": "Тревога отрицательной мощности",
+        "description": "Тревога при недоступности одной фазы (по умолчанию ВЫКЛ)"
+    },
+    "night_light_mode": {
+        "label": "Режим ночного света",
+        "description": "Режим работы обогревателя для ванной",
+        "values": {
+            "off": "Выкл"
+        }
+    },
+    "no_occupancy_since_false": {
+        "label": "Нет присутствия с ложь"
+    },
+    "no_occupancy_since_true": {
+        "label": "Нет присутствия с правдой"
+    },
+    "no_position_support": {
+        "label": "Без поддержки позиции",
+        "description": "Задержка в секундах до сброса присутствия (по умолчанию 100с)."
+    },
+    "notificationComplete": {
+        "label": "Уведомление завершено",
+        "description": "Какую команду mmWave отправить",
+        "values": {
+            "reset": "Сброс"
+        }
+    },
+    "occupancy_timeout_2": {
+        "label": "Тайм-аут присутствия 2"
+    },
+    "on_with_countdown": {
+        "label": "Включить с таймером",
+        "description": "Выключить полив через заданное время (однократное действие)"
+    },
+    "operating_mode": {
+        "label": "Режим работы",
+        "description": "Управление климатом обогревателя Aqara",
+        "values": {
+            "off": "Выкл"
+        }
+    },
+    "over_current_alarm": {
+        "label": "Тревога перегрузки",
+        "description": "Конфигурация тревог тока и напряжения"
+    },
+    "over_current_threshold": {
+        "label": "Порог перегрузки",
+        "description": "Верхний лимит тока (по умолчанию 63А)"
+    },
+    "over_current_threshold_time": {
+        "label": "Время порога перегрузки",
+        "description": "Задержка до отключения при перегрузке (по умолчанию 0с)"
+    },
+    "over_voltage_alarm": {
+        "label": "Тревога перенапряжения",
+        "description": "Верхний лимит тока (по умолчанию 63А)"
+    },
+    "over_voltage_threshold": {
+        "label": "Порог перенапряжения",
+        "description": "Верхний лимит напряжения (по умолчанию 275В)"
+    },
+    "override_active": {
+        "label": "Ручное управление активно",
+        "description": "Длительность ручного управления в минутах. 0 = до следующего события расписания."
+    },
+    "phase_loss_alarm": {
+        "label": "Тревога потери фазы",
+        "description": "Нижний лимит коэффициента мощности (по умолчанию 15%)"
+    },
+    "precision": {
+        "label": "Точность"
+    },
+    "prepayment": {
+        "label": "Предоплата",
+        "description": "Количество допустимых попыток повторного подключения на неисправность"
+    },
+    "presence_timeout": {
+        "label": "Тайм-аут присутствия",
+        "description": "Задержка в секундах до сброса присутствия (по умолчанию 100с)."
+    },
+    "pulse_length": {
+        "label": "Длина импульса",
+        "description": "Желаемая длина импульса для реле в секундах."
+    },
+    "quantitative_watering": {
+        "label": "Количественный полив",
+        "description": "Включить полив с заданным объёмом воды"
+    },
+    "reclosing": {
+        "label": "Повторное включение",
+        "description": "Измеренная разница тока между фазой и нулём"
+    },
+    "reclosing_count": {
+        "label": "Счётчик повторных включений",
+        "description": "Время ожидания перед повторным включением после устранения неисправности"
+    },
+    "reclosing_delay": {
+        "label": "Задержка повторного включения",
+        "description": "Время ожидания перед повторным включением после устранения неисправности"
+    },
+    "refresh": {
+        "label": "Обновить",
+        "description": "Сбросить объём полива в 0",
+        "values": {
+            "reset": "Сброс"
+        }
+    },
+    "replace_filter": {
+        "label": "Заменить фильтр",
+        "description": "Управление физическим вводом устройства"
+    },
+    "reset_energy_meters": {
+        "label": "Сброс счётчиков энергии",
+        "description": "Сбрасывает все счётчики энергии в 0 кВтч",
+        "values": {
+            "reset": "Сброс"
+        }
+    },
+    "restart_device": {
+        "label": "Перезагрузить устройство",
+        "description": "Перезагружает устройство.",
+        "values": {
+            "Restart Device": "Перезагрузить устройство"
+        }
+    },
+    "restore_reports": {
+        "label": "Восстановить отчёты",
+        "description": "Указывает, отправляются ли отчёты о рабочем состоянии"
+    },
+    "rs485_address": {
+        "label": "Адрес RS485"
+    },
+    "rs485_address_enabled": {
+        "label": "Скорость RS485",
+        "values": {
+            "2400": "2400",
+            "4800": "4800",
+            "9600": "9600",
+            "19200": "19200",
+            "38400": "38400"
+        }
+    },
+    "rs485_baud_rate": {
+        "label": "Скорость RS485",
+        "values": {
+            "2400": "2400",
+            "4800": "4800",
+            "9600": "9600",
+            "19200": "19200",
+            "38400": "38400"
+        }
+    },
+    "rs485_baud_rate_enabled": {
+        "label": "Скорость RS485",
+        "description": "Конфигурация для проводной связи RS485 и тревоги высокой мощности",
+        "values": {
+            "2400": "2400",
+            "4800": "4800",
+            "9600": "9600",
+            "19200": "19200",
+            "38400": "38400"
+        }
+    },
+    "rs485_data_format": {
+        "label": "Формат данных RS485",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "rs485_data_format_enabled": {
+        "label": "Адрес RS485",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "save_schedule": {
+        "label": "Сохранить расписание",
+        "description": "Загрузить недельное расписание в термостат",
+        "values": {
+            "trigger": "Запустить"
+        }
+    },
+    "schedule_end_time": {
+        "label": "Конец расписания LED",
+        "description": "Время начала отключения LED (формат ЧЧ:ММ)"
+    },
+    "schedule_start_time": {
+        "label": "Начало расписания LED",
+        "description": "Время начала отключения LED (формат ЧЧ:ММ)"
+    },
+    "schedule_upload_status": {
+        "label": "Статус загрузки расписания"
+    },
+    "seconds": {
+        "label": "Секунды",
+        "description": "Компонент секунд длительности"
+    },
+    "segment_colors": {
+        "label": "Цвета сегментов",
+        "description": "Зелёный (0-255)"
+    },
+    "self_test": {
+        "label": "Самотестирование",
+        "description": "Статус",
+        "values": {
+            "off": "Выкл",
+            "on_auto": "Авто вкл",
+            "button_locked": "Кнопка заблокирована",
+            "on_manual_app": "Ручное приложение",
+            "on_manual_button": "Ручная кнопка"
+        }
+    },
+    "self_test_result": {
+        "label": "Результат самотеста",
+        "description": "Указывает, проходит ли устройство тестирование",
+        "values": {
+            "checking": "Проверка",
+            "success": "Успех",
+            "failure": "Ошибка",
+            "others": "Прочее"
+        }
+    },
+    "sensitivity_level": {
+        "label": "Уровень чувствительности",
+        "description": "Уровень чувствительности на задней стороне устройства."
+    },
+    "sensor": {
+        "label": "Датчик",
+        "description": "Выбрать режим отображения датчика: внутренний или оба с внешним",
+        "values": {
+            "internal": "Внутренний",
+            "external": "Внешний"
+        }
+    },
+    "silence": {
+        "label": "Тишина",
+        "description": "Указывает, обнаружена ли неисправность"
+    },
+    "silent_mode": {
+        "label": "Тихий режим",
+        "description": "Указывает, обнаружена ли неисправность"
+    },
+    "simulated_brightness": {
+        "label": "Имитируемая яркость",
+        "description": "Дельта за интервал, по умолчанию 20"
+    },
+    "single_watering_amount": {
+        "label": "Объём полива",
+        "description": "Включить полив с заданным объёмом воды"
+    },
+    "single_watering_duration": {
+        "label": "Длительность полива",
+        "description": "Оставшееся время обратного отсчёта"
+    },
+    "slow_mode": {
+        "label": "Тихий режим",
+        "description": "Сторона мотора",
+        "values": {
+            "left": "Левая",
+            "right": "Правая"
+        }
+    },
+    "soil_calibration": {
+        "label": "Калибровка почвы",
+        "description": "Калибровка влажности"
+    },
+    "soil_sampling": {
+        "label": "Замер почвы",
+        "description": "Замер температуры и влажности"
+    },
+    "soil_warning": {
+        "label": "Предупреждение почвы",
+        "description": "Замер влажности почвы"
+    },
+    "solar_panel_voltage": {
+        "label": "Напряжение солнечной панели",
+        "description": "Текущий уровень напряжения от встроенной солнечной панели"
+    },
+    "spatial_learning": {
+        "label": "Пространственное обучение",
+        "description": "Запустить ИИ пространственное обучение.",
+        "values": {
+            "Start Learning": "Начать обучение"
+        }
+    },
+    "status": {
+        "label": "Статус",
+        "description": "Обновить статус устройства",
+        "values": {
+            "refresh": "Обновить"
+        }
+    },
+    "stop_alarm": {
+        "label": "Остановить тревогу",
+        "description": "Вызвать тревогу на устройстве",
+        "values": {
+            "trigger": "Вызвать"
+        }
+    },
+    "supervision_reports": {
+        "label": "Отчёты наблюдения",
+        "description": "Указывает, почти ли разряжена батарея"
+    },
+    "supported_max_motor_speed": {
+        "label": "Макс. скорость мотора",
+        "description": "Установить скорость мотора"
+    },
+    "surplus_flow": {
+        "label": "Остаток потока",
+        "description": "Количество последнего полива"
+    },
+    "switch_mode": {
+        "label": "Режим выключателя"
+    },
+    "switch_type_button": {
+        "label": "Тип выключателя кнопки",
+        "description": "Тип внешнего выключателя",
+        "values": {
+            "flip-switch": "Кнопочный",
+            "sync-switch": "Синхронный",
+            "button-switch": "Кнопка",
+            "button2-switch": "Кнопка2"
+        }
+    },
+    "switch_type_curtain": {
+        "label": "Тип выключателя шторы",
+        "description": "Тип выключателя",
+        "values": {
+            "toggle": "Коммутатор",
+            "state": "Состояние",
+            "momentary": "Кнопочный"
+        }
+    },
+    "tamper_last_changed": {
+        "label": "Последнее изменение саботажа",
+        "description": "Время (в секундах) с момента последнего изменения."
+    },
+    "temp_greater_then": {
+        "label": "Темп. больше чем",
+        "description": "Включить авто-настройки",
+        "values": {
+            "ON": "Вкл",
+            "OFF": "Выкл"
+        }
+    },
+    "temp_greater_value": {
+        "label": "Большее значение",
+        "description": "Действие при превышении",
+        "values": {
+            "ON": "Вкл",
+            "OFF": "Выкл"
+        }
+    },
+    "temp_lower_then": {
+        "label": "Темп. меньше чем",
+        "description": "Температура больше значения",
+        "values": {
+            "ON": "Вкл",
+            "OFF": "Выкл"
+        }
+    },
+    "temp_lower_value": {
+        "label": "Меньшее значение",
+        "description": "Действие при понижении"
+    },
+    "temperature_calibration": {
+        "label": "Калибровка температуры",
+        "description": "Единица температуры",
+        "values": {
+            "celsius": "Цельсий",
+            "fahrenheit": "Фаренгейт"
+        }
+    },
+    "temperature_sampling": {
+        "label": "Замер температуры",
+        "description": "Калибровка влажности почвы"
+    },
+    "temperature_setpoint_hold_duration": {
+        "label": "Длительность удержания установки",
+        "description": "Длительность ручного управления в минутах."
+    },
+    "temperature_unit": {
+        "label": "Единица температуры",
+        "description": "Единица температуры",
+        "values": {
+            "celsius": "Цельсий",
+            "fahrenheit": "Фаренгейт"
+        }
+    },
+    "test_mode": {
+        "label": "Режим теста"
+    },
+    "test_mode_timeout": {
+        "label": "Тайм-аут режима теста"
+    },
+    "time_start": {
+        "label": "Время начала",
+        "values": {
+            "1970": "1970",
+            "2000": "2000",
+            "off": "Выкл"
+        }
+    },
+    "track_target_distance": {
+        "label": "Отслеживание расстояния",
+        "description": "Начать отслеживание текущего расстояния до цели.",
+        "values": {
+            "start_tracking_distance": "Начать отслеживание"
+        }
+    },
+    "trigger": {
+        "label": "Триггер",
+        "description": "Длительность импульса.",
+        "values": {
+            "press": "Нажатие"
+        }
+    },
+    "trigger_alarm": {
+        "label": "Вызвать тревогу",
+        "description": "Вызвать тревогу на устройстве",
+        "values": {
+            "trigger": "Вызвать"
+        }
+    },
+    "trouble": {
+        "label": "Неисправность",
+        "description": "Указывает, проходит ли устройство тестирование"
+    },
+    "tx_power": {
+        "label": "Мощность передатчика",
+        "description": "Режим мощности передатчика для соответствия нормативам.",
+        "values": {
+            "CE": "CE",
+            "FCC": "FCC"
+        }
+    },
+    "unbalanced_load_alarm": {
+        "label": "Тревога дисбаланса",
+        "description": "Нижний лимит напряжения (по умолчанию 180В)"
+    },
+    "unbalanced_load_threshold": {
+        "label": "Порог дисбаланса",
+        "description": "Нижний лимит коэффициента мощности (по умолчанию 15%)"
+    },
+    "under_voltage_alarm": {
+        "label": "Тревога пониженного напряжения",
+        "description": "Верхний лимит напряжения (по умолчанию 275В)"
+    },
+    "under_voltage_threshold": {
+        "label": "Порог пониженного напряжения",
+        "description": "Нижний лимит напряжения (по умолчанию 175В)"
+    },
+    "unfreeze_support": {
+        "label": "Защита от замерзания",
+        "description": "Внутренняя температура на основе выбора датчика."
+    },
+    "vacation_mode": {
+        "label": "Режим отпуска",
+        "description": "В режиме отпуска расписание отключается."
+    },
+    "valve_adapt_process": {
+        "label": "Процесс адаптации клапана",
+        "description": "Запустить адаптацию клапана.",
+        "values": {
+            "adapt": "Адаптировать"
+        }
+    },
+    "valve_adapt_status": {
+        "label": "Статус адаптации клапана",
+        "description": "Текущий статус адаптации клапана"
+    },
+    "vibration_detection_enabled": {
+        "label": "Обнаружение вибрации включено",
+        "description": "Включить обнаружение вибрации на окне или двери"
+    },
+    "vibration_detection_sensitivity": {
+        "label": "Чувствительность обнаружения вибрации",
+        "description": "Включить обнаружение вибрации на окне или двери"
+    },
+    "vibration_timeout": {
+        "label": "Тайм-аут вибрации",
+        "description": "Задержка в секундах до сброса вибрации (по умолчанию 90с)."
+    },
+    "voltage_phase_b": {
+        "label": "Напряжение фаза B",
+        "description": "Измеренное напряжение на фазе B"
+    },
+    "voltage_phase_c": {
+        "label": "Напряжение фаза C",
+        "description": "Измеренное напряжение на фазе C"
+    },
+    "water": {
+        "label": "Вода",
+        "description": "Указывает, обнаружена ли вода"
+    },
+    "water_current": {
+        "label": "Текущий поток",
+        "description": "Общий объём полива",
+        "values": {
+            "reset": "Сброс"
+        }
+    },
+    "water_leak_alarm_control": {
+        "label": "Отключить тревогу протечки",
+        "description": "При протечке воды можно отключить звуковую тревогу"
+    },
+    "water_total": {
+        "label": "Общий объём воды",
+        "description": "Оставшийся объём"
+    },
+    "water_total_reset": {
+        "label": "Сброс общего объёма",
+        "description": "Текущий поток",
+        "values": {
+            "reset": "Сброс"
+        }
+    },
+    "zone_status_interval": {
+        "label": "Интервал статуса зоны",
+        "description": "Интервал сердцебиения в секундах (по умолчанию 300с)"
     }
 }

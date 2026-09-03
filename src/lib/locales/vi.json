@@ -1,255 +1,2311 @@
 {
-    "brightness": {},
-    "color_temp": {},
-    "color_temp_startup": {},
-    "hue": {},
-    "saturation": {},
-    "effect": {},
-    "temperature": {},
-    "humidity": {},
-    "pressure": {},
-    "illuminance": {},
-    "illuminance_lux": {},
-    "illuminance_raw": {},
-    "occupancy": {},
-    "occupancy_level": {},
-    "contact": {},
-    "water_leak": {},
-    "smoke": {},
-    "gas": {},
-    "co2": {},
-    "voc": {},
-    "power": {},
-    "energy": {},
-    "voltage": {},
-    "current": {},
-    "frequency": {},
-    "power_factor": {},
-    "battery": {},
-    "battery_low": {},
-    "battery_voltage": {},
-    "position": {},
-    "tilt": {},
-    "state": {},
-    "system_mode": {},
-    "child_lock": {},
-    "running_state": {},
-    "power_on_behavior": {},
-    "occupied_heating_setpoint": {},
-    "local_temperature": {},
-    "open_window": {},
-    "frost_protection": {},
-    "fan_mode": {},
-    "swing_mode": {},
-    "away_mode": {},
-    "eco_mode": {},
-    "boost": {},
-    "boost_time": {},
-    "linkquality": {},
-    "action": {},
-    "action_duration": {},
-    "action_group": {},
-    "tamper": {},
-    "vibration": {},
-    "alarm": {},
-    "noise": {},
-    "noise_detected": {},
-    "presence": {},
-    "motion": {},
-    "motion_state": {},
-    "soil_moisture": {},
-    "co": {},
-    "aqi": {},
-    "pm25": {},
-    "pm10": {},
-    "formaldehyde": {},
-    "hcho": {},
-    "cube_side": {},
-    "cube_side_1": {},
-    "cube_side_2": {},
-    "cube_side_3": {},
-    "cube_side_4": {},
-    "cube_side_5": {},
-    "cube_side_6": {},
-    "valve_position": {},
-    "valve_switch": {},
-    "valve_state": {},
-    "valve_detection": {},
-    "valve_detection_bool": {},
-    "valve_alarm": {},
-    "auto_lock": {},
-    "auto_off": {},
-    "auto_relock_time": {},
-    "away_preset_days": {},
-    "away_preset_temperature": {},
-    "button_lock": {},
-    "calibrated": {},
-    "carbon_monoxide": {},
-    "comfort_temperature": {},
-    "consumer_connected": {},
-    "cover_position": {},
-    "cover_tilt": {},
-    "cover_mode": {},
-    "cpu_temperature": {},
-    "current_phase_b": {},
-    "current_phase_c": {},
-    "current_neutral": {},
-    "deadzone_temperature": {},
-    "detection_interval": {},
-    "device_temperature": {},
-    "eco2": {},
-    "eco_temperature": {},
-    "produced_energy": {},
-    "energy_produced": {},
-    "flip_indicator_light": {},
-    "holiday_temperature": {},
-    "brightness_state": {},
-    "keypad_lockout": {},
-    "led_disabled_night": {},
-    "light_brightness": {},
-    "light_brightness_color": {},
-    "light_brightness_colortemp": {},
-    "light_color_options": {},
-    "lock": {},
-    "lock_action": {},
-    "lock_action_source_name": {},
-    "lock_action_user": {},
-    "max_cool_setpoint_limit": {},
-    "min_cool_setpoint_limit": {},
-    "max_heat_setpoint_limit": {},
-    "min_heat_setpoint_limit": {},
-    "max_temperature": {},
-    "max_temperature_limit": {},
-    "min_temperature_limit": {},
-    "min_temperature": {},
-    "mode_switch_select": {},
-    "motion_sensitivity_select": {},
-    "open_window_temperature": {},
-    "operation_mode_select": {},
-    "overload_protection": {},
-    "pm1": {},
-    "power_phase_b": {},
-    "power_phase_c": {},
-    "power_factor_phase_b": {},
-    "power_factor_phase_c": {},
-    "power_apparent": {},
-    "power_apparent_phase_b": {},
-    "power_apparent_phase_c": {},
-    "power_outage_count": {},
-    "power_outage_memory": {},
-    "power_reactive": {},
-    "power_reactive_phase_b": {},
-    "power_reactive_phase_c": {},
-    "programming_operation_mode": {},
-    "setup": {},
-    "schedule": {},
-    "schedule_settings": {},
-    "external_temperature_input": {},
-    "sos": {},
-    "sound_volume": {},
-    "switch_type": {},
-    "door_state": {},
-    "temperature_sensor_select": {},
-    "test": {},
-    "trigger_count": {},
-    "trigger_indicator": {},
-    "window_detection": {},
-    "window_detection_bool": {},
-    "window_open": {},
-    "moving": {},
-    "x_axis": {},
-    "y_axis": {},
-    "z_axis": {},
-    "pincode": {},
-    "squawk": {},
-    "identify_duration": {},
-    "identify": {},
-    "min_brightness": {},
-    "max_brightness": {},
-    "pilot_wire_mode": {},
-    "rain": {},
-    "warning": {},
-    "week": {},
-    "last_seen": {},
-    "motor_direction": {},
-    "motor_speed": {},
-    "target_temperature": {},
-    "current_heating_setpoint": {},
-    "unoccupied_heating_setpoint": {},
-    "preset": {},
-    "mode": {},
-    "duration": {},
-    "sensitivity": {},
-    "detection_distance": {},
-    "keep_time": {},
-    "occupancy_timeout": {},
-    "illuminance_above_threshold": {},
-    "opening_state": {},
-    "alarm_state": {},
-    "setup_mode": {},
-    "alarm_siren": {},
-    "alarm_siren_duration": {},
-    "vibration_limit": {},
-    "vibration_siren": {},
-    "vibration_siren_duration": {},
-    "close_signal": {},
-    "transmission_power": {},
-    "magnetic_status": {},
-    "connection_state": {},
-    "restart_required": {},
-    "restart": {},
-    "update_state": {},
-    "update_available": {},
-    "factory_reset": {},
-    "side_up": {},
-    "side_down": {},
-    "side_left": {},
-    "side_right": {},
-    "state_up": {},
-    "state_down": {},
-    "state_left": {},
-    "state_right": {},
-    "state_action": {},
-    "led_indicator": {},
-    "power_calibration": {},
-    "power_precision": {},
-    "current_calibration": {},
-    "current_precision": {},
-    "energy_calibration": {},
-    "energy_precision": {},
-    "device_temperature_calibration": {},
-    "voltage_calibration": {},
-    "voltage_precision": {},
-    "idle_steps": {},
-    "closing_steps": {},
-    "valve_opening_limit_voltage": {},
-    "valve_closing_limit_voltage": {},
-    "valve_motor_running_voltage": {},
-    "valve_opening_degree": {},
-    "valve_closing_degree": {},
-    "temperature_accuracy": {},
-    "weekly_schedule_sunday": {},
-    "weekly_schedule_monday": {},
-    "weekly_schedule_tuesday": {},
-    "weekly_schedule_wednesday": {},
-    "weekly_schedule_thursday": {},
-    "weekly_schedule_friday": {},
-    "weekly_schedule_saturday": {},
-    "smart_temperature_control": {},
-    "thermostat_unit": {},
-    "operation_mode": {},
-    "indicator_mode": {},
-    "timer_mode_target_temp": {},
-    "temporary_mode_duration": {},
-    "temporary_mode_select": {},
-    "open_window_detection": {},
-    "frost_protection_temperature": {},
-    "color": {},
-    "color_mode": {},
-    "color_xy": {},
-    "color_hs": {},
-    "transition": {},
-    "device_mode": {},
-    "battery_state": {},
-    "internal_temperature": {}
+    "brightness": {
+        "label": "Độ sáng"
+    },
+    "color_temp": {
+        "label": "Nhiệt độ màu"
+    },
+    "color_temp_startup": {
+        "label": "Nhiet do mau khoi dong"
+    },
+    "hue": {
+        "label": "Sac"
+    },
+    "saturation": {
+        "label": "Do bao hoa"
+    },
+    "effect": {
+        "label": "Hieu ung",
+        "description": "Triggers an effect on the light (e.g. make light blink for a few seconds)",
+        "values": {
+            "blink": "Blink",
+            "breathe": "Breathe",
+            "okay": "Okay",
+            "channel_change": "Channel_change",
+            "finish_effect": "Finish_effect",
+            "stop_effect": "Stop_effect"
+        }
+    },
+    "temperature": {
+        "label": "Nhiệt độ",
+        "description": "Nhiệt độ đo được"
+    },
+    "humidity": {
+        "label": "Độ ẩm",
+        "description": "Độ ẩm tương đối đo được"
+    },
+    "pressure": {
+        "label": "Áp suất",
+        "description": "Áp suất khí quyển đo được"
+    },
+    "illuminance": {
+        "label": "Cường độ ánh sáng",
+        "description": "Cường độ ánh sáng đo được"
+    },
+    "illuminance_lux": {
+        "label": "Anh sang lux"
+    },
+    "illuminance_raw": {
+        "label": "Anh sang thô",
+        "description": "Raw measured illuminance"
+    },
+    "occupancy": {
+        "label": "Sự hiện diện",
+        "description": "Cho biết thiết bị có phát hiện sự hiện diện không"
+    },
+    "occupancy_level": {
+        "label": "Muc hien dien",
+        "description": "The measured occupancy value"
+    },
+    "contact": {
+        "label": "Liên hệ",
+        "description": "Cho biết contact đang đóng hay mở"
+    },
+    "water_leak": {
+        "label": "Rò rỉ nước",
+        "description": "Cho biết thiết bị có phát hiện rò rỉ nước không"
+    },
+    "smoke": {
+        "label": "Khói",
+        "description": "Cho biết thiết bị có phát hiện khói không"
+    },
+    "gas": {
+        "label": "Khí gas",
+        "description": "Cho biết thiết bị có phát hiện khí gas không"
+    },
+    "co2": {
+        "label": "CO2",
+        "description": "Giá trị CO2 đo được"
+    },
+    "voc": {
+        "label": "VOC",
+        "description": "Giá trị VOC đo được"
+    },
+    "power": {
+        "label": "Công suất",
+        "description": "Công suất điện đo được"
+    },
+    "energy": {
+        "label": "Năng lượng",
+        "description": "Tổng năng lượng tiêu thụ"
+    },
+    "voltage": {
+        "label": "Điện áp",
+        "description": "Điện áp đo được"
+    },
+    "current": {
+        "label": "Dòng điện",
+        "description": "Dòng điện đo được"
+    },
+    "frequency": {
+        "label": "Tần số"
+    },
+    "power_factor": {
+        "label": "Hệ số công suất",
+        "description": "Hệ số công suất đo được"
+    },
+    "battery": {
+        "label": "Pin",
+        "description": "Mức pin còn lại %"
+    },
+    "battery_low": {
+        "label": "Pin yếu",
+        "description": "Cho biết pin gần hết"
+    },
+    "battery_voltage": {
+        "label": "Điện áp pin",
+        "description": "Điện áp pin tính bằng milivolt"
+    },
+    "position": {
+        "label": "Vị trí",
+        "description": "Vị trí"
+    },
+    "tilt": {
+        "label": "Nghiêng",
+        "description": "Nghiêng"
+    },
+    "state": {
+        "label": "Trạng thái"
+    },
+    "system_mode": {
+        "label": "Chế độ hệ thống",
+        "values": {
+            "auto": "Tự động",
+            "heat": "Sưởi ấm",
+            "cool": "Làm mát",
+            "off": "Tắt",
+            "dry": "Khô",
+            "fan_only": "Chỉ quạt"
+        }
+    },
+    "child_lock": {
+        "label": "Khóa trẻ em",
+        "description": "Bật/tắt đầu vào vật lý trên thiết bị",
+        "values": {
+            "LOCK": "Khóa",
+            "UNLOCK": "Mở khóa"
+        }
+    },
+    "running_state": {
+        "label": "Trạng thái hoạt động",
+        "values": {
+            "idle": "Chờ",
+            "heat": "Sưởi ấm",
+            "cool": "Làm mát"
+        }
+    },
+    "power_on_behavior": {
+        "label": "Hành vi khi bật",
+        "description": "Controls the behavior when the device is powered on after power loss",
+        "values": {
+            "on": "Bật",
+            "off": "Tắt",
+            "toggle": "Chuyển đổi",
+            "previous": "Trước đó"
+        }
+    },
+    "occupied_heating_setpoint": {
+        "label": "Đặt nhiệt độ sưởi ấm (có người)"
+    },
+    "local_temperature": {
+        "label": "Nhiệt độ cục bộ",
+        "description": "Current temperature measured on the device"
+    },
+    "open_window": {
+        "label": "Cửa sổ mở",
+        "description": "Bật/tắt cửa sổ mở",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "frost_protection": {
+        "label": "Bảo vệ chống đóng băng"
+    },
+    "fan_mode": {
+        "label": "Chế độ quạt",
+        "values": {
+            "low": "Thấp",
+            "medium": "Trung bình",
+            "high": "Cao",
+            "auto": "Tự động",
+            "off": "Tắt"
+        }
+    },
+    "swing_mode": {
+        "label": "Chế độ lắc",
+        "values": {
+            "on": "Bật",
+            "off": "Tắt"
+        }
+    },
+    "away_mode": {
+        "label": "Chế độ vắng nhà"
+    },
+    "eco_mode": {
+        "label": "Chế độ tiết kiệm",
+        "description": "ECO mode (energy saving mode)",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "boost": {
+        "label": "Tăng cường"
+    },
+    "boost_time": {
+        "label": "Thời gian tăng cường",
+        "description": "Boost time"
+    },
+    "linkquality": {
+        "label": "Chất lượng liên kết"
+    },
+    "action": {
+        "label": "Hành động",
+        "description": "Triggered action (e.g. a button click)"
+    },
+    "action_duration": {
+        "label": "Thời lượng hành động",
+        "description": "Triggered action duration in seconds"
+    },
+    "action_group": {
+        "label": "Nhom hanh dong",
+        "description": "Group where the action was triggered on"
+    },
+    "tamper": {
+        "label": "Xáo trộn",
+        "description": "Cho biết thiết bị có bị xáo trộn không"
+    },
+    "vibration": {
+        "label": "Run dong",
+        "description": "Indicates whether the device detected vibration"
+    },
+    "alarm": {
+        "label": "Bao dong"
+    },
+    "noise": {
+        "label": "Tiếng ồn",
+        "description": "The measured noise value"
+    },
+    "noise_detected": {
+        "label": "Phát hiện tiếng ồn",
+        "description": "Cho biết thiết bị có phát hiện tiếng ồn không"
+    },
+    "presence": {
+        "label": "Hien dien",
+        "description": "Indicates whether the device detected presence"
+    },
+    "motion": {
+        "label": "Chuyển động"
+    },
+    "motion_state": {
+        "label": "Trạng thái chuyển động"
+    },
+    "soil_moisture": {
+        "label": "Độ ẩm đất",
+        "description": "Độ ẩm đất đo được"
+    },
+    "co": {
+        "label": "CO",
+        "description": "The measured CO (carbon monoxide) value"
+    },
+    "aqi": {
+        "label": "Chỉ số chất lượng không khí",
+        "description": "Air quality index"
+    },
+    "pm25": {
+        "label": "PM2,5",
+        "description": "Measured PM2.5 (particulate matter) concentration"
+    },
+    "pm10": {
+        "label": "PM10",
+        "description": "Measured PM10 (particulate matter) concentration"
+    },
+    "formaldehyde": {
+        "label": "Formaldehyde",
+        "description": "The measured formaldehyd value"
+    },
+    "hcho": {
+        "label": "Formaldehyde",
+        "description": "Measured HCHO value"
+    },
+    "cube_side": {
+        "label": "Mat khoi",
+        "description": "Side of the cube"
+    },
+    "cube_side_1": {
+        "label": "Cube side 1"
+    },
+    "cube_side_2": {
+        "label": "Cube side 2"
+    },
+    "cube_side_3": {
+        "label": "Cube side 3"
+    },
+    "cube_side_4": {
+        "label": "Cube side 4"
+    },
+    "cube_side_5": {
+        "label": "Cube side 5"
+    },
+    "cube_side_6": {
+        "label": "Cube side 6"
+    },
+    "valve_position": {
+        "label": "Vị trí van",
+        "description": "Position of the valve"
+    },
+    "valve_switch": {
+        "label": "Van",
+        "description": "Valve state if open or closed",
+        "values": {
+            "OPEN": "Mở",
+            "CLOSE": "Đóng"
+        }
+    },
+    "valve_state": {
+        "label": "Trạng thái van",
+        "description": "Valve state if open or closed",
+        "values": {
+            "OPEN": "Mở",
+            "CLOSED": "Đóng"
+        }
+    },
+    "valve_detection": {
+        "label": "Phat hien van"
+    },
+    "valve_detection_bool": {
+        "label": "Phat hien van bool",
+        "description": "Determines if temperature control abnormalities should be detected"
+    },
+    "valve_alarm": {
+        "label": "Báo động van"
+    },
+    "auto_lock": {
+        "label": "Tự động khóa",
+        "values": {
+            "AUTO": "Tự động",
+            "MANUAL": "Thủ công"
+        }
+    },
+    "auto_off": {
+        "label": "Tự động tắt",
+        "description": "Turn the device automatically off when attached device consumes less than 2W for ${offTime} minutes"
+    },
+    "auto_relock_time": {
+        "label": "Thời gian khóa lại",
+        "description": "The number of seconds to wait after unlocking a lock before it automatically locks again. 0=disabled"
+    },
+    "away_preset_days": {
+        "label": "Ngay dat truoc khi roi nha",
+        "description": "Away preset days"
+    },
+    "away_preset_temperature": {
+        "label": "Nhiet do dat truoc khi roi nha",
+        "description": "Away preset temperature"
+    },
+    "button_lock": {
+        "label": "Khóa nút",
+        "description": "Tắt nút vật lý",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "calibrated": {
+        "label": "Đã hiệu chuẩn",
+        "description": "Cho biết thiết bị đã được hiệu chuẩn"
+    },
+    "carbon_monoxide": {
+        "label": "Carbon monoxide",
+        "description": "Indicates if CO (carbon monoxide) is detected"
+    },
+    "comfort_temperature": {
+        "label": "Nhiệt độ thoải mái",
+        "description": "Comfort temperature"
+    },
+    "consumer_connected": {
+        "label": "Tiêu thụ đã kết nối",
+        "description": "Indicates whether a plug is physically attached. Device does not have to pull power or even be connected electrically (state of this binary switch can be ON even if main power switch is OFF)"
+    },
+    "cover_position": {
+        "label": "Vị trí rèm"
+    },
+    "cover_tilt": {
+        "label": "Nghiêng rèm"
+    },
+    "cover_mode": {
+        "label": "Chế độ rèm",
+        "description": "Reversal of the motor rotating direction"
+    },
+    "cpu_temperature": {
+        "label": "Nhiệt độ CPU",
+        "description": "Temperature of the CPU"
+    },
+    "current_phase_b": {
+        "label": "Dòng điện pha B",
+        "description": "Instantaneous measured electrical current on phase B"
+    },
+    "current_phase_c": {
+        "label": "Dòng điện pha C",
+        "description": "Instantaneous measured electrical current on phase C"
+    },
+    "current_neutral": {
+        "label": "Dòng điện trung tính",
+        "description": "Instantaneous measured electrical current on neutral"
+    },
+    "deadzone_temperature": {
+        "label": "Vùng chết nhiệt độ",
+        "description": "The delta between local_temperature and current_heating_setpoint to trigger Heat"
+    },
+    "detection_interval": {
+        "label": "Khoảng thời gian phát hiện",
+        "description": "Time interval between action detection."
+    },
+    "device_temperature": {
+        "label": "Nhiệt độ thiết bị",
+        "description": "Temperature of the device"
+    },
+    "eco2": {
+        "label": "PPM",
+        "description": "Measured eCO2 value"
+    },
+    "eco_temperature": {
+        "label": "Nhiệt độ tiết kiệm",
+        "description": "Eco temperature"
+    },
+    "produced_energy": {
+        "label": "Nang luong san xuat",
+        "description": "Sum of produced energy"
+    },
+    "energy_produced": {
+        "label": "Nang luong san xuat",
+        "description": "Sum of produced energy"
+    },
+    "flip_indicator_light": {
+        "label": "Dao nguoc den chi bao",
+        "description": "After turn on, the indicator light turns on while switch is off, and vice versa",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "holiday_temperature": {
+        "label": "Nhiet do ngay nghi",
+        "description": "Holiday temperature"
+    },
+    "brightness_state": {
+        "label": "Trang thai do sang",
+        "description": "Brightness state",
+        "values": {
+            "low": "Low",
+            "middle": "Middle",
+            "high": "High",
+            "strong": "Strong"
+        }
+    },
+    "keypad_lockout": {
+        "label": "Khoa ban phim",
+        "description": "Enables/disables physical input on the device",
+        "values": {
+            "unlock": "Unlock",
+            "lock1": "Lock1",
+            "lock2": "Lock2"
+        }
+    },
+    "led_disabled_night": {
+        "label": "LED tắt ban đêm",
+        "description": "Enable/disable the LED at night"
+    },
+    "light_brightness": {
+        "label": "Do sang den"
+    },
+    "light_brightness_color": {
+        "label": "Light brightness color"
+    },
+    "light_brightness_colortemp": {
+        "label": "Light brightness colortemp"
+    },
+    "light_color_options": {
+        "label": "Tuy chon mau den",
+        "description": "Advanced color behavior"
+    },
+    "lock": {
+        "label": "Khoa"
+    },
+    "lock_action": {
+        "label": "Hanh dong khoa",
+        "description": "Triggered action on the lock",
+        "values": {
+            "unknown": "Unknown",
+            "lock": "Lock",
+            "unlock": "Unlock",
+            "lock_failure_invalid_pin_or_id": "Lock_failure_invalid_pin_or_id",
+            "lock_failure_invalid_schedule": "Lock_failure_invalid_schedule",
+            "unlock_failure_invalid_pin_or_id": "Unlock_failure_invalid_pin_or_id",
+            "unlock_failure_invalid_schedule": "Unlock_failure_invalid_schedule",
+            "one_touch_lock": "One_touch_lock",
+            "key_lock": "Key_lock",
+            "key_unlock": "Key_unlock",
+            "auto_lock": "Auto_lock",
+            "schedule_lock": "Schedule_lock",
+            "schedule_unlock": "Schedule_unlock",
+            "manual_lock": "Manual_lock",
+            "manual_unlock": "Manual_unlock",
+            "non_access_user_operational_event": "Non_access_user_operational_event"
+        }
+    },
+    "lock_action_source_name": {
+        "label": "Nguon hanh dong khoa",
+        "description": "Source of the triggered action on the lock",
+        "values": {
+            "keypad": "Keypad",
+            "rfid": "Rfid",
+            "manual": "Manual",
+            "rf": "Rf"
+        }
+    },
+    "lock_action_user": {
+        "label": "Nguoi dung hanh dong khoa",
+        "description": "ID of user that triggered the action on the lock"
+    },
+    "max_cool_setpoint_limit": {
+        "label": "Gioi han toi da dat mat",
+        "description": "Maximum Cooling set point limit"
+    },
+    "min_cool_setpoint_limit": {
+        "label": "Gioi han toi thieu dat mat",
+        "description": "Minimum Cooling point limit"
+    },
+    "max_heat_setpoint_limit": {
+        "label": "Gioi han toi da dat nong",
+        "description": "Maximum Heating set point limit"
+    },
+    "min_heat_setpoint_limit": {
+        "label": "Gioi han toi thieu dat nong",
+        "description": "Minimum Heating set point limit"
+    },
+    "max_temperature": {
+        "label": "Nhiet do toi da",
+        "description": "Maximum temperature"
+    },
+    "max_temperature_limit": {
+        "label": "Gioi han nhiet do toi da",
+        "description": "Maximum temperature limit. Cuts the thermostat out regardless of air temperature if the external floor sensor exceeds this temperature. Only used by the thermostat when in AL sensor mode."
+    },
+    "min_temperature_limit": {
+        "label": "Gioi han nhiet do toi thieu",
+        "description": "Minimum temperature limit for frost protection. Turns the thermostat on regardless of setpoint if the temperature drops below this."
+    },
+    "min_temperature": {
+        "label": "Nhiet do toi thieu",
+        "description": "Minimum temperature"
+    },
+    "mode_switch_select": {
+        "label": "Chon cong tac che do",
+        "description": "Select mode switch to use"
+    },
+    "motion_sensitivity_select": {
+        "label": "Chon do nhay chuyen dong",
+        "description": "Select motion sensitivity to use"
+    },
+    "open_window_temperature": {
+        "label": "Nhiệt độ cửa sổ mở",
+        "description": "Open window temperature"
+    },
+    "operation_mode_select": {
+        "label": "Chon che do hoat dong",
+        "description": "Select operation mode to use"
+    },
+    "overload_protection": {
+        "label": "Bảo vệ quá tải",
+        "description": "Maximum allowed load, turns off if exceeded"
+    },
+    "pm1": {
+        "label": "PM1",
+        "description": "Measured PM1 (particulate matter) concentration"
+    },
+    "power_phase_b": {
+        "label": "Cong suat pha B",
+        "description": "Instantaneous measured power on phase B"
+    },
+    "power_phase_c": {
+        "label": "Cong suat pha C",
+        "description": "Instantaneous measured power on phase C"
+    },
+    "power_factor_phase_b": {
+        "label": "He so cong suat pha B",
+        "description": "Instantaneous measured power factor on phase B"
+    },
+    "power_factor_phase_c": {
+        "label": "He so cong suat pha C",
+        "description": "Instantaneous measured power factor on phase C"
+    },
+    "power_apparent": {
+        "label": "Cong suat hien thi",
+        "description": "Instantaneous measured apparent power"
+    },
+    "power_apparent_phase_b": {
+        "label": "Cong suat hien thi pha B",
+        "description": "Instantaneous measured apparent power on phase B"
+    },
+    "power_apparent_phase_c": {
+        "label": "Cong suat hien thi pha C",
+        "description": "Instantaneous measured apparent power on phase C"
+    },
+    "power_outage_count": {
+        "label": "So lan mat dien",
+        "description": "Number of power outages${resetsWhenPairing ? \" (since last pairing)\" : \"\"}"
+    },
+    "power_outage_memory": {
+        "label": "Bo nho mat dien",
+        "description": "Enable/disable the power outage memory, this recovers the on/off mode after power failure"
+    },
+    "power_reactive": {
+        "label": "Cong suat phan ung",
+        "description": "Instantaneous measured reactive power"
+    },
+    "power_reactive_phase_b": {
+        "label": "Cong suat phan ung pha B",
+        "description": "Instantaneous measured reactive power on phase B"
+    },
+    "power_reactive_phase_c": {
+        "label": "Cong suat phan ung pha C",
+        "description": "Instantaneous measured reactive power on phase C"
+    },
+    "programming_operation_mode": {
+        "label": "Che do lap trinh hoat dong",
+        "description": "Controls how programming affects the thermostat. Possible values: setpoint (only use specified setpoint), schedule (follow programmed setpoint schedule), schedule_with_preheat (follow programmed setpoint schedule with pre-heating). Changing this value does not clear programmed schedules."
+    },
+    "setup": {
+        "label": "Thiet lap",
+        "description": "Indicates if the device is in setup mode"
+    },
+    "schedule": {
+        "label": "Lịch trình",
+        "description": "When enabled, the device will change its state based on your schedule settings"
+    },
+    "schedule_settings": {
+        "label": "Cài đặt lịch trình",
+        "description": "Allows schedule configuration"
+    },
+    "external_temperature_input": {
+        "label": "Nhap nhiet do ngoai",
+        "description": "Input for remote temperature sensor"
+    },
+    "sos": {
+        "label": "SOS",
+        "description": "SOS alarm"
+    },
+    "sound_volume": {
+        "label": "Am luong",
+        "description": "Sound volume of the lock",
+        "values": {
+            "silent_mode": "Silent_mode",
+            "low_volume": "Low_volume",
+            "high_volume": "High_volume"
+        }
+    },
+    "switch_type": {
+        "label": "Loại công tắc",
+        "description": "Wall switch type",
+        "values": {
+            "toggle": "Toggle",
+            "momentary": "Momentary"
+        }
+    },
+    "door_state": {
+        "label": "Trang thai cua",
+        "description": "State of the door",
+        "values": {
+            "open": "Open",
+            "closed": "Closed",
+            "error_jammed": "Error_jammed",
+            "error_forced_open": "Error_forced_open",
+            "error_unspecified": "Error_unspecified",
+            "undefined": "Undefined"
+        }
+    },
+    "temperature_sensor_select": {
+        "label": "Chon cam bien nhiet do",
+        "description": "Select temperature sensor to use"
+    },
+    "test": {
+        "label": "Kiem tra",
+        "description": "Indicates whether the device is being tested"
+    },
+    "trigger_count": {
+        "label": "So lan kich hoat",
+        "description": "Indicates how many times the sensor was triggered${sinceScheduledReport ? \" (since last scheduled report)\" : \"\"}"
+    },
+    "trigger_indicator": {
+        "label": "Chi bao kich hoat",
+        "description": "Enables trigger indication"
+    },
+    "window_detection": {
+        "label": "Phat hien cua so"
+    },
+    "window_detection_bool": {
+        "label": "Phat hien cua so bool",
+        "description": "Enables/disables window detection on the device"
+    },
+    "window_open": {
+        "label": "Cua so mo",
+        "description": "Indicates if window is open"
+    },
+    "moving": {
+        "label": "Dang chuyen dong",
+        "description": "Indicates if the device is moving"
+    },
+    "x_axis": {
+        "label": "Truc X",
+        "description": "Accelerometer X value"
+    },
+    "y_axis": {
+        "label": "Truc Y",
+        "description": "Accelerometer Y value"
+    },
+    "z_axis": {
+        "label": "Truc Z",
+        "description": "Accelerometer Z value"
+    },
+    "pincode": {
+        "label": "Ma PIN",
+        "description": "User ID to set or clear the pincode for",
+        "values": {
+            "unrestricted": "Unrestricted",
+            "year_day_schedule": "Year_day_schedule",
+            "week_day_schedule": "Week_day_schedule",
+            "master": "Master",
+            "non_access": "Non_access"
+        }
+    },
+    "squawk": {
+        "label": "Am bao dong",
+        "description": "Set Squawk state",
+        "values": {
+            "system_is_armed": "System_is_armed",
+            "system_is_disarmed": "System_is_disarmed"
+        }
+    },
+    "identify_duration": {
+        "label": "Thoi luong nhan dang",
+        "description": "Duration of flashing"
+    },
+    "identify": {
+        "label": "Nhan dang",
+        "description": "Ititiate device identification",
+        "values": {
+            "identify": "Identify"
+        }
+    },
+    "min_brightness": {
+        "label": "Do sang toi thieu",
+        "description": "Minimum light brightness"
+    },
+    "max_brightness": {
+        "label": "Do sang toi da",
+        "description": "Maximum light brightness"
+    },
+    "pilot_wire_mode": {
+        "label": "Che do day dan",
+        "description": "Controls the target temperature of the heater, with respect to the temperature set on that heater. Possible values: comfort (target temperature = heater set temperature) eco (target temperature = heater set temperature - 3.5°C), frost_protection (target temperature = 7 to 8°C), off (heater stops heating), and the less commonly used comfort_-1 (target temperature = heater set temperature - 1°C), comfort_-2 (target temperature = heater set temperature - 2°C),."
+    },
+    "rain": {
+        "label": "Mua",
+        "description": "Indicates whether the device detected rainfall"
+    },
+    "warning": {
+        "label": "Canh bao",
+        "description": "Mode of the warning (sound effect)",
+        "values": {
+            "stop": "Stop",
+            "burglar": "Burglar",
+            "fire": "Fire",
+            "emergency": "Emergency",
+            "police_panic": "Police_panic",
+            "fire_panic": "Fire_panic",
+            "emergency_panic": "Emergency_panic"
+        }
+    },
+    "week": {
+        "label": "Tuan",
+        "description": "Week format user for schedule",
+        "values": {
+            "7": "7",
+            "5+2": "5+2",
+            "6+1": "6+1"
+        }
+    },
+    "last_seen": {
+        "label": "Lan cuoi thay"
+    },
+    "motor_direction": {
+        "label": "Huong dong co"
+    },
+    "motor_speed": {
+        "label": "Toc do dong co"
+    },
+    "target_temperature": {
+        "label": "Nhiet do muc tieu"
+    },
+    "current_heating_setpoint": {
+        "label": "Diem dat nhiet do hien tai"
+    },
+    "unoccupied_heating_setpoint": {
+        "label": "Diem dat nhiet do khong co nguoi"
+    },
+    "preset": {
+        "label": "Dat truoc"
+    },
+    "mode": {
+        "label": "Che do"
+    },
+    "duration": {
+        "label": "Thoi luong"
+    },
+    "sensitivity": {
+        "label": "Do nhay"
+    },
+    "detection_distance": {
+        "label": "Khoang cach phat hien"
+    },
+    "keep_time": {
+        "label": "Thoi gian giu"
+    },
+    "occupancy_timeout": {
+        "label": "Thời gian chờ sự hiện diện"
+    },
+    "illuminance_above_threshold": {
+        "label": "Anh sang tren nguong"
+    },
+    "opening_state": {
+        "label": "Trang thai mo"
+    },
+    "alarm_state": {
+        "label": "Trang thai bao dong"
+    },
+    "setup_mode": {
+        "label": "Che do thiet lap"
+    },
+    "alarm_siren": {
+        "label": "Coi bao dong"
+    },
+    "alarm_siren_duration": {
+        "label": "Thoi luong coi bao dong"
+    },
+    "vibration_limit": {
+        "label": "Gioi han rung dong"
+    },
+    "vibration_siren": {
+        "label": "Coi rung dong"
+    },
+    "vibration_siren_duration": {
+        "label": "Thoi luong coi rung dong"
+    },
+    "close_signal": {
+        "label": "Tin hieu dong"
+    },
+    "transmission_power": {
+        "label": "Cong suat truyen"
+    },
+    "magnetic_status": {
+        "label": "Trang thai tu"
+    },
+    "connection_state": {
+        "label": "Trang thai ket noi"
+    },
+    "restart_required": {
+        "label": "Can khoi dong lai"
+    },
+    "restart": {
+        "label": "Khoi dong lai"
+    },
+    "update_state": {
+        "label": "Trang thai cap nhat"
+    },
+    "update_available": {
+        "label": "Co cap nhat"
+    },
+    "factory_reset": {
+        "label": "Dat lai nha san xuat"
+    },
+    "side_up": {
+        "label": "Phia tren"
+    },
+    "side_down": {
+        "label": "Phia duoi"
+    },
+    "side_left": {
+        "label": "Phia trai"
+    },
+    "side_right": {
+        "label": "Phia phai"
+    },
+    "state_up": {
+        "label": "Trang thai tren"
+    },
+    "state_down": {
+        "label": "Trang thai duoi"
+    },
+    "state_left": {
+        "label": "Trang thai trai"
+    },
+    "state_right": {
+        "label": "Trang thai phai"
+    },
+    "state_action": {
+        "label": "Hanh dong trang thai"
+    },
+    "led_indicator": {
+        "label": "Đèn LED chỉ báo"
+    },
+    "power_calibration": {
+        "label": "Dieu chinh cong suat"
+    },
+    "power_precision": {
+        "label": "Do chinh xac cong suat"
+    },
+    "current_calibration": {
+        "label": "Dieu chinh dong dien"
+    },
+    "current_precision": {
+        "label": "Do chinh xac dong dien"
+    },
+    "energy_calibration": {
+        "label": "Dieu chinh nang luong"
+    },
+    "energy_precision": {
+        "label": "Do chinh xac nang luong"
+    },
+    "device_temperature_calibration": {
+        "label": "Dieu chinh nhiet do thiet bi"
+    },
+    "voltage_calibration": {
+        "label": "Dieu chinh dien ap"
+    },
+    "voltage_precision": {
+        "label": "Do chinh xac dien ap"
+    },
+    "idle_steps": {
+        "label": "Buoc nghi ngoi"
+    },
+    "closing_steps": {
+        "label": "Buoc dong"
+    },
+    "valve_opening_limit_voltage": {
+        "label": "Dien ap gioi han mo van"
+    },
+    "valve_closing_limit_voltage": {
+        "label": "Dien ap gioi han dong van"
+    },
+    "valve_motor_running_voltage": {
+        "label": "Dien ap hoat dong dong co van"
+    },
+    "valve_opening_degree": {
+        "label": "Do mo van"
+    },
+    "valve_closing_degree": {
+        "label": "Do dong van"
+    },
+    "temperature_accuracy": {
+        "label": "Do chinh xac nhiet do"
+    },
+    "weekly_schedule_sunday": {
+        "label": "Lich trinh hang tuan Chu Nhat"
+    },
+    "weekly_schedule_monday": {
+        "label": "Lich trinh hang tuan Thu Hai"
+    },
+    "weekly_schedule_tuesday": {
+        "label": "Lich trinh hang tuan Thu Ba"
+    },
+    "weekly_schedule_wednesday": {
+        "label": "Lich trinh hang tuan Thu Tu"
+    },
+    "weekly_schedule_thursday": {
+        "label": "Lich trinh hang tuan Thu Nam"
+    },
+    "weekly_schedule_friday": {
+        "label": "Lich trinh hang tuan Thu Sau"
+    },
+    "weekly_schedule_saturday": {
+        "label": "Lich trinh hang tuan Thu Bay"
+    },
+    "smart_temperature_control": {
+        "label": "Dieu khien nhiet do thong minh"
+    },
+    "thermostat_unit": {
+        "label": "Don vi nhiet ke"
+    },
+    "operation_mode": {
+        "label": "Che do hoat dong"
+    },
+    "indicator_mode": {
+        "label": "Che do chi bao"
+    },
+    "timer_mode_target_temp": {
+        "label": "Timer mode target temp"
+    },
+    "temporary_mode_duration": {
+        "label": "Temporary mode duration"
+    },
+    "temporary_mode_select": {
+        "label": "Temporary mode select"
+    },
+    "open_window_detection": {
+        "label": "Phát hiện cửa sổ mở"
+    },
+    "frost_protection_temperature": {
+        "label": "Frost protection temperature"
+    },
+    "color": {
+        "label": "Mau"
+    },
+    "color_mode": {
+        "label": "Che do mau"
+    },
+    "color_xy": {
+        "label": "Mau xy"
+    },
+    "color_hs": {
+        "label": "Mau HS"
+    },
+    "transition": {
+        "label": "Chuyen tiep"
+    },
+    "device_mode": {
+        "label": "Che do thiet bi"
+    },
+    "battery_state": {
+        "label": "Trang thai pin"
+    },
+    "internal_temperature": {
+        "label": "Nhiet do noi bo"
+    },
+    "ac_connected": {
+        "label": "Ac Connected",
+        "description": "Indicates whether the device is connected to AC mains power"
+    },
+    "ac_frequency": {
+        "label": "AC frequency",
+        "description": "Measured electrical AC frequency"
+    },
+    "ac_status": {
+        "label": "Ac Status",
+        "description": "Indicates whether the device issues reports on alarm no longer being present"
+    },
+    "action_rotation_angle": {
+        "label": "Action Rotation Angle",
+        "description": "Rotation angle"
+    },
+    "action_rotation_angle_speed": {
+        "label": "Action Rotation Angle Speed",
+        "description": "Rotation angle"
+    },
+    "action_rotation_button_state": {
+        "label": "Action Rotation Button State",
+        "description": "Rotation time",
+        "values": {
+            "released": "Released",
+            "pressed": "Pressed"
+        }
+    },
+    "action_rotation_percent": {
+        "label": "Action Rotation Percent",
+        "description": "Rotation angle speed"
+    },
+    "action_rotation_percent_speed": {
+        "label": "Action Rotation Percent Speed",
+        "description": "Rotation percent"
+    },
+    "action_rotation_time": {
+        "label": "Action Rotation Time",
+        "description": "Rotation percent speed"
+    },
+    "air_quality": {
+        "label": "Air Quality",
+        "description": "Measured air quality",
+        "values": {
+            "excellent": "Excellent",
+            "good": "Good",
+            "moderate": "Moderate",
+            "poor": "Poor",
+            "unhealthy": "Unhealthy",
+            "out_of_range": "Out Of Range",
+            "unknown": "Unknown"
+        }
+    },
+    "alarm_1": {
+        "label": "Alarm 1",
+        "description": "Indicates whether the device detected vibration"
+    },
+    "alarm_2": {
+        "label": "Alarm 2",
+        "description": "Indicates whether the alarm is triggered"
+    },
+    "alarm_mode": {
+        "label": "Alarm Mode",
+        "description": "Alarm time",
+        "values": {
+            "arm": "Arm",
+            "silent": "Silent",
+            "disarm": "Disarm"
+        }
+    },
+    "alarm_set_1": {
+        "label": "Alarm Set 1",
+        "description": "Set the energy measurements to zero",
+        "values": {
+            "RESET": "Reset"
+        }
+    },
+    "alarm_set_2": {
+        "label": "Alarm Set 2",
+        "description": "Power limit (Default 25 kW)"
+    },
+    "alarm_set_3": {
+        "label": "Alarm Set 3",
+        "description": "Time overcurrent is allowed before the circuit is switched OFF (Default 0s)"
+    },
+    "alarm_status": {
+        "label": "Alarm Status",
+        "description": "Alarm time",
+        "values": {
+            "arm": "Arm",
+            "silent": "Silent",
+            "disarm": "Disarm"
+        }
+    },
+    "alarm_time": {
+        "label": "Alarm Time",
+        "description": "Alarm time"
+    },
+    "area1Occupancy": {
+        "label": "Area1Occupancy",
+        "description": "Reset energy meter",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "area2Occupancy": {
+        "label": "Area2Occupancy",
+        "description": "Indicates whether the device detected occupancy in Area 1"
+    },
+    "area3Occupancy": {
+        "label": "Area3Occupancy",
+        "description": "Indicates whether the device detected occupancy in Area 2"
+    },
+    "area4Occupancy": {
+        "label": "Area4Occupancy",
+        "description": "Indicates whether the device detected occupancy in Area 3"
+    },
+    "auto_off_enabled": {
+        "label": "Enable auto-off",
+        "description": "Enable/disable the automatic turn-off feature"
+    },
+    "auto_off_time": {
+        "label": "Enable auto-off",
+        "description": "Enable/disable the automatic turn-off feature"
+    },
+    "auto_settings": {
+        "label": "Auto Settings",
+        "description": "Automatically switch ON/OFF, make sure manual mode is turned OFF otherwise auto settings are not applied."
+    },
+    "automatic_valve_adapt": {
+        "label": "Valve adaptation status",
+        "description": "Specifies the current status of the valve adaptation"
+    },
+    "backlight_mode": {
+        "label": "Backlight Mode",
+        "description": "Determines when the button actuates",
+        "values": {
+            "release": "Release",
+            "press": "Press"
+        }
+    },
+    "battery_defect": {
+        "label": "Battery Defect",
+        "description": "Indicates whether the device is currently having trouble"
+    },
+    "boost_heating": {
+        "label": "Activate boost heating",
+        "description": "Activate boost heating (opens TRV for 5 minutes)"
+    },
+    "break_function_enabled": {
+        "label": "Break function"
+    },
+    "break_function_state": {
+        "label": "Break function state",
+        "description": "Indicates whether the device is in break mode or not"
+    },
+    "break_function_timeout": {
+        "label": "Automatic time limit for breaks"
+    },
+    "broadcast_alarms": {
+        "label": "Broadcast alarms",
+        "description": "Indicates whether the burglar alarm siren is being manually activated on the device"
+    },
+    "calibrate": {
+        "label": "Calibrate",
+        "description": "Calibrate curtain (motor will learn travel limits automatically)",
+        "values": {
+            "calibrate": "Calibrate"
+        }
+    },
+    "calibration": {
+        "label": "Calibration"
+    },
+    "calibration_mode": {
+        "label": "Calibration Mode",
+        "description": "Tilt percentage of that cover"
+    },
+    "clear_schedule": {
+        "label": "Save schedule",
+        "description": "Upload the weekly schedule to the thermostat",
+        "values": {
+            "trigger": "Trigger"
+        }
+    },
+    "click_control": {
+        "label": "Click Control",
+        "description": "Store the preferred cover position",
+        "values": {
+            "set_up": "Set Up",
+            "set_down": "Set Down",
+            "delete_up": "Delete Up",
+            "delete_down": "Delete Down",
+            "delete_both": "Delete Both"
+        }
+    },
+    "climate": {
+        "label": "Climate",
+        "description": "Aqara bathroom heater climate controls"
+    },
+    "color_power_on_behavior": {
+        "label": "Color Power On Behavior",
+        "description": "Controls state after power outage: false = on, true = restore previous state",
+        "values": {
+            "initial": "Initial",
+            "previous": "Previous",
+            "customized": "Customized"
+        }
+    },
+    "color_sync": {
+        "label": "Color Sync",
+        "description": "Expose the raw illuminance value."
+    },
+    "constant_temperature_mode": {
+        "label": "Constant Temperature Mode",
+        "description": "Prompt-tone mute end time in HH:MM format"
+    },
+    "contact_last_changed": {
+        "label": "Contact Last Changed",
+        "description": "Time (in seconds) since when contact was last changed."
+    },
+    "countdown": {
+        "label": "Countdown",
+        "description": "Toggle the device after a set duration (one time action)"
+    },
+    "countdown_left": {
+        "label": "Countdown Left",
+        "description": "Turn on the sprinkler and start countdown"
+    },
+    "cover_limit": {
+        "label": "Cover Limit",
+        "description": "Store the preferred cover position",
+        "values": {
+            "set_up": "Set Up",
+            "set_down": "Set Down",
+            "delete_up": "Delete Up",
+            "delete_down": "Delete Down",
+            "delete_both": "Delete Both"
+        }
+    },
+    "cover_position_percent_fix": {
+        "label": "Cover Position Percent Fix",
+        "description": "Fixes inverted cover position values on affected modules when enabled."
+    },
+    "cover_position_tilt_disable_report": {
+        "label": "Cover Position Tilt Disable Report"
+    },
+    "cover_type": {
+        "label": "Cover Type",
+        "description": "Operate the motor slower and quieter than normal",
+        "values": {
+            "roman_pole": "Roman Pole",
+            "roller_blind": "Roller Blind",
+            "canopy_curtain": "Canopy Curtain",
+            "roman_blind": "Roman Blind",
+            "honeycomb_curtain": "Honeycomb Curtain"
+        }
+    },
+    "data_reporting_interval": {
+        "label": "Data Reporting Interval",
+        "description": "How often the device should report measurements (Default 5s)"
+    },
+    "detection_range": {
+        "label": "Detection Range"
+    },
+    "detection_range_composite": {
+        "label": "Detection Range Composite",
+        "description": "Specifies the detection range using set of boolean settings."
+    },
+    "device_age": {
+        "label": "Device Age",
+        "description": "Duration the filter has been used"
+    },
+    "device_temperature_alarm": {
+        "label": "Device Temperature Alarm",
+        "description": "Leakage current limit (Default 50mA)"
+    },
+    "device_temperature_threshold": {
+        "label": "Device Temperature Threshold",
+        "description": "Automatically switch OFF the circuit when the measured temperature exceeds the limit (Default ON)"
+    },
+    "dismiss_alarm": {
+        "label": "Dismiss Alarm",
+        "description": "Alarm work mode",
+        "values": {
+            "normal": "Normal",
+            "alarm": "Alarm"
+        }
+    },
+    "do_not_disturb": {
+        "label": "Do Not Disturb",
+        "description": "State of the battery",
+        "values": {
+            "low": "Low",
+            "medium": "Medium",
+            "high": "High"
+        }
+    },
+    "effect_color": {
+        "label": "Effect Color"
+    },
+    "effect_color_mode": {
+        "label": "Effect Color Mode"
+    },
+    "effect_colors": {
+        "label": "Effect Colors",
+        "description": "Red (0-255)"
+    },
+    "effect_segments": {
+        "label": "Effect Segments"
+    },
+    "effect_speed": {
+        "label": "Effect Speed",
+        "description": "Animation speed for the active effect (0=slowest, 1=fastest)"
+    },
+    "enabled": {
+        "label": "Enabled",
+        "description": "Automatically switch ON/OFF, make sure manual mode is turned OFF otherwise auto settings are not applied."
+    },
+    "energy_balance": {
+        "label": "Energy Balance",
+        "description": "Automatically switch OFF the circuit when the energy balance reaches zero"
+    },
+    "energy_balance_add": {
+        "label": "Energy Balance Add",
+        "description": "Amount of energy allowed for consumption (Decreases when Prepayment is enabled)"
+    },
+    "energy_balance_reset": {
+        "label": "Energy Balance Reset",
+        "description": "Add an amount of energy to the balance",
+        "values": {
+            "RESET": "Reset"
+        }
+    },
+    "energy_reset": {
+        "label": "Energy Reset",
+        "description": "Which mmWave Control command to send",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "energy_saving_mode_enabled": {
+        "label": "Enable energy-saving mode",
+        "description": "Here you can enable/disable the energy-saving mode"
+    },
+    "energy_saving_mode_threshold": {
+        "label": "Enable energy-saving mode",
+        "description": "Here you can enable/disable the energy-saving mode"
+    },
+    "energy_saving_mode_timer": {
+        "label": "Energy-saving timer"
+    },
+    "error_state": {
+        "label": "Error State",
+        "description": "Indicates whether the device encounters any errors or not"
+    },
+    "error_status": {
+        "label": "Error Status",
+        "description": "Mute the buzzer for all alarms"
+    },
+    "expose_pin": {
+        "label": "Hiển thị PIN",
+        "description": "Controls which modes are exposed in Home Assistant climate discovery (default heat)."
+    },
+    "external_humidity": {
+        "label": "External Humidity",
+        "description": "Value for external temperature sensor"
+    },
+    "external_switch_type": {
+        "label": "Loại công tắc bên ngoài",
+        "values": {
+            "push_button": "Push Button",
+            "normal_on_off": "Normal On Off",
+            "three_way": "Three Way"
+        }
+    },
+    "external_temperature": {
+        "label": "Nhiệt độ bên ngoài",
+        "description": "Select mode to display sensor: internal or both with external"
+    },
+    "external_trigger": {
+        "label": "Trạng thái kích hoạt bên ngoài"
+    },
+    "fan": {
+        "label": "Quạt"
+    },
+    "fan_speed": {
+        "label": "Tốc độ quạt",
+        "description": "Current fan speed"
+    },
+    "fault": {
+        "label": "Fault",
+        "description": "Indicates whether the device is being self-tested",
+        "values": {
+            "checking": "Checking",
+            "success": "Success",
+            "failure": "Failure",
+            "others": "Others"
+        }
+    },
+    "fault_alarm": {
+        "label": "Fault Alarm",
+        "description": "Result of the self-test"
+    },
+    "favorite_position": {
+        "label": "Favorite Position",
+        "description": "Type of window covers installed",
+        "values": {
+            "roman_pole": "Roman Pole",
+            "roller_blind": "Roller Blind",
+            "canopy_curtain": "Canopy Curtain",
+            "roman_blind": "Roman Blind",
+            "honeycomb_curtain": "Honeycomb Curtain"
+        }
+    },
+    "filter_age": {
+        "label": "Filter Age",
+        "description": "Indicates if the filter is older than 6 months and needs replacing"
+    },
+    "flow_switch": {
+        "label": "Flow Switch",
+        "description": "Duration of last watering"
+    },
+    "force": {
+        "label": "Lực",
+        "description": "Sum of produced energy",
+        "values": {
+            "normal": "Bình thường",
+            "open": "Mở",
+            "close": "Đóng"
+        }
+    },
+    "gas_value": {
+        "label": "Gas Value",
+        "description": "Soil humidity sampling"
+    },
+    "gradient": {
+        "label": "Gradient",
+        "description": "Color in RGB HEX format (eg #663399)"
+    },
+    "gradient_offset": {
+        "label": "Dịch chuyển gradient",
+        "description": "Gradient color offset (0=start from first color)"
+    },
+    "gradient_scale": {
+        "label": "Tỷ lệ gradient",
+        "description": "Gradient scale (0=auto fit, 1.0+=number of colors visible)"
+    },
+    "gradient_scene": {
+        "label": "Cảnh gradient"
+    },
+    "gradient_style": {
+        "label": "Phong cách gradient",
+        "values": {
+            "linear": "Linear",
+            "scattered": "Scattered",
+            "mirrored": "Mirrored"
+        }
+    },
+    "heater_power": {
+        "label": "Công suất máy sưởi",
+        "description": "Aqara bathroom heater climate controls"
+    },
+    "hex": {
+        "label": "Hex",
+        "description": "Color in RGB HEX format (eg #663399)"
+    },
+    "high_power_alarm": {
+        "label": "RS485 data format",
+        "description": "Trigger alarm when power draw exceeds the limit (Default OFF)",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "high_power_threshold": {
+        "label": "High Power Threshold",
+        "description": "Trigger alarm when power draw exceeds the limit (Default OFF)"
+    },
+    "homeassistant_climate_modes": {
+        "label": "Home Assistant climate modes",
+        "description": "Controls the temperature unit of the thermostat (default celsius)."
+    },
+    "hue_native_control": {
+        "label": "Điều khiển gốc Hue"
+    },
+    "humidity_calibration": {
+        "label": "Humidity Calibration",
+        "description": "Temperature calibration"
+    },
+    "identify_timeout": {
+        "label": "Thời gian nhận dạng"
+    },
+    "identity_effect": {
+        "label": "Effect",
+        "description": "Defines the identification effect to simplify the device identification."
+    },
+    "illuminance_below_threshold_check": {
+        "label": "Kiểm tra ngưỡng ánh sáng",
+        "description": "Set to false to also send messages when illuminance is above threshold in night mode (default true)."
+    },
+    "inching": {
+        "label": "Inching",
+        "description": "Inching configuration"
+    },
+    "inching_control": {
+        "label": "Inching Control"
+    },
+    "inching_control_set": {
+        "label": "Inching Control Set"
+    },
+    "inching_time": {
+        "label": "Inching Time"
+    },
+    "indicate_faults": {
+        "label": "Indicate Faults",
+        "description": "Enable/disable LED indication for faults (e.g., lost connection to gateway)"
+    },
+    "indicate_mains_power": {
+        "label": "Indicate Mains Power",
+        "description": "Enable/disable LED indication for faults (e.g., lost connection to gateway)"
+    },
+    "indicator_light": {
+        "label": "Đèn LED chỉ báo",
+        "description": "Enable/disable the LED indicator",
+        "values": {
+            "on": "On",
+            "off": "Off"
+        }
+    },
+    "installation_height": {
+        "label": "Installation Height",
+        "description": "Distance from sensor to liquid surface"
+    },
+    "invert_cover": {
+        "label": "Đảo ngược rèm",
+        "description": "Inverts the cover position and state, false: open=100,close=0, true: open=0,close=100 (default false)."
+    },
+    "ir_code_to_send": {
+        "label": "Ir Code To Send",
+        "description": "The IR code learned by device"
+    },
+    "ir_emitter": {
+        "label": "Ir Emitter",
+        "description": "The IR code or timings to send by device"
+    },
+    "leakage_current": {
+        "label": "Leakage Current",
+        "description": "Current operating status",
+        "values": {
+            "off": "Off",
+            "consumption": "Consumption",
+            "production": "Production"
+        }
+    },
+    "leakage_current_alarm": {
+        "label": "Leakage Current Alarm",
+        "description": "Leakage current and temperature alarms configuration"
+    },
+    "leakage_current_threshold": {
+        "label": "Leakage Current Threshold",
+        "description": "Automatically switch OFF the circuit when the leakage current is above the limit (Default ON)"
+    },
+    "learn_ir_code": {
+        "label": "Learn Ir Code",
+        "description": "Turn on to learn new IR code"
+    },
+    "learned_ir_code": {
+        "label": "Learned Ir Code",
+        "description": "Turn on to learn new IR code"
+    },
+    "learned_ir_timings": {
+        "label": "Learned Ir Timings",
+        "description": "The IR code learned by device"
+    },
+    "led_control": {
+        "label": "Điều khiển LED",
+        "description": "Enable/disable LED indication for faults (e.g., lost connection to gateway)"
+    },
+    "led_enable": {
+        "label": "LED bật",
+        "description": "Measured PM2.5 (particulate matter) concentration",
+        "values": {
+            "excellent": "Excellent",
+            "good": "Good",
+            "moderate": "Moderate",
+            "poor": "Poor",
+            "unhealthy": "Unhealthy",
+            "hazardous": "Hazardous",
+            "out_of_range": "Out Of Range",
+            "unknown": "Unknown"
+        }
+    },
+    "led_if_on": {
+        "label": "LED khi bật",
+        "description": "Enables the built-in LED allowing to see the switch in the dark"
+    },
+    "led_in_dark": {
+        "label": "LED trong bóng tối",
+        "description": "Blinks the built-in LED to make it easier to identify the device",
+        "values": {
+            "identify": "Identify"
+        }
+    },
+    "light_mode": {
+        "label": "Light Mode",
+        "values": {
+            "normal": "Normal",
+            "on": "On",
+            "off": "Off",
+            "flash": "Flash"
+        }
+    },
+    "light_type": {
+        "label": "Light Type",
+        "description": "Stop the buzzer for the current alarm",
+        "values": {
+            "low": "Low",
+            "middle": "Middle",
+            "high": "High"
+        }
+    },
+    "limits_calibration": {
+        "label": "Hiệu chuẩn giới hạn",
+        "description": "Recalibrate the position limits",
+        "values": {
+            "calibrated": "Calibrated",
+            "recalibrate": "Recalibrate",
+            "open": "Open",
+            "close": "Close"
+        }
+    },
+    "liquid_depth": {
+        "label": "Liquid Depth",
+        "description": "Unknown (Default 0s)"
+    },
+    "liquid_depth_max": {
+        "label": "Liquid Depth Max",
+        "description": "Liquid level ratio"
+    },
+    "liquid_level_percent": {
+        "label": "Liquid Level Percent",
+        "description": "Unknown (Default 0s)"
+    },
+    "liquid_state": {
+        "label": "Liquid State",
+        "description": "Liquid maximum percentage",
+        "values": {
+            "low": "Low",
+            "normal": "Normal",
+            "high": "High"
+        }
+    },
+    "local_temperature_based_on_sensor": {
+        "label": "Nhiệt độ cục bộ dựa trên cảm biến",
+        "description": "Fixes inverted cover position values on affected modules when enabled."
+    },
+    "local_temperature_internal": {
+        "label": "Manual Override",
+        "description": "Temporary manual override active"
+    },
+    "lost_flow_alarm": {
+        "label": "Lost Flow Alarm",
+        "description": "Time overcurrent is allowed before the circuit is switched OFF (Default 0s)"
+    },
+    "lost_flow_threshold": {
+        "label": "Lost Flow Threshold",
+        "description": "Unknown"
+    },
+    "lost_flow_threshold_time": {
+        "label": "Lost Flow Threshold Time",
+        "description": "Unknown"
+    },
+    "manual_burglar_alarm": {
+        "label": "Manual Burglar Alarm",
+        "description": "Indicates whether the smoke alarm siren is being manually activated on the device"
+    },
+    "manual_smoke_alarm": {
+        "label": "Manual Smoke Alarm",
+        "description": "Indicates whether the smoke alarm siren is being manually activated on the device"
+    },
+    "max_set": {
+        "label": "Max Set",
+        "description": "Liquid minimum percentage"
+    },
+    "maximum_brightness": {
+        "label": "Độ sáng tối đa",
+        "description": "This raises the minimum brightness level of the connected light"
+    },
+    "measurement_poll_interval": {
+        "label": "Measurement Poll Interval"
+    },
+    "min_set": {
+        "label": "Min Set",
+        "description": "Distance from sensor to bottom of the tank"
+    },
+    "minimum_brightness": {
+        "label": "Độ sáng tối thiểu"
+    },
+    "minimum_pwm": {
+        "label": "Minimum PWM",
+        "description": "Power off the device and wait for 3 seconds before reconnecting to apply the settings."
+    },
+    "minutes": {
+        "label": "Minutes",
+        "description": "Whenever the device is switched ON, switch it OFF automatically after the configured delay"
+    },
+    "mmwave_detection_areas": {
+        "label": "Mmwave Detection Areas",
+        "description": "Defines the area in front of the switch"
+    },
+    "mmwave_interference_areas": {
+        "label": "Mmwave Interference Areas"
+    },
+    "mmwave_stay_areas": {
+        "label": "Mmwave Stay Areas"
+    },
+    "mmwave_targets": {
+        "label": "Mmwave Targets",
+        "description": "Y-axis coordinate of the target in centimeters"
+    },
+    "motor_clb_position": {
+        "label": "Motor Clb Position",
+        "description": "Motor Calibration By Position",
+        "values": {
+            "open": "Open",
+            "close": "Close",
+            "other": "Other",
+            "clear": "Clear"
+        }
+    },
+    "motor_clb_position_result": {
+        "label": "Motor Clb Position Result",
+        "description": "Motor Calibration By Position",
+        "values": {
+            "open": "Open",
+            "close": "Close",
+            "other": "Other",
+            "clear": "Clear"
+        }
+    },
+    "motor_info": {
+        "label": "Motor Info",
+        "description": "Motor Updated Info"
+    },
+    "motor_mode": {
+        "label": "Motor Mode",
+        "description": "Motor Mode"
+    },
+    "motor_state": {
+        "label": "Motor State",
+        "description": "Current motor movement status",
+        "values": {
+            "opening": "Opening",
+            "closing": "Closing",
+            "stopped": "Stopped"
+        }
+    },
+    "mute_prompt_end_time": {
+        "label": "Mute Prompt End Time",
+        "description": "Prompt-tone mute start time in HH:MM format"
+    },
+    "mute_prompt_start_time": {
+        "label": "Mute Prompt Start Time",
+        "description": "Mute device operation prompt tones"
+    },
+    "mute_prompt_tone": {
+        "label": "Mute Prompt Tone",
+        "description": "Bathroom heater operating mode"
+    },
+    "negative_active_power_alarm": {
+        "label": "Negative Active Power Alarm",
+        "description": "Trigger alarm when one phase is unavailable (Default OFF)"
+    },
+    "night_light_mode": {
+        "label": "Night Light Mode",
+        "description": "Bathroom heater power",
+        "values": {
+            "off": "Off"
+        }
+    },
+    "no_occupancy_since_false": {
+        "label": "No Occupancy Since False"
+    },
+    "no_occupancy_since_true": {
+        "label": "No Occupancy Since True",
+        "description": "Interval duration"
+    },
+    "no_position_support": {
+        "label": "No Position Support",
+        "description": "Time in seconds after which presence is cleared after detecting it (default 100 seconds)."
+    },
+    "notificationComplete": {
+        "label": "Notificationcomplete",
+        "description": "Which mmWave Control command to send"
+    },
+    "occupancy_timeout_2": {
+        "label": "Occupancy Timeout 2"
+    },
+    "on_with_countdown": {
+        "label": "On With Countdown",
+        "description": "Turn off the sprinkler after set duration (one time action)"
+    },
+    "operating_mode": {
+        "label": "Operating Mode",
+        "description": "Aqara bathroom heater climate controls",
+        "values": {
+            "off": "Off"
+        }
+    },
+    "over_current_alarm": {
+        "label": "Over Current Alarm",
+        "description": "Current and voltage alarms configuration"
+    },
+    "over_current_threshold": {
+        "label": "Over Current Threshold",
+        "description": "Automatically switch OFF the circuit when the circuit draws more current than the limit (Default ON)"
+    },
+    "over_current_threshold_time": {
+        "label": "Over Current Threshold Time",
+        "description": "How often the device should report measurements (Default 5s)"
+    },
+    "over_voltage_alarm": {
+        "label": "Over Voltage Alarm",
+        "description": "Current upper limit (Default 63A)"
+    },
+    "over_voltage_threshold": {
+        "label": "Over Voltage Threshold",
+        "description": "Automatically switch OFF the circuit when the voltage is above the limit (Default ON)"
+    },
+    "override_active": {
+        "label": "Manual Override Duration",
+        "description": "Duration in minutes for the current manual override. 0 means until next schedule event, 65535 means indefinitely."
+    },
+    "phase_loss_alarm": {
+        "label": "Phase Loss Alarm",
+        "description": "Power factor lower limit (Default 15%)"
+    },
+    "precision": {
+        "label": "Precision"
+    },
+    "prepayment": {
+        "label": "Prepayment",
+        "description": "Number of allowed reclosing attempts per fault"
+    },
+    "presence_timeout": {
+        "label": "Thời gian chờ sự hiện diện",
+        "description": "Time in seconds after which presence is cleared after detecting it (default 100 seconds)."
+    },
+    "pulse_length": {
+        "label": "Độ dài xung",
+        "description": "Set the desired pulse length for the relay in seconds."
+    },
+    "quantitative_watering": {
+        "label": "Quantitative Watering",
+        "description": "Enables water flow measurement, and automatically turn off the sprinkler when flow is 0 for ~30s"
+    },
+    "reclosing": {
+        "label": "Reclosing",
+        "description": "Measured current difference between live and neutral wires"
+    },
+    "reclosing_count": {
+        "label": "Reclosing Count",
+        "description": "Time to wait after the fault is cleared, before attempting reclose"
+    },
+    "reclosing_delay": {
+        "label": "Reclosing Delay",
+        "description": "Automatically attempt switching ON the circuit after it was turned OFF by a detected fault"
+    },
+    "refresh": {
+        "label": "Làm mới",
+        "description": "Current water flow",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "replace_filter": {
+        "label": "Replace Filter",
+        "description": "Controls physical input on the device"
+    },
+    "reset_energy_meters": {
+        "label": "Đặt lại đồng hồ năng lượng",
+        "description": "Triggers the reset of all energy meters on the device to 0 kWh",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "restart_device": {
+        "label": "Restart Device",
+        "description": "Restarts the device.",
+        "values": {
+            "Restart Device": "Restart Device"
+        }
+    },
+    "restore_reports": {
+        "label": "Restore Reports",
+        "description": "Indicates whether the device issues reports on zone operational status"
+    },
+    "rs485_address": {
+        "label": "RS485 address"
+    },
+    "rs485_address_enabled": {
+        "label": "RS485 baud rate"
+    },
+    "rs485_baud_rate": {
+        "label": "RS485 baud rate"
+    },
+    "rs485_baud_rate_enabled": {
+        "label": "RS485 baud rate",
+        "description": "Configuration for RS485 wired communication (if supported by device) and high power alarm"
+    },
+    "rs485_data_format": {
+        "label": "RS485 address",
+        "values": {
+            "N81": "N81",
+            "E81": "E81",
+            "O81": "O81",
+            "N82": "N82"
+        }
+    },
+    "rs485_data_format_enabled": {
+        "label": "RS485 address"
+    },
+    "save_schedule": {
+        "label": "Schedule upload status",
+        "description": "Upload the weekly schedule to the thermostat"
+    },
+    "schedule_end_time": {
+        "label": "Schedule End Time",
+        "description": "LED disable schedule start time (HH:MM format)"
+    },
+    "schedule_start_time": {
+        "label": "Schedule Start Time",
+        "description": "LED disable schedule start time (HH:MM format)"
+    },
+    "schedule_upload_status": {
+        "label": "Schedule upload status"
+    },
+    "seconds": {
+        "label": "Seconds",
+        "description": "Minutes component of the delay duration"
+    },
+    "segment_colors": {
+        "label": "Segment Colors",
+        "description": "Green (0-255)"
+    },
+    "self_test": {
+        "label": "Tự kiểm tra",
+        "description": "Cho biết thiết bị đang trong chế độ tự kiểm tra",
+        "values": {
+            "off": "Off",
+            "on_auto": "On Auto",
+            "button_locked": "Button Locked",
+            "on_manual_app": "On Manual App",
+            "on_manual_button": "On Manual Button"
+        }
+    },
+    "self_test_result": {
+        "label": "Self Test Result",
+        "description": "Status",
+        "values": {
+            "checking": "Checking",
+            "success": "Success",
+            "failure": "Failure",
+            "others": "Others"
+        }
+    },
+    "sensitivity_level": {
+        "label": "Mức độ nhạy",
+        "description": "Specifies the selected sensitivity level on the back of the device (either 'pet immunity' or 'sneak-by guard')."
+    },
+    "sensor": {
+        "label": "Cảm biến",
+        "description": "Select mode to display sensor: internal or both with external",
+        "values": {
+            "internal": "Internal",
+            "external": "External"
+        }
+    },
+    "silence": {
+        "label": "Yên lặng",
+        "description": "Indicates whether a fault was detected"
+    },
+    "silent_mode": {
+        "label": "Chế độ yên lặng",
+        "description": "Indicates whether a fault was detected"
+    },
+    "simulated_brightness": {
+        "label": "Độ sáng mô phỏng",
+        "description": "Delta per interval, 20 by default"
+    },
+    "single_watering_amount": {
+        "label": "Single Watering Amount",
+        "description": "Turn on the sprinkler with a set amount of water"
+    },
+    "single_watering_duration": {
+        "label": "Single Watering Duration",
+        "description": "Time left in the countdown"
+    },
+    "slow_mode": {
+        "label": "Slow Mode",
+        "description": "Motor rotation direction",
+        "values": {
+            "left": "Left",
+            "right": "Right"
+        }
+    },
+    "soil_calibration": {
+        "label": "Soil Calibration",
+        "description": "Humidity calibration"
+    },
+    "soil_sampling": {
+        "label": "Soil Sampling",
+        "description": "Air temperature and humidity sampling"
+    },
+    "soil_warning": {
+        "label": "Soil Warning",
+        "description": "Soil humidity sampling"
+    },
+    "solar_panel_voltage": {
+        "label": "Solar Panel Voltage",
+        "description": "Current voltage level received from the integrated solar panel"
+    },
+    "spatial_learning": {
+        "label": "Spatial Learning",
+        "description": "Initiate AI Spatial Learning.",
+        "values": {
+            "Start Learning": "Start Learning"
+        }
+    },
+    "status": {
+        "label": "Status",
+        "description": "Reset the stored watering amount to 0",
+        "values": {
+            "refresh": "Refresh"
+        }
+    },
+    "stop_alarm": {
+        "label": "Dừng báo động",
+        "description": "Trigger an alarm on the device",
+        "values": {
+            "trigger": "Trigger"
+        }
+    },
+    "supervision_reports": {
+        "label": "Báo cáo giám sát",
+        "description": "Indicates whether the battery of the device is almost empty"
+    },
+    "supported_max_motor_speed": {
+        "label": "Supported Max Motor Speed",
+        "description": "Set the motor speed"
+    },
+    "surplus_flow": {
+        "label": "Surplus Flow",
+        "description": "Turn on the sprinkler with a set amount of water"
+    },
+    "switch_mode": {
+        "label": "Chế độ công tắc"
+    },
+    "switch_type_button": {
+        "label": "Switch Type Button",
+        "description": "External switch type",
+        "values": {
+            "flip-switch": "Flip-Switch",
+            "sync-switch": "Sync-Switch",
+            "button-switch": "Button-Switch",
+            "button2-switch": "Button2-Switch"
+        }
+    },
+    "switch_type_curtain": {
+        "label": "Switch Type Curtain",
+        "description": "Type of the switch",
+        "values": {
+            "toggle": "Toggle",
+            "state": "State",
+            "momentary": "Momentary"
+        }
+    },
+    "tamper_last_changed": {
+        "label": "Tamper Last Changed",
+        "description": "Time (in seconds) since when contact was last changed."
+    },
+    "temp_greater_then": {
+        "label": "Temp Greater Then",
+        "description": "Automatically switch ON/OFF, make sure manual mode is turned OFF otherwise auto settings are not applied.",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "temp_greater_value": {
+        "label": "Temp Greater Value",
+        "description": "Greater action",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "temp_lower_then": {
+        "label": "Temp Lower Then",
+        "description": "Temperature greater than value",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "temp_lower_value": {
+        "label": "Temp Lower Value",
+        "description": "Lower action",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "temperature_calibration": {
+        "label": "Temperature Calibration",
+        "description": "Temperature unit",
+        "values": {
+            "celsius": "Celsius",
+            "fahrenheit": "Fahrenheit"
+        }
+    },
+    "temperature_sampling": {
+        "label": "Temperature Sampling",
+        "description": "Soil Humidity calibration"
+    },
+    "temperature_setpoint_hold_duration": {
+        "label": "Manual Override Duration",
+        "description": "Duration in minutes for the current manual override. 0 means until next schedule event, 65535 means indefinitely."
+    },
+    "temperature_unit": {
+        "label": "Temperature Unit",
+        "description": "Temperature unit",
+        "values": {
+            "celsius": "Celsius",
+            "fahrenheit": "Fahrenheit"
+        }
+    },
+    "test_mode": {
+        "label": "Chế độ kiểm tra"
+    },
+    "test_mode_timeout": {
+        "label": "Thời gian chờ chế độ kiểm tra"
+    },
+    "time_start": {
+        "label": "Time Start",
+        "values": {
+            "1970": "1970",
+            "2000": "2000",
+            "off": "Off"
+        }
+    },
+    "track_target_distance": {
+        "label": "Track Target Distance",
+        "description": "Initiate current target distance tracking.",
+        "values": {
+            "start_tracking_distance": "Start Tracking Distance"
+        }
+    },
+    "trigger": {
+        "label": "Pulse duration",
+        "description": "Duration of the pulse.",
+        "values": {
+            "press": "Press"
+        }
+    },
+    "trigger_alarm": {
+        "label": "Kích hoạt báo động",
+        "description": "Trigger an alarm on the device",
+        "values": {
+            "trigger": "Trigger"
+        }
+    },
+    "trouble": {
+        "label": "Hỏng hóc",
+        "description": "Indicates whether the device mains voltage supply is at fault"
+    },
+    "tx_power": {
+        "label": "Công suất TX",
+        "description": "TX power mode for regulatory compliance (CE or FCC). Requires device rejoin to apply.",
+        "values": {
+            "CE": "Ce",
+            "FCC": "Fcc"
+        }
+    },
+    "unbalanced_load_alarm": {
+        "label": "Unbalanced Load Alarm",
+        "description": "Voltage lower limit (Default 180V)"
+    },
+    "unbalanced_load_threshold": {
+        "label": "Unbalanced Load Threshold",
+        "description": "Trigger alarm when power factor is below the limit (Default 15%)"
+    },
+    "under_voltage_alarm": {
+        "label": "Under Voltage Alarm",
+        "description": "Voltage upper limit (Default 275V)"
+    },
+    "under_voltage_threshold": {
+        "label": "Under Voltage Threshold",
+        "description": "Automatically switch OFF the circuit when the voltage is below the limit (Default ON)"
+    },
+    "unfreeze_support": {
+        "label": "Hỗ trợ rã đông",
+        "description": "Base local temperature on sensor choice (default false)."
+    },
+    "vacation_mode": {
+        "label": "Chế độ nghỉ phép",
+        "description": "When Vacation Mode is active the schedule is disabled and unoccupied_heating_setpoint is used."
+    },
+    "valve_adapt_process": {
+        "label": "Quá trình thích ứng van",
+        "values": {
+            "adapt": "Adapt"
+        }
+    },
+    "valve_adapt_status": {
+        "label": "Trạng thái thích ứng van",
+        "description": "Specifies the current status of the valve adaptation"
+    },
+    "vibration_detection_enabled": {
+        "label": "Phát hiện rung đã bật"
+    },
+    "vibration_detection_sensitivity": {
+        "label": "Độ nhạy phát hiện rung",
+        "description": "Activate the vibration detection to detect vibrations at the window or door via the integrated sensor as well"
+    },
+    "vibration_timeout": {
+        "label": "Thời gian chờ rung",
+        "description": "Time in seconds after which vibration is cleared after detecting it (default 90 seconds)."
+    },
+    "voltage_phase_b": {
+        "label": "VOC",
+        "description": "Measured VOC value"
+    },
+    "voltage_phase_c": {
+        "label": "Voltage phase B",
+        "description": "Measured electrical potential value on phase B"
+    },
+    "water": {
+        "label": "Water",
+        "description": "Indicates whether the device is opened or closed"
+    },
+    "water_current": {
+        "label": "Water Current",
+        "description": "Total watering amount"
+    },
+    "water_leak_alarm_control": {
+        "label": "Mute water leak alarm"
+    },
+    "water_total": {
+        "label": "Water Total",
+        "description": "Quantity of last watering"
+    },
+    "water_total_reset": {
+        "label": "Water Total Reset",
+        "description": "Total watering amount",
+        "values": {
+            "reset": "Reset"
+        }
+    },
+    "zone_status_interval": {
+        "label": "Khoảng thời gian trạng thái vùng",
+        "description": "Heartbeat interval in seconds. Controls the periodic interval between ZoneStatusChange commands (default 300s)"
+    }
 }
