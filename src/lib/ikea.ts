@@ -7,6 +7,7 @@ import {access, binary, options, presets} from "../lib/exposes";
 import * as m from "../lib/modernExtend";
 import * as reporting from "../lib/reporting";
 import * as globalStore from "../lib/store";
+import {i18n} from "../lib/translations";
 import type {Configure, Expose, Fz, KeyValue, KeyValueAny, LevelConfigFeatures, ModernExtend, OnEvent, Range, Tz, Zh} from "../lib/types";
 import {
     assertString,
@@ -143,7 +144,8 @@ export function ikeaBattery(): ModernExtend {
             .withDescription("Remaining battery in %")
             .withValueMin(0)
             .withValueMax(100)
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("battery")),
     ];
 
     const fromZigbee = [
@@ -241,32 +243,50 @@ export function ikeaConfigureRemote(): ModernExtend {
 
 export function ikeaAirPurifier(): ModernExtend {
     const exposes: Expose[] = [
-        presets.fan().withState("fan_state").withModes(["off", "auto", "1", "2", "3", "4", "5", "6", "7", "8", "9"]),
-        presets.numeric("fan_speed", access.STATE_GET).withValueMin(0).withValueMax(9).withDescription("Current fan speed"),
+        presets.fan().withState("fan_state").withModes(["off", "auto", "1", "2", "3", "4", "5", "6", "7", "8", "9"]).withTranslations(i18n("fan")),
+        presets
+            .numeric("fan_speed", access.STATE_GET)
+            .withValueMin(0)
+            .withValueMax(9)
+            .withDescription("Current fan speed")
+            .withTranslations(i18n("fan_speed")),
         presets
             .numeric("pm25", access.STATE_GET)
             .withLabel("PM25")
             .withUnit("µg/m³")
-            .withDescription("Measured PM2.5 (particulate matter) concentration"),
+            .withDescription("Measured PM2.5 (particulate matter) concentration")
+            .withTranslations(i18n("pm25")),
         presets
             .enum("air_quality", access.STATE_GET, ["excellent", "good", "moderate", "poor", "unhealthy", "hazardous", "out_of_range", "unknown"])
-            .withDescription("Calculated air quality"),
-        presets.binary("led_enable", access.ALL, true, false).withDescription("Controls the LED").withCategory("config"),
-        presets.binary("child_lock", access.ALL, "LOCK", "UNLOCK").withDescription("Controls physical input on the device").withCategory("config"),
+            .withDescription("Calculated air quality")
+            .withTranslations(i18n("air_quality")),
+        presets
+            .binary("led_enable", access.ALL, true, false)
+            .withDescription("Controls the LED")
+            .withCategory("config")
+            .withTranslations(i18n("led_enable")),
+        presets
+            .binary("child_lock", access.ALL, "LOCK", "UNLOCK")
+            .withDescription("Controls physical input on the device")
+            .withCategory("config")
+            .withTranslations(i18n("child_lock")),
         presets
             .binary("replace_filter", access.STATE_GET, true, false)
             .withDescription("Indicates if the filter is older than 6 months and needs replacing")
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("replace_filter")),
         presets
             .numeric("filter_age", access.STATE_GET)
             .withUnit("minutes")
             .withDescription("Duration the filter has been used")
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("filter_age")),
         presets
             .numeric("device_age", access.STATE_GET)
             .withUnit("minutes")
             .withDescription("Duration the air purifier has been used")
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("device_age")),
     ];
 
     const fromZigbee = [
@@ -527,11 +547,15 @@ export function ikeaConfigureGenPollCtrl(args?: {endpointId: number}): ModernExt
 
 export function tradfriOccupancy(): ModernExtend {
     const exposes: Expose[] = [
-        presets.binary("occupancy", access.STATE, true, false).withDescription("Indicates whether the device detected occupancy"),
+        presets
+            .binary("occupancy", access.STATE, true, false)
+            .withDescription("Indicates whether the device detected occupancy")
+            .withTranslations(i18n("occupancy")),
         presets
             .binary("illuminance_above_threshold", access.STATE, true, false)
             .withDescription("Indicates whether the device detected bright light (works only in night mode)")
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("illuminance_above_threshold")),
     ];
 
     const fromZigbee = [

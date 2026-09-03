@@ -14,6 +14,7 @@ import {
     numeric,
     setupConfigureForReporting,
 } from "./modernExtend";
+import {i18n} from "./translations";
 import type {Configure, Fz, ModernExtend, Tz, Zh} from "./types";
 
 const NS = "zhc:ubisys";
@@ -620,7 +621,8 @@ export const ubisysModernExtend = {
 
         const expose = e
             .binary(propertyName, access, true, false)
-            .withDescription("When Vacation Mode is active the schedule is disabled and unoccupied_heating_setpoint is used.");
+            .withDescription("When Vacation Mode is active the schedule is disabled and unoccupied_heating_setpoint is used.")
+            .withTranslations(i18n("vacation_mode"));
 
         const fromZigbee = [
             {

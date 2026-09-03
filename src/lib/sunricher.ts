@@ -7,6 +7,7 @@ import {logger} from "./logger";
 import * as reporting from "./reporting";
 import {payload} from "./reporting";
 import * as globalStore from "./store";
+import {i18n} from "./translations";
 import type {Configure, Expose, Fz, KeyValueAny, ModernExtend, Tz} from "./types";
 import * as utils from "./utils";
 import {precisionRound} from "./utils";
@@ -98,7 +99,10 @@ const extend = {
         ];
 
         const exposes: Expose[] = [
-            e.enum("external_switch_type", ea.ALL, ["push_button", "normal_on_off", "three_way"]).withLabel("External switch type"),
+            e
+                .enum("external_switch_type", ea.ALL, ["push_button", "normal_on_off", "three_way"])
+                .withLabel("External switch type")
+                .withTranslations(i18n("external_switch_type")),
         ];
 
         const configure: [Configure] = [
@@ -169,6 +173,7 @@ const extend = {
                 .withValueMin(0)
                 .withValueMax(50)
                 .withUnit("%")
+                .withTranslations(i18n("minimum_pwm"))
                 .withValueStep(1),
         ];
 
@@ -418,7 +423,11 @@ const extend = {
         const manufacturerCode = 0x120b;
 
         const exposes: Expose[] = [
-            e.enum("indicator_light", ea.ALL, ["on", "off"]).withDescription("Enable/disable the LED indicator").withCategory("config"),
+            e
+                .enum("indicator_light", ea.ALL, ["on", "off"])
+                .withDescription("Enable/disable the LED indicator")
+                .withCategory("config")
+                .withTranslations(i18n("indicator_light")),
         ];
 
         const fromZigbee = [
@@ -476,6 +485,7 @@ const extend = {
             e
                 .text(`schedule_${day}`, ea.ALL)
                 .withDescription(`Schedule for ${day.charAt(0).toUpperCase() + day.slice(1)}, example: "06:00/21.0 12:00/21.0 18:00/21.0 22:00/16.0"`)
+                .withTranslations(i18n(`weekly_schedule_${day}`))
                 .withCategory("config"),
         );
 
@@ -585,7 +595,12 @@ const extend = {
     },
 
     thermostatChildLock: (): ModernExtend => {
-        const exposes = [e.binary("child_lock", ea.ALL, "LOCK", "UNLOCK").withDescription("Enables/disables physical input on the device")];
+        const exposes = [
+            e
+                .binary("child_lock", ea.ALL, "LOCK", "UNLOCK")
+                .withDescription("Enables/disables physical input on the device")
+                .withTranslations(i18n("child_lock")),
+        ];
 
         const fromZigbee = [
             {
@@ -903,7 +918,8 @@ const extend = {
             e
                 .enum("calibrate", ea.SET, ["calibrate"])
                 .withDescription("Calibrate curtain (motor will learn travel limits automatically)")
-                .withCategory("config"),
+                .withCategory("config")
+                .withTranslations(i18n("calibrate")),
         ];
 
         return {

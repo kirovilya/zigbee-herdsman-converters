@@ -10,7 +10,8 @@ import type {
     ThermostatSystemMode,
 } from "./constants";
 import {thermostatSetpointChangeSource} from "./constants";
-import type {Access, LevelConfigFeatures, Range} from "./types";
+import {i18n} from "./translations";
+import type {Access, LevelConfigFeatures, Range, Translations} from "./types";
 import {getLabelFromName} from "./utils";
 
 export type Feature = Numeric | Binary | Enum | Composite | List | Text;
@@ -36,6 +37,7 @@ export class Base {
     features?: Feature[];
     category?: "config" | "diagnostic";
     homeassistant?: HomeAssistant;
+    translations?: Translations;
 
     withEndpoint(endpointName: string) {
         this.endpoint = endpointName;
@@ -75,6 +77,11 @@ export class Base {
 
     withDescription(description: string) {
         this.description = description;
+        return this;
+    }
+
+    withTranslations(translations: Translations) {
+        this.translations = translations;
         return this;
     }
 
@@ -138,6 +145,7 @@ export class Base {
         }
         target.category = this.category;
         target.homeassistant = this.homeassistant ? {...this.homeassistant} : undefined;
+        target.translations = this.translations ? JSON.parse(JSON.stringify(this.translations)) : undefined;
     }
 }
 
@@ -834,41 +842,50 @@ const a = access;
 
 export const options = {
     calibration: (name: string, type = "absolute") =>
-        new Numeric(`${name}_calibration`, access.SET).withDescription(
-            `Calibrates the ${name} value (${type} offset), takes into effect on next report of device.`,
-        ),
+        new Numeric(`${name}_calibration`, access.SET)
+            .withDescription(`Calibrates the ${name} value (${type} offset), takes into effect on next report of device.`)
+            .withTranslations(i18n("calibration")),
     precision: (name: string) =>
         new Numeric(`${name}_precision`, access.SET)
             .withValueMin(0)
             .withValueMax(3)
             .withDescription(
                 `Number of digits after decimal point for ${name}, takes into effect on next report of device. This option can only decrease the precision, not increase it.`,
-            ),
+            )
+            .withTranslations(i18n("precision")),
     invert_cover: () =>
-        new Binary("invert_cover", access.SET, true, false).withDescription(
-            "Inverts the cover position and state, false: open=100,close=0, true: open=0,close=100 (default false).",
-        ),
-    illuminance_raw: () => new Binary("illuminance_raw", access.SET, true, false).withDescription("Expose the raw illuminance value."),
+        new Binary("invert_cover", access.SET, true, false)
+            .withDescription("Inverts the cover position and state, false: open=100,close=0, true: open=0,close=100 (default false).")
+            .withTranslations(i18n("invert_cover")),
+    illuminance_raw: () =>
+        new Binary("illuminance_raw", access.SET, true, false)
+            .withDescription("Expose the raw illuminance value.")
+            .withTranslations(i18n("illuminance_raw")),
     color_sync: () =>
-        new Binary("color_sync", access.SET, true, false).withDescription(
-            "When enabled colors will be synced, e.g. if the light supports both color x/y and color temperature a conversion from color x/y to color temperature will be done when setting the x/y color (default true).",
-        ),
+        new Binary("color_sync", access.SET, true, false)
+            .withDescription(
+                "When enabled colors will be synced, e.g. if the light supports both color x/y and color temperature a conversion from color x/y to color temperature will be done when setting the x/y color (default true).",
+            )
+            .withTranslations(i18n("color_sync")),
     thermostat_unit: () =>
-        new Enum("thermostat_unit", access.SET, ["celsius", "fahrenheit"]).withDescription(
-            "Controls the temperature unit of the thermostat (default celsius).",
-        ),
+        new Enum("thermostat_unit", access.SET, ["celsius", "fahrenheit"])
+            .withDescription("Controls the temperature unit of the thermostat (default celsius).")
+            .withTranslations(i18n("thermostat_unit")),
     homeassistant_climate_modes: () =>
         new Enum("homeassistant_climate_modes", access.SET, ["heat", "cool", "heat_cool"])
             .withLabel("Home Assistant climate modes")
-            .withDescription("Controls which modes are exposed in Home Assistant climate discovery (default heat)."),
+            .withDescription("Controls which modes are exposed in Home Assistant climate discovery (default heat).")
+            .withTranslations(i18n("homeassistant_climate_modes")),
     expose_pin: () =>
         new Binary("expose_pin", access.SET, true, false)
             .withLabel("Expose PIN")
-            .withDescription("Expose pin of this lock in the published payload (default false)."),
+            .withDescription("Expose pin of this lock in the published payload (default false).")
+            .withTranslations(i18n("expose_pin")),
     occupancy_timeout: () =>
         new Numeric("occupancy_timeout", access.SET)
             .withValueMin(0)
-            .withDescription("Time in seconds after which occupancy is cleared after detecting it (default 90 seconds)."),
+            .withDescription("Time in seconds after which occupancy is cleared after detecting it (default 90 seconds).")
+            .withTranslations(i18n("occupancy_timeout")),
     occupancy_timeout_2: () =>
         new Numeric("occupancy_timeout", access.SET)
             .withValueMin(0)
@@ -876,78 +893,94 @@ export const options = {
             .withUnit("s")
             .withDescription(
                 'Time in seconds after which occupancy is cleared after detecting it (default is "detection_interval" + 2 seconds). The value must be equal to or greater than "detection_interval", and it can also be a fraction.',
-            ),
+            )
+            .withTranslations(i18n("occupancy_timeout_2")),
     vibration_timeout: () =>
         new Numeric("vibration_timeout", access.SET)
             .withValueMin(0)
-            .withDescription("Time in seconds after which vibration is cleared after detecting it (default 90 seconds)."),
+            .withDescription("Time in seconds after which vibration is cleared after detecting it (default 90 seconds).")
+            .withTranslations(i18n("vibration_timeout")),
     simulated_brightness: () =>
         new Composite("simulated_brightness", "simulated_brightness", access.SET)
             .withDescription(
                 "Simulate a brightness value. If this device provides a brightness_move_up or brightness_move_down action it is possible to specify the update interval and delta. The action_brightness_delta indicates the delta for each interval.",
             )
             .withFeature(new Numeric("delta", access.SET).withValueMin(0).withDescription("Delta per interval, 20 by default"))
-            .withFeature(new Numeric("interval", access.SET).withValueMin(0).withUnit("ms").withDescription("Interval duration")),
+            .withFeature(new Numeric("interval", access.SET).withValueMin(0).withUnit("ms").withDescription("Interval duration"))
+            .withTranslations(i18n("simulated_brightness")),
     no_occupancy_since_true: () =>
-        new List("no_occupancy_since", access.SET, new Numeric("time", access.STATE_SET)).withDescription(
-            'Sends a message the last time occupancy (occupancy: true) was detected. When setting this for example to [10, 60] a `{"no_occupancy_since": 10}` will be sent after 10 seconds and a `{"no_occupancy_since": 60}` after 60 seconds.',
-        ),
+        new List("no_occupancy_since", access.SET, new Numeric("time", access.STATE_SET))
+            .withDescription(
+                'Sends a message the last time occupancy (occupancy: true) was detected. When setting this for example to [10, 60] a `{"no_occupancy_since": 10}` will be sent after 10 seconds and a `{"no_occupancy_since": 60}` after 60 seconds.',
+            )
+            .withTranslations(i18n("no_occupancy_since_true")),
     no_occupancy_since_false: () =>
-        new List("no_occupancy_since", access.SET, new Numeric("time", access.STATE_SET)).withDescription(
-            'Sends a message after the last time no occupancy (occupancy: false) was detected. When setting this for example to [10, 60] a `{"no_occupancy_since": 10}` will be sent after 10 seconds and a `{"no_occupancy_since": 60}` after 60 seconds.',
-        ),
+        new List("no_occupancy_since", access.SET, new Numeric("time", access.STATE_SET))
+            .withDescription(
+                'Sends a message after the last time no occupancy (occupancy: false) was detected. When setting this for example to [10, 60] a `{"no_occupancy_since": 10}` will be sent after 10 seconds and a `{"no_occupancy_since": 60}` after 60 seconds.',
+            )
+            .withTranslations(i18n("no_occupancy_since_false")),
     presence_timeout: () =>
         new Numeric("presence_timeout", access.SET)
             .withValueMin(0)
-            .withDescription("Time in seconds after which presence is cleared after detecting it (default 100 seconds)."),
+            .withDescription("Time in seconds after which presence is cleared after detecting it (default 100 seconds).")
+            .withTranslations(i18n("presence_timeout")),
     no_position_support: () =>
-        new Binary("no_position_support", access.SET, true, false).withDescription(
-            "Set to true when your device only reports position 0, 100 and 50 (in this case your device has an older firmware) (default false).",
-        ),
+        new Binary("no_position_support", access.SET, true, false)
+            .withDescription(
+                "Set to true when your device only reports position 0, 100 and 50 (in this case your device has an older firmware) (default false).",
+            )
+            .withTranslations(i18n("no_position_support")),
     transition: () =>
         new Numeric("transition", access.SET)
             .withValueMin(0)
             .withValueStep(0.1)
             .withDescription(
                 "Controls the transition time (in seconds) of on/off, brightness, color temperature (if applicable) and color (if applicable) changes. Defaults to `0` (no transition).",
-            ),
+            )
+            .withTranslations(i18n("transition")),
     measurement_poll_interval: (extraNote = "") =>
         new Numeric("measurement_poll_interval", access.SET)
             .withValueMin(-1)
             .withDescription(
                 `This device does not support reporting electric measurements so it is polled instead. The default poll interval is 60 seconds, set to -1 to disable.${extraNote}`,
-            ),
+            )
+            .withTranslations(i18n("measurement_poll_interval")),
     illuminance_below_threshold_check: () =>
-        new Binary("illuminance_below_threshold_check", access.SET, true, false).withDescription(
-            "Set to false to also send messages when illuminance is above threshold in night mode (default true).",
-        ),
+        new Binary("illuminance_below_threshold_check", access.SET, true, false)
+            .withDescription("Set to false to also send messages when illuminance is above threshold in night mode (default true).")
+            .withTranslations(i18n("illuminance_below_threshold_check")),
     state_action: () =>
-        new Binary("state_action", access.SET, true, false).withDescription(
-            `State actions will also be published as 'action' when true (default false).`,
-        ),
+        new Binary("state_action", access.SET, true, false)
+            .withDescription(`State actions will also be published as 'action' when true (default false).`)
+            .withTranslations(i18n("state_action")),
     identify_timeout: () =>
         new Numeric("identify_timeout", access.SET)
             .withDescription(
                 "Sets duration of identification procedure in seconds (i.e., how long device would flash). Value ranges from 1 to 30 seconds (default 3).",
             )
             .withValueMin(1)
-            .withValueMax(30),
+            .withValueMax(30)
+            .withTranslations(i18n("identify_timeout")),
     cover_position_tilt_disable_report: () =>
-        new Binary("cover_position_tilt_disable_report", access.SET, true, false).withDescription(
-            `Do not publish set cover target position as a normal 'position' value (default false).`,
-        ),
+        new Binary("cover_position_tilt_disable_report", access.SET, true, false)
+            .withDescription(`Do not publish set cover target position as a normal 'position' value (default false).`)
+            .withTranslations(i18n("cover_position_tilt_disable_report")),
     cover_position_percent_fix: () =>
-        new Binary("cover_position_percent_fix", access.SET, true, false).withDescription(
-            "Fixes inverted cover position values on affected modules when enabled (default false).",
-        ),
+        new Binary("cover_position_percent_fix", access.SET, true, false)
+            .withDescription("Fixes inverted cover position values on affected modules when enabled.")
+            .withTranslations(i18n("cover_position_percent_fix")),
     local_temperature_based_on_sensor: () =>
         new Binary("local_temperature_based_on_sensor", access.SET, true, false)
             .withLabel("Local temperature sensor reporting")
-            .withDescription("Base local temperature on sensor choice (default false)."),
+            .withDescription("Base local temperature on sensor choice (default false).")
+            .withTranslations(i18n("local_temperature_based_on_sensor")),
     unfreeze_support: () =>
-        new Binary("unfreeze_support", access.SET, true, false).withDescription(
-            "Whether to unfreeze IKEA lights (that are known to be frozen) before issuing a command, false: no unfreeze support, true: unfreeze support (default true).",
-        ),
+        new Binary("unfreeze_support", access.SET, true, false)
+            .withDescription(
+                "Whether to unfreeze IKEA lights (that are known to be frozen) before issuing a command, false: no unfreeze support, true: unfreeze support (default true).",
+            )
+            .withTranslations(i18n("unfreeze_support")),
 };
 
 export const presets = {
@@ -965,73 +998,141 @@ export const presets = {
     switch_: () => new Switch(),
     // Specific
     ac_frequency: () =>
-        new Numeric("ac_frequency", access.STATE).withLabel("AC frequency").withUnit("Hz").withDescription("Measured electrical AC frequency"),
+        new Numeric("ac_frequency", access.STATE)
+            .withLabel("AC frequency")
+            .withUnit("Hz")
+            .withDescription("Measured electrical AC frequency")
+            .withTranslations(i18n("ac_frequency")),
     action: (values: string[]) =>
-        new Enum("action", access.STATE, values).withDescription("Triggered action (e.g. a button click)").withCategory("diagnostic"),
+        new Enum("action", access.STATE, values)
+            .withDescription("Triggered action (e.g. a button click)")
+            .withCategory("diagnostic")
+            .withTranslations(i18n("action")),
     action_duration: () =>
-        new Numeric("action_duration", access.STATE).withUnit("s").withDescription("Triggered action duration in seconds").withCategory("diagnostic"),
-    action_group: () => new Numeric("action_group", access.STATE).withDescription("Group where the action was triggered on"),
+        new Numeric("action_duration", access.STATE)
+            .withUnit("s")
+            .withDescription("Triggered action duration in seconds")
+            .withCategory("diagnostic")
+            .withTranslations(i18n("action_duration")),
+    action_group: () =>
+        new Numeric("action_group", access.STATE).withDescription("Group where the action was triggered on").withTranslations(i18n("action_group")),
     angle: (name: string) => new Numeric(name, access.STATE).withValueMin(-360).withValueMax(360).withUnit("°"),
     angle_axis: (name: string) => new Numeric(name, access.STATE).withValueMin(-90).withValueMax(90).withUnit("°"),
-    aqi: () => new Numeric("aqi", access.STATE).withDescription("Air quality index"),
+    aqi: () => new Numeric("aqi", access.STATE).withDescription("Air quality index").withTranslations(i18n("aqi")),
     auto_lock: () =>
-        new Switch().withLabel("Auto lock").withState("auto_lock", false, "Enable/disable auto lock", access.STATE_SET, "AUTO", "MANUAL"),
+        new Switch()
+            .withLabel("Auto lock")
+            .withState("auto_lock", false, "Enable/disable auto lock", access.STATE_SET, "AUTO", "MANUAL")
+            .withTranslations(i18n("auto_lock")),
     auto_off: (offTime: number) =>
         new Binary("auto_off", access.ALL, true, false)
             .withLabel("Auto OFF")
             .withDescription(`Turn the device automatically off when attached device consumes less than 2W for ${offTime} minutes`)
-            .withCategory("config"),
+            .withCategory("config")
+            .withTranslations(i18n("auto_off")),
     auto_relock_time: () =>
         new Numeric("auto_relock_time", access.ALL)
             .withValueMin(0)
             .withUnit("s")
-            .withDescription("The number of seconds to wait after unlocking a lock before it automatically locks again. 0=disabled"),
-    away_mode: () => new Switch().withLabel("Away mode").withState("away_mode", false, "Enable/disable away mode", access.STATE_SET),
-    away_preset_days: () => new Numeric("away_preset_days", access.STATE_SET).withDescription("Away preset days").withValueMin(0).withValueMax(100),
+            .withDescription("The number of seconds to wait after unlocking a lock before it automatically locks again. 0=disabled")
+            .withTranslations(i18n("auto_relock_time")),
+    away_mode: () =>
+        new Switch()
+            .withLabel("Away mode")
+            .withState("away_mode", false, "Enable/disable away mode", access.STATE_SET)
+            .withTranslations(i18n("away_mode")),
+    away_preset_days: () =>
+        new Numeric("away_preset_days", access.STATE_SET)
+            .withDescription("Away preset days")
+            .withValueMin(0)
+            .withValueMax(100)
+            .withTranslations(i18n("away_preset_days")),
     away_preset_temperature: () =>
         new Numeric("away_preset_temperature", access.STATE_SET)
             .withUnit("°C")
             .withDescription("Away preset temperature")
             .withValueMin(-10)
             .withValueMax(35)
-            .withCategory("config"),
+            .withCategory("config")
+            .withTranslations(i18n("away_preset_temperature")),
     battery: () =>
         new Numeric("battery", access.STATE)
             .withUnit("%")
             .withDescription("Remaining battery in %, can take up to 24 hours before reported")
             .withValueMin(0)
             .withValueMax(100)
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("battery")),
     battery_low: () =>
         new Binary("battery_low", access.STATE, true, false)
             .withDescription("Indicates if the battery of this device is almost empty")
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("battery_low")),
     battery_voltage: () =>
-        new Numeric("voltage", access.STATE).withUnit("mV").withDescription("Voltage of the battery in millivolts").withCategory("diagnostic"),
-    boost_time: () => new Numeric("boost_time", access.STATE_SET).withUnit("s").withDescription("Boost time").withValueMin(0).withValueMax(900),
+        new Numeric("voltage", access.STATE)
+            .withUnit("mV")
+            .withDescription("Voltage of the battery in millivolts")
+            .withCategory("diagnostic")
+            .withTranslations(i18n("battery_voltage")),
+    boost_time: () =>
+        new Numeric("boost_time", access.STATE_SET)
+            .withUnit("s")
+            .withDescription("Boost time")
+            .withValueMin(0)
+            .withValueMax(900)
+            .withTranslations(i18n("boost_time")),
     button_lock: () =>
-        new Binary("button_lock", access.ALL, "ON", "OFF").withDescription("Disables the physical switch button").withCategory("config"),
+        new Binary("button_lock", access.ALL, "ON", "OFF")
+            .withDescription("Disables the physical switch button")
+            .withCategory("config")
+            .withTranslations(i18n("button_lock")),
     calibrated: () =>
-        new Binary("calibrated", access.STATE, true, false).withDescription("Indicates if this device is calibrated").withCategory("diagnostic"),
-    carbon_monoxide: () => new Binary("carbon_monoxide", access.STATE, true, false).withDescription("Indicates if CO (carbon monoxide) is detected"),
-    child_lock: () => new Binary("child_lock", access.STATE_SET, "LOCK", "UNLOCK").withDescription("Enables/disables physical input on the device"),
-    co2: () => new Numeric("co2", access.STATE).withLabel("CO2").withUnit("ppm").withDescription("The measured CO2 (carbon dioxide) value"),
-    co: () => new Numeric("co", access.STATE).withLabel("CO").withUnit("ppm").withDescription("The measured CO (carbon monoxide) value"),
+        new Binary("calibrated", access.STATE, true, false)
+            .withDescription("Indicates if this device is calibrated")
+            .withCategory("diagnostic")
+            .withTranslations(i18n("calibrated")),
+    carbon_monoxide: () =>
+        new Binary("carbon_monoxide", access.STATE, true, false)
+            .withDescription("Indicates if CO (carbon monoxide) is detected")
+            .withTranslations(i18n("carbon_monoxide")),
+    child_lock: () =>
+        new Binary("child_lock", access.STATE_SET, "LOCK", "UNLOCK")
+            .withDescription("Enables/disables physical input on the device")
+            .withTranslations(i18n("child_lock")),
+    co2: () =>
+        new Numeric("co2", access.STATE)
+            .withLabel("CO2")
+            .withUnit("ppm")
+            .withDescription("The measured CO2 (carbon dioxide) value")
+            .withTranslations(i18n("co2")),
+    co: () =>
+        new Numeric("co", access.STATE)
+            .withLabel("CO")
+            .withUnit("ppm")
+            .withDescription("The measured CO (carbon monoxide) value")
+            .withTranslations(i18n("co")),
     comfort_temperature: () =>
-        new Numeric("comfort_temperature", access.STATE_SET).withUnit("°C").withDescription("Comfort temperature").withValueMin(0).withValueMax(30),
+        new Numeric("comfort_temperature", access.STATE_SET)
+            .withUnit("°C")
+            .withDescription("Comfort temperature")
+            .withValueMin(0)
+            .withValueMax(30)
+            .withTranslations(i18n("comfort_temperature")),
     consumer_connected: () =>
         new Binary("consumer_connected", access.STATE, true, false)
             .withDescription(
                 "Indicates whether a plug is physically attached. Device does not have to pull power or even be connected electrically (state of this binary switch can be ON even if main power switch is OFF)",
             )
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("consumer_connected")),
     contact: () =>
         new Binary("contact", access.STATE, false, true)
             .withDescription("Indicates if the contact is closed (= true) or open (= false)")
-            .withHomeAssistant({name: null}), // Prevents HA from appending the device class to the device name (e.g. "Garage Door Door")
-    cover_position: () => new Cover().withPosition(),
-    cover_position_tilt: () => new Cover().withPosition().withTilt(),
-    cover_tilt: () => new Cover().withTilt(),
+            .withHomeAssistant({name: null})
+            .withTranslations(i18n("contact")), // Prevents HA from appending the device class to the device name (e.g. "Garage Door Door")
+    cover_position: () => new Cover().withPosition().withTranslations(i18n("cover_position")),
+    cover_position_tilt: () => new Cover().withPosition().withTilt().withTranslations(i18n("cover_position")),
+    cover_tilt: () => new Cover().withTilt().withTranslations(i18n("cover_tilt")),
     cover_mode: () =>
         new Composite("cover_mode", "cover_mode", access.ALL)
             .withFeature(new Binary("reversed", access.ALL, true, false).withDescription("Reversal of the motor rotating direction"))
@@ -1041,77 +1142,143 @@ export const presets = {
                     "Set the cover maintenance mode, enabling will disable the cover motor",
                 ),
             )
-            .withFeature(new Binary("led", access.ALL, true, false).withDescription("Set the LED")),
+            .withFeature(new Binary("led", access.ALL, true, false).withDescription("Set the LED"))
+            .withTranslations(i18n("cover_mode")),
     cpu_temperature: () =>
-        new Numeric("cpu_temperature", access.STATE).withLabel("CPU temperature").withUnit("°C").withDescription("Temperature of the CPU"),
-    cube_side: (name: string) => new Numeric(name, access.STATE).withDescription("Side of the cube").withValueMin(0).withValueMax(6).withValueStep(1),
-    current: () => new Numeric("current", access.STATE).withUnit("A").withDescription("Instantaneous measured electrical current"),
+        new Numeric("cpu_temperature", access.STATE)
+            .withLabel("CPU temperature")
+            .withUnit("°C")
+            .withDescription("Temperature of the CPU")
+            .withTranslations(i18n("cpu_temperature")),
+    cube_side: (name: string) =>
+        new Numeric(name, access.STATE)
+            .withDescription("Side of the cube")
+            .withValueMin(0)
+            .withValueMax(6)
+            .withValueStep(1)
+            .withTranslations(i18n("cube_side")),
+    current: () =>
+        new Numeric("current", access.STATE)
+            .withUnit("A")
+            .withDescription("Instantaneous measured electrical current")
+            .withTranslations(i18n("current")),
     current_phase_b: () =>
         new Numeric("current_phase_b", access.STATE)
             .withLabel("Current phase B")
             .withUnit("A")
-            .withDescription("Instantaneous measured electrical current on phase B"),
+            .withDescription("Instantaneous measured electrical current on phase B")
+            .withTranslations(i18n("current_phase_b")),
     current_phase_c: () =>
         new Numeric("current_phase_c", access.STATE)
             .withLabel("Current phase C")
             .withUnit("A")
-            .withDescription("Instantaneous measured electrical current on phase C"),
+            .withDescription("Instantaneous measured electrical current on phase C")
+            .withTranslations(i18n("current_phase_c")),
     current_neutral: () =>
         new Numeric("current_neutral", access.STATE)
             .withLabel("Current neutral")
             .withUnit("A")
-            .withDescription("Instantaneous measured electrical current on neutral"),
+            .withDescription("Instantaneous measured electrical current on neutral")
+            .withTranslations(i18n("current_neutral")),
     deadzone_temperature: () =>
         new Numeric("deadzone_temperature", access.STATE_SET)
             .withUnit("°C")
             .withDescription("The delta between local_temperature and current_heating_setpoint to trigger Heat")
             .withValueMin(0)
             .withValueMax(5)
-            .withValueStep(1),
+            .withValueStep(1)
+            .withTranslations(i18n("deadzone_temperature")),
     detection_interval: () =>
         new Numeric("detection_interval", access.ALL)
             .withValueMin(2)
             .withValueMax(65535)
             .withUnit("s")
             .withDescription("Time interval between action detection.")
-            .withCategory("config"),
+            .withCategory("config")
+            .withTranslations(i18n("detection_interval")),
     device_temperature: () =>
-        new Numeric("device_temperature", access.STATE).withUnit("°C").withDescription("Temperature of the device").withCategory("diagnostic"),
-    eco2: () => new Numeric("eco2", access.STATE).withLabel("eCO2").withLabel("PPM").withUnit("ppm").withDescription("Measured eCO2 value"),
-    eco_mode: () => new Binary("eco_mode", access.STATE_SET, "ON", "OFF").withDescription("ECO mode (energy saving mode)"),
+        new Numeric("device_temperature", access.STATE)
+            .withUnit("°C")
+            .withDescription("Temperature of the device")
+            .withCategory("diagnostic")
+            .withTranslations(i18n("device_temperature")),
+    eco2: () =>
+        new Numeric("eco2", access.STATE)
+            .withLabel("eCO2")
+            .withLabel("PPM")
+            .withUnit("ppm")
+            .withDescription("Measured eCO2 value")
+            .withTranslations(i18n("eco2")),
+    eco_mode: () =>
+        new Binary("eco_mode", access.STATE_SET, "ON", "OFF").withDescription("ECO mode (energy saving mode)").withTranslations(i18n("eco_mode")),
     eco_temperature: () =>
-        new Numeric("eco_temperature", access.STATE_SET).withUnit("°C").withDescription("Eco temperature").withValueMin(0).withValueMax(35),
+        new Numeric("eco_temperature", access.STATE_SET)
+            .withUnit("°C")
+            .withDescription("Eco temperature")
+            .withValueMin(0)
+            .withValueMax(35)
+            .withTranslations(i18n("eco_temperature")),
     effect: () =>
-        new Enum("effect", access.SET, ["blink", "breathe", "okay", "channel_change", "finish_effect", "stop_effect"]).withDescription(
-            "Triggers an effect on the light (e.g. make light blink for a few seconds)",
-        ),
-    energy: () => new Numeric("energy", access.STATE).withUnit("kWh").withDescription("Sum of consumed energy"),
-    produced_energy: () => new Numeric("produced_energy", access.STATE).withUnit("kWh").withDescription("Sum of produced energy"),
-    energy_produced: () => new Numeric("energy_produced", access.STATE).withUnit("kWh").withDescription("Sum of produced energy"),
+        new Enum("effect", access.SET, ["blink", "breathe", "okay", "channel_change", "finish_effect", "stop_effect"])
+            .withDescription("Triggers an effect on the light (e.g. make light blink for a few seconds)")
+            .withTranslations(i18n("effect")),
+    energy: () => new Numeric("energy", access.STATE).withUnit("kWh").withDescription("Sum of consumed energy").withTranslations(i18n("energy")),
+    produced_energy: () =>
+        new Numeric("produced_energy", access.STATE)
+            .withUnit("kWh")
+            .withDescription("Sum of produced energy")
+            .withTranslations(i18n("produced_energy")),
+    energy_produced: () =>
+        new Numeric("energy_produced", access.STATE)
+            .withUnit("kWh")
+            .withDescription("Sum of produced energy")
+            .withTranslations(i18n("energy_produced")),
     fan: () => new Fan(),
     flip_indicator_light: () =>
         new Binary("flip_indicator_light", access.ALL, "ON", "OFF")
             .withDescription("After turn on, the indicator light turns on while switch is off, and vice versa")
-            .withCategory("config"),
-    force: () => new Enum("force", access.STATE_SET, ["normal", "open", "close"]).withDescription("Force the valve position"),
-    formaldehyd: () => new Numeric("formaldehyd", access.STATE).withDescription("The measured formaldehyd value").withUnit("mg/m³"),
-    gas: () => new Binary("gas", access.STATE, true, false).withDescription("Indicates whether the device detected gas"),
-    dry: () => new Binary("dry", access.STATE, true, false).withDescription("Water shortage warning"),
-    hcho: () => new Numeric("hcho", access.STATE).withLabel("HCHO").withUnit("mg/m³").withDescription("Measured HCHO value"),
+            .withCategory("config")
+            .withTranslations(i18n("flip_indicator_light")),
+    force: () =>
+        new Enum("force", access.STATE_SET, ["normal", "open", "close"]).withDescription("Force the valve position").withTranslations(i18n("force")),
+    formaldehyd: () =>
+        new Numeric("formaldehyd", access.STATE)
+            .withDescription("The measured formaldehyd value")
+            .withUnit("mg/m³")
+            .withTranslations(i18n("formaldehyde")),
+    gas: () =>
+        new Binary("gas", access.STATE, true, false).withDescription("Indicates whether the device detected gas").withTranslations(i18n("gas")),
+    dry: () => new Binary("dry", access.STATE, true, false).withDescription("Water shortage warning").withTranslations(i18n("water_leak")),
+    hcho: () =>
+        new Numeric("hcho", access.STATE).withLabel("HCHO").withUnit("mg/m³").withDescription("Measured HCHO value").withTranslations(i18n("hcho")),
     holiday_temperature: () =>
-        new Numeric("holiday_temperature", access.STATE_SET).withUnit("°C").withDescription("Holiday temperature").withValueMin(0).withValueMax(30),
-    humidity: () => new Numeric("humidity", access.STATE).withUnit("%").withDescription("Measured relative humidity"),
-    illuminance: () => new Numeric("illuminance", access.STATE).withDescription("Measured illuminance").withUnit("lx"),
-    illuminance_raw: () => new Numeric("illuminance_raw", access.STATE).withDescription("Raw measured illuminance"),
-    brightness_state: () => new Enum("brightness_state", access.STATE, ["low", "middle", "high", "strong"]).withDescription("Brightness state"),
+        new Numeric("holiday_temperature", access.STATE_SET)
+            .withUnit("°C")
+            .withDescription("Holiday temperature")
+            .withValueMin(0)
+            .withValueMax(30)
+            .withTranslations(i18n("holiday_temperature")),
+    humidity: () =>
+        new Numeric("humidity", access.STATE).withUnit("%").withDescription("Measured relative humidity").withTranslations(i18n("humidity")),
+    illuminance: () =>
+        new Numeric("illuminance", access.STATE).withDescription("Measured illuminance").withUnit("lx").withTranslations(i18n("illuminance")),
+    illuminance_raw: () =>
+        new Numeric("illuminance_raw", access.STATE).withDescription("Raw measured illuminance").withTranslations(i18n("illuminance_raw")),
+    brightness_state: () =>
+        new Enum("brightness_state", access.STATE, ["low", "middle", "high", "strong"])
+            .withDescription("Brightness state")
+            .withTranslations(i18n("brightness_state")),
     keypad_lockout: () =>
-        new Enum("keypad_lockout", access.ALL, ["unlock", "lock1", "lock2"]).withDescription("Enables/disables physical input on the device"),
+        new Enum("keypad_lockout", access.ALL, ["unlock", "lock1", "lock2"])
+            .withDescription("Enables/disables physical input on the device")
+            .withTranslations(i18n("keypad_lockout")),
     led_disabled_night: () =>
         new Binary("led_disabled_night", access.ALL, true, false)
             .withLabel("LED disabled night")
             .withDescription("Enable/disable the LED at night")
-            .withCategory("config"),
-    light_brightness: () => new Light().withBrightness(),
+            .withCategory("config")
+            .withTranslations(i18n("led_disabled_night")),
+    light_brightness: () => new Light().withBrightness().withTranslations(i18n("light_brightness")),
     light_brightness_color: (preferHueAndSaturation: boolean) =>
         new Light().withBrightness().withColor(preferHueAndSaturation ? ["hs", "xy"] : ["xy", "hs"]),
     light_brightness_colorhs: () => new Light().withBrightness().withColor(["hs"]),
@@ -1137,10 +1304,18 @@ export const presets = {
                     "Controls whether color and color temperature can be set while light is off",
                 ),
             )
-            .withCategory("config"),
+            .withCategory("config")
+            .withTranslations(i18n("light_color_options")),
     local_temperature: () =>
-        new Numeric("local_temperature", access.STATE_GET).withUnit("°C").withDescription("Current temperature measured on the device"),
-    lock: () => new Lock().withState("state", "LOCK", "UNLOCK", "State of the lock").withLockState("lock_state", "Actual state of the lock"),
+        new Numeric("local_temperature", access.STATE_GET)
+            .withUnit("°C")
+            .withDescription("Current temperature measured on the device")
+            .withTranslations(i18n("local_temperature")),
+    lock: () =>
+        new Lock()
+            .withState("state", "LOCK", "UNLOCK", "State of the lock")
+            .withLockState("lock_state", "Actual state of the lock")
+            .withTranslations(i18n("lock")),
     lock_action: () =>
         new Enum("action", access.STATE, [
             "unknown",
@@ -1159,42 +1334,56 @@ export const presets = {
             "manual_lock",
             "manual_unlock",
             "non_access_user_operational_event",
-        ]).withDescription("Triggered action on the lock"),
+        ])
+            .withDescription("Triggered action on the lock")
+            .withTranslations(i18n("lock_action")),
     lock_action_source_name: () =>
-        new Enum("action_source_name", access.STATE, ["keypad", "rfid", "manual", "rf"]).withDescription(
-            "Source of the triggered action on the lock",
-        ),
-    lock_action_user: () => new Numeric("action_user", access.STATE).withDescription("ID of user that triggered the action on the lock"),
+        new Enum("action_source_name", access.STATE, ["keypad", "rfid", "manual", "rf"])
+            .withDescription("Source of the triggered action on the lock")
+            .withTranslations(i18n("lock_action_source_name")),
+    lock_action_user: () =>
+        new Numeric("action_user", access.STATE)
+            .withDescription("ID of user that triggered the action on the lock")
+            .withTranslations(i18n("lock_action_user")),
     max_cool_setpoint_limit: (min: number, max: number, step: number) =>
         new Numeric("max_cool_setpoint_limit", access.ALL)
             .withUnit("°C")
             .withDescription("Maximum Cooling set point limit")
             .withValueMin(min)
             .withValueMax(max)
-            .withValueStep(step),
+            .withValueStep(step)
+            .withTranslations(i18n("max_cool_setpoint_limit")),
     min_cool_setpoint_limit: (min: number, max: number, step: number) =>
         new Numeric("min_cool_setpoint_limit", access.ALL)
             .withUnit("°C")
             .withDescription("Minimum Cooling point limit")
             .withValueMin(min)
             .withValueMax(max)
-            .withValueStep(step),
+            .withValueStep(step)
+            .withTranslations(i18n("min_cool_setpoint_limit")),
     max_heat_setpoint_limit: (min: number, max: number, step: number) =>
         new Numeric("max_heat_setpoint_limit", access.ALL)
             .withUnit("°C")
             .withDescription("Maximum Heating set point limit")
             .withValueMin(min)
             .withValueMax(max)
-            .withValueStep(step),
+            .withValueStep(step)
+            .withTranslations(i18n("max_heat_setpoint_limit")),
     min_heat_setpoint_limit: (min: number, max: number, step: number) =>
         new Numeric("min_heat_setpoint_limit", access.ALL)
             .withUnit("°C")
             .withDescription("Minimum Heating set point limit")
             .withValueMin(min)
             .withValueMax(max)
-            .withValueStep(step),
+            .withValueStep(step)
+            .withTranslations(i18n("min_heat_setpoint_limit")),
     max_temperature: () =>
-        new Numeric("max_temperature", access.STATE_SET).withUnit("°C").withDescription("Maximum temperature").withValueMin(15).withValueMax(35),
+        new Numeric("max_temperature", access.STATE_SET)
+            .withUnit("°C")
+            .withDescription("Maximum temperature")
+            .withValueMin(15)
+            .withValueMax(35)
+            .withTranslations(i18n("max_temperature")),
     max_temperature_limit: () =>
         new Numeric("max_temperature_limit", access.STATE_SET)
             .withUnit("°C")
@@ -1202,7 +1391,8 @@ export const presets = {
                 "Maximum temperature limit. Cuts the thermostat out regardless of air temperature if the external floor sensor exceeds this temperature. Only used by the thermostat when in AL sensor mode.",
             )
             .withValueMin(0)
-            .withValueMax(35),
+            .withValueMax(35)
+            .withTranslations(i18n("max_temperature_limit")),
     min_temperature_limit: () =>
         new Numeric("min_temperature_limit", access.STATE_SET)
             .withUnit("°C")
@@ -1210,148 +1400,287 @@ export const presets = {
                 "Minimum temperature limit for frost protection. Turns the thermostat on regardless of setpoint if the temperature drops below this.",
             )
             .withValueMin(1)
-            .withValueMax(5),
+            .withValueMax(5)
+            .withTranslations(i18n("min_temperature_limit")),
     min_temperature: () =>
-        new Numeric("min_temperature", access.STATE_SET).withUnit("°C").withDescription("Minimum temperature").withValueMin(1).withValueMax(15),
+        new Numeric("min_temperature", access.STATE_SET)
+            .withUnit("°C")
+            .withDescription("Minimum temperature")
+            .withValueMin(1)
+            .withValueMax(15)
+            .withTranslations(i18n("min_temperature")),
     mode_switch_select: (modeSwitchNames: string[]) =>
-        new Enum("mode_switch", access.ALL, modeSwitchNames).withDescription("Select mode switch to use").withCategory("config"),
+        new Enum("mode_switch", access.ALL, modeSwitchNames)
+            .withDescription("Select mode switch to use")
+            .withCategory("config")
+            .withTranslations(i18n("mode_switch_select")),
     motion_sensitivity_select: (motionSensitivityNames: string[]) =>
-        new Enum("motion_sensitivity", access.ALL, motionSensitivityNames).withDescription("Select motion sensitivity to use").withCategory("config"),
-    noise: () => new Numeric("noise", access.STATE).withUnit("dBA").withDescription("The measured noise value"),
-    noise_detected: () => new Binary("noise_detected", access.STATE, true, false).withDescription("Indicates whether the device detected noise"),
-    occupancy: () => new Binary("occupancy", access.STATE, true, false).withDescription("Indicates whether the device detected occupancy"),
-    occupancy_level: () => new Numeric("occupancy_level", access.STATE).withDescription("The measured occupancy value"),
-    open_window: () => new Binary("open_window", access.STATE_SET, "ON", "OFF").withDescription("Enables/disables the status on the device"),
+        new Enum("motion_sensitivity", access.ALL, motionSensitivityNames)
+            .withDescription("Select motion sensitivity to use")
+            .withCategory("config")
+            .withTranslations(i18n("motion_sensitivity_select")),
+    noise: () => new Numeric("noise", access.STATE).withUnit("dBA").withDescription("The measured noise value").withTranslations(i18n("noise")),
+    noise_detected: () =>
+        new Binary("noise_detected", access.STATE, true, false)
+            .withDescription("Indicates whether the device detected noise")
+            .withTranslations(i18n("noise_detected")),
+    occupancy: () =>
+        new Binary("occupancy", access.STATE, true, false)
+            .withDescription("Indicates whether the device detected occupancy")
+            .withTranslations(i18n("occupancy")),
+    occupancy_level: () =>
+        new Numeric("occupancy_level", access.STATE).withDescription("The measured occupancy value").withTranslations(i18n("occupancy_level")),
+    open_window: () =>
+        new Binary("open_window", access.STATE_SET, "ON", "OFF")
+            .withDescription("Enables/disables the status on the device")
+            .withTranslations(i18n("open_window")),
     open_window_temperature: () =>
         new Numeric("open_window_temperature", access.STATE_SET)
             .withUnit("°C")
             .withDescription("Open window temperature")
             .withValueMin(0)
-            .withValueMax(35),
+            .withValueMax(35)
+            .withTranslations(i18n("open_window_temperature")),
     operation_mode_select: (operationModeNames: string[]) =>
-        new Enum("operation_mode", access.ALL, operationModeNames).withDescription("Select operation mode to use").withCategory("config"),
+        new Enum("operation_mode", access.ALL, operationModeNames)
+            .withDescription("Select operation mode to use")
+            .withCategory("config")
+            .withTranslations(i18n("operation_mode_select")),
     overload_protection: (min: number, max: number) =>
         new Numeric("overload_protection", access.ALL)
             .withUnit("W")
             .withValueMin(min)
             .withValueMax(max)
             .withDescription("Maximum allowed load, turns off if exceeded")
-            .withCategory("config"),
-    pm1: () => new Numeric("pm1", access.STATE).withLabel("PM1").withUnit("µg/m³").withDescription("Measured PM1 (particulate matter) concentration"),
+            .withCategory("config")
+            .withTranslations(i18n("overload_protection")),
+    pm1: () =>
+        new Numeric("pm1", access.STATE)
+            .withLabel("PM1")
+            .withUnit("µg/m³")
+            .withDescription("Measured PM1 (particulate matter) concentration")
+            .withTranslations(i18n("pm1")),
     pm10: () =>
-        new Numeric("pm10", access.STATE).withLabel("PM10").withUnit("µg/m³").withDescription("Measured PM10 (particulate matter) concentration"),
+        new Numeric("pm10", access.STATE)
+            .withLabel("PM10")
+            .withUnit("µg/m³")
+            .withDescription("Measured PM10 (particulate matter) concentration")
+            .withTranslations(i18n("pm10")),
     pm25: () =>
-        new Numeric("pm25", access.STATE).withLabel("PM25").withUnit("µg/m³").withDescription("Measured PM2.5 (particulate matter) concentration"),
-    position: () => new Numeric("position", access.STATE).withUnit("%").withDescription("Position"),
-    power: () => new Numeric("power", access.STATE).withUnit("W").withDescription("Instantaneous measured power"),
-    power_phase_b: () => new Numeric("power_phase_b", access.STATE).withUnit("W").withDescription("Instantaneous measured power on phase B"),
-    power_phase_c: () => new Numeric("power_phase_c", access.STATE).withUnit("W").withDescription("Instantaneous measured power on phase C"),
-    power_factor: () => new Numeric("power_factor", access.STATE).withDescription("Instantaneous measured power factor"),
-    power_factor_phase_b: () => new Numeric("power_factor_phase_b", access.STATE).withDescription("Instantaneous measured power factor on phase B"),
-    power_factor_phase_c: () => new Numeric("power_factor_phase_c", access.STATE).withDescription("Instantaneous measured power factor on phase C"),
-    power_apparent: () => new Numeric("power_apparent", access.STATE).withUnit("VA").withDescription("Instantaneous measured apparent power"),
+        new Numeric("pm25", access.STATE)
+            .withLabel("PM25")
+            .withUnit("µg/m³")
+            .withDescription("Measured PM2.5 (particulate matter) concentration")
+            .withTranslations(i18n("pm25")),
+    position: () => new Numeric("position", access.STATE).withUnit("%").withDescription("Position").withTranslations(i18n("position")),
+    power: () => new Numeric("power", access.STATE).withUnit("W").withDescription("Instantaneous measured power").withTranslations(i18n("power")),
+    power_phase_b: () =>
+        new Numeric("power_phase_b", access.STATE)
+            .withUnit("W")
+            .withDescription("Instantaneous measured power on phase B")
+            .withTranslations(i18n("power_phase_b")),
+    power_phase_c: () =>
+        new Numeric("power_phase_c", access.STATE)
+            .withUnit("W")
+            .withDescription("Instantaneous measured power on phase C")
+            .withTranslations(i18n("power_phase_c")),
+    power_factor: () =>
+        new Numeric("power_factor", access.STATE).withDescription("Instantaneous measured power factor").withTranslations(i18n("power_factor")),
+    power_factor_phase_b: () =>
+        new Numeric("power_factor_phase_b", access.STATE)
+            .withDescription("Instantaneous measured power factor on phase B")
+            .withTranslations(i18n("power_factor_phase_b")),
+    power_factor_phase_c: () =>
+        new Numeric("power_factor_phase_c", access.STATE)
+            .withDescription("Instantaneous measured power factor on phase C")
+            .withTranslations(i18n("power_factor_phase_c")),
+    power_apparent: () =>
+        new Numeric("power_apparent", access.STATE)
+            .withUnit("VA")
+            .withDescription("Instantaneous measured apparent power")
+            .withTranslations(i18n("power_apparent")),
     power_apparent_phase_b: () =>
-        new Numeric("power_apparent_phase_b", access.STATE).withUnit("VA").withDescription("Instantaneous measured apparent power on phase B"),
+        new Numeric("power_apparent_phase_b", access.STATE)
+            .withUnit("VA")
+            .withDescription("Instantaneous measured apparent power on phase B")
+            .withTranslations(i18n("power_apparent_phase_b")),
     power_apparent_phase_c: () =>
-        new Numeric("power_apparent_phase_c", access.STATE).withUnit("VA").withDescription("Instantaneous measured apparent power on phase C"),
+        new Numeric("power_apparent_phase_c", access.STATE)
+            .withUnit("VA")
+            .withDescription("Instantaneous measured apparent power on phase C")
+            .withTranslations(i18n("power_apparent_phase_c")),
     power_on_behavior: (values = ["off", "previous", "on"]) =>
         new Enum("power_on_behavior", access.ALL, values)
             .withLabel("Power-on behavior")
             .withDescription("Controls the behavior when the device is powered on after power loss")
-            .withCategory("config"),
+            .withCategory("config")
+            .withTranslations(i18n("power_on_behavior")),
     power_outage_count: (resetsWhenPairing = true) =>
         new Numeric("power_outage_count", access.STATE)
             .withDescription(`Number of power outages${resetsWhenPairing ? " (since last pairing)" : ""}`)
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("power_outage_count")),
     power_outage_memory: () =>
         new Binary("power_outage_memory", access.ALL, true, false)
             .withDescription("Enable/disable the power outage memory, this recovers the on/off mode after power failure")
-            .withCategory("config"),
-    power_reactive: () => new Numeric("power_reactive", access.STATE).withUnit("VAR").withDescription("Instantaneous measured reactive power"),
+            .withCategory("config")
+            .withTranslations(i18n("power_outage_memory")),
+    power_reactive: () =>
+        new Numeric("power_reactive", access.STATE)
+            .withUnit("VAR")
+            .withDescription("Instantaneous measured reactive power")
+            .withTranslations(i18n("power_reactive")),
     power_reactive_phase_b: () =>
-        new Numeric("power_reactive_phase_b", access.STATE).withUnit("VAR").withDescription("Instantaneous measured reactive power on phase B"),
+        new Numeric("power_reactive_phase_b", access.STATE)
+            .withUnit("VAR")
+            .withDescription("Instantaneous measured reactive power on phase B")
+            .withTranslations(i18n("power_reactive_phase_b")),
     power_reactive_phase_c: () =>
-        new Numeric("power_reactive_phase_c", access.STATE).withUnit("VAR").withDescription("Instantaneous measured reactive power on phase C"),
-    presence: () => new Binary("presence", access.STATE, true, false).withDescription("Indicates whether the device detected presence"),
-    pressure: () => new Numeric("pressure", access.STATE).withUnit("hPa").withDescription("The measured atmospheric pressure"),
+        new Numeric("power_reactive_phase_c", access.STATE)
+            .withUnit("VAR")
+            .withDescription("Instantaneous measured reactive power on phase C")
+            .withTranslations(i18n("power_reactive_phase_c")),
+    presence: () =>
+        new Binary("presence", access.STATE, true, false)
+            .withDescription("Indicates whether the device detected presence")
+            .withTranslations(i18n("presence")),
+    pressure: () =>
+        new Numeric("pressure", access.STATE).withUnit("hPa").withDescription("The measured atmospheric pressure").withTranslations(i18n("pressure")),
     programming_operation_mode: (values: ThermostatProgrammingOperationMode[] = ["setpoint", "schedule", "schedule_with_preheat", "eco"]) =>
-        new Enum("programming_operation_mode", access.ALL, values).withDescription(
-            "Controls how programming affects the thermostat. Possible values: setpoint (only use specified setpoint), schedule (follow programmed setpoint schedule), schedule_with_preheat (follow programmed setpoint schedule with pre-heating). Changing this value does not clear programmed schedules.",
-        ),
+        new Enum("programming_operation_mode", access.ALL, values)
+            .withDescription(
+                "Controls how programming affects the thermostat. Possible values: setpoint (only use specified setpoint), schedule (follow programmed setpoint schedule), schedule_with_preheat (follow programmed setpoint schedule with pre-heating). Changing this value does not clear programmed schedules.",
+            )
+            .withTranslations(i18n("programming_operation_mode")),
     setup: () =>
-        new Binary("setup", access.STATE, true, false).withDescription("Indicates if the device is in setup mode").withCategory("diagnostic"),
+        new Binary("setup", access.STATE, true, false)
+            .withDescription("Indicates if the device is in setup mode")
+            .withCategory("diagnostic")
+            .withTranslations(i18n("setup")),
     schedule: () =>
         new Binary("schedule", access.ALL, true, false)
             .withDescription("When enabled, the device will change its state based on your schedule settings")
-            .withCategory("config"),
-    schedule_settings: () => new Text("schedule_settings", access.ALL).withDescription("Allows schedule configuration").withCategory("config"),
+            .withCategory("config")
+            .withTranslations(i18n("schedule")),
+    schedule_settings: () =>
+        new Text("schedule_settings", access.ALL)
+            .withDescription("Allows schedule configuration")
+            .withCategory("config")
+            .withTranslations(i18n("schedule_settings")),
     external_temperature_input: () =>
         new Numeric("external_temperature_input", access.ALL)
             .withUnit("°C")
             .withValueMin(0)
             .withValueMax(55)
             .withDescription("Input for remote temperature sensor")
-            .withCategory("config"),
-    smoke: () => new Binary("smoke", access.STATE, true, false).withDescription("Indicates whether the device detected smoke"),
-    soil_moisture: () => new Numeric("soil_moisture", access.STATE).withUnit("%").withDescription("Measured soil moisture value"),
-    sos: () => new Binary("sos", access.STATE, true, false).withLabel("SOS").withDescription("SOS alarm"),
+            .withCategory("config")
+            .withTranslations(i18n("external_temperature_input")),
+    smoke: () =>
+        new Binary("smoke", access.STATE, true, false).withDescription("Indicates whether the device detected smoke").withTranslations(i18n("smoke")),
+    soil_moisture: () =>
+        new Numeric("soil_moisture", access.STATE)
+            .withUnit("%")
+            .withDescription("Measured soil moisture value")
+            .withTranslations(i18n("soil_moisture")),
+    sos: () => new Binary("sos", access.STATE, true, false).withLabel("SOS").withDescription("SOS alarm").withTranslations(i18n("sos")),
     sound_volume: () =>
-        new Enum("sound_volume", access.ALL, ["silent_mode", "low_volume", "high_volume"]).withDescription("Sound volume of the lock"),
-    switch: (description = "On/off state of the switch") => new Switch().withState("state", true, description),
-    switch_type: () => new Enum("switch_type", access.ALL, ["toggle", "momentary"]).withDescription("Wall switch type"),
+        new Enum("sound_volume", access.ALL, ["silent_mode", "low_volume", "high_volume"])
+            .withDescription("Sound volume of the lock")
+            .withTranslations(i18n("sound_volume")),
+    switch: (description = "On/off state of the switch") => new Switch().withState("state", true, description).withTranslations(i18n("state")),
+    switch_type: () =>
+        new Enum("switch_type", access.ALL, ["toggle", "momentary"]).withDescription("Wall switch type").withTranslations(i18n("switch_type")),
     door_state: () =>
-        new Enum("door_state", access.STATE, [
-            "open",
-            "closed",
-            "error_jammed",
-            "error_forced_open",
-            "error_unspecified",
-            "undefined",
-        ]).withDescription("State of the door"),
-    tamper: () => new Binary("tamper", access.STATE, true, false).withDescription("Indicates whether the device is tampered"),
-    temperature: () => new Numeric("temperature", access.STATE).withUnit("°C").withDescription("Measured temperature value"),
+        new Enum("door_state", access.STATE, ["open", "closed", "error_jammed", "error_forced_open", "error_unspecified", "undefined"])
+            .withDescription("State of the door")
+            .withTranslations(i18n("door_state")),
+    tamper: () =>
+        new Binary("tamper", access.STATE, true, false).withDescription("Indicates whether the device is tampered").withTranslations(i18n("tamper")),
+    temperature: () =>
+        new Numeric("temperature", access.STATE).withUnit("°C").withDescription("Measured temperature value").withTranslations(i18n("temperature")),
     temperature_sensor_select: (sensorNames: string[]) =>
-        new Enum("sensor", access.STATE_SET, sensorNames).withDescription("Select temperature sensor to use").withCategory("config"),
-    test: () => new Binary("test", access.STATE, true, false).withDescription("Indicates whether the device is being tested"),
+        new Enum("sensor", access.STATE_SET, sensorNames)
+            .withDescription("Select temperature sensor to use")
+            .withCategory("config")
+            .withTranslations(i18n("temperature_sensor_select")),
+    test: () =>
+        new Binary("test", access.STATE, true, false).withDescription("Indicates whether the device is being tested").withTranslations(i18n("test")),
     trigger_count: (sinceScheduledReport = true) =>
         new Numeric("trigger_count", access.STATE)
             .withDescription(`Indicates how many times the sensor was triggered${sinceScheduledReport ? " (since last scheduled report)" : ""}`)
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("trigger_count")),
     trigger_indicator: () =>
-        new Binary("trigger_indicator", access.ALL, true, false).withDescription("Enables trigger indication").withCategory("config"),
-    valve_alarm: () => new Binary("valve_alarm", access.STATE, true, false).withCategory("diagnostic"),
-    valve_position: () => new Numeric("position", access.ALL).withValueMin(0).withValueMax(100).withDescription("Position of the valve"),
-    valve_switch: () => new Binary("state", access.ALL, "OPEN", "CLOSE").withDescription("Valve state if open or closed"),
-    valve_state: () => new Binary("valve_state", access.STATE, "OPEN", "CLOSED").withDescription("Valve state if open or closed"),
+        new Binary("trigger_indicator", access.ALL, true, false)
+            .withDescription("Enables trigger indication")
+            .withCategory("config")
+            .withTranslations(i18n("trigger_indicator")),
+    valve_alarm: () => new Binary("valve_alarm", access.STATE, true, false).withCategory("diagnostic").withTranslations(i18n("valve_alarm")),
+    valve_position: () =>
+        new Numeric("position", access.ALL)
+            .withValueMin(0)
+            .withValueMax(100)
+            .withDescription("Position of the valve")
+            .withTranslations(i18n("valve_position")),
+    valve_switch: () =>
+        new Binary("state", access.ALL, "OPEN", "CLOSE").withDescription("Valve state if open or closed").withTranslations(i18n("valve_switch")),
+    valve_state: () =>
+        new Binary("valve_state", access.STATE, "OPEN", "CLOSED")
+            .withDescription("Valve state if open or closed")
+            .withTranslations(i18n("valve_state")),
     valve_detection: () =>
-        new Switch().withLabel("Valve detection").withState("valve_detection", true, "Valve detection").setAccess("state", access.STATE_SET), // left for compatability, do not use
+        new Switch()
+            .withLabel("Valve detection")
+            .withState("valve_detection", true, "Valve detection")
+            .setAccess("state", access.STATE_SET)
+            .withTranslations(i18n("valve_detection")), // left for compatability, do not use
     valve_detection_bool: () =>
         new Binary("valve_detection", access.ALL, true, false)
             .withDescription("Determines if temperature control abnormalities should be detected")
-            .withCategory("config"),
-    vibration: () => new Binary("vibration", access.STATE, true, false).withDescription("Indicates whether the device detected vibration"),
-    tilt: () => new Binary("tilt", access.STATE, true, false).withDescription("Indicates whether the device detected tilt"),
-    voc: () => new Numeric("voc", access.STATE).withLabel("VOC").withUnit("µg/m³").withDescription("Measured VOC value"),
-    voltage: () => new Numeric("voltage", access.STATE).withUnit("V").withDescription("Measured electrical potential value"),
+            .withCategory("config")
+            .withTranslations(i18n("valve_detection_bool")),
+    vibration: () =>
+        new Binary("vibration", access.STATE, true, false)
+            .withDescription("Indicates whether the device detected vibration")
+            .withTranslations(i18n("vibration")),
+    tilt: () =>
+        new Binary("tilt", access.STATE, true, false).withDescription("Indicates whether the device detected tilt").withTranslations(i18n("tilt")),
+    voc: () =>
+        new Numeric("voc", access.STATE).withLabel("VOC").withUnit("µg/m³").withDescription("Measured VOC value").withTranslations(i18n("voc")),
+    voltage: () =>
+        new Numeric("voltage", access.STATE).withUnit("V").withDescription("Measured electrical potential value").withTranslations(i18n("voltage")),
     voltage_phase_b: () =>
         new Numeric("voltage_phase_b", access.STATE)
             .withLabel("Voltage phase B")
             .withUnit("V")
-            .withDescription("Measured electrical potential value on phase B"),
+            .withDescription("Measured electrical potential value on phase B")
+            .withTranslations(i18n("voltage_phase_b")),
     voltage_phase_c: () =>
         new Numeric("voltage_phase_c", access.STATE)
             .withLabel("Voltage phase C")
             .withUnit("V")
-            .withDescription("Measured electrical potential value on phase C"),
-    water_leak: () => new Binary("water_leak", access.STATE, true, false).withDescription("Indicates whether the device detected a water leak"),
+            .withDescription("Measured electrical potential value on phase C")
+            .withTranslations(i18n("voltage_phase_c")),
+    water_leak: () =>
+        new Binary("water_leak", access.STATE, true, false)
+            .withDescription("Indicates whether the device detected a water leak")
+            .withTranslations(i18n("water_leak")),
     // fits one usecase  (leak = true)
-    water: () => new Binary("water", access.STATE, true, false).withDescription("Indicates whether the device detects water"),
+    water: () =>
+        new Binary("water", access.STATE, true, false)
+            .withDescription("Indicates whether the device detects water")
+            .withTranslations(i18n("water_leak")),
     // fits two usecases (users interprets leak as true or false, depending on device placement)
     pilot_wire_mode: (values = ["comfort", "eco", "frost_protection", "off", "comfort_-1", "comfort_-2"]) =>
-        new Enum("pilot_wire_mode", access.ALL, values).withDescription(
-            "Controls the target temperature of the heater, with respect to the temperature set on that heater. Possible values: comfort (target temperature = heater set temperature) eco (target temperature = heater set temperature - 3.5°C), frost_protection (target temperature = 7 to 8°C), off (heater stops heating), and the less commonly used comfort_-1 (target temperature = heater set temperature - 1°C), comfort_-2 (target temperature = heater set temperature - 2°C),.",
-        ),
-    rain: () => new Binary("rain", access.STATE, true, false).withDescription("Indicates whether the device detected rainfall"),
+        new Enum("pilot_wire_mode", access.ALL, values)
+            .withDescription(
+                "Controls the target temperature of the heater, with respect to the temperature set on that heater. Possible values: comfort (target temperature = heater set temperature) eco (target temperature = heater set temperature - 3.5°C), frost_protection (target temperature = 7 to 8°C), off (heater stops heating), and the less commonly used comfort_-1 (target temperature = heater set temperature - 1°C), comfort_-2 (target temperature = heater set temperature - 2°C),.",
+            )
+            .withTranslations(i18n("pilot_wire_mode")),
+    rain: () =>
+        new Binary("rain", access.STATE, true, false)
+            .withDescription("Indicates whether the device detected rainfall")
+            .withTranslations(i18n("rain")),
     warning: () =>
         new Composite("warning", "warning", access.SET)
             .withFeature(
@@ -1369,21 +1698,31 @@ export const presets = {
             .withFeature(new Enum("strobe_level", access.SET, ["low", "medium", "high", "very_high"]).withDescription("Intensity of the strobe"))
             .withFeature(new Binary("strobe", access.SET, true, false).withDescription("Turn on/off the strobe (light) during warning"))
             .withFeature(new Numeric("strobe_duty_cycle", access.SET).withValueMax(10).withValueMin(0).withDescription("Length of the flash cycle"))
-            .withFeature(new Numeric("duration", access.SET).withUnit("s").withDescription("Duration in seconds of the alarm")),
-    week: () => new Enum("week", access.STATE_SET, ["5+2", "6+1", "7"]).withDescription("Week format user for schedule"),
+            .withFeature(new Numeric("duration", access.SET).withUnit("s").withDescription("Duration in seconds of the alarm"))
+            .withTranslations(i18n("warning")),
+    week: () =>
+        new Enum("week", access.STATE_SET, ["5+2", "6+1", "7"]).withDescription("Week format user for schedule").withTranslations(i18n("week")),
     /** @deprecated left for compatability, use {@link window_detection_bool} instead */
     window_detection: () =>
         new Switch()
             .withLabel("Window detection")
-            .withState("window_detection", true, "Enables/disables window detection on the device", access.STATE_SET),
+            .withState("window_detection", true, "Enables/disables window detection on the device", access.STATE_SET)
+            .withTranslations(i18n("window_detection")),
     window_detection_bool: (access: number = a.ALL) =>
-        new Binary("window_detection", access, true, false).withDescription("Enables/disables window detection on the device").withCategory("config"),
+        new Binary("window_detection", access, true, false)
+            .withDescription("Enables/disables window detection on the device")
+            .withCategory("config")
+            .withTranslations(i18n("window_detection_bool")),
     window_open: (access: number = a.STATE) =>
-        new Binary("window_open", access, true, false).withDescription("Indicates if window is open").withCategory("diagnostic"),
-    moving: () => new Binary("moving", access.STATE, true, false).withDescription("Indicates if the device is moving"),
-    x_axis: () => new Numeric("x_axis", access.STATE).withDescription("Accelerometer X value"),
-    y_axis: () => new Numeric("y_axis", access.STATE).withDescription("Accelerometer Y value"),
-    z_axis: () => new Numeric("z_axis", access.STATE).withDescription("Accelerometer Z value"),
+        new Binary("window_open", access, true, false)
+            .withDescription("Indicates if window is open")
+            .withCategory("diagnostic")
+            .withTranslations(i18n("window_open")),
+    moving: () =>
+        new Binary("moving", access.STATE, true, false).withDescription("Indicates if the device is moving").withTranslations(i18n("moving")),
+    x_axis: () => new Numeric("x_axis", access.STATE).withDescription("Accelerometer X value").withTranslations(i18n("x_axis")),
+    y_axis: () => new Numeric("y_axis", access.STATE).withDescription("Accelerometer Y value").withTranslations(i18n("y_axis")),
+    z_axis: () => new Numeric("z_axis", access.STATE).withDescription("Accelerometer Z value").withTranslations(i18n("z_axis")),
     pincode: () =>
         new Composite("pin_code", "pin_code", access.ALL)
             .withFeature(new Numeric("user", access.SET).withDescription("User ID to set or clear the pincode for"))
@@ -1393,22 +1732,39 @@ export const presets = {
                 ),
             )
             .withFeature(new Binary("user_enabled", access.SET, true, false).withDescription("Whether the user is enabled/disabled"))
-            .withFeature(new Numeric("pin_code", access.SET).withLabel("PIN code").withDescription("Pincode to set, set pincode to null to clear")),
+            .withFeature(new Numeric("pin_code", access.SET).withLabel("PIN code").withDescription("Pincode to set, set pincode to null to clear"))
+            .withTranslations(i18n("pincode")),
     squawk: () =>
         new Composite("squawk", "squawk", access.SET)
             .withFeature(new Enum("state", access.SET, ["system_is_armed", "system_is_disarmed"]).withDescription("Set Squawk state"))
             .withFeature(new Enum("level", access.SET, ["low", "medium", "high", "very_high"]).withDescription("Sound level"))
-            .withFeature(new Binary("strobe", access.SET, true, false).withDescription("Turn on/off the strobe (light) for Squawk")),
+            .withFeature(new Binary("strobe", access.SET, true, false).withDescription("Turn on/off the strobe (light) for Squawk"))
+            .withTranslations(i18n("squawk")),
     identify_duration: () =>
         new Numeric("identify", access.SET)
             .withValueMin(0)
             .withValueMax(30)
             .withUnit("seconds")
             .withDescription("Duration of flashing")
-            .withCategory("config"),
-    identify: () => new Enum("identify", access.SET, ["identify"]).withDescription("Ititiate device identification").withCategory("config"),
-    min_brightness: () => new Numeric("min_brightness", access.ALL).withValueMin(1).withValueMax(255).withDescription("Minimum light brightness"),
-    max_brightness: () => new Numeric("max_brightness", access.ALL).withValueMin(1).withValueMax(255).withDescription("Maximum light brightness"),
+            .withCategory("config")
+            .withTranslations(i18n("identify_duration")),
+    identify: () =>
+        new Enum("identify", access.SET, ["identify"])
+            .withDescription("Ititiate device identification")
+            .withCategory("config")
+            .withTranslations(i18n("identify")),
+    min_brightness: () =>
+        new Numeric("min_brightness", access.ALL)
+            .withValueMin(1)
+            .withValueMax(255)
+            .withDescription("Minimum light brightness")
+            .withTranslations(i18n("min_brightness")),
+    max_brightness: () =>
+        new Numeric("max_brightness", access.ALL)
+            .withValueMin(1)
+            .withValueMax(255)
+            .withDescription("Maximum light brightness")
+            .withTranslations(i18n("max_brightness")),
 };
 
 const eBinary = (name: string, access: number, valueOn: string, valueOff: string) => new Binary(name, access, valueOn, valueOff);

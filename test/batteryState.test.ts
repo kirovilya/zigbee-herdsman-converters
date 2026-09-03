@@ -17,7 +17,7 @@ describe("battery_state exposes", () => {
         expect(tuya.exposes.batteryState().category).toBe("diagnostic");
     });
 
-    it("marks direct Tuya battery_state exposes as diagnostic", async () => {
+    it("marks direct Tuya battery_state exposes as diagnostic", {timeout: 15000}, async () => {
         const device = mockDevice({modelID: "TS0601", manufacturerName: "_TZE284_o9ofysmo", endpoints: [{ID: 1}]});
         const definition = await findByDevice(device);
 

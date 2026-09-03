@@ -18,6 +18,7 @@ import * as globalStore from "../lib/store";
 import type * as exposes from "./exposes";
 import {type Cover, presets as e, access as ea, Numeric, options as opt} from "./exposes";
 import {configure as lightConfigure} from "./light";
+import {i18n} from "./translations";
 import type {
     Access,
     BatteryLinearVoltage,
@@ -37,6 +38,7 @@ import type {
     OnEvent,
     PowerSource,
     Range,
+    Translations,
     Tz,
     Zh,
 } from "./types";
@@ -67,49 +69,88 @@ import {
 const NS = "zhc:modernextend";
 
 const IAS_EXPOSE_LOOKUP = {
-    occupancy: e.binary("occupancy", ea.STATE, true, false).withDescription("Indicates whether the device detected occupancy"),
-    contact: e.binary("contact", ea.STATE, false, true).withDescription("Indicates whether the device is opened or closed"),
-    smoke: e.binary("smoke", ea.STATE, true, false).withDescription("Indicates whether the device detected smoke"),
-    water_leak: e.binary("water_leak", ea.STATE, true, false).withDescription("Indicates whether the device detected a water leak"),
-    water: e.binary("water", ea.STATE, true, false).withDescription("Indicates whether the device detects water"),
-    carbon_monoxide: e.binary("carbon_monoxide", ea.STATE, true, false).withDescription("Indicates whether the device detected carbon monoxide"),
-    sos: e.binary("sos", ea.STATE, true, false).withLabel("SOS").withDescription("Indicates whether the SOS alarm is triggered"),
-    vibration: e.binary("vibration", ea.STATE, true, false).withDescription("Indicates whether the device detected vibration"),
-    alarm: e.binary("alarm", ea.STATE, true, false).withDescription("Indicates whether the alarm is triggered"),
-    gas: e.binary("gas", ea.STATE, true, false).withDescription("Indicates whether the device detected gas"),
-    alarm_1: e.binary("alarm_1", ea.STATE, true, false).withDescription("Indicates whether IAS Zone alarm 1 is active"),
-    alarm_2: e.binary("alarm_2", ea.STATE, true, false).withDescription("Indicates whether IAS Zone alarm 2 is active"),
-    tamper: e.binary("tamper", ea.STATE, true, false).withDescription("Indicates whether the device is tampered").withCategory("diagnostic"),
-    rain: e.binary("rain", ea.STATE, true, false).withDescription("Indicates whether the device detected rainfall"),
-    pressure: e.binary("pressure", ea.STATE, true, false).withDescription("Indicates whether the device detected pressure"),
+    occupancy: e
+        .binary("occupancy", ea.STATE, true, false)
+        .withDescription("Indicates whether the device detected occupancy")
+        .withTranslations(i18n("occupancy")),
+    contact: e
+        .binary("contact", ea.STATE, false, true)
+        .withDescription("Indicates whether the device is opened or closed")
+        .withTranslations(i18n("contact")),
+    smoke: e.binary("smoke", ea.STATE, true, false).withDescription("Indicates whether the device detected smoke").withTranslations(i18n("smoke")),
+    water_leak: e
+        .binary("water_leak", ea.STATE, true, false)
+        .withDescription("Indicates whether the device detected a water leak")
+        .withTranslations(i18n("water_leak")),
+    water: e.binary("water", ea.STATE, true, false).withDescription("Indicates whether the device detects water").withTranslations(i18n("water")),
+    carbon_monoxide: e
+        .binary("carbon_monoxide", ea.STATE, true, false)
+        .withDescription("Indicates whether the device detected carbon monoxide")
+        .withTranslations(i18n("carbon_monoxide")),
+    sos: e
+        .binary("sos", ea.STATE, true, false)
+        .withLabel("SOS")
+        .withDescription("Indicates whether the SOS alarm is triggered")
+        .withTranslations(i18n("sos")),
+    vibration: e
+        .binary("vibration", ea.STATE, true, false)
+        .withDescription("Indicates whether the device detected vibration")
+        .withTranslations(i18n("vibration")),
+    alarm: e.binary("alarm", ea.STATE, true, false).withDescription("Indicates whether the alarm is triggered").withTranslations(i18n("alarm")),
+    gas: e.binary("gas", ea.STATE, true, false).withDescription("Indicates whether the device detected gas").withTranslations(i18n("gas")),
+    alarm_1: e
+        .binary("alarm_1", ea.STATE, true, false)
+        .withDescription("Indicates whether IAS Zone alarm 1 is active")
+        .withTranslations(i18n("alarm_1")),
+    alarm_2: e
+        .binary("alarm_2", ea.STATE, true, false)
+        .withDescription("Indicates whether IAS Zone alarm 2 is active")
+        .withTranslations(i18n("alarm_2")),
+    tamper: e
+        .binary("tamper", ea.STATE, true, false)
+        .withDescription("Indicates whether the device is tampered")
+        .withCategory("diagnostic")
+        .withTranslations(i18n("tamper")),
+    rain: e.binary("rain", ea.STATE, true, false).withDescription("Indicates whether the device detected rainfall").withTranslations(i18n("rain")),
+    pressure: e
+        .binary("pressure", ea.STATE, true, false)
+        .withDescription("Indicates whether the device detected pressure")
+        .withTranslations(i18n("pressure")),
     battery_low: e
         .binary("battery_low", ea.STATE, true, false)
         .withDescription("Indicates whether the battery of the device is almost empty")
-        .withCategory("diagnostic"),
+        .withCategory("diagnostic")
+        .withTranslations(i18n("battery_low")),
     supervision_reports: e
         .binary("supervision_reports", ea.STATE, true, false)
         .withDescription("Indicates whether the device issues reports on zone operational status")
-        .withCategory("diagnostic"),
+        .withCategory("diagnostic")
+        .withTranslations(i18n("supervision_reports")),
     restore_reports: e
         .binary("restore_reports", ea.STATE, true, false)
         .withDescription("Indicates whether the device issues reports on alarm no longer being present")
-        .withCategory("diagnostic"),
+        .withCategory("diagnostic")
+        .withTranslations(i18n("restore_reports")),
     ac_status: e
         .binary("ac_status", ea.STATE, true, false)
         .withDescription("Indicates whether the device mains voltage supply is at fault")
-        .withCategory("diagnostic"),
+        .withCategory("diagnostic")
+        .withTranslations(i18n("ac_status")),
     test: e
         .binary("test", ea.STATE, true, false)
         .withDescription("Indicates whether the device is currently performing a test")
-        .withCategory("diagnostic"),
+        .withCategory("diagnostic")
+        .withTranslations(i18n("test")),
     trouble: e
         .binary("trouble", ea.STATE, true, false)
         .withDescription("Indicates whether the device is currently having trouble")
-        .withCategory("diagnostic"),
+        .withCategory("diagnostic")
+        .withTranslations(i18n("trouble")),
     battery_defect: e
         .binary("battery_defect", ea.STATE, true, false)
         .withDescription("Indicates whether the device battery is defective")
-        .withCategory("diagnostic"),
+        .withCategory("diagnostic")
+        .withTranslations(i18n("battery_defect")),
 };
 
 export const TIME_LOOKUP = {
@@ -412,16 +453,28 @@ export function battery(args: BatteryArgs = {}): ModernExtend {
                 .withDescription("Remaining battery in %")
                 .withValueMin(0)
                 .withValueMax(100)
-                .withCategory("diagnostic"),
+                .withCategory("diagnostic")
+                .withTranslations(i18n("battery")),
         );
     }
     if (voltage) {
         exposes.push(
-            e.numeric("voltage", ea.STATE_GET).withUnit("mV").withDescription("Reported battery voltage in millivolts").withCategory("diagnostic"),
+            e
+                .numeric("voltage", ea.STATE_GET)
+                .withUnit("mV")
+                .withDescription("Reported battery voltage in millivolts")
+                .withCategory("diagnostic")
+                .withTranslations(i18n("battery_voltage")),
         );
     }
     if (lowStatus) {
-        exposes.push(e.binary("battery_low", ea.STATE, true, false).withDescription("Empty battery indicator").withCategory("diagnostic"));
+        exposes.push(
+            e
+                .binary("battery_low", ea.STATE, true, false)
+                .withDescription("Empty battery indicator")
+                .withCategory("diagnostic")
+                .withTranslations(i18n("battery_low")),
+        );
     }
 
     const fromZigbee = [
@@ -559,14 +612,19 @@ export interface IdentifyArgs {
 
 export function identify(args: IdentifyArgs = {}): ModernExtend {
     const {isSleepy = false, endpointNames = undefined} = args;
-    const normal: Expose = e.enum("identify", ea.SET, ["identify"]).withDescription("Initiate device identification").withCategory("config");
+    const normal: Expose = e
+        .enum("identify", ea.SET, ["identify"])
+        .withDescription("Initiate device identification")
+        .withCategory("config")
+        .withTranslations(i18n("identify"));
     const sleepy: Expose = e
         .enum("identify", ea.SET, ["identify"])
         .withDescription(
             "Initiate device identification. This device is asleep by default." +
                 "You may need to wake it up first before sending the identify command.",
         )
-        .withCategory("config");
+        .withCategory("config")
+        .withTranslations(i18n("identify"));
 
     const identifyExpose = isSleepy ? sleepy : normal;
     const exposes: Expose[] = exposeEndpoints(identifyExpose, endpointNames);
@@ -578,7 +636,8 @@ export function identify(args: IdentifyArgs = {}): ModernExtend {
                 "The value ranges from 1 to 30 seconds (default: 3).",
         )
         .withValueMin(1)
-        .withValueMax(30);
+        .withValueMax(30)
+        .withTranslations(i18n("identify_timeout"));
 
     const baseConverter: Tz.Converter = {
         key: ["identify"],
@@ -593,6 +652,11 @@ export function identify(args: IdentifyArgs = {}): ModernExtend {
 
     return {exposes, toZigbee, isModernExtend: true};
 }
+
+export const translations = (translations: Translations): ModernExtend => ({
+    isModernExtend: true,
+    translations,
+});
 
 export interface OnOffArgs {
     powerOnBehavior?: boolean;
@@ -3025,7 +3089,7 @@ export function binary<Cl extends string | number, Custom extends TCustomCluster
     const attributeKey = isString(attribute) ? attribute : attribute.ID;
     const access = ea[args.access ?? "ALL"];
 
-    let expose = e.binary(name, access, valueOn[0], valueOff[0]).withDescription(description);
+    let expose = e.binary(name, access, valueOn[0], valueOff[0]).withDescription(description).withTranslations(i18n(name));
     if (endpointName) expose = expose.withEndpoint(endpointName);
     if (label) expose = expose.withLabel(label);
     if (entityCategory) expose = expose.withCategory(entityCategory);

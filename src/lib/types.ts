@@ -246,6 +246,21 @@ export namespace OnEvent {
     export type Handler = (event: Event) => Promise<void> | void;
 }
 
+export type Translations = Record<string, LocaleTranslations>;
+
+type LocaleTranslations = {
+    description?: string;
+    exposes?: Record<
+        string,
+        {
+            label?: string;
+            description?: string;
+            values?: Record<string, string>;
+            presets?: Record<string, {name?: string; description?: string}>;
+        }
+    >;
+};
+
 export interface ModernExtend {
     fromZigbee?: Definition["fromZigbee"];
     toZigbee?: Definition["toZigbee"];
@@ -256,6 +271,7 @@ export interface ModernExtend {
     options?: Option[];
     onEvent?: Definition["onEvent"][];
     endpoint?: Definition["endpoint"];
+    translations?: Translations;
     isModernExtend: true;
 }
 
@@ -279,6 +295,7 @@ type DefinitionBase = {
     whiteLabel?: WhiteLabel[];
     generated?: true;
     externalConverterName?: string;
+    translations?: Translations;
 };
 
 type DefinitionConfig = {

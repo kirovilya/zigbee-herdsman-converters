@@ -1,0 +1,836 @@
+{
+    "brightness": {
+        "label": "Яркость",
+        "description": "Уровень яркости"
+    },
+    "color_temp": {
+        "label": "Температура цвета",
+        "description": "Цветовая температура"
+    },
+    "color_temp_startup": {
+        "label": "Температура при включении"
+    },
+    "hue": {
+        "label": "Оттенок"
+    },
+    "saturation": {
+        "label": "Насыщенность"
+    },
+    "effect": {
+        "label": "Эффект"
+    },
+    "temperature": {
+        "label": "Температура",
+        "description": "Измеренная температура"
+    },
+    "humidity": {
+        "label": "Влажность",
+        "description": "Измеренная влажность"
+    },
+    "pressure": {
+        "label": "Давление",
+        "description": "Атмосферное давление"
+    },
+    "illuminance": {
+        "label": "Освещённость"
+    },
+    "illuminance_lux": {
+        "label": "Освещённость (люкс)"
+    },
+    "illuminance_raw": {
+        "label": "Освещённость (сырое)"
+    },
+    "occupancy": {
+        "label": "Присутствие"
+    },
+    "occupancy_level": {
+        "label": "Уровень присутствия"
+    },
+    "contact": {
+        "label": "Контакт"
+    },
+    "water_leak": {
+        "label": "Протечка"
+    },
+    "smoke": {
+        "label": "Дым"
+    },
+    "gas": {
+        "label": "Газ"
+    },
+    "co2": {
+        "label": "CO2"
+    },
+    "voc": {
+        "label": "ЛОС"
+    },
+    "power": {
+        "label": "Мощность"
+    },
+    "energy": {
+        "label": "Энергия"
+    },
+    "voltage": {
+        "label": "Напряжение"
+    },
+    "current": {
+        "label": "Ток"
+    },
+    "frequency": {
+        "label": "Частота"
+    },
+    "power_factor": {
+        "label": "Коэффициент мощности"
+    },
+    "battery": {
+        "label": "Батарея",
+        "description": "Уровень заряда"
+    },
+    "battery_low": {
+        "label": "Низкий заряд"
+    },
+    "battery_voltage": {
+        "label": "Напряжение батареи"
+    },
+    "position": {
+        "label": "Положение"
+    },
+    "tilt": {
+        "label": "Наклон"
+    },
+    "state": {
+        "label": "Состояние"
+    },
+    "system_mode": {
+        "label": "Режим системы",
+        "values": {
+            "auto": "Авто",
+            "heat": "Обогрев",
+            "cool": "Охлаждение",
+            "off": "Выкл",
+            "dry": "Сухой",
+            "fan_only": "Вентилятор"
+        }
+    },
+    "child_lock": {
+        "label": "Защита от детей",
+        "values": {
+            "LOCK": "Заблокировано",
+            "UNLOCK": "Разблокировано"
+        }
+    },
+    "running_state": {
+        "label": "Состояние работы",
+        "values": {
+            "idle": "Ожидание",
+            "heat": "Обогрев",
+            "cool": "Охлаждение"
+        }
+    },
+    "power_on_behavior": {
+        "label": "Поведение при включении",
+        "values": {
+            "on": "Вкл",
+            "off": "Выкл",
+            "toggle": "Переключить",
+            "previous": "Предыдущее"
+        }
+    },
+    "occupied_heating_setpoint": {
+        "label": "Уставка обогрева"
+    },
+    "local_temperature": {
+        "label": "Местная температура"
+    },
+    "open_window": {
+        "label": "Открытое окно"
+    },
+    "frost_protection": {
+        "label": "Защита от замерзания"
+    },
+    "fan_mode": {
+        "label": "Режим вентилятора",
+        "values": {
+            "low": "Низкий",
+            "medium": "Средний",
+            "high": "Высокий",
+            "auto": "Авто",
+            "off": "Выкл"
+        }
+    },
+    "swing_mode": {
+        "label": "Режим качания",
+        "values": {
+            "on": "Вкл",
+            "off": "Выкл"
+        }
+    },
+    "away_mode": {
+        "label": "Режим отсутствия"
+    },
+    "eco_mode": {
+        "label": "Эко режим"
+    },
+    "boost": {
+        "label": "Турбо"
+    },
+    "boost_time": {
+        "label": "Время турбо"
+    },
+    "linkquality": {
+        "label": "Качество связи"
+    },
+    "action": {
+        "label": "Действие"
+    },
+    "action_duration": {
+        "label": "Длительность действия"
+    },
+    "action_group": {
+        "label": "Группа действий"
+    },
+    "tamper": {
+        "label": "Вмешательство"
+    },
+    "vibration": {
+        "label": "Вибрация"
+    },
+    "alarm": {
+        "label": "Тревога"
+    },
+    "noise": {
+        "label": "Шум"
+    },
+    "noise_detected": {
+        "label": "Обнаружен шум"
+    },
+    "presence": {
+        "label": "Присутствие"
+    },
+    "motion": {
+        "label": "Движение"
+    },
+    "motion_state": {
+        "label": "Состояние движения"
+    },
+    "soil_moisture": {
+        "label": "Влажность почвы"
+    },
+    "co": {
+        "label": "CO"
+    },
+    "aqi": {
+        "label": "Индекс качества воздуха"
+    },
+    "pm25": {
+        "label": "PM2.5"
+    },
+    "pm10": {
+        "label": "PM10"
+    },
+    "formaldehyde": {
+        "label": "Формальдегид"
+    },
+    "hcho": {
+        "label": "Формальдегид"
+    },
+    "cube_side": {
+        "label": "Сторона куба"
+    },
+    "cube_side_1": {
+        "label": "Сторона 1"
+    },
+    "cube_side_2": {
+        "label": "Сторона 2"
+    },
+    "cube_side_3": {
+        "label": "Сторона 3"
+    },
+    "cube_side_4": {
+        "label": "Сторона 4"
+    },
+    "cube_side_5": {
+        "label": "Сторона 5"
+    },
+    "cube_side_6": {
+        "label": "Сторона 6"
+    },
+    "valve_position": {
+        "label": "Положение клапана"
+    },
+    "valve_switch": {
+        "label": "Клапан"
+    },
+    "valve_state": {
+        "label": "Состояние клапана"
+    },
+    "valve_detection": {
+        "label": "Обнаружение клапана"
+    },
+    "valve_detection_bool": {
+        "label": "Обнаружение клапана"
+    },
+    "valve_alarm": {
+        "label": "Тревога клапана"
+    },
+    "auto_lock": {
+        "label": "Автоблокировка"
+    },
+    "auto_off": {
+        "label": "Автоотключение"
+    },
+    "auto_relock_time": {
+        "label": "Время автоблокировки"
+    },
+    "away_preset_days": {
+        "label": "Дни режима отсутствия"
+    },
+    "away_preset_temperature": {
+        "label": "Температура режима отсутствия"
+    },
+    "button_lock": {
+        "label": "Блокировка кнопок"
+    },
+    "calibrated": {
+        "label": "Откалибровано"
+    },
+    "carbon_monoxide": {
+        "label": "Угарный газ"
+    },
+    "comfort_temperature": {
+        "label": "Комфортная температура"
+    },
+    "consumer_connected": {
+        "label": "Потребитель подключен"
+    },
+    "cover_position": {
+        "label": "Положение шторы"
+    },
+    "cover_tilt": {
+        "label": "Наклон шторы"
+    },
+    "cover_mode": {
+        "label": "Режим шторы"
+    },
+    "cpu_temperature": {
+        "label": "Температура CPU"
+    },
+    "current_phase_b": {
+        "label": "Ток фазы B"
+    },
+    "current_phase_c": {
+        "label": "Ток фазы C"
+    },
+    "current_neutral": {
+        "label": "Ток нейтрали"
+    },
+    "deadzone_temperature": {
+        "label": "Мёртвая зона температуры"
+    },
+    "detection_interval": {
+        "label": "Интервал обнаружения"
+    },
+    "device_temperature": {
+        "label": "Температура устройства"
+    },
+    "eco2": {
+        "label": "eCO2"
+    },
+    "eco_temperature": {
+        "label": "Эко температура"
+    },
+    "produced_energy": {
+        "label": "Произведенная энергия"
+    },
+    "energy_produced": {
+        "label": "Произведенная энергия"
+    },
+    "flip_indicator_light": {
+        "label": "Инвертировать индикатор"
+    },
+    "holiday_temperature": {
+        "label": "Температура отпуска"
+    },
+    "brightness_state": {
+        "label": "Состояние яркости"
+    },
+    "keypad_lockout": {
+        "label": "Блокировка клавиатуры"
+    },
+    "led_disabled_night": {
+        "label": "LED отключен ночью"
+    },
+    "light_brightness": {
+        "label": "Яркость света"
+    },
+    "light_brightness_color": {
+        "label": "Яркость цветного света"
+    },
+    "light_brightness_colortemp": {
+        "label": "Яркость света с температурой"
+    },
+    "light_color_options": {
+        "label": "Настройки цвета света"
+    },
+    "lock": {
+        "label": "Замок"
+    },
+    "lock_action": {
+        "label": "Действие замка"
+    },
+    "lock_action_source_name": {
+        "label": "Источник действия замка"
+    },
+    "lock_action_user": {
+        "label": "Пользователь действия замка"
+    },
+    "max_cool_setpoint_limit": {
+        "label": "Макс. уставка охлаждения"
+    },
+    "min_cool_setpoint_limit": {
+        "label": "Мин. уставка охлаждения"
+    },
+    "max_heat_setpoint_limit": {
+        "label": "Макс. уставка обогрева"
+    },
+    "min_heat_setpoint_limit": {
+        "label": "Мин. уставка обогрева"
+    },
+    "max_temperature": {
+        "label": "Макс. температура"
+    },
+    "max_temperature_limit": {
+        "label": "Макс. предел температуры"
+    },
+    "min_temperature_limit": {
+        "label": "Мин. предел температуры"
+    },
+    "min_temperature": {
+        "label": "Мин. температура"
+    },
+    "mode_switch_select": {
+        "label": "Выбор режима переключения"
+    },
+    "motion_sensitivity_select": {
+        "label": "Выбор чувствительности движения"
+    },
+    "open_window_temperature": {
+        "label": "Температура открытого окна"
+    },
+    "operation_mode_select": {
+        "label": "Выбор режима работы"
+    },
+    "overload_protection": {
+        "label": "Защита от перегрузки"
+    },
+    "pm1": {
+        "label": "PM1"
+    },
+    "power_phase_b": {
+        "label": "Мощность фазы B"
+    },
+    "power_phase_c": {
+        "label": "Мощность фазы C"
+    },
+    "power_factor_phase_b": {
+        "label": "Коэфф. мощности фазы B"
+    },
+    "power_factor_phase_c": {
+        "label": "Коэфф. мощности фазы C"
+    },
+    "power_apparent": {
+        "label": "Полная мощность"
+    },
+    "power_apparent_phase_b": {
+        "label": "Полная мощность фазы B"
+    },
+    "power_apparent_phase_c": {
+        "label": "Полная мощность фазы C"
+    },
+    "power_outage_count": {
+        "label": "Количество отключений"
+    },
+    "power_outage_memory": {
+        "label": "Память отключений"
+    },
+    "power_reactive": {
+        "label": "Реактивная мощность"
+    },
+    "power_reactive_phase_b": {
+        "label": "Реактивная мощность фазы B"
+    },
+    "power_reactive_phase_c": {
+        "label": "Реактивная мощность фазы C"
+    },
+    "programming_operation_mode": {
+        "label": "Режим программирования"
+    },
+    "setup": {
+        "label": "Настройка"
+    },
+    "schedule": {
+        "label": "Расписание"
+    },
+    "schedule_settings": {
+        "label": "Настройки расписания"
+    },
+    "external_temperature_input": {
+        "label": "Внешний ввод температуры"
+    },
+    "sos": {
+        "label": "SOS"
+    },
+    "sound_volume": {
+        "label": "Громкость звука"
+    },
+    "switch_type": {
+        "label": "Тип переключателя"
+    },
+    "door_state": {
+        "label": "Состояние двери"
+    },
+    "temperature_sensor_select": {
+        "label": "Выбор датчика температуры"
+    },
+    "test": {
+        "label": "Тест"
+    },
+    "trigger_count": {
+        "label": "Количество срабатываний"
+    },
+    "trigger_indicator": {
+        "label": "Индикатор срабатывания"
+    },
+    "window_detection": {
+        "label": "Обнаружение окна"
+    },
+    "window_detection_bool": {
+        "label": "Обнаружение окна"
+    },
+    "window_open": {
+        "label": "Открытое окно"
+    },
+    "moving": {
+        "label": "Движение"
+    },
+    "x_axis": {
+        "label": "Ось X"
+    },
+    "y_axis": {
+        "label": "Ось Y"
+    },
+    "z_axis": {
+        "label": "Ось Z"
+    },
+    "pincode": {
+        "label": "Пин-код"
+    },
+    "squawk": {
+        "label": "Крик"
+    },
+    "identify_duration": {
+        "label": "Длительность идентификации"
+    },
+    "identify": {
+        "label": "Идентификация"
+    },
+    "min_brightness": {
+        "label": "Мин. яркость"
+    },
+    "max_brightness": {
+        "label": "Макс. яркость"
+    },
+    "pilot_wire_mode": {
+        "label": "Режим провода управления",
+        "values": {
+            "comfort": "Комфорт",
+            "eco": "Эко",
+            "frost_protection": "Защита от замерзания",
+            "off": "Выкл"
+        }
+    },
+    "rain": {
+        "label": "Дождь"
+    },
+    "warning": {
+        "label": "Предупреждение"
+    },
+    "week": {
+        "label": "Неделя"
+    },
+    "last_seen": {
+        "label": "Последний раз виден"
+    },
+    "motor_direction": {
+        "label": "Направление мотора"
+    },
+    "motor_speed": {
+        "label": "Скорость мотора"
+    },
+    "target_temperature": {
+        "label": "Целевая температура"
+    },
+    "current_heating_setpoint": {
+        "label": "Текущая уставка обогрева"
+    },
+    "unoccupied_heating_setpoint": {
+        "label": "Уставка при отсутствии"
+    },
+    "preset": {
+        "label": "Пресет"
+    },
+    "mode": {
+        "label": "Режим"
+    },
+    "duration": {
+        "label": "Длительность"
+    },
+    "sensitivity": {
+        "label": "Чувствительность"
+    },
+    "detection_distance": {
+        "label": "Дистанция обнаружения"
+    },
+    "keep_time": {
+        "label": "Время удержания"
+    },
+    "occupancy_timeout": {
+        "label": "Таймаут присутствия"
+    },
+    "illuminance_above_threshold": {
+        "label": "Освещённость выше порога"
+    },
+    "opening_state": {
+        "label": "Состояние открытия"
+    },
+    "alarm_state": {
+        "label": "Состояние тревоги"
+    },
+    "setup_mode": {
+        "label": "Режим настройки"
+    },
+    "alarm_siren": {
+        "label": "Сирена тревоги"
+    },
+    "alarm_siren_duration": {
+        "label": "Длительность сирены"
+    },
+    "vibration_limit": {
+        "label": "Лимит вибрации"
+    },
+    "vibration_siren": {
+        "label": "Сирена вибрации"
+    },
+    "vibration_siren_duration": {
+        "label": "Длительность сирены вибрации"
+    },
+    "close_signal": {
+        "label": "Сигнал закрытия"
+    },
+    "transmission_power": {
+        "label": "Мощность передачи"
+    },
+    "magnetic_status": {
+        "label": "Магнитный статус"
+    },
+    "connection_state": {
+        "label": "Состояние подключения"
+    },
+    "restart_required": {
+        "label": "Требуется перезагрузка"
+    },
+    "restart": {
+        "label": "Перезагрузка"
+    },
+    "update_state": {
+        "label": "Состояние обновления"
+    },
+    "update_available": {
+        "label": "Доступно обновление"
+    },
+    "factory_reset": {
+        "label": "Сброс до заводских"
+    },
+    "side_up": {
+        "label": "Сторона вверх"
+    },
+    "side_down": {
+        "label": "Сторона вниз"
+    },
+    "side_left": {
+        "label": "Сторона влево"
+    },
+    "side_right": {
+        "label": "Сторона вправо"
+    },
+    "state_up": {
+        "label": "Состояние (вверх)"
+    },
+    "state_down": {
+        "label": "Состояние (вниз)"
+    },
+    "state_left": {
+        "label": "Состояние (влево)"
+    },
+    "state_right": {
+        "label": "Состояние (вправо)"
+    },
+    "state_action": {
+        "label": "Опубликовать состояние как действие"
+    },
+    "led_indicator": {
+        "label": "LED индикатор"
+    },
+    "power_calibration": {
+        "label": "Калибровка мощности"
+    },
+    "power_precision": {
+        "label": "Точность мощности"
+    },
+    "current_calibration": {
+        "label": "Калибровка тока"
+    },
+    "current_precision": {
+        "label": "Точность тока"
+    },
+    "energy_calibration": {
+        "label": "Калибровка энергии"
+    },
+    "energy_precision": {
+        "label": "Точность энергии"
+    },
+    "device_temperature_calibration": {
+        "label": "Калибровка температуры устройства"
+    },
+    "voltage_calibration": {
+        "label": "Калибровка напряжения"
+    },
+    "voltage_precision": {
+        "label": "Точность напряжения"
+    },
+    "idle_steps": {
+        "label": "Холостые шаги"
+    },
+    "closing_steps": {
+        "label": "Шаги закрытия"
+    },
+    "valve_opening_limit_voltage": {
+        "label": "Напряжение открытия клапана"
+    },
+    "valve_closing_limit_voltage": {
+        "label": "Напряжение закрытия клапана"
+    },
+    "valve_motor_running_voltage": {
+        "label": "Напряжение мотора клапана"
+    },
+    "valve_opening_degree": {
+        "label": "Степень открытия клапана"
+    },
+    "valve_closing_degree": {
+        "label": "Степень закрытия клапана"
+    },
+    "temperature_accuracy": {
+        "label": "Точность температуры"
+    },
+    "weekly_schedule_sunday": {
+        "label": "Расписание воскресенье"
+    },
+    "weekly_schedule_monday": {
+        "label": "Расписание понедельник"
+    },
+    "weekly_schedule_tuesday": {
+        "label": "Расписание вторник"
+    },
+    "weekly_schedule_wednesday": {
+        "label": "Расписание среда"
+    },
+    "weekly_schedule_thursday": {
+        "label": "Расписание четверг"
+    },
+    "weekly_schedule_friday": {
+        "label": "Расписание пятница"
+    },
+    "weekly_schedule_saturday": {
+        "label": "Расписание суббота"
+    },
+    "smart_temperature_control": {
+        "label": "Умный контроль температуры"
+    },
+    "thermostat_unit": {
+        "label": "Единица термостата",
+        "values": {
+            "celsius": "Цельсий",
+            "fahrenheit": "Фаренгейт"
+        }
+    },
+    "operation_mode": {
+        "label": "Режим работы",
+        "values": {
+            "command": "Команда",
+            "event": "Событие"
+        }
+    },
+    "indicator_mode": {
+        "label": "Режим индикатора",
+        "values": {
+            "on": "Вкл",
+            "off": "Выкл",
+            "off_on": "Выкл/Вкл"
+        }
+    },
+    "timer_mode_target_temp": {
+        "label": "Целевая температура таймера"
+    },
+    "temporary_mode_duration": {
+        "label": "Длительность временного режима"
+    },
+    "temporary_mode_select": {
+        "label": "Выбор временного режима"
+    },
+    "open_window_detection": {
+        "label": "Обнаружение открытого окна"
+    },
+    "frost_protection_temperature": {
+        "label": "Температура защиты от замерзания"
+    },
+    "color": {
+        "label": "Цвет"
+    },
+    "color_mode": {
+        "label": "Режим цвета",
+        "values": {
+            "xy": "XY",
+            "hs": "HS",
+            "color_temp": "Температура цвета"
+        }
+    },
+    "color_xy": {
+        "label": "Цвет (XY)"
+    },
+    "color_hs": {
+        "label": "Цвет (HS)"
+    },
+    "transition": {
+        "label": "Переход"
+    },
+    "device_mode": {
+        "label": "Режим устройства",
+        "values": {
+            "single_relay": "Одно реле",
+            "single_dimmer": "Один диммер",
+            "dual_relay": "Два реле",
+            "dual_dimmer": "Два диммера"
+        }
+    },
+    "battery_state": {
+        "label": "Состояние батареи",
+        "values": {
+            "normal": "Нормально",
+            "low": "Низкий",
+            "empty": "Пустая"
+        }
+    },
+    "internal_temperature": {
+        "label": "Внутренняя температура"
+    }
+}

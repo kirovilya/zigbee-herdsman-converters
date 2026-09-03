@@ -1,0 +1,836 @@
+{
+    "child_lock": {
+        "label": "Kindersicherung",
+        "values": {
+            "LOCK": "Gesperrt",
+            "UNLOCK": "Entsperrt"
+        }
+    },
+    "running_state": {
+        "label": "Betriebszustand",
+        "values": {
+            "idle": "Leerlauf",
+            "heat": "Heizen",
+            "cool": "Kühlen"
+        }
+    },
+    "power_on_behavior": {
+        "label": "Einschaltverhalten nach Stromausfall",
+        "values": {
+            "on": "Ein",
+            "off": "Aus",
+            "toggle": "Umschalten",
+            "previous": "Vorheriger"
+        }
+    },
+    "occupied_heating_setpoint": {
+        "label": "Heizsollwert"
+    },
+    "local_temperature": {
+        "label": "Lokale Temperatur"
+    },
+    "open_window": {
+        "label": "Fenster geöffnet"
+    },
+    "frost_protection": {
+        "label": "Frostschutz"
+    },
+    "fan_mode": {
+        "label": "Lüftermodus",
+        "values": {
+            "low": "Niedrig",
+            "medium": "Mittel",
+            "high": "Hoch",
+            "auto": "Auto",
+            "off": "Aus"
+        }
+    },
+    "swing_mode": {
+        "label": "Schwingmodus",
+        "values": {
+            "on": "Ein",
+            "off": "Aus"
+        }
+    },
+    "away_mode": {
+        "label": "Abwesenheitsmodus"
+    },
+    "eco_mode": {
+        "label": "Eco-Modus"
+    },
+    "boost": {
+        "label": "Boost"
+    },
+    "boost_time": {
+        "label": "Boost-Dauer"
+    },
+    "linkquality": {
+        "label": "Verbindungsqualität"
+    },
+    "action": {
+        "label": "Aktion"
+    },
+    "action_duration": {
+        "label": "Aktionsdauer"
+    },
+    "action_group": {
+        "label": "Aktionsgruppe"
+    },
+    "tamper": {
+        "label": "Manipulation"
+    },
+    "vibration": {
+        "label": "Vibration"
+    },
+    "alarm": {
+        "label": "Alarm"
+    },
+    "noise": {
+        "label": "Geräusch"
+    },
+    "noise_detected": {
+        "label": "Geräusch erkannt"
+    },
+    "presence": {
+        "label": "Anwesenheit"
+    },
+    "motion": {
+        "label": "Bewegung"
+    },
+    "motion_state": {
+        "label": "Bewegungszustand"
+    },
+    "soil_moisture": {
+        "label": "Bodenfeuchtigkeit"
+    },
+    "co": {
+        "label": "CO"
+    },
+    "aqi": {
+        "label": "Luftqualitätsindex"
+    },
+    "pm25": {
+        "label": "PM2,5"
+    },
+    "pm10": {
+        "label": "PM10"
+    },
+    "formaldehyde": {
+        "label": "Formaldehyd"
+    },
+    "hcho": {
+        "label": "Formaldehyd"
+    },
+    "cube_side": {
+        "label": "Würfelseite"
+    },
+    "cube_side_1": {
+        "label": "Seite 1"
+    },
+    "cube_side_2": {
+        "label": "Seite 2"
+    },
+    "cube_side_3": {
+        "label": "Seite 3"
+    },
+    "cube_side_4": {
+        "label": "Seite 4"
+    },
+    "cube_side_5": {
+        "label": "Seite 5"
+    },
+    "cube_side_6": {
+        "label": "Seite 6"
+    },
+    "valve_position": {
+        "label": "Ventilposition"
+    },
+    "valve_switch": {
+        "label": "Ventil"
+    },
+    "valve_state": {
+        "label": "Ventilzustand"
+    },
+    "valve_detection": {
+        "label": "Ventilerkennung"
+    },
+    "valve_detection_bool": {
+        "label": "Ventilerkennung"
+    },
+    "valve_alarm": {
+        "label": "Ventilalarm"
+    },
+    "auto_lock": {
+        "label": "Auto-Sperre"
+    },
+    "auto_off": {
+        "label": "Auto-Aus"
+    },
+    "auto_relock_time": {
+        "label": "Auto-Sperrzeit"
+    },
+    "away_preset_days": {
+        "label": "Abwesenheitstage"
+    },
+    "away_preset_temperature": {
+        "label": "Abwesenheitstemperatur"
+    },
+    "button_lock": {
+        "label": "Tastensperre"
+    },
+    "calibrated": {
+        "label": "Kalibriert"
+    },
+    "carbon_monoxide": {
+        "label": "Kohlenmonoxid"
+    },
+    "comfort_temperature": {
+        "label": "Komforttemperatur"
+    },
+    "consumer_connected": {
+        "label": "Verbunden"
+    },
+    "cover_position": {
+        "label": "Behängeposition"
+    },
+    "cover_tilt": {
+        "label": "Behängeneigung"
+    },
+    "cover_mode": {
+        "label": "Behängemodus"
+    },
+    "cpu_temperature": {
+        "label": "CPU-Temperatur"
+    },
+    "current_phase_b": {
+        "label": "Strom Phase B"
+    },
+    "current_phase_c": {
+        "label": "Strom Phase C"
+    },
+    "current_neutral": {
+        "label": "Strom Neutralleiter"
+    },
+    "deadzone_temperature": {
+        "label": "Totzone Temperatur"
+    },
+    "detection_interval": {
+        "label": "Erkennungsintervall"
+    },
+    "device_temperature": {
+        "label": "Gerätetemperatur"
+    },
+    "eco2": {
+        "label": "eCO2"
+    },
+    "eco_temperature": {
+        "label": "Eco-Temperatur"
+    },
+    "produced_energy": {
+        "label": "Produzierte Energie"
+    },
+    "energy_produced": {
+        "label": "Produzierte Energie"
+    },
+    "flip_indicator_light": {
+        "label": "LED-Anzeige umkehren"
+    },
+    "holiday_temperature": {
+        "label": "Urlaubstemperatur"
+    },
+    "brightness_state": {
+        "label": "Helligkeitszustand"
+    },
+    "keypad_lockout": {
+        "label": "Tastatursperre"
+    },
+    "led_disabled_night": {
+        "label": "LED nachts deaktiviert"
+    },
+    "light_brightness": {
+        "label": "Licht Helligkeit"
+    },
+    "light_brightness_color": {
+        "label": "Licht Helligkeit Farbe"
+    },
+    "light_brightness_colortemp": {
+        "label": "Licht Helligkeit Farbtemperatur"
+    },
+    "light_color_options": {
+        "label": "Licht Farboptionen"
+    },
+    "lock": {
+        "label": "Schloss"
+    },
+    "lock_action": {
+        "label": "Schloss Aktion"
+    },
+    "lock_action_source_name": {
+        "label": "Schloss Aktionsquelle"
+    },
+    "lock_action_user": {
+        "label": "Schloss Aktionsbenutzer"
+    },
+    "max_cool_setpoint_limit": {
+        "label": "Max. Kühl-Sollwert"
+    },
+    "min_cool_setpoint_limit": {
+        "label": "Min. Kühl-Sollwert"
+    },
+    "max_heat_setpoint_limit": {
+        "label": "Max. Heiz-Sollwert"
+    },
+    "min_heat_setpoint_limit": {
+        "label": "Min. Heiz-Sollwert"
+    },
+    "max_temperature": {
+        "label": "Max. Temperatur"
+    },
+    "max_temperature_limit": {
+        "label": "Max. Temperaturgrenze"
+    },
+    "min_temperature_limit": {
+        "label": "Min. Temperaturgrenze"
+    },
+    "min_temperature": {
+        "label": "Min. Temperatur"
+    },
+    "mode_switch_select": {
+        "label": "Modusschalter Auswahl"
+    },
+    "motion_sensitivity_select": {
+        "label": "Bewegungsempfindlichkeit Auswahl"
+    },
+    "open_window_temperature": {
+        "label": "Fenster offen Temperatur"
+    },
+    "operation_mode_select": {
+        "label": "Betriebsmodus Auswahl"
+    },
+    "overload_protection": {
+        "label": "Überlastschutz"
+    },
+    "pm1": {
+        "label": "PM1"
+    },
+    "power_phase_b": {
+        "label": "Leistung Phase B"
+    },
+    "power_phase_c": {
+        "label": "Leistung Phase C"
+    },
+    "power_factor_phase_b": {
+        "label": "Leistungsfaktor Phase B"
+    },
+    "power_factor_phase_c": {
+        "label": "Leistungsfaktor Phase C"
+    },
+    "power_apparent": {
+        "label": "Scheinleistung"
+    },
+    "power_apparent_phase_b": {
+        "label": "Scheinleistung Phase B"
+    },
+    "power_apparent_phase_c": {
+        "label": "Scheinleistung Phase C"
+    },
+    "power_outage_count": {
+        "label": "Anzahl Stromausfälle"
+    },
+    "power_outage_memory": {
+        "label": "Stromausfall-Speicher"
+    },
+    "power_reactive": {
+        "label": "Blindleistung"
+    },
+    "power_reactive_phase_b": {
+        "label": "Blindleistung Phase B"
+    },
+    "power_reactive_phase_c": {
+        "label": "Blindleistung Phase C"
+    },
+    "programming_operation_mode": {
+        "label": "Programmierungsmodus"
+    },
+    "setup": {
+        "label": "Einrichtung"
+    },
+    "schedule": {
+        "label": "Zeitplan"
+    },
+    "schedule_settings": {
+        "label": "Zeitplaneinstellungen"
+    },
+    "external_temperature_input": {
+        "label": "Außentemperatur-Eingang"
+    },
+    "sos": {
+        "label": "SOS"
+    },
+    "sound_volume": {
+        "label": "Lautstärke"
+    },
+    "switch_type": {
+        "label": "Schaltertyp"
+    },
+    "door_state": {
+        "label": "Türzustand"
+    },
+    "temperature_sensor_select": {
+        "label": "Temperatursensor Auswahl"
+    },
+    "test": {
+        "label": "Test"
+    },
+    "trigger_count": {
+        "label": "Auslöseranzahl"
+    },
+    "trigger_indicator": {
+        "label": "Auslöserindikator"
+    },
+    "window_detection": {
+        "label": "Fenstererkennung"
+    },
+    "window_detection_bool": {
+        "label": "Fenstererkennung"
+    },
+    "window_open": {
+        "label": "Fenster offen"
+    },
+    "moving": {
+        "label": "Bewegung"
+    },
+    "x_axis": {
+        "label": "X-Achse"
+    },
+    "y_axis": {
+        "label": "Y-Achse"
+    },
+    "z_axis": {
+        "label": "Z-Achse"
+    },
+    "pincode": {
+        "label": "PIN-Code"
+    },
+    "squawk": {
+        "label": "Quaken"
+    },
+    "identify_duration": {
+        "label": "Identifizierungsdauer"
+    },
+    "identify": {
+        "label": "Identifizieren"
+    },
+    "min_brightness": {
+        "label": "Min. Helligkeit"
+    },
+    "max_brightness": {
+        "label": "Max. Helligkeit"
+    },
+    "pilot_wire_mode": {
+        "label": "Pilotdraht-Modus",
+        "values": {
+            "comfort": "Komfort",
+            "eco": "Eco",
+            "frost_protection": "Frostschutz",
+            "off": "Aus"
+        }
+    },
+    "rain": {
+        "label": "Regen"
+    },
+    "warning": {
+        "label": "Warnung"
+    },
+    "week": {
+        "label": "Woche"
+    },
+    "last_seen": {
+        "label": "Zuletzt gesehen"
+    },
+    "motor_direction": {
+        "label": "Motorrichtung"
+    },
+    "motor_speed": {
+        "label": "Motordrehzahl"
+    },
+    "target_temperature": {
+        "label": "Solltemperatur"
+    },
+    "current_heating_setpoint": {
+        "label": "Aktueller Heizsollwert"
+    },
+    "unoccupied_heating_setpoint": {
+        "label": "Heizsollwert (abwesend)"
+    },
+    "preset": {
+        "label": "Voreinstellung"
+    },
+    "mode": {
+        "label": "Modus"
+    },
+    "duration": {
+        "label": "Dauer"
+    },
+    "sensitivity": {
+        "label": "Empfindlichkeit"
+    },
+    "detection_distance": {
+        "label": "Erkennungsdistanz"
+    },
+    "keep_time": {
+        "label": "Haltezeit"
+    },
+    "occupancy_timeout": {
+        "label": "Anwesenheits-Timeout"
+    },
+    "illuminance_above_threshold": {
+        "label": "Beleuchtung über Schwelle"
+    },
+    "opening_state": {
+        "label": "Öffnungszustand"
+    },
+    "alarm_state": {
+        "label": "Alarmstatus"
+    },
+    "setup_mode": {
+        "label": "Setup Modus"
+    },
+    "alarm_siren": {
+        "label": "Alarmsirene"
+    },
+    "alarm_siren_duration": {
+        "label": "Dauer Alarmsirene"
+    },
+    "vibration_limit": {
+        "label": "Vibrationslimit"
+    },
+    "vibration_siren": {
+        "label": "Vibrationssirene"
+    },
+    "vibration_siren_duration": {
+        "label": "Dauer Vibrationssirene"
+    },
+    "close_signal": {
+        "label": "Schließsignal"
+    },
+    "transmission_power": {
+        "label": "Sendeleistung"
+    },
+    "magnetic_status": {
+        "label": "Magnetstatus"
+    },
+    "connection_state": {
+        "label": "Verbindungsstatus"
+    },
+    "restart_required": {
+        "label": "Neustart erforderlich"
+    },
+    "restart": {
+        "label": "Neustart"
+    },
+    "update_state": {
+        "label": "Update-Status"
+    },
+    "update_available": {
+        "label": "Update verfügbar"
+    },
+    "factory_reset": {
+        "label": "Werksreset"
+    },
+    "side_up": {
+        "label": "Seite oben"
+    },
+    "side_down": {
+        "label": "Seite unten"
+    },
+    "side_left": {
+        "label": "Seite links"
+    },
+    "side_right": {
+        "label": "Seite rechts"
+    },
+    "state_up": {
+        "label": "Status (oben)"
+    },
+    "state_down": {
+        "label": "Status (unten)"
+    },
+    "state_left": {
+        "label": "Status (links)"
+    },
+    "state_right": {
+        "label": "Status (rechts)"
+    },
+    "state_action": {
+        "label": "Status als Aktion veröffentlichen"
+    },
+    "led_indicator": {
+        "label": "LED-Anzeige"
+    },
+    "power_calibration": {
+        "label": "Kalibrierung Leistung"
+    },
+    "power_precision": {
+        "label": "Genauigkeit Leistung"
+    },
+    "current_calibration": {
+        "label": "Kalibrierung Strom"
+    },
+    "current_precision": {
+        "label": "Genauigkeit Strom"
+    },
+    "energy_calibration": {
+        "label": "Kalibrierung Energie"
+    },
+    "energy_precision": {
+        "label": "Genauigkeit Energie"
+    },
+    "device_temperature_calibration": {
+        "label": "Kalibrierung Gerätetemperatur"
+    },
+    "voltage_calibration": {
+        "label": "Kalibrierung Spannung"
+    },
+    "voltage_precision": {
+        "label": "Genauigkeit Spannung"
+    },
+    "idle_steps": {
+        "label": "Leerlaufschritte"
+    },
+    "closing_steps": {
+        "label": "Schließschritte"
+    },
+    "valve_opening_limit_voltage": {
+        "label": "Grenzspannung Ventilöffnung"
+    },
+    "valve_closing_limit_voltage": {
+        "label": "Grenzspannung Ventilschließung"
+    },
+    "valve_motor_running_voltage": {
+        "label": "Betriebsspannung Ventilmotor"
+    },
+    "valve_opening_degree": {
+        "label": "Ventilöffnung"
+    },
+    "valve_closing_degree": {
+        "label": "Ventilschließung"
+    },
+    "temperature_accuracy": {
+        "label": "Temperaturgenauigkeit"
+    },
+    "weekly_schedule_sunday": {
+        "label": "Wochenplan Sonntag"
+    },
+    "weekly_schedule_monday": {
+        "label": "Wochenplan Montag"
+    },
+    "weekly_schedule_tuesday": {
+        "label": "Wochenplan Dienstag"
+    },
+    "weekly_schedule_wednesday": {
+        "label": "Wochenplan Mittwoch"
+    },
+    "weekly_schedule_thursday": {
+        "label": "Wochenplan Donnerstag"
+    },
+    "weekly_schedule_friday": {
+        "label": "Wochenplan Freitag"
+    },
+    "weekly_schedule_saturday": {
+        "label": "Wochenplan Samstag"
+    },
+    "smart_temperature_control": {
+        "label": "Intelligente Temperaturregelung"
+    },
+    "thermostat_unit": {
+        "label": "Thermostat-Einheit",
+        "values": {
+            "celsius": "Celsius",
+            "fahrenheit": "Fahrenheit"
+        }
+    },
+    "operation_mode": {
+        "label": "Betriebsmodus",
+        "values": {
+            "command": "Befehl",
+            "event": "Ereignis"
+        }
+    },
+    "indicator_mode": {
+        "label": "LED-Modus",
+        "values": {
+            "on": "Ein",
+            "off": "Aus",
+            "off_on": "Aus/Ein"
+        }
+    },
+    "timer_mode_target_temp": {
+        "label": "Solltemperatur im Timer-Modus"
+    },
+    "temporary_mode_duration": {
+        "label": "Dauer des temporären Modus"
+    },
+    "temporary_mode_select": {
+        "label": "Temporärer Modus"
+    },
+    "open_window_detection": {
+        "label": "Offenes-Fenster-Erkennung"
+    },
+    "frost_protection_temperature": {
+        "label": "Frostschutz-Temperatur"
+    },
+    "color": {
+        "label": "Farbe"
+    },
+    "color_mode": {
+        "label": "Farbmodus",
+        "values": {
+            "xy": "XY",
+            "hs": "HS",
+            "color_temp": "Farbtemperatur"
+        }
+    },
+    "color_xy": {
+        "label": "Farbe (xy)"
+    },
+    "color_hs": {
+        "label": "Farbe (hs)"
+    },
+    "transition": {
+        "label": "Übergang"
+    },
+    "device_mode": {
+        "label": "Gerätemodus",
+        "values": {
+            "single_relay": "Einzelrelais",
+            "single_dimmer": "Einzeldimmer",
+            "dual_relay": "Doppelrelais",
+            "dual_dimmer": "Doppeldimmer"
+        }
+    },
+    "battery_state": {
+        "label": "Batteriestatus",
+        "values": {
+            "normal": "Normal",
+            "low": "Schwach",
+            "empty": "Leer"
+        }
+    },
+    "internal_temperature": {
+        "label": "Innentemperatur"
+    },
+    "brightness": {
+        "label": "Helligkeit",
+        "description": "Helligkeitsstufe"
+    },
+    "color_temp": {
+        "label": "Farbtemperatur",
+        "description": "Farbtemperatur"
+    },
+    "color_temp_startup": {
+        "label": "Farbtemperatur beim Start"
+    },
+    "hue": {
+        "label": "Farbton"
+    },
+    "saturation": {
+        "label": "Sättigung"
+    },
+    "effect": {
+        "label": "Effekt"
+    },
+    "temperature": {
+        "label": "Temperatur",
+        "description": "Gemessene Temperatur"
+    },
+    "humidity": {
+        "label": "Luftfeuchtigkeit",
+        "description": "Gemessene Luftfeuchtigkeit"
+    },
+    "pressure": {
+        "label": "Luftdruck",
+        "description": "Atmosphärischer Druck"
+    },
+    "illuminance": {
+        "label": "Beleuchtungsstärke"
+    },
+    "illuminance_lux": {
+        "label": "Beleuchtungsstärke (lux)"
+    },
+    "illuminance_raw": {
+        "label": "Beleuchtungsstärke (Rohwert)"
+    },
+    "occupancy": {
+        "label": "Anwesenheit"
+    },
+    "occupancy_level": {
+        "label": "Anwesenheitsniveau"
+    },
+    "contact": {
+        "label": "Kontakt"
+    },
+    "water_leak": {
+        "label": "Wasserleck"
+    },
+    "smoke": {
+        "label": "Rauch"
+    },
+    "gas": {
+        "label": "Gas"
+    },
+    "co2": {
+        "label": "CO2"
+    },
+    "voc": {
+        "label": "VOC"
+    },
+    "power": {
+        "label": "Leistung"
+    },
+    "energy": {
+        "label": "Energie"
+    },
+    "voltage": {
+        "label": "Spannung"
+    },
+    "current": {
+        "label": "Strom"
+    },
+    "frequency": {
+        "label": "Frequenz"
+    },
+    "power_factor": {
+        "label": "Leistungsfaktor"
+    },
+    "battery": {
+        "label": "Batterie",
+        "description": "Ladezustand"
+    },
+    "battery_low": {
+        "label": "Schwache Batterie"
+    },
+    "battery_voltage": {
+        "label": "Batteriespannung"
+    },
+    "position": {
+        "label": "Position"
+    },
+    "tilt": {
+        "label": "Neigung"
+    },
+    "state": {
+        "label": "Status"
+    },
+    "system_mode": {
+        "label": "Systemmodus",
+        "values": {
+            "auto": "Auto",
+            "heat": "Heizen",
+            "cool": "Kühlen",
+            "off": "Aus",
+            "dry": "Trocken",
+            "fan_only": "Nur Lüfter"
+        }
+    }
+}

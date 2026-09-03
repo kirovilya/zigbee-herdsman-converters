@@ -9,6 +9,7 @@ import * as light from "./light";
 import {logger} from "./logger";
 import * as modernExtend from "./modernExtend";
 import * as globalStore from "./store";
+import {i18n} from "./translations";
 import type {Configure, Expose, Fz, KeyValue, KeyValueAny, ModernExtend, Tz} from "./types";
 import * as utils from "./utils";
 import {determineEndpoint, exposeEndpoints, hasAlreadyProcessedMessage, isObject, numberWithinRange, toNumber} from "./utils";
@@ -626,18 +627,22 @@ const philipsModernExtend = {
                 }
             },
             options: [
-                new exposes.Binary("hue_native_control", ea.SET, true, false).withDescription(
-                    "Control this light using a Philips-specific protocol instead of standard Zigbee commands. " +
-                        "When enabled, on/off, brightness, color, and color temperature are combined into single atomic commands. " +
-                        "This is required to use the Effect color update mode. " +
-                        "When disabled (default), standard Zigbee commands are used, which preserves the usual behavior, " +
-                        "including simulating on/off transitions.",
-                ),
-                new exposes.Enum("effect_color_mode", ea.SET, ["stop", "update"]).withDescription(
-                    "Controls what happens when color is changed while an effect is active (requires Hue native control). " +
-                        "'stop' (default): color change stops the effect (Hue app behavior). " +
-                        "'update': color change re-sends the effect with the new color.",
-                ),
+                new exposes.Binary("hue_native_control", ea.SET, true, false)
+                    .withDescription(
+                        "Control this light using a Philips-specific protocol instead of standard Zigbee commands. " +
+                            "When enabled, on/off, brightness, color, and color temperature are combined into single atomic commands. " +
+                            "This is required to use the Effect color update mode. " +
+                            "When disabled (default), standard Zigbee commands are used, which preserves the usual behavior, " +
+                            "including simulating on/off transitions.",
+                    )
+                    .withTranslations(i18n("hue_native_control")),
+                new exposes.Enum("effect_color_mode", ea.SET, ["stop", "update"])
+                    .withDescription(
+                        "Controls what happens when color is changed while an effect is active (requires Hue native control). " +
+                            "'stop' (default): color change stops the effect (Hue app behavior). " +
+                            "'update': color change re-sends the effect with the new color.",
+                    )
+                    .withTranslations(i18n("effect_color_mode")),
             ],
         } satisfies Tz.Converter;
 
@@ -674,13 +679,21 @@ const philipsModernExtend = {
                 }
                 result.exposes.push(
                     // gradient_scene is deprecated, use gradient instead
-                    ...exposeEndpoints(e.enum("gradient_scene", ea.SET, Object.keys(gradientScenes)), args.endpointNames),
+                    ...exposeEndpoints(
+                        e.enum("gradient_scene", ea.SET, Object.keys(gradientScenes)).withTranslations(i18n("gradient_scene")),
+                        args.endpointNames,
+                    ),
                     ...exposeEndpoints(
                         e
-                            .list("gradient", ea.ALL, e.text("hex", ea.ALL).withDescription("Color in RGB HEX format (eg #663399)"))
+                            .list(
+                                "gradient",
+                                ea.ALL,
+                                e.text("hex", ea.ALL).withDescription("Color in RGB HEX format (eg #663399)").withTranslations(i18n("hex")),
+                            )
                             .withLengthMin(1)
                             .withLengthMax(9)
-                            .withDescription("List of RGB HEX colors"),
+                            .withDescription("List of RGB HEX colors")
+                            .withTranslations(i18n("gradient")),
                         args.endpointNames,
                     ),
                 );
@@ -703,7 +716,8 @@ const philipsModernExtend = {
                         .withValueMin(0)
                         .withValueMax(1)
                         .withValueStep(0.01)
-                        .withDescription("Animation speed for the active effect (0=slowest, 1=fastest)"),
+                        .withDescription("Animation speed for the active effect (0=slowest, 1=fastest)")
+                        .withTranslations(i18n("effect_speed")),
                     args.endpointNames,
                 ),
             );
@@ -714,7 +728,8 @@ const philipsModernExtend = {
                 ...exposeEndpoints(
                     e
                         .text("effect_color", ea.SET)
-                        .withDescription('Set the base color of the active effect without stopping it (hex e.g. #FF4400, or JSON {"x":0.6,"y":0.3})'),
+                        .withDescription('Set the base color of the active effect without stopping it (hex e.g. #FF4400, or JSON {"x":0.6,"y":0.3})')
+                        .withTranslations(i18n("effect_color")),
                     args.endpointNames,
                 ),
             );
@@ -727,7 +742,8 @@ const philipsModernExtend = {
                             .enum("gradient_style", ea.ALL, ["linear", "scattered", "mirrored"])
                             .withDescription(
                                 "Gradient rendering style: linear (smooth blend), scattered (color per segment), mirrored (symmetric from center)",
-                            ),
+                            )
+                            .withTranslations(i18n("gradient_style")),
                         args.endpointNames,
                     ),
                 );
@@ -739,7 +755,8 @@ const philipsModernExtend = {
                             .withValueMin(0)
                             .withValueMax(31)
                             .withValueStep(0.125)
-                            .withDescription("Gradient scale (0=auto fit, 1.0+=number of colors visible)"),
+                            .withDescription("Gradient scale (0=auto fit, 1.0+=number of colors visible)")
+                            .withTranslations(i18n("gradient_scale")),
                         args.endpointNames,
                     ),
                     ...exposeEndpoints(
@@ -747,7 +764,8 @@ const philipsModernExtend = {
                             .withValueMin(0)
                             .withValueMax(31)
                             .withValueStep(0.125)
-                            .withDescription("Gradient color offset (0=start from first color)"),
+                            .withDescription("Gradient color offset (0=start from first color)")
+                            .withTranslations(i18n("gradient_offset")),
                         args.endpointNames,
                     ),
                 );
@@ -801,8 +819,12 @@ const philipsModernExtend = {
             e.tamper().withAccess(ea.STATE_GET),
             new eNumeric("contact_last_changed", ea.STATE_GET)
                 .withUnit("s")
-                .withDescription("Time (in seconds) since when contact was last changed."),
-            new eNumeric("tamper_last_changed", ea.STATE_GET).withUnit("s").withDescription("Time (in seconds) since when tamper was last changed."),
+                .withDescription("Time (in seconds) since when contact was last changed.")
+                .withTranslations(i18n("contact_last_changed")),
+            new eNumeric("tamper_last_changed", ea.STATE_GET)
+                .withUnit("s")
+                .withDescription("Time (in seconds) since when tamper was last changed.")
+                .withTranslations(i18n("tamper_last_changed")),
         ];
         const fromZigbee = [
             {

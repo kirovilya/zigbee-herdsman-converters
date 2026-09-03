@@ -1,0 +1,1016 @@
+{
+    "brightness": {
+        "label": "Brightness"
+    },
+    "color_temp": {
+        "label": "Color temp"
+    },
+    "color_temp_startup": {
+        "label": "Color temp startup"
+    },
+    "hue": {
+        "label": "Hue"
+    },
+    "saturation": {
+        "label": "Saturation"
+    },
+    "effect": {
+        "label": "Effect",
+        "description": "Triggers an effect on the light (e.g. make light blink for a few seconds)",
+        "values": {
+            "blink": "Blink",
+            "breathe": "Breathe",
+            "okay": "Okay",
+            "channel_change": "Channel_change",
+            "finish_effect": "Finish_effect",
+            "stop_effect": "Stop_effect"
+        }
+    },
+    "temperature": {
+        "label": "Temperature",
+        "description": "Measured temperature value"
+    },
+    "humidity": {
+        "label": "Humidity",
+        "description": "Measured relative humidity"
+    },
+    "pressure": {
+        "label": "Pressure",
+        "description": "The measured atmospheric pressure"
+    },
+    "illuminance": {
+        "label": "Illuminance",
+        "description": "Measured illuminance"
+    },
+    "illuminance_lux": {
+        "label": "Illuminance lux"
+    },
+    "illuminance_raw": {
+        "label": "Illuminance raw",
+        "description": "Raw measured illuminance"
+    },
+    "occupancy": {
+        "label": "Occupancy",
+        "description": "Indicates whether the device detected occupancy"
+    },
+    "occupancy_level": {
+        "label": "Occupancy level",
+        "description": "The measured occupancy value"
+    },
+    "contact": {
+        "label": "Contact",
+        "description": "Indicates if the contact is closed (= true) or open (= false)"
+    },
+    "water_leak": {
+        "label": "Water leak",
+        "description": "Indicates whether the device detects water"
+    },
+    "smoke": {
+        "label": "Smoke",
+        "description": "Indicates whether the device detected smoke"
+    },
+    "gas": {
+        "label": "Gas",
+        "description": "Indicates whether the device detected gas"
+    },
+    "co2": {
+        "label": "CO2",
+        "description": "The measured CO2 (carbon dioxide) value"
+    },
+    "voc": {
+        "label": "VOC",
+        "description": "Measured VOC value"
+    },
+    "power": {
+        "label": "Power",
+        "description": "Instantaneous measured power"
+    },
+    "energy": {
+        "label": "Energy",
+        "description": "Sum of consumed energy"
+    },
+    "voltage": {
+        "label": "Voltage",
+        "description": "Measured electrical potential value"
+    },
+    "current": {
+        "label": "Current",
+        "description": "Instantaneous measured electrical current"
+    },
+    "frequency": {
+        "label": "Frequency"
+    },
+    "power_factor": {
+        "label": "Power factor",
+        "description": "Instantaneous measured power factor"
+    },
+    "battery": {
+        "label": "Battery",
+        "description": "Remaining battery in %, can take up to 24 hours before reported"
+    },
+    "battery_low": {
+        "label": "Battery low",
+        "description": "Indicates if the battery of this device is almost empty"
+    },
+    "battery_voltage": {
+        "label": "Battery voltage",
+        "description": "Voltage of the battery in millivolts"
+    },
+    "position": {
+        "label": "Position",
+        "description": "Position"
+    },
+    "tilt": {
+        "label": "Tilt",
+        "description": "Indicates whether the device detected tilt"
+    },
+    "state": {
+        "label": "State"
+    },
+    "system_mode": {
+        "label": "System mode"
+    },
+    "child_lock": {
+        "label": "Child lock",
+        "description": "Enables/disables physical input on the device",
+        "values": {
+            "LOCK": "Lock",
+            "UNLOCK": "Unlock"
+        }
+    },
+    "running_state": {
+        "label": "Running state"
+    },
+    "power_on_behavior": {
+        "label": "Power-on behavior",
+        "description": "Controls the behavior when the device is powered on after power loss"
+    },
+    "occupied_heating_setpoint": {
+        "label": "Occupied heating setpoint"
+    },
+    "local_temperature": {
+        "label": "Local temperature",
+        "description": "Current temperature measured on the device"
+    },
+    "open_window": {
+        "label": "Open window",
+        "description": "Enables/disables the status on the device",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "frost_protection": {
+        "label": "Frost protection"
+    },
+    "fan_mode": {
+        "label": "Fan mode"
+    },
+    "swing_mode": {
+        "label": "Swing mode"
+    },
+    "away_mode": {
+        "label": "Away mode"
+    },
+    "eco_mode": {
+        "label": "Eco mode",
+        "description": "ECO mode (energy saving mode)",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "boost": {
+        "label": "Boost"
+    },
+    "boost_time": {
+        "label": "Boost time",
+        "description": "Boost time"
+    },
+    "linkquality": {
+        "label": "Linkquality"
+    },
+    "action": {
+        "label": "Action",
+        "description": "Triggered action (e.g. a button click)"
+    },
+    "action_duration": {
+        "label": "Action duration",
+        "description": "Triggered action duration in seconds"
+    },
+    "action_group": {
+        "label": "Action group",
+        "description": "Group where the action was triggered on"
+    },
+    "tamper": {
+        "label": "Tamper",
+        "description": "Indicates whether the device is tampered"
+    },
+    "vibration": {
+        "label": "Vibration",
+        "description": "Indicates whether the device detected vibration"
+    },
+    "alarm": {
+        "label": "Alarm"
+    },
+    "noise": {
+        "label": "Noise",
+        "description": "The measured noise value"
+    },
+    "noise_detected": {
+        "label": "Noise detected",
+        "description": "Indicates whether the device detected noise"
+    },
+    "presence": {
+        "label": "Presence",
+        "description": "Indicates whether the device detected presence"
+    },
+    "motion": {
+        "label": "Motion"
+    },
+    "motion_state": {
+        "label": "Motion state"
+    },
+    "soil_moisture": {
+        "label": "Soil moisture",
+        "description": "Measured soil moisture value"
+    },
+    "co": {
+        "label": "CO",
+        "description": "The measured CO (carbon monoxide) value"
+    },
+    "aqi": {
+        "label": "Aqi",
+        "description": "Air quality index"
+    },
+    "pm25": {
+        "label": "PM25",
+        "description": "Measured PM2.5 (particulate matter) concentration"
+    },
+    "pm10": {
+        "label": "PM10",
+        "description": "Measured PM10 (particulate matter) concentration"
+    },
+    "formaldehyde": {
+        "label": "Formaldehyde",
+        "description": "The measured formaldehyd value"
+    },
+    "hcho": {
+        "label": "HCHO",
+        "description": "Measured HCHO value"
+    },
+    "cube_side": {
+        "label": "Cube side",
+        "description": "Side of the cube"
+    },
+    "cube_side_1": {
+        "label": "Cube side 1"
+    },
+    "cube_side_2": {
+        "label": "Cube side 2"
+    },
+    "cube_side_3": {
+        "label": "Cube side 3"
+    },
+    "cube_side_4": {
+        "label": "Cube side 4"
+    },
+    "cube_side_5": {
+        "label": "Cube side 5"
+    },
+    "cube_side_6": {
+        "label": "Cube side 6"
+    },
+    "valve_position": {
+        "label": "Valve position",
+        "description": "Position of the valve"
+    },
+    "valve_switch": {
+        "label": "Valve switch",
+        "description": "Valve state if open or closed",
+        "values": {
+            "OPEN": "Open",
+            "CLOSE": "Close"
+        }
+    },
+    "valve_state": {
+        "label": "Valve state",
+        "description": "Valve state if open or closed",
+        "values": {
+            "OPEN": "Open",
+            "CLOSED": "Closed"
+        }
+    },
+    "valve_detection": {
+        "label": "Valve detection"
+    },
+    "valve_detection_bool": {
+        "label": "Valve detection bool",
+        "description": "Determines if temperature control abnormalities should be detected"
+    },
+    "valve_alarm": {
+        "label": "Valve alarm"
+    },
+    "auto_lock": {
+        "label": "Auto lock",
+        "values": {
+            "AUTO": "Auto",
+            "MANUAL": "Manual"
+        }
+    },
+    "auto_off": {
+        "label": "Auto OFF",
+        "description": "Turn the device automatically off when attached device consumes less than 2W for ${offTime} minutes"
+    },
+    "auto_relock_time": {
+        "label": "Auto relock time",
+        "description": "The number of seconds to wait after unlocking a lock before it automatically locks again. 0=disabled"
+    },
+    "away_preset_days": {
+        "label": "Away preset days",
+        "description": "Away preset days"
+    },
+    "away_preset_temperature": {
+        "label": "Away preset temperature",
+        "description": "Away preset temperature"
+    },
+    "button_lock": {
+        "label": "Button lock",
+        "description": "Disables the physical switch button",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "calibrated": {
+        "label": "Calibrated",
+        "description": "Indicates if this device is calibrated"
+    },
+    "carbon_monoxide": {
+        "label": "Carbon monoxide",
+        "description": "Indicates if CO (carbon monoxide) is detected"
+    },
+    "comfort_temperature": {
+        "label": "Comfort temperature",
+        "description": "Comfort temperature"
+    },
+    "consumer_connected": {
+        "label": "Consumer connected",
+        "description": "Indicates whether a plug is physically attached. Device does not have to pull power or even be connected electrically (state of this binary switch can be ON even if main power switch is OFF)"
+    },
+    "cover_position": {
+        "label": "Cover position"
+    },
+    "cover_tilt": {
+        "label": "Cover tilt"
+    },
+    "cover_mode": {
+        "label": "Cover mode",
+        "description": "Reversal of the motor rotating direction"
+    },
+    "cpu_temperature": {
+        "label": "CPU temperature",
+        "description": "Temperature of the CPU"
+    },
+    "current_phase_b": {
+        "label": "Current phase B",
+        "description": "Instantaneous measured electrical current on phase B"
+    },
+    "current_phase_c": {
+        "label": "Current phase C",
+        "description": "Instantaneous measured electrical current on phase C"
+    },
+    "current_neutral": {
+        "label": "Current neutral",
+        "description": "Instantaneous measured electrical current on neutral"
+    },
+    "deadzone_temperature": {
+        "label": "Deadzone temperature",
+        "description": "The delta between local_temperature and current_heating_setpoint to trigger Heat"
+    },
+    "detection_interval": {
+        "label": "Detection interval",
+        "description": "Time interval between action detection."
+    },
+    "device_temperature": {
+        "label": "Device temperature",
+        "description": "Temperature of the device"
+    },
+    "eco2": {
+        "label": "PPM",
+        "description": "Measured eCO2 value"
+    },
+    "eco_temperature": {
+        "label": "Eco temperature",
+        "description": "Eco temperature"
+    },
+    "produced_energy": {
+        "label": "Produced energy",
+        "description": "Sum of produced energy"
+    },
+    "energy_produced": {
+        "label": "Energy produced",
+        "description": "Sum of produced energy"
+    },
+    "flip_indicator_light": {
+        "label": "Flip indicator light",
+        "description": "After turn on, the indicator light turns on while switch is off, and vice versa",
+        "values": {
+            "ON": "On",
+            "OFF": "Off"
+        }
+    },
+    "holiday_temperature": {
+        "label": "Holiday temperature",
+        "description": "Holiday temperature"
+    },
+    "brightness_state": {
+        "label": "Brightness state",
+        "description": "Brightness state",
+        "values": {
+            "low": "Low",
+            "middle": "Middle",
+            "high": "High",
+            "strong": "Strong"
+        }
+    },
+    "keypad_lockout": {
+        "label": "Keypad lockout",
+        "description": "Enables/disables physical input on the device",
+        "values": {
+            "unlock": "Unlock",
+            "lock1": "Lock1",
+            "lock2": "Lock2"
+        }
+    },
+    "led_disabled_night": {
+        "label": "LED disabled night",
+        "description": "Enable/disable the LED at night"
+    },
+    "light_brightness": {
+        "label": "Light brightness"
+    },
+    "light_brightness_color": {
+        "label": "Light brightness color"
+    },
+    "light_brightness_colortemp": {
+        "label": "Light brightness colortemp"
+    },
+    "light_color_options": {
+        "label": "Light color options",
+        "description": "Advanced color behavior"
+    },
+    "lock": {
+        "label": "Lock"
+    },
+    "lock_action": {
+        "label": "Lock action",
+        "description": "Triggered action on the lock",
+        "values": {
+            "unknown": "Unknown",
+            "lock": "Lock",
+            "unlock": "Unlock",
+            "lock_failure_invalid_pin_or_id": "Lock_failure_invalid_pin_or_id",
+            "lock_failure_invalid_schedule": "Lock_failure_invalid_schedule",
+            "unlock_failure_invalid_pin_or_id": "Unlock_failure_invalid_pin_or_id",
+            "unlock_failure_invalid_schedule": "Unlock_failure_invalid_schedule",
+            "one_touch_lock": "One_touch_lock",
+            "key_lock": "Key_lock",
+            "key_unlock": "Key_unlock",
+            "auto_lock": "Auto_lock",
+            "schedule_lock": "Schedule_lock",
+            "schedule_unlock": "Schedule_unlock",
+            "manual_lock": "Manual_lock",
+            "manual_unlock": "Manual_unlock",
+            "non_access_user_operational_event": "Non_access_user_operational_event"
+        }
+    },
+    "lock_action_source_name": {
+        "label": "Lock action source name",
+        "description": "Source of the triggered action on the lock",
+        "values": {
+            "keypad": "Keypad",
+            "rfid": "Rfid",
+            "manual": "Manual",
+            "rf": "Rf"
+        }
+    },
+    "lock_action_user": {
+        "label": "Lock action user",
+        "description": "ID of user that triggered the action on the lock"
+    },
+    "max_cool_setpoint_limit": {
+        "label": "Max cool setpoint limit",
+        "description": "Maximum Cooling set point limit"
+    },
+    "min_cool_setpoint_limit": {
+        "label": "Min cool setpoint limit",
+        "description": "Minimum Cooling point limit"
+    },
+    "max_heat_setpoint_limit": {
+        "label": "Max heat setpoint limit",
+        "description": "Maximum Heating set point limit"
+    },
+    "min_heat_setpoint_limit": {
+        "label": "Min heat setpoint limit",
+        "description": "Minimum Heating set point limit"
+    },
+    "max_temperature": {
+        "label": "Max temperature",
+        "description": "Maximum temperature"
+    },
+    "max_temperature_limit": {
+        "label": "Max temperature limit",
+        "description": "Maximum temperature limit. Cuts the thermostat out regardless of air temperature if the external floor sensor exceeds this temperature. Only used by the thermostat when in AL sensor mode."
+    },
+    "min_temperature_limit": {
+        "label": "Min temperature limit",
+        "description": "Minimum temperature limit for frost protection. Turns the thermostat on regardless of setpoint if the temperature drops below this."
+    },
+    "min_temperature": {
+        "label": "Min temperature",
+        "description": "Minimum temperature"
+    },
+    "mode_switch_select": {
+        "label": "Mode switch select",
+        "description": "Select mode switch to use"
+    },
+    "motion_sensitivity_select": {
+        "label": "Motion sensitivity select",
+        "description": "Select motion sensitivity to use"
+    },
+    "open_window_temperature": {
+        "label": "Open window temperature",
+        "description": "Open window temperature"
+    },
+    "operation_mode_select": {
+        "label": "Operation mode select",
+        "description": "Select operation mode to use"
+    },
+    "overload_protection": {
+        "label": "Overload protection",
+        "description": "Maximum allowed load, turns off if exceeded"
+    },
+    "pm1": {
+        "label": "PM1",
+        "description": "Measured PM1 (particulate matter) concentration"
+    },
+    "power_phase_b": {
+        "label": "Power phase b",
+        "description": "Instantaneous measured power on phase B"
+    },
+    "power_phase_c": {
+        "label": "Power phase c",
+        "description": "Instantaneous measured power on phase C"
+    },
+    "power_factor_phase_b": {
+        "label": "Power factor phase b",
+        "description": "Instantaneous measured power factor on phase B"
+    },
+    "power_factor_phase_c": {
+        "label": "Power factor phase c",
+        "description": "Instantaneous measured power factor on phase C"
+    },
+    "power_apparent": {
+        "label": "Power apparent",
+        "description": "Instantaneous measured apparent power"
+    },
+    "power_apparent_phase_b": {
+        "label": "Power apparent phase b",
+        "description": "Instantaneous measured apparent power on phase B"
+    },
+    "power_apparent_phase_c": {
+        "label": "Power apparent phase c",
+        "description": "Instantaneous measured apparent power on phase C"
+    },
+    "power_outage_count": {
+        "label": "Power outage count",
+        "description": "Number of power outages${resetsWhenPairing ? \" (since last pairing)\" : \"\"}"
+    },
+    "power_outage_memory": {
+        "label": "Power outage memory",
+        "description": "Enable/disable the power outage memory, this recovers the on/off mode after power failure"
+    },
+    "power_reactive": {
+        "label": "Power reactive",
+        "description": "Instantaneous measured reactive power"
+    },
+    "power_reactive_phase_b": {
+        "label": "Power reactive phase b",
+        "description": "Instantaneous measured reactive power on phase B"
+    },
+    "power_reactive_phase_c": {
+        "label": "Power reactive phase c",
+        "description": "Instantaneous measured reactive power on phase C"
+    },
+    "programming_operation_mode": {
+        "label": "Programming operation mode",
+        "description": "Controls how programming affects the thermostat. Possible values: setpoint (only use specified setpoint), schedule (follow programmed setpoint schedule), schedule_with_preheat (follow programmed setpoint schedule with pre-heating). Changing this value does not clear programmed schedules."
+    },
+    "setup": {
+        "label": "Setup",
+        "description": "Indicates if the device is in setup mode"
+    },
+    "schedule": {
+        "label": "Schedule",
+        "description": "When enabled, the device will change its state based on your schedule settings"
+    },
+    "schedule_settings": {
+        "label": "Schedule settings",
+        "description": "Allows schedule configuration"
+    },
+    "external_temperature_input": {
+        "label": "External temperature input",
+        "description": "Input for remote temperature sensor"
+    },
+    "sos": {
+        "label": "SOS",
+        "description": "SOS alarm"
+    },
+    "sound_volume": {
+        "label": "Sound volume",
+        "description": "Sound volume of the lock",
+        "values": {
+            "silent_mode": "Silent_mode",
+            "low_volume": "Low_volume",
+            "high_volume": "High_volume"
+        }
+    },
+    "switch_type": {
+        "label": "Switch type",
+        "description": "Wall switch type",
+        "values": {
+            "toggle": "Toggle",
+            "momentary": "Momentary"
+        }
+    },
+    "door_state": {
+        "label": "Door state",
+        "description": "State of the door",
+        "values": {
+            "open": "Open",
+            "closed": "Closed",
+            "error_jammed": "Error_jammed",
+            "error_forced_open": "Error_forced_open",
+            "error_unspecified": "Error_unspecified",
+            "undefined": "Undefined"
+        }
+    },
+    "temperature_sensor_select": {
+        "label": "Temperature sensor select",
+        "description": "Select temperature sensor to use"
+    },
+    "test": {
+        "label": "Test",
+        "description": "Indicates whether the device is being tested"
+    },
+    "trigger_count": {
+        "label": "Trigger count",
+        "description": "Indicates how many times the sensor was triggered${sinceScheduledReport ? \" (since last scheduled report)\" : \"\"}"
+    },
+    "trigger_indicator": {
+        "label": "Trigger indicator",
+        "description": "Enables trigger indication"
+    },
+    "window_detection": {
+        "label": "Window detection"
+    },
+    "window_detection_bool": {
+        "label": "Window detection bool",
+        "description": "Enables/disables window detection on the device"
+    },
+    "window_open": {
+        "label": "Window open",
+        "description": "Indicates if window is open"
+    },
+    "moving": {
+        "label": "Moving",
+        "description": "Indicates if the device is moving"
+    },
+    "x_axis": {
+        "label": "X axis",
+        "description": "Accelerometer X value"
+    },
+    "y_axis": {
+        "label": "Y axis",
+        "description": "Accelerometer Y value"
+    },
+    "z_axis": {
+        "label": "Z axis",
+        "description": "Accelerometer Z value"
+    },
+    "pincode": {
+        "label": "PIN code",
+        "description": "User ID to set or clear the pincode for",
+        "values": {
+            "unrestricted": "Unrestricted",
+            "year_day_schedule": "Year_day_schedule",
+            "week_day_schedule": "Week_day_schedule",
+            "master": "Master",
+            "non_access": "Non_access"
+        }
+    },
+    "squawk": {
+        "label": "Squawk",
+        "description": "Set Squawk state",
+        "values": {
+            "system_is_armed": "System_is_armed",
+            "system_is_disarmed": "System_is_disarmed"
+        }
+    },
+    "identify_duration": {
+        "label": "Identify duration",
+        "description": "Duration of flashing"
+    },
+    "identify": {
+        "label": "Identify",
+        "description": "Ititiate device identification",
+        "values": {
+            "identify": "Identify"
+        }
+    },
+    "min_brightness": {
+        "label": "Min brightness",
+        "description": "Minimum light brightness"
+    },
+    "max_brightness": {
+        "label": "Max brightness",
+        "description": "Maximum light brightness"
+    },
+    "pilot_wire_mode": {
+        "label": "Pilot wire mode",
+        "description": "Controls the target temperature of the heater, with respect to the temperature set on that heater. Possible values: comfort (target temperature = heater set temperature) eco (target temperature = heater set temperature - 3.5°C), frost_protection (target temperature = 7 to 8°C), off (heater stops heating), and the less commonly used comfort_-1 (target temperature = heater set temperature - 1°C), comfort_-2 (target temperature = heater set temperature - 2°C),."
+    },
+    "rain": {
+        "label": "Rain",
+        "description": "Indicates whether the device detected rainfall"
+    },
+    "warning": {
+        "label": "Warning",
+        "description": "Mode of the warning (sound effect)",
+        "values": {
+            "stop": "Stop",
+            "burglar": "Burglar",
+            "fire": "Fire",
+            "emergency": "Emergency",
+            "police_panic": "Police_panic",
+            "fire_panic": "Fire_panic",
+            "emergency_panic": "Emergency_panic"
+        }
+    },
+    "week": {
+        "label": "Week",
+        "description": "Week format user for schedule",
+        "values": {
+            "7": "7",
+            "5+2": "5+2",
+            "6+1": "6+1"
+        }
+    },
+    "last_seen": {
+        "label": "Last seen"
+    },
+    "motor_direction": {
+        "label": "Motor direction"
+    },
+    "motor_speed": {
+        "label": "Motor speed"
+    },
+    "target_temperature": {
+        "label": "Target temperature"
+    },
+    "current_heating_setpoint": {
+        "label": "Current heating setpoint"
+    },
+    "unoccupied_heating_setpoint": {
+        "label": "Unoccupied heating setpoint"
+    },
+    "preset": {
+        "label": "Preset"
+    },
+    "mode": {
+        "label": "Mode"
+    },
+    "duration": {
+        "label": "Duration"
+    },
+    "sensitivity": {
+        "label": "Sensitivity"
+    },
+    "detection_distance": {
+        "label": "Detection distance"
+    },
+    "keep_time": {
+        "label": "Keep time"
+    },
+    "occupancy_timeout": {
+        "label": "Occupancy timeout"
+    },
+    "illuminance_above_threshold": {
+        "label": "Illuminance above threshold"
+    },
+    "opening_state": {
+        "label": "Opening state"
+    },
+    "alarm_state": {
+        "label": "Alarm state"
+    },
+    "setup_mode": {
+        "label": "Setup mode"
+    },
+    "alarm_siren": {
+        "label": "Alarm siren"
+    },
+    "alarm_siren_duration": {
+        "label": "Alarm siren duration"
+    },
+    "vibration_limit": {
+        "label": "Vibration limit"
+    },
+    "vibration_siren": {
+        "label": "Vibration siren"
+    },
+    "vibration_siren_duration": {
+        "label": "Vibration siren duration"
+    },
+    "close_signal": {
+        "label": "Close signal"
+    },
+    "transmission_power": {
+        "label": "Transmission power"
+    },
+    "magnetic_status": {
+        "label": "Magnetic status"
+    },
+    "connection_state": {
+        "label": "Connection state"
+    },
+    "restart_required": {
+        "label": "Restart required"
+    },
+    "restart": {
+        "label": "Restart"
+    },
+    "update_state": {
+        "label": "Update state"
+    },
+    "update_available": {
+        "label": "Update available"
+    },
+    "factory_reset": {
+        "label": "Factory reset"
+    },
+    "side_up": {
+        "label": "Side up"
+    },
+    "side_down": {
+        "label": "Side down"
+    },
+    "side_left": {
+        "label": "Side left"
+    },
+    "side_right": {
+        "label": "Side right"
+    },
+    "state_up": {
+        "label": "State up"
+    },
+    "state_down": {
+        "label": "State down"
+    },
+    "state_left": {
+        "label": "State left"
+    },
+    "state_right": {
+        "label": "State right"
+    },
+    "state_action": {
+        "label": "State action"
+    },
+    "led_indicator": {
+        "label": "Led indicator"
+    },
+    "power_calibration": {
+        "label": "Power calibration"
+    },
+    "power_precision": {
+        "label": "Power precision"
+    },
+    "current_calibration": {
+        "label": "Current calibration"
+    },
+    "current_precision": {
+        "label": "Current precision"
+    },
+    "energy_calibration": {
+        "label": "Energy calibration"
+    },
+    "energy_precision": {
+        "label": "Energy precision"
+    },
+    "device_temperature_calibration": {
+        "label": "Device temperature calibration"
+    },
+    "voltage_calibration": {
+        "label": "Voltage calibration"
+    },
+    "voltage_precision": {
+        "label": "Voltage precision"
+    },
+    "idle_steps": {
+        "label": "Idle steps"
+    },
+    "closing_steps": {
+        "label": "Closing steps"
+    },
+    "valve_opening_limit_voltage": {
+        "label": "Valve opening limit voltage"
+    },
+    "valve_closing_limit_voltage": {
+        "label": "Valve closing limit voltage"
+    },
+    "valve_motor_running_voltage": {
+        "label": "Valve motor running voltage"
+    },
+    "valve_opening_degree": {
+        "label": "Valve opening degree"
+    },
+    "valve_closing_degree": {
+        "label": "Valve closing degree"
+    },
+    "temperature_accuracy": {
+        "label": "Temperature accuracy"
+    },
+    "weekly_schedule_sunday": {
+        "label": "Weekly schedule sunday"
+    },
+    "weekly_schedule_monday": {
+        "label": "Weekly schedule monday"
+    },
+    "weekly_schedule_tuesday": {
+        "label": "Weekly schedule tuesday"
+    },
+    "weekly_schedule_wednesday": {
+        "label": "Weekly schedule wednesday"
+    },
+    "weekly_schedule_thursday": {
+        "label": "Weekly schedule thursday"
+    },
+    "weekly_schedule_friday": {
+        "label": "Weekly schedule friday"
+    },
+    "weekly_schedule_saturday": {
+        "label": "Weekly schedule saturday"
+    },
+    "smart_temperature_control": {
+        "label": "Smart temperature control"
+    },
+    "thermostat_unit": {
+        "label": "Thermostat unit"
+    },
+    "operation_mode": {
+        "label": "Operation mode"
+    },
+    "indicator_mode": {
+        "label": "Indicator mode"
+    },
+    "timer_mode_target_temp": {
+        "label": "Timer mode target temp"
+    },
+    "temporary_mode_duration": {
+        "label": "Temporary mode duration"
+    },
+    "temporary_mode_select": {
+        "label": "Temporary mode select"
+    },
+    "open_window_detection": {
+        "label": "Open window detection"
+    },
+    "frost_protection_temperature": {
+        "label": "Frost protection temperature"
+    },
+    "color": {
+        "label": "Color"
+    },
+    "color_mode": {
+        "label": "Color mode"
+    },
+    "color_xy": {
+        "label": "Color xy"
+    },
+    "color_hs": {
+        "label": "Color hs"
+    },
+    "transition": {
+        "label": "Transition"
+    },
+    "device_mode": {
+        "label": "Device mode"
+    },
+    "battery_state": {
+        "label": "Battery state"
+    },
+    "internal_temperature": {
+        "label": "Internal temperature"
+    }
+}

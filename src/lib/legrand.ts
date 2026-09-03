@@ -5,6 +5,7 @@ import type {DummyDevice, Fz, KeyValueAny, KeyValueString, OnEvent, Tz, Zh} from
 import * as utils from "../lib/utils";
 import * as exposes from "./exposes";
 import {logger} from "./logger";
+import {i18n} from "./translations";
 import type {TuyaClosuresWindowCovering} from "./tuya";
 
 const NS = "zhc:legrand";
@@ -48,7 +49,8 @@ const optsLegrand = {
             .composite("Identity effect", "identity_effect", ea.SET)
             .withDescription("Defines the identification effect to simplify the device identification.")
             .withFeature(e.enum("effect", ea.SET, Object.values(ledEffects)).withLabel("Effect"))
-            .withFeature(e.enum("color", ea.SET, Object.values(ledColors)).withLabel("Color"));
+            .withFeature(e.enum("color", ea.SET, Object.values(ledColors)).withLabel("Color"))
+            .withTranslations(i18n("identity_effect"));
     },
 };
 
@@ -237,16 +239,22 @@ export const eLegrand = {
         return e
             .enum("identify", ea.SET, ["identify"])
             .withDescription("Blinks the built-in LED to make it easier to identify the device")
-            .withCategory("config");
+            .withCategory("config")
+            .withTranslations(i18n("identify"));
     },
     ledInDark: () => {
         return e
             .binary("led_in_dark", ea.ALL, "ON", "OFF")
             .withDescription("Enables the built-in LED allowing to see the switch in the dark")
-            .withCategory("config");
+            .withCategory("config")
+            .withTranslations(i18n("led_in_dark"));
     },
     ledIfOn: () => {
-        return e.binary("led_if_on", ea.ALL, "ON", "OFF").withDescription("Enables the LED on activity").withCategory("config");
+        return e
+            .binary("led_if_on", ea.ALL, "ON", "OFF")
+            .withDescription("Enables the LED on activity")
+            .withCategory("config")
+            .withTranslations(i18n("led_if_on"));
     },
     getCover: (device: Zh.Device | DummyDevice) => {
         const c = e.cover_position();
@@ -278,7 +286,8 @@ export const eLegrand = {
         return e
             .enum("calibration_mode", ea.ALL, Object.values(modes))
             .withDescription("Defines the calibration mode of the switch. (Caution: Changing modes requires a recalibration of the shutter switch!)")
-            .withCategory("config");
+            .withCategory("config")
+            .withTranslations(i18n("calibration_mode"));
     },
 };
 

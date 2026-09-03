@@ -1,6 +1,7 @@
 import {Zcl} from "zigbee-herdsman";
 import {presets as e, access as ea} from "./exposes";
 import {deviceAddCustomCluster, deviceTemperature, type NumericArgs, numeric, temperature} from "./modernExtend";
+import {i18n} from "./translations";
 import type {Configure, Expose, Fz, ModernExtend, Tz} from "./types";
 import {exposeEndpoints} from "./utils";
 
@@ -223,7 +224,8 @@ export const develcoModernExtend = {
 
         const expose = e
             .enum("air_quality", access, ["excellent", "good", "moderate", "poor", "unhealthy", "out_of_range", "unknown"])
-            .withDescription("Measured air quality");
+            .withDescription("Measured air quality")
+            .withTranslations(i18n("air_quality"));
 
         const fromZigbee = [
             {
@@ -328,11 +330,16 @@ export const develcoModernExtend = {
             .withFeature(
                 e
                     .binary("indicate_faults", ea.ALL, true, false)
-                    .withDescription("Enable/disable LED indication for faults (e.g., lost connection to gateway)"),
+                    .withDescription("Enable/disable LED indication for faults (e.g., lost connection to gateway)")
+                    .withTranslations(i18n("indicate_faults")),
             )
             .withFeature(
-                e.binary("indicate_mains_power", ea.ALL, true, false).withDescription("Enable/disable green LED indication for mains power status"),
-            );
+                e
+                    .binary("indicate_mains_power", ea.ALL, true, false)
+                    .withDescription("Enable/disable green LED indication for mains power status")
+                    .withTranslations(i18n("indicate_mains_power")),
+            )
+            .withTranslations(i18n("led_control"));
 
         const fromZigbee: Fz.Converter<"genBasic", DevelcoGenBasic, ["attributeReport", "readResponse"]>[] = [
             {
@@ -395,7 +402,8 @@ export const develcoModernExtend = {
     txPower: (): ModernExtend => {
         const expose = e
             .enum("tx_power", ea.ALL, ["CE", "FCC"])
-            .withDescription("TX power mode for regulatory compliance (CE or FCC). Requires device rejoin to apply.");
+            .withDescription("TX power mode for regulatory compliance (CE or FCC). Requires device rejoin to apply.")
+            .withTranslations(i18n("tx_power"));
 
         const fromZigbee: Fz.Converter<"genBasic", DevelcoGenBasic, ["attributeReport", "readResponse"]>[] = [
             {
@@ -446,7 +454,8 @@ export const develcoModernExtend = {
             .withUnit("s")
             .withValueMin(0)
             .withValueMax(65535)
-            .withDescription("Heartbeat interval in seconds. Controls the periodic interval between ZoneStatusChange commands (default 300s)");
+            .withDescription("Heartbeat interval in seconds. Controls the periodic interval between ZoneStatusChange commands (default 300s)")
+            .withTranslations(i18n("zone_status_interval"));
 
         const fromZigbee: Fz.Converter<"ssIasZone", DevelcoIasZone, ["attributeReport", "readResponse"]>[] = [
             {
@@ -494,7 +503,8 @@ export const develcoModernExtend = {
         const expose = e
             .binary("ac_connected", ea.STATE, true, false)
             .withDescription("Indicates whether the device is connected to AC mains power")
-            .withCategory("diagnostic");
+            .withCategory("diagnostic")
+            .withTranslations(i18n("ac_connected"));
 
         const fromZigbee: Fz.Converter<"ssIasZone", undefined, ["commandStatusChangeNotification", "attributeReport", "readResponse"]>[] = [
             {
@@ -536,13 +546,15 @@ export const develcoModernExtend = {
             .withUnit("s")
             .withValueMin(0.0)
             .withValueMax(3600)
-            .withDescription("Duration of the pulse.");
+            .withDescription("Duration of the pulse.")
+            .withTranslations(i18n("duration"));
 
         const triggerExpose = e
             .enum("trigger", ea.SET, ["press"])
             .withDescription(
                 "Trigger a timed pulse. The length of the pulse is defined by 'Pulse duration'. If the 'Pulse duration' is undefined a default value of 1s will be used.",
-            );
+            )
+            .withTranslations(i18n("trigger"));
 
         const exposes: Expose[] = [...exposeEndpoints(durationExpose, endpointNames), ...exposeEndpoints(triggerExpose, endpointNames)];
 
