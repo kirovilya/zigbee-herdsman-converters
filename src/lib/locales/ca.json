@@ -15,7 +15,18 @@
         "label": "Saturació"
     },
     "effect": {
-        "label": "Efecte"
+        "label": "Efecte",
+        "description": "Triggers an effect on the light",
+        "values": {
+            "blink": "Blink",
+            "breathe": "Breathe",
+            "okay": "Okay",
+            "channel_change": "Channel_change",
+            "finish_effect": "Finish_effect",
+            "stop_effect": "Stop_effect",
+            "colorloop": "Colorloop",
+            "stop_colorloop": "Stop_colorloop"
+        }
     },
     "temperature": {
         "label": "Temperatura",
@@ -150,7 +161,8 @@
             "off": "Apagat",
             "toggle": "Alternar",
             "previous": "Anterior"
-        }
+        },
+        "description": "Controls the behavior when the device is powered on after power loss"
     },
     "occupied_heating_setpoint": {
         "label": "Punt de consigna d'escalfament ocupat"

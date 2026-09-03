@@ -154,7 +154,10 @@ export class Switch extends Base {
     features: Feature[] = [];
 
     withState(property: string, toggle: string | boolean, description: string, access = a.ALL, valueOn = "ON", valueOff = "OFF") {
-        const feature = new Binary("state", access, valueOn, valueOff).withProperty(property).withDescription(description);
+        const feature = new Binary("state", access, valueOn, valueOff)
+            .withProperty(property)
+            .withDescription(description)
+            .withTranslations(i18n("state"));
         if (toggle) {
             feature.withValueToggle("TOGGLE");
         }
@@ -396,21 +399,44 @@ export class Light extends Base {
 
     constructor() {
         super();
-        this.addFeature(new Binary("state", access.ALL, "ON", "OFF").withValueToggle("TOGGLE").withDescription("On/off state of this light"));
+        this.addFeature(
+            new Binary("state", access.ALL, "ON", "OFF")
+                .withValueToggle("TOGGLE")
+                .withDescription("On/off state of this light")
+                .withTranslations(i18n("state")),
+        );
     }
 
     withBrightness() {
-        this.addFeature(new Numeric("brightness", access.ALL).withValueMin(0).withValueMax(254).withDescription("Brightness of this light"));
+        this.addFeature(
+            new Numeric("brightness", access.ALL)
+                .withValueMin(0)
+                .withValueMax(254)
+                .withDescription("Brightness of this light")
+                .withTranslations(i18n("brightness")),
+        );
         return this;
     }
 
     withMinBrightness() {
-        this.addFeature(new Numeric("min_brightness", access.ALL).withValueMin(1).withValueMax(255).withDescription("Minimum light brightness"));
+        this.addFeature(
+            new Numeric("min_brightness", access.ALL)
+                .withValueMin(1)
+                .withValueMax(255)
+                .withDescription("Minimum light brightness")
+                .withTranslations(i18n("min_brightness")),
+        );
         return this;
     }
 
     withMaxBrightness() {
-        this.addFeature(new Numeric("max_brightness", access.ALL).withValueMin(1).withValueMax(255).withDescription("Maximum light brightness"));
+        this.addFeature(
+            new Numeric("max_brightness", access.ALL)
+                .withValueMin(1)
+                .withValueMax(255)
+                .withDescription("Maximum light brightness")
+                .withTranslations(i18n("max_brightness")),
+        );
         return this;
     }
 
@@ -424,12 +450,13 @@ export class Light extends Base {
             "current_level_startup",
         ],
     ) {
-        let levelConfig = new Composite("level_config", "level_config", access.ALL);
+        let levelConfig = new Composite("level_config", "level_config", access.ALL).withTranslations(i18n("level_config"));
         if (features.includes("on_off_transition_time")) {
             levelConfig = levelConfig.withFeature(
                 new Numeric("on_off_transition_time", access.ALL)
                     .withLabel("ON/OFF transition time")
-                    .withDescription("Seconds taken to move to or from the target level when On or Off commands are received by an On/Off cluster"),
+                    .withDescription("Seconds taken to move to or from the target level when On or Off commands are received by an On/Off cluster")
+                    .withTranslations(i18n("on_off_transition_time")),
             );
         }
         if (features.includes("on_transition_time")) {
@@ -439,7 +466,8 @@ export class Light extends Base {
                     .withPreset("disabled", "disabled", "Use on_off_transition_time value")
                     .withDescription(
                         "Seconds taken to move the current level from the minimum level to the maximum level when an On command is received",
-                    ),
+                    )
+                    .withTranslations(i18n("on_transition_time")),
             );
         }
         if (features.includes("off_transition_time")) {
@@ -449,14 +477,15 @@ export class Light extends Base {
                     .withPreset("disabled", "disabled", "Use on_off_transition_time value")
                     .withDescription(
                         "Seconds taken to move the current level from the maximum level to the minimum level when an Off command is received",
-                    ),
+                    )
+                    .withTranslations(i18n("off_transition_time")),
             );
         }
         if (features.includes("execute_if_off")) {
             levelConfig = levelConfig.withFeature(
-                new Binary("execute_if_off", access.ALL, true, false).withDescription(
-                    'this setting can affect the "on_level", "current_level_startup" or "brightness" setting',
-                ),
+                new Binary("execute_if_off", access.ALL, true, false)
+                    .withDescription('this setting can affect the "on_level", "current_level_startup" or "brightness" setting')
+                    .withTranslations(i18n("execute_if_off")),
             );
         }
         if (features.includes("on_level")) {
@@ -465,7 +494,8 @@ export class Light extends Base {
                     .withValueMin(1)
                     .withValueMax(254)
                     .withPreset("previous", "previous", "Use previous value")
-                    .withDescription("Specifies the level that shall be applied, when an on/toggle command causes the light to turn on."),
+                    .withDescription("Specifies the level that shall be applied, when an on/toggle command causes the light to turn on.")
+                    .withTranslations(i18n("on_level")),
             );
         }
         if (features.includes("current_level_startup")) {
@@ -475,7 +505,8 @@ export class Light extends Base {
                     .withValueMax(254)
                     .withPreset("minimum", "minimum", "Use minimum permitted value")
                     .withPreset("previous", "previous", "Use previous value")
-                    .withDescription("Defines the desired startup level for a device when it is supplied with power"),
+                    .withDescription("Defines the desired startup level for a device when it is supplied with power")
+                    .withTranslations(i18n("current_level_startup")),
             );
         }
         levelConfig = levelConfig.withDescription("Configure genLevelCtrl");
@@ -493,7 +524,8 @@ export class Light extends Base {
             .withUnit("mired")
             .withValueMin(range[0])
             .withValueMax(range[1])
-            .withDescription("Color temperature of this light");
+            .withDescription("Color temperature of this light")
+            .withTranslations(i18n("color_temp"));
 
         if (process.env.VITEST_ZHC_TEST) {
             // @ts-expect-error ignore
@@ -525,7 +557,8 @@ export class Light extends Base {
             .withUnit("mired")
             .withValueMin(range[0])
             .withValueMax(range[1])
-            .withDescription("Color temperature after cold power on of this light");
+            .withDescription("Color temperature after cold power on of this light")
+            .withTranslations(i18n("color_temp_startup"));
 
         [
             {name: "coolest", value: range[0], description: "Coolest temperature supported"},
@@ -551,14 +584,16 @@ export class Light extends Base {
                     .withLabel("Color (X/Y)")
                     .withFeature(new Numeric("x", access.ALL))
                     .withFeature(new Numeric("y", access.ALL))
-                    .withDescription("Color of this light in the CIE 1931 color space (x/y)");
+                    .withDescription("Color of this light in the CIE 1931 color space (x/y)")
+                    .withTranslations(i18n("color_xy"));
                 this.addFeature(colorXY);
             } else if (type === "hs") {
                 const colorHS = new Composite("color_hs", "color", access.ALL)
                     .withLabel("Color (HS)")
                     .withFeature(new Numeric("hue", access.ALL))
                     .withFeature(new Numeric("saturation", access.ALL))
-                    .withDescription("Color of this light expressed as hue/saturation");
+                    .withDescription("Color of this light expressed as hue/saturation")
+                    .withTranslations(i18n("color_hs"));
                 this.addFeature(colorHS);
             } else {
                 assert(false, `Unsupported color type ${type}`);
@@ -586,13 +621,25 @@ export class Cover extends Base {
 
     withPosition() {
         this.addFeature(
-            new Numeric("position", access.ALL).withValueMin(0).withValueMax(100).withDescription("Position of this cover").withUnit("%"),
+            new Numeric("position", access.ALL)
+                .withValueMin(0)
+                .withValueMax(100)
+                .withDescription("Position of this cover")
+                .withUnit("%")
+                .withTranslations(i18n("position")),
         );
         return this;
     }
 
     withTilt() {
-        this.addFeature(new Numeric("tilt", access.ALL).withValueMin(0).withValueMax(100).withDescription("Tilt of this cover").withUnit("%"));
+        this.addFeature(
+            new Numeric("tilt", access.ALL)
+                .withValueMin(0)
+                .withValueMax(100)
+                .withDescription("Tilt of this cover")
+                .withUnit("%")
+                .withTranslations(i18n("tilt")),
+        );
         return this;
     }
 
@@ -613,20 +660,29 @@ export class Fan extends Base {
     // that property name, add new ones without an argument to this function,
     // which defaults to the new property name.
     withState(name = "state", access = a.ALL) {
-        this.addFeature(new Binary("state", access, "ON", "OFF").withDescription("On/off state of this fan").withProperty(name));
+        this.addFeature(
+            new Binary("state", access, "ON", "OFF").withDescription("On/off state of this fan").withProperty(name).withTranslations(i18n("fan")),
+        );
         return this;
     }
 
     withModes(modes: string[], access = a.ALL) {
         assert(this.features.findIndex((f) => f.name === "speed") === -1, "Fan can only be either mode or speed-controlled, not both");
-        this.addFeature(new Enum("mode", access, modes).withProperty("fan_mode").withDescription("Mode of this fan"));
+        this.addFeature(
+            new Enum("mode", access, modes).withProperty("fan_mode").withDescription("Mode of this fan").withTranslations(i18n("fan_speed")),
+        );
         return this;
     }
 
     withSpeed(minSpeed = 1, maxSpeed = 254, access = a.ALL) {
         assert(this.features.findIndex((f) => f.name === "mode") === -1, "Fan can only be either mode or speed-controlled, not both");
         this.addFeature(
-            new Numeric("speed", access).withProperty("speed").withValueMin(minSpeed).withValueMax(maxSpeed).withDescription("Speed of this fan"),
+            new Numeric("speed", access)
+                .withProperty("speed")
+                .withValueMin(minSpeed)
+                .withValueMax(maxSpeed)
+                .withDescription("Speed of this fan")
+                .withTranslations(i18n("fan_speed")),
         );
         return this;
     }
@@ -1300,9 +1356,9 @@ export const presets = {
         new Composite("color_options", "color_options", access.ALL)
             .withDescription("Advanced color behavior")
             .withFeature(
-                new Binary("execute_if_off", access.SET, true, false).withDescription(
-                    "Controls whether color and color temperature can be set while light is off",
-                ),
+                new Binary("execute_if_off", access.SET, true, false)
+                    .withDescription("Controls whether color and color temperature can be set while light is off")
+                    .withTranslations(i18n("execute_if_off")),
             )
             .withCategory("config")
             .withTranslations(i18n("light_color_options")),

@@ -1,9 +1,11 @@
 {
     "brightness": {
-        "label": "Brightness"
+        "label": "Brightness",
+        "description": "Brightness of this light"
     },
     "color_temp": {
-        "label": "Color temp"
+        "label": "Color temp",
+        "description": "Color temperature of this light"
     },
     "color_temp_startup": {
         "label": "Color temp startup"
@@ -23,7 +25,9 @@
             "okay": "Okay",
             "channel_change": "Channel_change",
             "finish_effect": "Finish_effect",
-            "stop_effect": "Stop_effect"
+            "stop_effect": "Stop_effect",
+            "colorloop": "Colorloop",
+            "stop_colorloop": "Stop_colorloop"
         }
     },
     "temperature": {
@@ -125,7 +129,12 @@
         "description": "Indicates whether the device detected tilt"
     },
     "state": {
-        "label": "State"
+        "label": "State",
+        "description": "On/off state of this light",
+        "values": {
+            "ON": "ON",
+            "OFF": "OFF"
+        }
     },
     "system_mode": {
         "label": "System mode"
@@ -188,7 +197,8 @@
         "description": "Boost time"
     },
     "linkquality": {
-        "label": "Linkquality"
+        "label": "Linkquality",
+        "description": "Link quality (signal strength)"
     },
     "action": {
         "label": "Action",
@@ -316,7 +326,8 @@
         "values": {
             "AUTO": "Auto",
             "MANUAL": "Manual"
-        }
+        },
+        "description": "Enable/disable auto lock"
     },
     "auto_off": {
         "label": "Auto OFF",
@@ -461,7 +472,8 @@
         "description": "Advanced color behavior"
     },
     "lock": {
-        "label": "Lock"
+        "label": "Lock",
+        "description": "State of the lock"
     },
     "lock_action": {
         "label": "Lock action",
@@ -996,10 +1008,12 @@
         "label": "Color mode"
     },
     "color_xy": {
-        "label": "Color xy"
+        "label": "Color xy",
+        "description": "Color of this light in the CIE 1931 color space (x/y)"
     },
     "color_hs": {
-        "label": "Color hs"
+        "label": "Color hs",
+        "description": "Color of this light expressed as hue/saturation"
     },
     "transition": {
         "label": "Transition"
@@ -1396,7 +1410,8 @@
         "label": "External trigger state"
     },
     "fan": {
-        "label": "Fan"
+        "label": "Fan",
+        "description": "Current fan speed"
     },
     "fan_speed": {
         "label": "PM25",
@@ -2272,5 +2287,53 @@
     "zone_status_interval": {
         "label": "Zone Status Interval",
         "description": "Heartbeat interval in seconds. Controls the periodic interval between ZoneStatusChange commands (default 300s)"
+    },
+    "level_config": {
+        "label": "Level config",
+        "description": "Configure genLevelCtrl"
+    },
+    "on_off_transition_time": {
+        "label": "ON/OFF transition time",
+        "description": "Seconds taken to move to or from the target level"
+    },
+    "on_transition_time": {
+        "label": "ON transition time",
+        "description": "Seconds taken to move level up when On command is received"
+    },
+    "off_transition_time": {
+        "label": "OFF transition time",
+        "description": "Seconds taken to move level down when Off command is received"
+    },
+    "execute_if_off": {
+        "label": "Execute if off",
+        "description": "Controls whether color and color temperature can be set while light is off"
+    },
+    "on_level": {
+        "label": "On level",
+        "description": "Specifies the level applied when an on/toggle command causes the light to turn on"
+    },
+    "current_level_startup": {
+        "label": "Current level startup",
+        "description": "Defines the desired startup level for a device when it is supplied with power"
+    },
+    "min_level": {
+        "label": "Min level",
+        "description": "Minimum value of level"
+    },
+    "max_level": {
+        "label": "Max level",
+        "description": "Maximum value of level"
+    },
+    "ballast_minimum_level": {
+        "label": "Ballast minimum level",
+        "description": "Specifies the minimum light output of the ballast"
+    },
+    "ballast_maximum_level": {
+        "label": "Ballast maximum level",
+        "description": "Specifies the maximum light output of the ballast"
+    },
+    "temperature_display_mode": {
+        "label": "Temperature display mode",
+        "description": "Temperature display mode"
     }
 }

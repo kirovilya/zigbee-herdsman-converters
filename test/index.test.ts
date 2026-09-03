@@ -501,7 +501,13 @@ describe("ZHC", () => {
             endpoint: "rgb",
         };
         const actual = presets.light_brightness_colorxy().withEndpoint("rgb");
-        expect(expected).toStrictEqual(JSON.parse(JSON.stringify(actual)));
+        const actualSerialized = JSON.parse(JSON.stringify(actual));
+        // Strip translations from features for structural comparison
+        for (const f of actualSerialized.features) {
+            delete f.translations;
+            if (f.features) for (const sf of f.features) delete sf.translations;
+        }
+        expect(expected).toStrictEqual(actualSerialized);
     });
 
     it("verifies options filter", async () => {

@@ -70,7 +70,7 @@ export const i18n = (exposeName: string): Translations => {
     const result: Translations = {};
     for (const [locale, exposes] of Object.entries(globalTranslations)) {
         if (exposes[exposeName]) {
-            result[locale] = {exposes: {[exposeName]: exposes[exposeName]}};
+            result[locale] = exposes[exposeName] as Translations[string];
         }
     }
     return result;
@@ -85,12 +85,12 @@ export const createI18n =
         for (const locale of allLocales) {
             const vendorExpose = vendorTranslations[locale]?.exposes?.[exposeName];
             if (vendorExpose) {
-                result[locale] = {exposes: {[exposeName]: vendorExpose}};
+                result[locale] = vendorExpose as Translations[string];
                 continue;
             }
             const globalExpose = globalTranslations[locale]?.[exposeName];
             if (globalExpose) {
-                result[locale] = {exposes: {[exposeName]: globalExpose}};
+                result[locale] = globalExpose as Translations[string];
             }
         }
         return result;

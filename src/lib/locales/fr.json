@@ -16,7 +16,17 @@
     },
     "effect": {
         "label": "Effet",
-        "description": "Déclenche un effet sur la lumière"
+        "description": "Déclenche un effet sur la lumière",
+        "values": {
+            "blink": "Blink",
+            "breathe": "Breathe",
+            "okay": "Okay",
+            "channel_change": "Channel_change",
+            "finish_effect": "Finish_effect",
+            "stop_effect": "Stop_effect",
+            "colorloop": "Colorloop",
+            "stop_colorloop": "Stop_colorloop"
+        }
     },
     "temperature": {
         "label": "Température",
@@ -153,7 +163,8 @@
             "off": "Arrêt",
             "toggle": "Basculement",
             "previous": "Précédent"
-        }
+        },
+        "description": "Controls the behavior when the device is powered on after power loss"
     },
     "occupied_heating_setpoint": {
         "label": "Consigne de chauffage occupé"

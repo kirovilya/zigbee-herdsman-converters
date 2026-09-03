@@ -772,11 +772,17 @@ export function thermostatUi<Cl extends string | number = "hvacUserInterfaceCfg"
 
     const exposes: Expose[] = [
         ...exposeEndpoints(
-            e.enum("temperature_display_mode", ea.ALL, Object.values(constants.temperatureDisplayMode)).withDescription("Temperature display mode"),
+            e
+                .enum("temperature_display_mode", ea.ALL, Object.values(constants.temperatureDisplayMode))
+                .withDescription("Temperature display mode")
+                .withTranslations(i18n("temperature_display_mode")),
             endpointNames,
         ),
         ...exposeEndpoints(
-            e.enum("keypad_lockout", ea.ALL, Object.values(constants.keypadLockoutMode)).withDescription("Keypad lockout mode"),
+            e
+                .enum("keypad_lockout", ea.ALL, Object.values(constants.keypadLockoutMode))
+                .withDescription("Keypad lockout mode")
+                .withTranslations(i18n("keypad_lockout")),
             endpointNames,
         ),
     ];
@@ -815,7 +821,9 @@ export function commandsOnOff(args: CommandsOnOffArgs = {}): ModernExtend {
     if (endpointNames) {
         actions = commands.flatMap((c) => endpointNames.map((e) => `${c}_${e}`));
     }
-    const exposes: Expose[] = [e.enum("action", ea.STATE, actions).withDescription("Triggered action (e.g. a button click)")];
+    const exposes: Expose[] = [
+        e.enum("action", ea.STATE, actions).withDescription("Triggered action (e.g. a button click)").withTranslations(i18n("action")),
+    ];
 
     const actionPayloadLookup: KeyValueString = {
         commandOn: "on",
@@ -1537,7 +1545,11 @@ export function commandsLevelCtrl(args: CommandsLevelCtrl = {}): ModernExtend {
         actions = commands.flatMap((c) => endpointNames.map((e) => `${c}_${e}`));
     }
     const exposes: Expose[] = [
-        e.enum("action", ea.STATE, actions).withDescription("Triggered action (e.g. a button click)").withCategory("diagnostic"),
+        e
+            .enum("action", ea.STATE, actions)
+            .withDescription("Triggered action (e.g. a button click)")
+            .withTranslations(i18n("action"))
+            .withCategory("diagnostic"),
     ];
 
     const fromZigbee = [fz.command_move_to_level, fz.command_move, fz.command_step, fz.command_stop];
@@ -1605,7 +1617,11 @@ export function commandsColorCtrl(args: CommandsColorCtrl = {}): ModernExtend {
         actions = commands.flatMap((c) => endpointNames.map((e) => `${c}_${e}`));
     }
     const exposes: Expose[] = [
-        e.enum("action", ea.STATE, actions).withDescription("Triggered action (e.g. a button click)").withCategory("diagnostic"),
+        e
+            .enum("action", ea.STATE, actions)
+            .withDescription("Triggered action (e.g. a button click)")
+            .withTranslations(i18n("action"))
+            .withCategory("diagnostic"),
     ];
 
     const fromZigbee = [
@@ -1787,7 +1803,11 @@ export function commandsWindowCovering(args: CommandsWindowCoveringArgs = {}): M
         actions = commands.flatMap((c) => endpointNames.map((e) => `${c}_${e}`));
     }
     const exposes: Expose[] = [
-        e.enum("action", ea.STATE, actions).withDescription("Triggered action (e.g. a button click)").withCategory("diagnostic"),
+        e
+            .enum("action", ea.STATE, actions)
+            .withDescription("Triggered action (e.g. a button click)")
+            .withTranslations(i18n("action"))
+            .withCategory("diagnostic"),
     ];
 
     const actionPayloadLookup: KeyValueString = {
@@ -2865,7 +2885,7 @@ export function enumLookup<Cl extends string | number, Custom extends TCustomClu
     const attributeKey = isString(attribute) ? attribute : attribute.ID;
     const access = ea[args.access ?? "ALL"];
 
-    let expose = e.enum(name, access, Object.keys(lookup)).withDescription(description);
+    let expose = e.enum(name, access, Object.keys(lookup)).withDescription(description).withTranslations(i18n(name));
     if (endpointName) expose = expose.withEndpoint(endpointName);
     if (entityCategory) expose = expose.withCategory(entityCategory);
     if (label !== undefined) expose = expose.withLabel(label);
@@ -2976,7 +2996,7 @@ export function numeric<Cl extends string | number, Custom extends TCustomCluste
     const exposes: Expose[] = [];
 
     const createExpose = (endpoint?: string): Expose => {
-        let expose = e.numeric(name, access).withDescription(description);
+        let expose = e.numeric(name, access).withDescription(description).withTranslations(i18n(name));
         if (endpoint) expose = expose.withEndpoint(endpoint);
         if (unit) expose = expose.withUnit(unit);
         if (valueMin !== undefined) expose = expose.withValueMin(valueMin);
@@ -3166,7 +3186,7 @@ export function text<Cl extends string | number, Custom extends TCustomCluster |
     const attributeKey = isString(attribute) ? attribute : attribute.ID;
     const access = ea[args.access ?? "ALL"];
 
-    let expose = e.text(name, access).withDescription(description);
+    let expose = e.text(name, access).withDescription(description).withTranslations(i18n(name));
     if (endpointName) expose = expose.withEndpoint(endpointName);
     if (entityCategory) expose = expose.withCategory(entityCategory);
 
@@ -3258,7 +3278,11 @@ export function actionEnumLookup<
     let actions = Object.keys(lookup).flatMap((a) => (args.endpointNames ? args.endpointNames.map((e) => `${a}_${e}`) : [a]));
     // allows direct external input to be used by other extends in the same device
     if (args.extraActions) actions = actions.concat(args.extraActions);
-    const expose = e.enum("action", ea.STATE, actions).withDescription("Triggered action (e.g. a button click)").withCategory("diagnostic");
+    const expose = e
+        .enum("action", ea.STATE, actions)
+        .withDescription("Triggered action (e.g. a button click)")
+        .withTranslations(i18n("action"))
+        .withCategory("diagnostic");
 
     const fromZigbee = [
         {
