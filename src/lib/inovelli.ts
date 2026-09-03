@@ -8,6 +8,7 @@ import * as exposes from "./exposes";
 import * as m from "./modernExtend";
 import * as reporting from "./reporting";
 import * as globalStore from "./store";
+import {i18n} from "./translations";
 import type {Configure, DummyDevice, Expose, Fz, KeyValue, KeyValueAny, ModernExtend, Tz, Zh} from "./types";
 import * as utils from "./utils";
 
@@ -980,7 +981,8 @@ const attributesToExposeList = (attributes: {[s: string]: ResolvedAttribute}, ex
         if (attributes[key].displayType === "enum") {
             const enumE = e
                 .enum(key, attributes[key].readOnly ? ea.STATE_GET : ea.ALL, Object.keys(attributes[key].values ?? {}))
-                .withDescription(attributes[key].description);
+                .withDescription(attributes[key].description)
+                .withTranslations(i18n(key));
             if (!attributes[key].readOnly) {
                 enumE.withCategory(attributes[key].category ?? "config");
             }
@@ -994,7 +996,8 @@ const attributesToExposeList = (attributes: {[s: string]: ResolvedAttribute}, ex
                     attributes[key].values.Enabled,
                     attributes[key].values.Disabled,
                 )
-                .withDescription(attributes[key].description);
+                .withDescription(attributes[key].description)
+                .withTranslations(i18n(key));
             if (!attributes[key].readOnly) {
                 binary.withCategory(attributes[key].category ?? "config");
             }
@@ -1014,6 +1017,7 @@ const attributesToExposeList = (attributes: {[s: string]: ResolvedAttribute}, ex
                 numeric.withUnit(attributes[key].unit);
             }
             numeric.withDescription(attributes[key].description);
+            numeric.withTranslations(i18n(key));
             if (!attributes[key].readOnly) {
                 numeric.withCategory(attributes[key].category ?? "config");
             }
@@ -2958,11 +2962,16 @@ const exposeLedEffectComplete = () => {
     return e
         .enum("notificationComplete", ea.STATE, Object.values(LED_NOTIFICATION_TYPES))
         .withDescription("Indication that a specific notification has completed.")
+        .withTranslations(i18n("notificationComplete"))
         .withCategory("diagnostic");
 };
 
 const exposeEnergyReset = () => {
-    return e.enum("energy_reset", ea.SET, ["reset"]).withDescription("Reset energy meter").withCategory("config");
+    return e
+        .enum("energy_reset", ea.SET, ["reset"])
+        .withDescription("Reset energy meter")
+        .withTranslations(i18n("energy_reset"))
+        .withCategory("config");
 };
 
 const exposeMMWaveAreas = () => {
@@ -2970,19 +2979,23 @@ const exposeMMWaveAreas = () => {
         e
             .binary("area1Occupancy", ea.STATE, true, false)
             .withProperty("mmwave_area1_occupancy")
-            .withDescription("Indicates whether the device detected occupancy in Area 1"),
+            .withDescription("Indicates whether the device detected occupancy in Area 1")
+            .withTranslations(i18n("area1Occupancy")),
         e
             .binary("area2Occupancy", ea.STATE, true, false)
             .withProperty("mmwave_area2_occupancy")
-            .withDescription("Indicates whether the device detected occupancy in Area 2"),
+            .withDescription("Indicates whether the device detected occupancy in Area 2")
+            .withTranslations(i18n("area2Occupancy")),
         e
             .binary("area3Occupancy", ea.STATE, true, false)
             .withProperty("mmwave_area3_occupancy")
-            .withDescription("Indicates whether the device detected occupancy in Area 3"),
+            .withDescription("Indicates whether the device detected occupancy in Area 3")
+            .withTranslations(i18n("area3Occupancy")),
         e
             .binary("area4Occupancy", ea.STATE, true, false)
             .withProperty("mmwave_area4_occupancy")
-            .withDescription("Indicates whether the device detected occupancy in Area 4"),
+            .withDescription("Indicates whether the device detected occupancy in Area 4")
+            .withTranslations(i18n("area4Occupancy")),
     ];
 };
 
@@ -3031,6 +3044,7 @@ const exposeDetectionAreas = () => {
         .withDescription(
             "Defines one or more active detection zones where the sensor reports movement or occupancy. Up to four detection zones can be set.",
         )
+        .withTranslations(i18n("mmwave_detection_areas"))
         .withFeature(createAreaComposite("area_1", "area1"))
         .withFeature(createAreaComposite("area_2", "area2"))
         .withFeature(createAreaComposite("area_3", "area3"))
@@ -3044,6 +3058,7 @@ const exposeInterferenceAreas = () => {
         .withDescription(
             "Manually defines the coordinates of an interference area, which is an ignored zone where targets are not reported as present. Up to four zones can be defined.",
         )
+        .withTranslations(i18n("mmwave_interference_areas"))
         .withFeature(createAreaComposite("area_1", "area1"))
         .withFeature(createAreaComposite("area_2", "area2"))
         .withFeature(createAreaComposite("area_3", "area3"))
@@ -3057,6 +3072,7 @@ const exposeStayAreas = () => {
         .withDescription(
             "Defines one or more stay areas where stationary presence should still be detected. Up to four stay zones can be configured.",
         )
+        .withTranslations(i18n("mmwave_stay_areas"))
         .withFeature(createAreaComposite("area_1", "area1"))
         .withFeature(createAreaComposite("area_2", "area2"))
         .withFeature(createAreaComposite("area_3", "area3"))
@@ -3078,6 +3094,7 @@ const exposeMMWaveTargets = () => {
         .withLengthMin(0)
         .withLengthMax(4)
         .withDescription("All of the detected mmWave targets")
+        .withTranslations(i18n("mmwave_targets"))
         .withCategory("diagnostic");
 };
 

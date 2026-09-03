@@ -10,6 +10,7 @@ import {logger} from "./logger";
 import type {ElectricityMeterArgs} from "./modernExtend";
 import {payload} from "./reporting";
 import * as globalStore from "./store";
+import {i18n} from "./translations";
 import type {Configure, DefinitionExposesFunction, DummyDevice, Expose, Fz, KeyValue, KeyValueAny, ModernExtend, OnEvent, Tz, Zh} from "./types";
 import * as utils from "./utils";
 import {sleep, toNumber} from "./utils";
@@ -209,6 +210,7 @@ export const boschGeneralEnergyDeviceExtend = {
             e
                 .enum("reset_energy_meters", ea.SET, ["reset"])
                 .withDescription("Triggers the reset of all energy meters on the device to 0 kWh")
+                .withTranslations(i18n("reset_energy_meters"))
                 .withCategory("config"),
         ];
         const toZigbee: Tz.Converter[] = [
@@ -254,13 +256,17 @@ export const boschGeneralEnergyDeviceExtend = {
             const autoOffEnabledExpose = e
                 .binary("auto_off_enabled", ea.ALL, utils.getFromLookupByValue(0x01, offOnLookup), utils.getFromLookupByValue(0x00, offOnLookup))
                 .withLabel("Enable auto-off")
+                .withTranslations(i18n("auto_off_enabled"))
                 .withDescription("Enable/disable the automatic turn-off feature")
+                .withTranslations(i18n("auto_off_enabled"))
                 .withCategory("config");
 
             const autoOffTimeExpose = e
                 .numeric("auto_off_time", ea.ALL)
                 .withLabel("Auto-off time")
+                .withTranslations(i18n("auto_off_time"))
                 .withDescription("Turn off the output after the specified amount of time. Only in action when the automatic turn-off is enabled.")
+                .withTranslations(i18n("auto_off_time"))
                 .withUnit("min")
                 .withValueMin(0)
                 .withValueMax(720)
@@ -378,6 +384,7 @@ export const boschGeneralSensorDeviceExtend = {
             e
                 .binary("test_mode", ea.ALL, utils.getFromLookupByValue(true, testModeLookup), utils.getFromLookupByValue(false, testModeLookup))
                 .withDescription(testModeDescription)
+                .withTranslations(i18n("test_mode"))
                 .withCategory("config"),
         ];
 
@@ -386,6 +393,7 @@ export const boschGeneralSensorDeviceExtend = {
                 e
                     .numeric("test_mode_timeout", ea.ALL)
                     .withDescription(`Determines how long the test mode should be activated. The default length is ${defaultTimeout} seconds.`)
+                    .withTranslations(i18n("test_mode_timeout"))
                     .withValueMin(1)
                     .withValueMax(255)
                     .withUnit("seconds")
@@ -561,6 +569,7 @@ export const boschBmctExtend = {
                 .withDescription(
                     "Decouple the switch from the corresponding output to use it for other purposes. Please keep in mind that the available options may depend on the used switch type.",
                 )
+                .withTranslations(i18n("switch_mode"))
                 .withCategory("config");
 
             if (endpoint !== undefined) {
@@ -643,6 +652,7 @@ export const boschBmctExtend = {
             const childLockExpose = e
                 .binary("child_lock", ea.ALL, utils.getFromLookupByValue(0x01, childLockLookup), utils.getFromLookupByValue(0x00, childLockLookup))
                 .withDescription("Enables/disables physical input on the switch")
+                .withTranslations(i18n("child_lock"))
                 .withCategory("config");
 
             if (endpoint !== undefined) {
@@ -737,7 +747,9 @@ export const boschBmctExtend = {
             const minimumBrightnessExpose = e
                 .numeric("minimum_brightness", ea.ALL)
                 .withLabel("Raise minimum brightness")
+                .withTranslations(i18n("minimum_brightness"))
                 .withDescription("This raises the minimum brightness level of the connected light")
+                .withTranslations(i18n("minimum_brightness"))
                 .withValueMin(0)
                 .withValueMax(255)
                 .withCategory("config");
@@ -745,7 +757,9 @@ export const boschBmctExtend = {
             const maximumBrightnessExpose = e
                 .numeric("maximum_brightness", ea.ALL)
                 .withLabel("Lower maximum brightness")
+                .withTranslations(i18n("maximum_brightness"))
                 .withDescription("This lowers the maximum brightness level of the connected light")
+                .withTranslations(i18n("maximum_brightness"))
                 .withValueMin(0)
                 .withValueMax(255)
                 .withCategory("config");
@@ -844,7 +858,9 @@ export const boschBmctExtend = {
             const deviceModeExpose = e
                 .enum("device_mode", ea.SET, Object.keys(deviceModesLookup))
                 .withLabel("Device mode")
+                .withTranslations(i18n("device_mode"))
                 .withDescription("Set the desired mode of the relay")
+                .withTranslations(i18n("device_mode"))
                 .withCategory("config");
 
             return [deviceModeExpose];
@@ -923,7 +939,9 @@ export const boschBmctExtend = {
             const pulseLengthExpose = e
                 .numeric("pulse_length", ea.ALL)
                 .withLabel("Pulse length")
+                .withTranslations(i18n("pulse_length"))
                 .withDescription("Set the desired pulse length for the relay in seconds.")
+                .withTranslations(i18n("pulse_length"))
                 .withUnit("s")
                 .withValueStep(0.1)
                 .withValueMin(0.5)
@@ -1027,9 +1045,11 @@ export const boschBmctExtend = {
             const switchTypeExpose = e
                 .enum("switch_type", ea.ALL, supportedSwitchTypes)
                 .withLabel("Connected switch type")
+                .withTranslations(i18n("switch_type"))
                 .withDescription(
                     "Select which switch type is connected to the module. Please keep in mind that the available options may depend on the selected device mode.",
                 )
+                .withTranslations(i18n("switch_type"))
                 .withCategory("config");
 
             return [switchTypeExpose];
@@ -1675,14 +1695,18 @@ export const boschBsirExtend = {
             e
                 .enum("trigger_alarm", ea.SET, ["trigger"])
                 .withLabel("Trigger alarm")
+                .withTranslations(i18n("trigger_alarm"))
                 .withDescription("Trigger an alarm on the device")
+                .withTranslations(i18n("trigger_alarm"))
                 .withCategory("config"),
             e
                 .enum("stop_alarm", ea.SET, ["stop"])
                 .withLabel("Stop alarm")
+                .withTranslations(i18n("stop_alarm"))
                 .withDescription(
                     "Stop an active alarm on the device. Please keep in mind that the alarm stops automatically after the configured duration for the light and siren is expired.",
                 )
+                .withTranslations(i18n("stop_alarm"))
                 .withCategory("config"),
         ];
 
@@ -1841,13 +1865,17 @@ export const boschBsirExtend = {
             e
                 .binary("external_trigger", ea.STATE, true, false)
                 .withLabel("External trigger state")
+                .withTranslations(i18n("external_trigger"))
                 .withDescription(
                     "Indicates whether an external alarm via the 'TRIGGER_IN' connectors on the back of the device is being received. Please keep in mind that the device automatically activates/deactivates an alarm in that case.",
-                ),
+                )
+                .withTranslations(i18n("external_trigger")),
             e
                 .binary("tamper", ea.STATE, true, false)
                 .withLabel("Tamper state")
+                .withTranslations(i18n("tamper"))
                 .withDescription("Indicates whether the device is tampered")
+                .withTranslations(i18n("tamper"))
                 .withCategory("diagnostic"),
             e
                 .binary(
@@ -1857,9 +1885,11 @@ export const boschBsirExtend = {
                     utils.getFromLookupByValue(false, powerOutageLookup),
                 )
                 .withLabel("Power outage state")
+                .withTranslations(i18n("tamper"))
                 .withDescription(
                     "Indicates the configured primary power source experiences a power outage. This only works when using ac or dc power.",
                 )
+                .withTranslations(i18n("tamper"))
                 .withCategory("diagnostic"),
         ];
 
@@ -1949,6 +1979,7 @@ export const boschBsirExtend = {
             e
                 .numeric("solar_panel_voltage", ea.STATE)
                 .withDescription("Current voltage level received from the integrated solar panel")
+                .withTranslations(i18n("solar_panel_voltage"))
                 .withUnit("volt")
                 .withCategory("diagnostic"),
         ];
@@ -2122,6 +2153,7 @@ export const boschDoorWindowContactExtend = {
             e
                 .enum("action", ea.STATE, Object.keys(buttonActionsLookup))
                 .withDescription("Indicates button presses on the device")
+                .withTranslations(i18n("action"))
                 .withCategory("diagnostic"),
         ];
 
@@ -2175,16 +2207,20 @@ export const boschDoorWindowContactExtend = {
                     utils.getFromLookupByValue(0x00, breakFunctionEnabledLookup),
                 )
                 .withLabel("Break function")
+                .withTranslations(i18n("break_function_enabled"))
                 .withDescription(
                     "Activate the break function by pressing the operating button on the door/window contact twice. This means that the device temporarily stops reading the sensors.",
                 )
+                .withTranslations(i18n("break_function_enabled"))
                 .withCategory("config"),
             e
                 .numeric("break_function_timeout", ea.ALL)
                 .withLabel("Automatic time limit for breaks")
+                .withTranslations(i18n("break_function_timeout"))
                 .withDescription(
                     "Here you can define how long the break function is activated for the door/window contact. Once the time limit has expired, the break ends automatically. The LED on the device will flash orange as long as the break is activated when this setting is being used.",
                 )
+                .withTranslations(i18n("break_function_timeout"))
                 .withValueMin(1)
                 .withValueMax(15)
                 .withUnit("minutes")
@@ -2193,7 +2229,9 @@ export const boschDoorWindowContactExtend = {
             e
                 .enum("break_function_state", ea.STATE_GET, Object.keys(breakFunctionStatusLookup))
                 .withLabel("Break function state")
-                .withDescription("Indicates whether the device is in break mode or not"),
+                .withTranslations(i18n("break_function_state"))
+                .withDescription("Indicates whether the device is in break mode or not")
+                .withTranslations(i18n("break_function_state")),
         ];
 
         const fromZigbee = [
@@ -2299,14 +2337,21 @@ export const boschDoorWindowContactExtend = {
                     utils.getFromLookupByValue(0x00, vibrationDetectionEnabledLookup),
                 )
                 .withLabel("Vibration detection")
+                .withTranslations(i18n("vibration_detection_enabled"))
                 .withDescription("Activate the vibration detection to detect vibrations at the window or door via the integrated sensor as well")
+                .withTranslations(i18n("vibration_detection_enabled"))
                 .withCategory("config"),
             e
                 .enum("vibration_detection_sensitivity", ea.ALL, Object.keys(vibrationDetectionSensitivityLookup))
                 .withLabel("Vibration detection sensitivity")
+                .withTranslations(i18n("vibration_detection_sensitivity"))
                 .withDescription("Set the sensitivity of the vibration detection sensor")
+                .withTranslations(i18n("vibration_detection_sensitivity"))
                 .withCategory("config"),
-            e.binary("vibration", ea.STATE_GET, true, false).withDescription("Indicates whether the device detected vibration"),
+            e
+                .binary("vibration", ea.STATE_GET, true, false)
+                .withDescription("Indicates whether the device detected vibration")
+                .withTranslations(i18n("vibration")),
         ];
 
         const fromZigbee = [
@@ -2460,12 +2505,16 @@ export const boschBsenExtend = {
             e
                 .binary("tamper", ea.STATE, true, false)
                 .withLabel("Tamper state")
+                .withTranslations(i18n("tamper"))
                 .withDescription("Indicates whether the device is tampered")
+                .withTranslations(i18n("tamper"))
                 .withCategory("diagnostic"),
             e
                 .binary("occupancy", ea.STATE, true, false)
                 .withLabel("Occupancy state")
-                .withDescription("Indicates whether the device detected any motion in the surroundings"),
+                .withTranslations(i18n("occupancy"))
+                .withDescription("Indicates whether the device detected any motion in the surroundings")
+                .withTranslations(i18n("occupancy")),
         ];
 
         const fromZigbee = [
@@ -2558,6 +2607,7 @@ export const boschBsenExtend = {
             e
                 .enum("sensitivity_level", ea.STATE_GET, Object.keys(sensitivityLevelLookup))
                 .withDescription("Specifies the selected sensitivity level on the back of the device (either 'pet immunity' or 'sneak-by guard').")
+                .withTranslations(i18n("sensitivity_level"))
                 .withCategory("diagnostic"),
         ];
 
@@ -2717,7 +2767,9 @@ export const boschWaterAlarmExtend = {
                     utils.getFromLookupByValue(false, muteAlarmControlLookup),
                 )
                 .withLabel("Mute water leak alarm")
-                .withDescription("In case of an water leak, you can mute and unmute the audible alarm here"),
+                .withTranslations(i18n("water_leak_alarm_control"))
+                .withDescription("In case of an water leak, you can mute and unmute the audible alarm here")
+                .withTranslations(i18n("water_leak_alarm_control")),
         ];
 
         const toZigbee: Tz.Converter[] = [
@@ -2990,18 +3042,22 @@ export const boschSmokeAlarmExtend = {
         const exposes: Expose[] = [
             e
                 .binary("manual_smoke_alarm", ea.ALL, utils.getFromLookupByValue(true, onOffLookup), utils.getFromLookupByValue(false, onOffLookup))
-                .withDescription("Indicates whether the smoke alarm siren is being manually activated on the device"),
+                .withDescription("Indicates whether the smoke alarm siren is being manually activated on the device")
+                .withTranslations(i18n("manual_smoke_alarm")),
             e
                 .binary("manual_burglar_alarm", ea.ALL, utils.getFromLookupByValue(true, onOffLookup), utils.getFromLookupByValue(false, onOffLookup))
-                .withDescription("Indicates whether the burglar alarm siren is being manually activated on the device"),
+                .withDescription("Indicates whether the burglar alarm siren is being manually activated on the device")
+                .withTranslations(i18n("manual_burglar_alarm")),
             e
                 .binary("broadcast_alarms", ea.ALL, utils.getFromLookupByValue(true, onOffLookup), utils.getFromLookupByValue(false, onOffLookup))
                 .withLabel("Broadcast alarms")
+                .withTranslations(i18n("broadcast_alarms"))
                 .withDescription(
                     "Broadcast manual alarm state changes to all BSD-2 devices on the network. Please keep in mind " +
                         "that a detected smoke alarm is not being transmitted automatically to other devices. " +
                         "To achieve that, you must set up an automation, e.g., in Home Assistant.",
                 )
+                .withTranslations(i18n("broadcast_alarms"))
                 .withCategory("config"),
         ];
 
@@ -3162,14 +3218,18 @@ export const boschSmartPlugExtend = {
                     utils.getFromLookupByValue(0x00, energySavingModeEnabledLookup),
                 )
                 .withLabel("Enable energy-saving mode")
+                .withTranslations(i18n("energy_saving_mode_enabled"))
                 .withDescription("Here you can enable/disable the energy-saving mode")
+                .withTranslations(i18n("energy_saving_mode_enabled"))
                 .withCategory("config"),
             e
                 .numeric("energy_saving_mode_threshold", ea.ALL)
                 .withLabel("Energy-saving threshold")
+                .withTranslations(i18n("energy_saving_mode_threshold"))
                 .withDescription(
                     "Here you can set the threshold for the energy-saving mode. If the consumption falls below the set value (and the timer has been met), the smart plug will be turned off.",
                 )
+                .withTranslations(i18n("energy_saving_mode_threshold"))
                 .withUnit("watt")
                 .withValueMin(1)
                 .withValueMax(50)
@@ -3178,7 +3238,9 @@ export const boschSmartPlugExtend = {
             e
                 .numeric("energy_saving_mode_timer", ea.ALL)
                 .withLabel("Energy-saving timer")
+                .withTranslations(i18n("energy_saving_mode_timer"))
                 .withDescription("Here you can set the time the threshold has to be met before the smart plug is turned off")
+                .withTranslations(i18n("energy_saving_mode_timer"))
                 .withUnit("seconds")
                 .withValueMin(1)
                 .withValueMax(1800)
@@ -3916,7 +3978,9 @@ export const boschThermostatExtend = {
                     utils.getFromLookupByValue(0x00, boostHeatingLookup),
                 )
                 .withLabel("Activate boost heating")
-                .withDescription("Activate boost heating (opens TRV for 5 minutes)"),
+                .withTranslations(i18n("boost_heating"))
+                .withDescription("Activate boost heating (opens TRV for 5 minutes)")
+                .withTranslations(i18n("boost_heating")),
         ];
 
         const fromZigbee = [
@@ -3991,6 +4055,7 @@ export const boschThermostatExtend = {
             e
                 .text("error_state", ea.STATE_GET)
                 .withDescription("Indicates whether the device encounters any errors or not")
+                .withTranslations(i18n("error_state"))
                 .withCategory("diagnostic"),
         ];
 
@@ -4091,22 +4156,28 @@ export const boschThermostatExtend = {
             e
                 .enum("valve_adapt_status", ea.STATE_GET, Object.keys(valveAdaptStatusLookup))
                 .withLabel("Valve adaptation status")
+                .withTranslations(i18n("valve_adapt_status"))
                 .withDescription("Specifies the current status of the valve adaptation")
+                .withTranslations(i18n("valve_adapt_status"))
                 .withCategory("diagnostic"),
             e
                 .binary("automatic_valve_adapt", ea.STATE_GET, true, false)
                 .withLabel("Automatic valve adaptation requested")
+                .withTranslations(i18n("automatic_valve_adapt"))
                 .withDescription(
                     "Specifies if an automatic valve adaptation is being requested by the thermostat " +
                         "(for example after a successful firmware upgrade). If this is the case, the " +
                         "valve adaptation will be automatically started as soon as the adaptation status " +
                         "is 'ready_to_calibrate' or 'error'.",
                 )
+                .withTranslations(i18n("automatic_valve_adapt"))
                 .withCategory("diagnostic"),
             e
                 .enum("valve_adapt_process", ea.SET, ["adapt"])
                 .withLabel("Trigger adaptation process")
+                .withTranslations(i18n("valve_adapt_process"))
                 .withDescription("Trigger the valve adaptation process. Only possible when the adaptation status is 'ready_to_calibrate' or 'error'.")
+                .withTranslations(i18n("valve_adapt_process"))
                 .withCategory("config"),
         ];
 

@@ -8,6 +8,7 @@ import * as exposes from "./exposes";
 import {logger} from "./logger";
 import * as modernExtend from "./modernExtend";
 import * as globalStore from "./store";
+import {i18n} from "./translations";
 import type {
     DefinitionExposesFunction,
     Expose,
@@ -666,13 +667,35 @@ const tuyaExposes = {
             .withValueMax(180)
             .withValueStep(1)
             .withDescription("Alarm time")
+            .withTranslations(i18n("alarm_time"))
             .withCategory("config"),
-    alarmMode: () => e.enum("alarm_mode", ea.STATE_SET, ["arm", "silent", "disarm"]).withDescription("Alarm work mode").withCategory("config"),
-    alarmStatus: () => e.enum("alarm_status", ea.STATE, ["normal", "alarm"]).withDescription("Indicates when vibration is detected"),
-    dismissAlarm: () => e.enum("dismiss_alarm", ea.STATE_SET, ["DISMISS"]).withDescription("Stop the buzzer for the current alarm"),
+    alarmMode: () =>
+        e
+            .enum("alarm_mode", ea.STATE_SET, ["arm", "silent", "disarm"])
+            .withDescription("Alarm work mode")
+            .withTranslations(i18n("alarm_mode"))
+            .withCategory("config"),
+    alarmStatus: () =>
+        e
+            .enum("alarm_status", ea.STATE, ["normal", "alarm"])
+            .withDescription("Indicates when vibration is detected")
+            .withTranslations(i18n("alarm_status")),
+    dismissAlarm: () =>
+        e
+            .enum("dismiss_alarm", ea.STATE_SET, ["DISMISS"])
+            .withDescription("Stop the buzzer for the current alarm")
+            .withTranslations(i18n("dismiss_alarm")),
     sensitivity: () =>
-        e.enum("sensitivity", ea.STATE_SET, ["low", "middle", "high"]).withDescription("Sensitivity level of the sensor").withCategory("config"),
-    lightType: () => e.enum("light_type", ea.STATE_SET, ["led", "incandescent", "halogen"]).withDescription("Type of light attached to the device"),
+        e
+            .enum("sensitivity", ea.STATE_SET, ["low", "middle", "high"])
+            .withDescription("Sensitivity level of the sensor")
+            .withTranslations(i18n("sensitivity"))
+            .withCategory("config"),
+    lightType: () =>
+        e
+            .enum("light_type", ea.STATE_SET, ["led", "incandescent", "halogen"])
+            .withDescription("Type of light attached to the device")
+            .withTranslations(i18n("light_type")),
     lightBrightnessWithMinMax: () =>
         e
             .light_brightness()
@@ -690,7 +713,8 @@ const tuyaExposes = {
             .withValueMax(43200)
             .withValueStep(1)
             .withUnit("s")
-            .withDescription("Toggle the device after a set duration (one time action)"),
+            .withDescription("Toggle the device after a set duration (one time action)")
+            .withTranslations(i18n("countdown")),
     countdown_min: () =>
         e
             .numeric("countdown", ea.STATE_SET)
@@ -698,7 +722,8 @@ const tuyaExposes = {
             .withValueMax(240)
             .withValueStep(1)
             .withUnit("min")
-            .withDescription("Turn off the sprinkler after set duration (one time action)"),
+            .withDescription("Turn off the sprinkler after set duration (one time action)")
+            .withTranslations(i18n("countdown")),
     on_with_countdown: () =>
         e
             .numeric("on_with_countdown", ea.STATE_SET)
@@ -706,7 +731,8 @@ const tuyaExposes = {
             .withValueMax(240)
             .withValueStep(1)
             .withUnit("min")
-            .withDescription("Turn on the sprinkler and start countdown"),
+            .withDescription("Turn on the sprinkler and start countdown")
+            .withTranslations(i18n("on_with_countdown")),
     countdown_left: () =>
         e
             .numeric("countdown_left", ea.STATE)
@@ -714,12 +740,19 @@ const tuyaExposes = {
             .withValueMax(240)
             .withValueStep(1)
             .withUnit("min")
-            .withDescription("Time left in the countdown"),
-    single_watering_duration: () => e.numeric("single_watering_duration", ea.STATE).withDescription("Duration of last watering").withUnit("s"),
+            .withDescription("Time left in the countdown")
+            .withTranslations(i18n("countdown_left")),
+    single_watering_duration: () =>
+        e
+            .numeric("single_watering_duration", ea.STATE)
+            .withDescription("Duration of last watering")
+            .withTranslations(i18n("single_watering_duration"))
+            .withUnit("s"),
     flow_switch: () =>
         e
             .binary("flow_switch", ea.STATE_SET, "ON", "OFF")
-            .withDescription("Enables water flow measurement, and automatically turn off the sprinkler when flow is 0 for ~30s"),
+            .withDescription("Enables water flow measurement, and automatically turn off the sprinkler when flow is 0 for ~30s")
+            .withTranslations(i18n("flow_switch")),
     quantitative_watering: () =>
         e
             .numeric("quantitative_watering", ea.STATE_SET)
@@ -727,35 +760,95 @@ const tuyaExposes = {
             .withValueMax(10000)
             .withValueStep(1)
             .withUnit("L")
-            .withDescription("Turn on the sprinkler with a set amount of water"),
-    single_watering_amount: () => e.numeric("single_watering_amount", ea.STATE).withUnit("L").withDescription("Quantity of last watering"),
-    surplus_flow: () => e.numeric("surplus_flow", ea.STATE).withUnit("L").withDescription("Remaining amount"),
-    water_total: () => e.numeric("water_total", ea.STATE).withUnit("L").withValueMin(0).withValueStep(0.001).withDescription("Total watering amount"),
+            .withDescription("Turn on the sprinkler with a set amount of water")
+            .withTranslations(i18n("quantitative_watering")),
+    single_watering_amount: () =>
+        e
+            .numeric("single_watering_amount", ea.STATE)
+            .withUnit("L")
+            .withDescription("Quantity of last watering")
+            .withTranslations(i18n("single_watering_amount")),
+    surplus_flow: () => e.numeric("surplus_flow", ea.STATE).withUnit("L").withDescription("Remaining amount").withTranslations(i18n("surplus_flow")),
+    water_total: () =>
+        e
+            .numeric("water_total", ea.STATE)
+            .withUnit("L")
+            .withValueMin(0)
+            .withValueStep(0.001)
+            .withDescription("Total watering amount")
+            .withTranslations(i18n("water_total")),
     water_current: () =>
-        e.numeric("water_current", ea.STATE).withUnit("L/min").withValueMin(0).withValueStep(0.001).withDescription("Current water flow"),
+        e
+            .numeric("water_current", ea.STATE)
+            .withUnit("L/min")
+            .withValueMin(0)
+            .withValueStep(0.001)
+            .withDescription("Current water flow")
+            .withTranslations(i18n("water_current")),
     water_total_reset: () =>
-        e.enum("water_total_reset", ea.STATE_SET, ["reset"]).withDescription("Reset the stored watering amount to 0").withCategory("config"),
-    refresh: () => e.enum("refresh", ea.STATE_SET, ["refresh"]).withDescription("Refresh the device status").withCategory("config"),
+        e
+            .enum("water_total_reset", ea.STATE_SET, ["reset"])
+            .withDescription("Reset the stored watering amount to 0")
+            .withTranslations(i18n("water_total_reset"))
+            .withCategory("config"),
+    refresh: () =>
+        e
+            .enum("refresh", ea.STATE_SET, ["refresh"])
+            .withDescription("Refresh the device status")
+            .withTranslations(i18n("refresh"))
+            .withCategory("config"),
     status_sprinkler: () =>
-        e.enum("status", ea.STATE, ["off", "on_auto", "button_locked", "on_manual_app", "on_manual_button"]).withDescription("Status"),
+        e
+            .enum("status", ea.STATE, ["off", "on_auto", "button_locked", "on_manual_app", "on_manual_button"])
+            .withDescription("Status")
+            .withTranslations(i18n("status")),
     switch: () => e.switch().setAccess("state", ea.STATE_SET),
-    selfTest: () => e.binary("self_test", ea.STATE_SET, true, false).withDescription("Indicates whether the device is being self-tested"),
+    selfTest: () =>
+        e
+            .binary("self_test", ea.STATE_SET, true, false)
+            .withDescription("Indicates whether the device is being self-tested")
+            .withTranslations(i18n("self_test")),
     selfTestResult: () =>
-        e.enum("self_test_result", ea.STATE, ["checking", "success", "failure", "others"]).withDescription("Result of the self-test"),
-    fault: () => e.binary("fault", ea.STATE, true, false).withDescription("Indicates whether a fault was detected").withCategory("diagnostic"),
-    faultAlarm: () => e.binary("fault_alarm", ea.STATE, true, false).withDescription("Indicates whether a fault was detected"),
-    silence: () => e.binary("silence", ea.STATE_SET, true, false).withDescription("Silence the alarm"), // current alarm or all alarms?
-    silentMode: () => e.binary("silent_mode", ea.STATE_SET, "ON", "OFF").withDescription("Mute the buzzer for all alarms").withCategory("config"),
+        e
+            .enum("self_test_result", ea.STATE, ["checking", "success", "failure", "others"])
+            .withDescription("Result of the self-test")
+            .withTranslations(i18n("self_test_result")),
+    fault: () =>
+        e
+            .binary("fault", ea.STATE, true, false)
+            .withDescription("Indicates whether a fault was detected")
+            .withTranslations(i18n("fault"))
+            .withCategory("diagnostic"),
+    faultAlarm: () =>
+        e
+            .binary("fault_alarm", ea.STATE, true, false)
+            .withDescription("Indicates whether a fault was detected")
+            .withTranslations(i18n("fault_alarm")),
+    silence: () => e.binary("silence", ea.STATE_SET, true, false).withDescription("Silence the alarm").withTranslations(i18n("silence")), // current alarm or all alarms?
+    silentMode: () =>
+        e
+            .binary("silent_mode", ea.STATE_SET, "ON", "OFF")
+            .withDescription("Mute the buzzer for all alarms")
+            .withTranslations(i18n("silent_mode"))
+            .withCategory("config"),
     frostProtection: (extraNote = "") =>
         e
             .binary("frost_protection", ea.STATE_SET, "ON", "OFF")
-            .withDescription(`When Anti-Freezing function is activated, the temperature in the house is kept at 8 °C.${extraNote}`),
-    errorStatus: () => e.numeric("error_status", ea.STATE).withDescription("Error status"),
+            .withDescription(`When Anti-Freezing function is activated, the temperature in the house is kept at 8 °C.${extraNote}`)
+            .withTranslations(i18n("frost_protection")),
+    errorStatus: () => e.numeric("error_status", ea.STATE).withDescription("Error status").withTranslations(i18n("error_status")),
     scheduleAllDays: (access: number, example: string) =>
         ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"].map((day) =>
-            e.text(`schedule_${day}`, access).withDescription(`Schedule for ${day}, example: "${example}"`),
+            e
+                .text(`schedule_${day}`, access)
+                .withDescription(`Schedule for ${day}, example: "${example}"`)
+                .withTranslations(i18n(`schedule_${day}`)),
         ),
-    temperatureUnit: () => e.enum("temperature_unit", ea.STATE_SET, ["celsius", "fahrenheit"]).withDescription("Temperature unit"),
+    temperatureUnit: () =>
+        e
+            .enum("temperature_unit", ea.STATE_SET, ["celsius", "fahrenheit"])
+            .withDescription("Temperature unit")
+            .withTranslations(i18n("temperature_unit")),
     temperatureCalibration: () =>
         e
             .numeric("temperature_calibration", ea.STATE_SET)
@@ -763,7 +856,8 @@ const tuyaExposes = {
             .withValueMax(2.0)
             .withValueStep(0.1)
             .withUnit("°C")
-            .withDescription("Temperature calibration"),
+            .withDescription("Temperature calibration")
+            .withTranslations(i18n("temperature_calibration")),
     humidityCalibration: () =>
         e
             .numeric("humidity_calibration", ea.STATE_SET)
@@ -771,7 +865,8 @@ const tuyaExposes = {
             .withValueMax(30)
             .withValueStep(1)
             .withUnit("%")
-            .withDescription("Humidity calibration"),
+            .withDescription("Humidity calibration")
+            .withTranslations(i18n("humidity_calibration")),
     soilCalibration: () =>
         e
             .numeric("soil_calibration", ea.STATE_SET)
@@ -779,7 +874,8 @@ const tuyaExposes = {
             .withValueMax(30)
             .withValueStep(1)
             .withUnit("%")
-            .withDescription("Soil Humidity calibration"),
+            .withDescription("Soil Humidity calibration")
+            .withTranslations(i18n("soil_calibration")),
     temperatureSampling: () =>
         e
             .numeric("temperature_sampling", ea.STATE_SET)
@@ -787,7 +883,8 @@ const tuyaExposes = {
             .withValueMax(3600)
             .withValueStep(1)
             .withUnit("s")
-            .withDescription("Air temperature and humidity sampling"),
+            .withDescription("Air temperature and humidity sampling")
+            .withTranslations(i18n("temperature_sampling")),
     soilSampling: () =>
         e
             .numeric("soil_sampling", ea.STATE_SET)
@@ -795,7 +892,8 @@ const tuyaExposes = {
             .withValueMax(3600)
             .withValueStep(1)
             .withUnit("s")
-            .withDescription("Soil humidity sampling"),
+            .withDescription("Soil humidity sampling")
+            .withTranslations(i18n("soil_sampling")),
     soilWarning: () =>
         e
             .numeric("soil_warning", ea.STATE_SET)
@@ -803,79 +901,149 @@ const tuyaExposes = {
             .withValueMax(100)
             .withValueStep(1)
             .withUnit("%")
-            .withDescription("Soil water shortage humidity value"),
-    gasValue: () => e.numeric("gas_value", ea.STATE).withDescription("Measured gas concentration"),
+            .withDescription("Soil water shortage humidity value")
+            .withTranslations(i18n("soil_warning")),
+    gasValue: () => e.numeric("gas_value", ea.STATE).withDescription("Measured gas concentration").withTranslations(i18n("gas_value")),
     energyWithPhase: (phase: string) =>
-        e.numeric(`energy_${phase}`, ea.STATE).withUnit("kWh").withDescription(`Sum of consumed energy (phase ${phase.toUpperCase()})`),
+        e
+            .numeric(`energy_${phase}`, ea.STATE)
+            .withUnit("kWh")
+            .withDescription(`Sum of consumed energy (phase ${phase.toUpperCase()})`)
+            .withTranslations(i18n(`energy_${phase}`)),
     energyProducedWithPhase: (phase: string) =>
-        e.numeric(`energy_produced_${phase}`, ea.STATE).withUnit("kWh").withDescription(`Sum of produced energy (phase ${phase.toUpperCase()})`),
+        e
+            .numeric(`energy_produced_${phase}`, ea.STATE)
+            .withUnit("kWh")
+            .withDescription(`Sum of produced energy (phase ${phase.toUpperCase()})`)
+            .withTranslations(i18n(`energy_produced_${phase}`)),
     energyFlowWithPhase: (phase: string, more: [string]) =>
         e
             .enum(`energy_flow_${phase}`, ea.STATE, ["consuming", "producing", ...more])
-            .withDescription(`Direction of energy (phase ${phase.toUpperCase()})`),
+            .withDescription(`Direction of energy (phase ${phase.toUpperCase()})`)
+            .withTranslations(i18n(`energy_flow_${phase}`)),
     voltageWithPhase: (phase: string) =>
-        e.numeric(`voltage_${phase}`, ea.STATE).withUnit("V").withDescription(`Measured electrical potential value (phase ${phase.toUpperCase()})`),
+        e
+            .numeric(`voltage_${phase}`, ea.STATE)
+            .withUnit("V")
+            .withDescription(`Measured electrical potential value (phase ${phase.toUpperCase()})`)
+            .withTranslations(i18n(`voltage_${phase}`)),
     powerWithPhase: (phase: string) =>
-        e.numeric(`power_${phase}`, ea.STATE).withUnit("W").withDescription(`Instantaneous measured power (phase ${phase.toUpperCase()})`),
+        e
+            .numeric(`power_${phase}`, ea.STATE)
+            .withUnit("W")
+            .withDescription(`Instantaneous measured power (phase ${phase.toUpperCase()})`)
+            .withTranslations(i18n(`power_${phase}`)),
     currentWithPhase: (phase: string) =>
         e
             .numeric(`current_${phase}`, ea.STATE)
             .withUnit("A")
-            .withDescription(`Instantaneous measured electrical current (phase ${phase.toUpperCase()})`),
+            .withDescription(`Instantaneous measured electrical current (phase ${phase.toUpperCase()})`)
+            .withTranslations(i18n(`current_${phase}`)),
     powerFactorWithPhase: (phase: string) =>
         e
             .numeric(`power_factor_${phase}`, ea.STATE)
             .withUnit("%")
-            .withDescription(`Instantaneous measured power factor (phase ${phase.toUpperCase()})`),
-    switchType: () => e.enum("switch_type", ea.ALL, ["toggle", "state", "momentary"]).withDescription("Type of the switch").withCategory("config"),
+            .withDescription(`Instantaneous measured power factor (phase ${phase.toUpperCase()})`)
+            .withTranslations(i18n(`power_factor_${phase}`)),
+    switchType: () =>
+        e
+            .enum("switch_type", ea.ALL, ["toggle", "state", "momentary"])
+            .withDescription("Type of the switch")
+            .withTranslations(i18n("switch_type"))
+            .withCategory("config"),
     switchTypeCurtain: () =>
         e
             .enum("switch_type_curtain", ea.ALL, ["flip-switch", "sync-switch", "button-switch", "button2-switch"])
             .withDescription("External switch type")
+            .withTranslations(i18n("switch_type_curtain"))
             .withCategory("config"),
     switchTypeButton: () =>
-        e.enum("switch_type_button", ea.ALL, ["release", "press"]).withDescription("Determines when the button actuates").withCategory("config"),
+        e
+            .enum("switch_type_button", ea.ALL, ["release", "press"])
+            .withDescription("Determines when the button actuates")
+            .withTranslations(i18n("switch_type_button"))
+            .withCategory("config"),
     backlightModeLowMediumHigh: () =>
-        e.enum("backlight_mode", ea.ALL, ["low", "medium", "high"]).withDescription("Intensity of the backlight").withCategory("config"),
+        e
+            .enum("backlight_mode", ea.ALL, ["low", "medium", "high"])
+            .withDescription("Intensity of the backlight")
+            .withTranslations(i18n("backlight_mode"))
+            .withCategory("config"),
     backlightModeOffNormalInverted: () =>
-        e.enum("backlight_mode", ea.ALL, ["off", "normal", "inverted"]).withDescription("Mode of the backlight").withCategory("config"),
-    backlightModeOffOn: () => e.binary("backlight_mode", ea.ALL, "ON", "OFF").withDescription("Mode of the backlight").withCategory("config"),
+        e
+            .enum("backlight_mode", ea.ALL, ["off", "normal", "inverted"])
+            .withDescription("Mode of the backlight")
+            .withTranslations(i18n("backlight_mode"))
+            .withCategory("config"),
+    backlightModeOffOn: () =>
+        e
+            .binary("backlight_mode", ea.ALL, "ON", "OFF")
+            .withDescription("Mode of the backlight")
+            .withTranslations(i18n("backlight_mode"))
+            .withCategory("config"),
     indicatorMode: () =>
-        e.enum("indicator_mode", ea.ALL, ["off", "off/on", "on/off", "on"]).withDescription("LED indicator mode").withCategory("config"),
+        e
+            .enum("indicator_mode", ea.ALL, ["off", "off/on", "on/off", "on"])
+            .withDescription("LED indicator mode")
+            .withTranslations(i18n("indicator_mode"))
+            .withCategory("config"),
     indicatorModeNoneRelayPos: () =>
-        e.enum("indicator_mode", ea.ALL, ["none", "relay", "pos"]).withDescription("Mode of the indicator light").withCategory("config"),
+        e
+            .enum("indicator_mode", ea.ALL, ["none", "relay", "pos"])
+            .withDescription("Mode of the indicator light")
+            .withTranslations(i18n("indicator_mode"))
+            .withCategory("config"),
     powerOutageMemory: () =>
-        e.enum("power_outage_memory", ea.ALL, ["on", "off", "restore"]).withDescription("Recover state after power outage").withCategory("config"),
+        e
+            .enum("power_outage_memory", ea.ALL, ["on", "off", "restore"])
+            .withDescription("Recover state after power outage")
+            .withTranslations(i18n("power_outage_memory"))
+            .withCategory("config"),
     batteryState: () =>
-        e.enum("battery_state", ea.STATE, ["low", "medium", "high"]).withDescription("State of the battery").withCategory("diagnostic"),
+        e
+            .enum("battery_state", ea.STATE, ["low", "medium", "high"])
+            .withDescription("State of the battery")
+            .withTranslations(i18n("battery_state"))
+            .withCategory("diagnostic"),
     doNotDisturb: () =>
         e
             .binary("do_not_disturb", ea.STATE_SET, true, false)
             .withDescription("Controls state after power outage: false = on, true = restore previous state")
+            .withTranslations(i18n("do_not_disturb"))
             .withCategory("config"),
     colorPowerOnBehavior: () =>
         e
             .enum("color_power_on_behavior", ea.STATE_SET, ["initial", "previous", "customized"])
             .withDescription("Power on behavior state")
+            .withTranslations(i18n("color_power_on_behavior"))
             .withCategory("config"),
     powerOnBehavior: () =>
-        e.enum("power_on_behavior", ea.ALL, ["off", "on", "previous"]).withDescription("Power on behavior state").withCategory("config"),
+        e
+            .enum("power_on_behavior", ea.ALL, ["off", "on", "previous"])
+            .withDescription("Power on behavior state")
+            .withTranslations(i18n("power_on_behavior"))
+            .withCategory("config"),
     switchMode: () =>
         e
             .enum("switch_mode", ea.STATE_SET, ["switch", "scene"])
             .withDescription("Sets the mode of the switch to act as a switch or as a scene")
+            .withTranslations(i18n("switch_mode"))
             .withCategory("config"),
     switchMode2: () =>
         e
             .enum("switch_mode", ea.STATE_SET, ["switch", "curtain"])
             .withDescription("Sets the mode of the switch to act as a switch or as a curtain controller")
+            .withTranslations(i18n("switch_mode"))
             .withCategory("config"),
     lightMode: () =>
-        e.enum("light_mode", ea.STATE_SET, ["normal", "on", "off", "flash"]).withDescription(`'Sets the indicator mode of l1.
+        e
+            .enum("light_mode", ea.STATE_SET, ["normal", "on", "off", "flash"])
+            .withDescription(`'Sets the indicator mode of l1.
         Normal: Orange while off and white while on.
         On: Always white. Off: Always orange.
         Flash: Flashes white when triggered.
-        Note: Orange light will turn off after light off delay, white light always stays on. Light mode updates on next state change.'`),
+        Note: Orange light will turn off after light off delay, white light always stays on. Light mode updates on next state change.'`)
+            .withTranslations(i18n("light_mode")),
     // Inching can be enabled for multiple endpoints (1 to 6) but it is always controlled on endpoint 1
     // So instead of pinning the values to each endpoint, it is easier to keep the structure stand alone.
     inchingSwitch: (quantity: number) => {
@@ -883,19 +1051,24 @@ const tuyaExposes = {
             .composite("inching_control_set", "inching_control_set", ea.SET)
             .withDescription(
                 "Device Inching function Settings. The device will automatically turn off " + "after each turn on for a specified period of time.",
-            );
+            )
+            .withTranslations(i18n("inching_control_set"));
         for (let i = 1; i <= quantity; i++) {
             x.withFeature(
                 e
                     .binary("inching_control", ea.SET, "ENABLE", "DISABLE")
                     .withDescription(`Enable/disable inching function for endpoint ${i}.`)
+                    .withTranslations(i18n("inching_control"))
                     .withLabel(`Inching for Endpoint ${i}`)
+                    .withTranslations(i18n("inching_control"))
                     .withProperty(`inching_control_${i}`),
             ).withFeature(
                 e
                     .numeric("inching_time", ea.SET)
                     .withDescription(`Delay time for executing a inching action for endpoint ${i}.`)
+                    .withTranslations(i18n("inching_time"))
                     .withLabel(`Inching time for endpoint ${i}`)
+                    .withTranslations(i18n("inching_time"))
                     .withProperty(`inching_time_${i}`)
                     .withUnit("seconds")
                     .withValueMin(1)
@@ -909,10 +1082,12 @@ const tuyaExposes = {
         e
             .composite("inching", "inching", ea.STATE_SET)
             .withDescription("Inching configuration")
+            .withTranslations(i18n("inching"))
             .withFeature(
                 e
                     .binary("state", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Whenever the device is switched ON, switch it OFF automatically after the configured delay"),
+                    .withDescription("Whenever the device is switched ON, switch it OFF automatically after the configured delay")
+                    .withTranslations(i18n("state")),
             )
             .withFeature(
                 e
@@ -920,7 +1095,8 @@ const tuyaExposes = {
                     .withUnit("m")
                     .withValueMin(0)
                     .withValueMax(1440)
-                    .withDescription("Minutes component of the delay duration"),
+                    .withDescription("Minutes component of the delay duration")
+                    .withTranslations(i18n("minutes")),
             )
             .withFeature(
                 e
@@ -928,27 +1104,35 @@ const tuyaExposes = {
                     .withUnit("s")
                     .withValueMin(0)
                     .withValueMax(59)
-                    .withDescription("Seconds component of the delay duration"),
+                    .withDescription("Seconds component of the delay duration")
+                    .withTranslations(i18n("seconds")),
             )
             .withCategory("config"),
     circuitBreakerFaults: () =>
         e
             .list("faults", ea.STATE, e.enum("fault", ea.STATE, circuitBreakerFaultList))
             .withDescription("List of current faults")
+            .withTranslations(i18n("fault"))
             .withCategory("diagnostic"),
     circuitBreakerStatus: () =>
-        e.enum("status", ea.STATE, ["off", "consumption", "production"]).withDescription("Current operating status").withCategory("diagnostic"),
+        e
+            .enum("status", ea.STATE, ["off", "consumption", "production"])
+            .withDescription("Current operating status")
+            .withTranslations(i18n("status"))
+            .withCategory("diagnostic"),
     leakageCurrent: () =>
         e
             .numeric("leakage_current", ea.STATE)
             .withUnit("mA")
             .withDescription("Measured current difference between live and neutral wires")
+            .withTranslations(i18n("leakage_current"))
             .withCategory("diagnostic"),
     reclosing: () =>
         e
             .binary("reclosing", ea.STATE_SET, "ON", "OFF")
             .withCategory("config")
-            .withDescription("Automatically attempt switching ON the circuit after it was turned OFF by a detected fault"),
+            .withDescription("Automatically attempt switching ON the circuit after it was turned OFF by a detected fault")
+            .withTranslations(i18n("reclosing")),
     reclosing_delay: () =>
         e
             .numeric("reclosing_delay", ea.STATE_SET)
@@ -957,7 +1141,8 @@ const tuyaExposes = {
             .withValueMax(99)
             .withValueStep(1)
             .withCategory("config")
-            .withDescription("Time to wait after the fault is cleared, before attempting reclose"),
+            .withDescription("Time to wait after the fault is cleared, before attempting reclose")
+            .withTranslations(i18n("reclosing_delay")),
     reclosing_count: () =>
         e
             .numeric("reclosing_count", ea.STATE_SET)
@@ -965,17 +1150,20 @@ const tuyaExposes = {
             .withValueMax(30)
             .withValueStep(1)
             .withCategory("config")
-            .withDescription("Number of allowed reclosing attempts per fault"),
+            .withDescription("Number of allowed reclosing attempts per fault")
+            .withTranslations(i18n("reclosing_count")),
     energyPrepayment: () =>
         e
             .binary("prepayment", ea.STATE_SET, "ON", "OFF")
             .withDescription("Automatically switch OFF the circuit when the energy balance reaches zero")
+            .withTranslations(i18n("prepayment"))
             .withCategory("config"),
     energyBalance: () =>
         e
             .numeric("energy_balance", ea.STATE)
             .withUnit("kWh")
             .withDescription("Amount of energy allowed for consumption (Decreases when Prepayment is enabled)")
+            .withTranslations(i18n("energy_balance"))
             .withCategory("diagnostic"),
     energyBalanceAdd: () =>
         e
@@ -985,18 +1173,30 @@ const tuyaExposes = {
             .withValueMax(999999)
             .withValueStep(0.01)
             .withDescription("Add an amount of energy to the balance")
+            .withTranslations(i18n("energy_balance_add"))
             .withCategory("config"),
     energyBalanceReset: () =>
-        e.enum("energy_balance_reset", ea.STATE_SET, ["RESET"]).withDescription("Set the energy balance to zero").withCategory("config"),
-    energyReset: () => e.enum("energy_reset", ea.STATE_SET, ["RESET"]).withDescription("Set the energy measurements to zero").withCategory("config"),
+        e
+            .enum("energy_balance_reset", ea.STATE_SET, ["RESET"])
+            .withDescription("Set the energy balance to zero")
+            .withTranslations(i18n("energy_balance_reset"))
+            .withCategory("config"),
+    energyReset: () =>
+        e
+            .enum("energy_reset", ea.STATE_SET, ["RESET"])
+            .withDescription("Set the energy measurements to zero")
+            .withTranslations(i18n("energy_reset"))
+            .withCategory("config"),
     leakageCurrentAndTemperatureAlarm: () =>
         e
             .composite("alarm_set_1", "alarm_set_1", ea.STATE_SET)
             .withDescription("Leakage current and temperature alarms configuration")
+            .withTranslations(i18n("alarm_set_1"))
             .withFeature(
                 e
                     .binary("leakage_current_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Automatically switch OFF the circuit when the leakage current is above the limit (Default ON)"),
+                    .withDescription("Automatically switch OFF the circuit when the leakage current is above the limit (Default ON)")
+                    .withTranslations(i18n("leakage_current_alarm")),
             )
             .withFeature(
                 e
@@ -1005,12 +1205,14 @@ const tuyaExposes = {
                     .withValueMin(1)
                     .withValueMax(99)
                     .withValueStep(1)
-                    .withDescription("Leakage current limit (Default 50mA)"),
+                    .withDescription("Leakage current limit (Default 50mA)")
+                    .withTranslations(i18n("leakage_current_threshold")),
             )
             .withFeature(
                 e
                     .binary("device_temperature_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Automatically switch OFF the circuit when the measured temperature exceeds the limit (Default ON)"),
+                    .withDescription("Automatically switch OFF the circuit when the measured temperature exceeds the limit (Default ON)")
+                    .withTranslations(i18n("device_temperature_alarm")),
             )
             .withFeature(
                 e
@@ -1019,23 +1221,59 @@ const tuyaExposes = {
                     .withValueMin(10)
                     .withValueMax(85)
                     .withValueStep(1)
-                    .withDescription("Temperature limit (Default 80°C)"),
+                    .withDescription("Temperature limit (Default 80°C)")
+                    .withTranslations(i18n("device_temperature_threshold")),
             )
             .withCategory("config"),
     rs485ConfigAndHighPowerAlarm: () =>
         e
             .composite("alarm_set_1", "alarm_set_1", ea.STATE_SET)
             .withDescription("Configuration for RS485 wired communication (if supported by device) and high power alarm")
-            .withFeature(e.binary("rs485_baud_rate_enabled", ea.STATE_SET, "ON", "OFF").withLabel("RS485 baud rate"))
-            .withFeature(e.enum("rs485_baud_rate", ea.STATE_SET, [2400, 4800, 9600, 19200, 38400]).withLabel("RS485 baud rate"))
-            .withFeature(e.binary("rs485_address_enabled", ea.STATE_SET, "ON", "OFF").withLabel("RS485 address"))
-            .withFeature(e.numeric("rs485_address", ea.STATE_SET).withValueMin(1).withValueMax(100).withValueStep(1).withLabel("RS485 address"))
-            .withFeature(e.binary("rs485_data_format_enabled", ea.STATE_SET, "ON", "OFF").withLabel("RS485 data format"))
-            .withFeature(e.enum("rs485_data_format", ea.STATE_SET, ["N81", "E81", "O81", "N82"]).withLabel("RS485 data format"))
+            .withTranslations(i18n("alarm_set_1"))
+            .withFeature(
+                e
+                    .binary("rs485_baud_rate_enabled", ea.STATE_SET, "ON", "OFF")
+                    .withLabel("RS485 baud rate")
+                    .withTranslations(i18n("rs485_baud_rate_enabled")),
+            )
+            .withFeature(
+                e
+                    .enum("rs485_baud_rate", ea.STATE_SET, [2400, 4800, 9600, 19200, 38400])
+                    .withLabel("RS485 baud rate")
+                    .withTranslations(i18n("rs485_baud_rate")),
+            )
+            .withFeature(
+                e
+                    .binary("rs485_address_enabled", ea.STATE_SET, "ON", "OFF")
+                    .withLabel("RS485 address")
+                    .withTranslations(i18n("rs485_address_enabled")),
+            )
+            .withFeature(
+                e
+                    .numeric("rs485_address", ea.STATE_SET)
+                    .withValueMin(1)
+                    .withValueMax(100)
+                    .withValueStep(1)
+                    .withLabel("RS485 address")
+                    .withTranslations(i18n("rs485_address")),
+            )
+            .withFeature(
+                e
+                    .binary("rs485_data_format_enabled", ea.STATE_SET, "ON", "OFF")
+                    .withLabel("RS485 data format")
+                    .withTranslations(i18n("rs485_data_format_enabled")),
+            )
+            .withFeature(
+                e
+                    .enum("rs485_data_format", ea.STATE_SET, ["N81", "E81", "O81", "N82"])
+                    .withLabel("RS485 data format")
+                    .withTranslations(i18n("rs485_data_format")),
+            )
             .withFeature(
                 e
                     .binary("high_power_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Trigger alarm when power draw exceeds the limit (Default OFF)"),
+                    .withDescription("Trigger alarm when power draw exceeds the limit (Default OFF)")
+                    .withTranslations(i18n("high_power_alarm")),
             )
             .withFeature(
                 e
@@ -1044,17 +1282,20 @@ const tuyaExposes = {
                     .withValueMax(65535)
                     .withValueStep(1)
                     .withUnit("kW")
-                    .withDescription("Power limit (Default 25 kW)"),
+                    .withDescription("Power limit (Default 25 kW)")
+                    .withTranslations(i18n("high_power_threshold")),
             )
             .withCategory("config"),
     currentAndVoltageAlarm: () =>
         e
             .composite("alarm_set_2", "alarm_set_2", ea.STATE_SET)
             .withDescription("Current and voltage alarms configuration")
+            .withTranslations(i18n("alarm_set_2"))
             .withFeature(
                 e
                     .binary("over_current_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Automatically switch OFF the circuit when the circuit draws more current than the limit (Default ON)"),
+                    .withDescription("Automatically switch OFF the circuit when the circuit draws more current than the limit (Default ON)")
+                    .withTranslations(i18n("over_current_alarm")),
             )
             .withFeature(
                 e
@@ -1063,12 +1304,14 @@ const tuyaExposes = {
                     .withValueMin(1.0)
                     .withValueMax(80.0)
                     .withValueStep(0.1)
-                    .withDescription("Current upper limit (Default 63A)"),
+                    .withDescription("Current upper limit (Default 63A)")
+                    .withTranslations(i18n("over_current_threshold")),
             )
             .withFeature(
                 e
                     .binary("over_voltage_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Automatically switch OFF the circuit when the voltage is above the limit (Default ON)"),
+                    .withDescription("Automatically switch OFF the circuit when the voltage is above the limit (Default ON)")
+                    .withTranslations(i18n("over_voltage_alarm")),
             )
             .withFeature(
                 e
@@ -1077,12 +1320,14 @@ const tuyaExposes = {
                     .withValueMin(120)
                     .withValueMax(300)
                     .withValueStep(1)
-                    .withDescription("Voltage upper limit (Default 275V)"),
+                    .withDescription("Voltage upper limit (Default 275V)")
+                    .withTranslations(i18n("over_voltage_threshold")),
             )
             .withFeature(
                 e
                     .binary("under_voltage_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Automatically switch OFF the circuit when the voltage is below the limit (Default ON)"),
+                    .withDescription("Automatically switch OFF the circuit when the voltage is below the limit (Default ON)")
+                    .withTranslations(i18n("under_voltage_alarm")),
             )
             .withFeature(
                 e
@@ -1091,17 +1336,20 @@ const tuyaExposes = {
                     .withValueMin(80)
                     .withValueMax(210)
                     .withValueStep(1)
-                    .withDescription("Voltage lower limit (Default 175V)"),
+                    .withDescription("Voltage lower limit (Default 175V)")
+                    .withTranslations(i18n("under_voltage_threshold")),
             )
             .withCategory("config"),
     alarmSet2: () =>
         e
             .composite("alarm_set_2", "alarm_set_2", ea.STATE_SET)
             .withDescription("Configuration for alarms and reporting frequency")
+            .withTranslations(i18n("alarm_set_2"))
             .withFeature(
                 e
                     .binary("over_current_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Trigger alarm when current is higher than the limit (Default OFF)"),
+                    .withDescription("Trigger alarm when current is higher than the limit (Default OFF)")
+                    .withTranslations(i18n("over_current_alarm")),
             )
             .withFeature(
                 e
@@ -1110,12 +1358,14 @@ const tuyaExposes = {
                     .withValueMin(0)
                     .withValueMax(65535)
                     .withValueStep(1)
-                    .withDescription("Current upper limit (Default 100A)"),
+                    .withDescription("Current upper limit (Default 100A)")
+                    .withTranslations(i18n("over_current_threshold")),
             )
             .withFeature(
                 e
                     .binary("over_voltage_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Trigger alarm when the voltage is above the limit (Default ON)"),
+                    .withDescription("Trigger alarm when the voltage is above the limit (Default ON)")
+                    .withTranslations(i18n("over_voltage_alarm")),
             )
             .withFeature(
                 e
@@ -1124,12 +1374,14 @@ const tuyaExposes = {
                     .withValueMin(0)
                     .withValueMax(65535)
                     .withValueStep(1)
-                    .withDescription("Voltage upper limit (Default 253V)"),
+                    .withDescription("Voltage upper limit (Default 253V)")
+                    .withTranslations(i18n("over_voltage_threshold")),
             )
             .withFeature(
                 e
                     .binary("under_voltage_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Trigger alarm when the voltage is below the limit (Default OFF)"),
+                    .withDescription("Trigger alarm when the voltage is below the limit (Default OFF)")
+                    .withTranslations(i18n("under_voltage_alarm")),
             )
             .withFeature(
                 e
@@ -1138,12 +1390,14 @@ const tuyaExposes = {
                     .withValueMin(0)
                     .withValueMax(65535)
                     .withValueStep(1)
-                    .withDescription("Voltage lower limit (Default 180V)"),
+                    .withDescription("Voltage lower limit (Default 180V)")
+                    .withTranslations(i18n("under_voltage_threshold")),
             )
             .withFeature(
                 e
                     .binary("unbalanced_load_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Trigger alarm when power factor is below the limit (Default 15%)"),
+                    .withDescription("Trigger alarm when power factor is below the limit (Default 15%)")
+                    .withTranslations(i18n("unbalanced_load_alarm")),
             )
             .withFeature(
                 e
@@ -1152,15 +1406,20 @@ const tuyaExposes = {
                     .withValueMin(0)
                     .withValueMax(100)
                     .withValueStep(1)
-                    .withDescription("Power factor lower limit (Default 15%)"),
+                    .withDescription("Power factor lower limit (Default 15%)")
+                    .withTranslations(i18n("unbalanced_load_threshold")),
             )
             .withFeature(
-                e.binary("phase_loss_alarm", ea.STATE_SET, "ON", "OFF").withDescription("Trigger alarm when one phase is unavailable (Default OFF)"),
+                e
+                    .binary("phase_loss_alarm", ea.STATE_SET, "ON", "OFF")
+                    .withDescription("Trigger alarm when one phase is unavailable (Default OFF)")
+                    .withTranslations(i18n("phase_loss_alarm")),
             )
             .withFeature(
                 e
                     .binary("negative_active_power_alarm", ea.STATE_SET, "ON", "OFF")
-                    .withDescription("Trigger alarm when the active power is negative (Default ON)"),
+                    .withDescription("Trigger alarm when the active power is negative (Default ON)")
+                    .withTranslations(i18n("negative_active_power_alarm")),
             )
             .withFeature(e.binary("custom_data_reporting_interval", ea.STATE_SET, "ON", "OFF"))
             .withFeature(
@@ -1170,7 +1429,8 @@ const tuyaExposes = {
                     .withValueMin(5)
                     .withValueMax(600)
                     .withValueStep(0.5)
-                    .withDescription("How often the device should report measurements (Default 5s)"),
+                    .withDescription("How often the device should report measurements (Default 5s)")
+                    .withTranslations(i18n("data_reporting_interval")),
             )
             .withCategory("config"),
     overCurrentThresholdTime: () =>
@@ -1181,12 +1441,14 @@ const tuyaExposes = {
             .withValueMax(999)
             .withValueStep(1)
             .withDescription("Time overcurrent is allowed before the circuit is switched OFF (Default 0s)")
+            .withTranslations(i18n("over_current_threshold_time"))
             .withCategory("config"),
     lostFlowAlarm: () =>
         e
             .composite("alarm_set_3", "alarm_set_3", ea.STATE_SET)
             .withDescription("Lost flow alarm configuration")
-            .withFeature(e.binary("lost_flow_alarm", ea.STATE_SET, "ON", "OFF").withDescription("Unknown"))
+            .withTranslations(i18n("alarm_set_3"))
+            .withFeature(e.binary("lost_flow_alarm", ea.STATE_SET, "ON", "OFF").withDescription("Unknown").withTranslations(i18n("lost_flow_alarm")))
             .withFeature(
                 e
                     .numeric("lost_flow_threshold", ea.STATE_SET)
@@ -1194,7 +1456,8 @@ const tuyaExposes = {
                     .withValueMin(1.0)
                     .withValueMax(100.0)
                     .withValueStep(0.1)
-                    .withDescription("Unknown"),
+                    .withDescription("Unknown")
+                    .withTranslations(i18n("lost_flow_threshold")),
             )
             .withCategory("config"),
     lostFlowThresholdTime: () =>
@@ -1205,14 +1468,21 @@ const tuyaExposes = {
             .withValueMax(999)
             .withValueStep(1)
             .withDescription("Unknown (Default 0s)")
+            .withTranslations(i18n("lost_flow_threshold_time"))
             .withCategory("config"),
-    liquidLevelPercent: () => e.numeric("liquid_level_percent", ea.STATE).withUnit("%").withDescription("Liquid level ratio"),
-    liquidDepth: () => e.numeric("liquid_depth", ea.STATE).withUnit("m").withDescription("Liquid depth"),
+    liquidLevelPercent: () =>
+        e
+            .numeric("liquid_level_percent", ea.STATE)
+            .withUnit("%")
+            .withDescription("Liquid level ratio")
+            .withTranslations(i18n("liquid_level_percent")),
+    liquidDepth: () => e.numeric("liquid_depth", ea.STATE).withUnit("m").withDescription("Liquid depth").withTranslations(i18n("liquid_depth")),
     liquidDepthMax: () =>
         e
             .numeric("liquid_depth_max", ea.STATE_SET)
             .withUnit("m")
             .withDescription("Distance from sensor to liquid surface")
+            .withTranslations(i18n("liquid_depth_max"))
             .withValueMin(0.1)
             .withValueMax(5)
             .withValueStep(0.01)
@@ -1222,6 +1492,7 @@ const tuyaExposes = {
             .numeric("installation_height", ea.STATE_SET)
             .withUnit("m")
             .withDescription("Distance from sensor to bottom of the tank")
+            .withTranslations(i18n("installation_height"))
             .withValueMin(0.1)
             .withValueMax(5)
             .withValueStep(0.01)
@@ -1231,6 +1502,7 @@ const tuyaExposes = {
             .numeric("min_set", ea.STATE_SET)
             .withUnit("%")
             .withDescription("Liquid minimum percentage")
+            .withTranslations(i18n("min_set"))
             .withValueMin(0)
             .withValueMax(100)
             .withValueStep(1)
@@ -1240,12 +1512,20 @@ const tuyaExposes = {
             .numeric("max_set", ea.STATE_SET)
             .withUnit("%")
             .withDescription("Liquid maximum percentage")
+            .withTranslations(i18n("max_set"))
             .withValueMin(0)
             .withValueMax(100)
             .withValueStep(1)
             .withCategory("config"),
-    liquidState: () => e.enum("liquid_state", ea.STATE, ["low", "normal", "high"]).withDescription("Liquid level status"),
-    powerSupplyVoltage: () => e.numeric("voltage", ea.STATE).withUnit("V").withDescription("Power supply voltage").withCategory("diagnostic"),
+    liquidState: () =>
+        e.enum("liquid_state", ea.STATE, ["low", "normal", "high"]).withDescription("Liquid level status").withTranslations(i18n("liquid_state")),
+    powerSupplyVoltage: () =>
+        e
+            .numeric("voltage", ea.STATE)
+            .withUnit("V")
+            .withDescription("Power supply voltage")
+            .withTranslations(i18n("voltage"))
+            .withCategory("diagnostic"),
     relaySwitch: () => e.binary("relay_switch", ea.STATE_SET, "ON", "OFF").withCategory("config"),
     pumpMode: () => e.enum("pump_mode", ea.STATE_SET, ["supply", "drainage"]).withCategory("config"),
     autoPumpControl: () => e.enum("pump_control", ea.STATE_SET, ["auto", "manual"]).withCategory("config"),
@@ -1257,16 +1537,31 @@ const tuyaExposes = {
         e
             .enum("motor_state", ea.STATE, ["opening", "closing", "stopped"])
             .withDescription("Current motor movement status")
+            .withTranslations(i18n("motor_state"))
             .withCategory("diagnostic"),
     motorDirection: () =>
-        e.enum("motor_direction", ea.STATE_SET, ["normal", "reversed"]).withDescription("Motor rotation direction").withCategory("config"),
-    motorDirectionSide: () => e.enum("motor_direction", ea.STATE_SET, ["left", "right"]).withDescription("Motor side").withCategory("config"),
+        e
+            .enum("motor_direction", ea.STATE_SET, ["normal", "reversed"])
+            .withDescription("Motor rotation direction")
+            .withTranslations(i18n("motor_direction"))
+            .withCategory("config"),
+    motorDirectionSide: () =>
+        e
+            .enum("motor_direction", ea.STATE_SET, ["left", "right"])
+            .withDescription("Motor side")
+            .withTranslations(i18n("motor_direction"))
+            .withCategory("config"),
     slowMode: () =>
-        e.binary("slow_mode", ea.STATE_SET, "ON", "OFF").withDescription("Operate the motor slower and quieter than normal").withCategory("config"),
+        e
+            .binary("slow_mode", ea.STATE_SET, "ON", "OFF")
+            .withDescription("Operate the motor slower and quieter than normal")
+            .withTranslations(i18n("slow_mode"))
+            .withCategory("config"),
     coverType: () =>
         e
             .enum("cover_type", ea.STATE_SET, ["roman_pole", "roller_blind", "canopy_curtain", "roman_blind", "honeycomb_curtain"])
             .withDescription("Type of window covers installed")
+            .withTranslations(i18n("cover_type"))
             .withCategory("config"),
     favoritePosition: () =>
         e
@@ -1276,13 +1571,15 @@ const tuyaExposes = {
             .withValueMax(100)
             .withValueStep(1)
             .withDescription("Store the preferred cover position")
+            .withTranslations(i18n("favorite_position"))
             .withCategory("config"),
     coverLimit: () =>
         e
             .enum("cover_limit", ea.STATE_SET, ["set_up", "set_down", "delete_up", "delete_down", "delete_both"])
             .withDescription("Set current position as the limit position")
+            .withTranslations(i18n("cover_limit"))
             .withCategory("config"),
-    clickControl: () => e.enum("click_control", ea.STATE_SET, ["up", "down"]).withDescription("Step control"),
+    clickControl: () => e.enum("click_control", ea.STATE_SET, ["up", "down"]).withDescription("Step control").withTranslations(i18n("click_control")),
 };
 
 export {tuyaExposes as exposes};
@@ -1293,7 +1590,8 @@ const tuyaOptions = {
             .enum("time_start", ea.SET, ["1970", "2000", "off"])
             .withDescription(
                 `Reply to Tuya-specific time synchronization requests: "1970" - Reply with seconds since 1970/01/01 (recommended, should stop the device from asking), "2000" - Reply with seconds since 2000/01/01 (use if the weekday is wrong with 1970), "off" - Don't reply (use if replying causes too much traffic). Default for this device: "${defaultOption}"`,
-            ),
+            )
+            .withTranslations(i18n("time_start")),
 };
 
 export {tuyaOptions as options};
@@ -4384,8 +4682,14 @@ const tuyaModernExtend = {
         const exp = e
             .composite("auto_settings", "auto_settings", ea.STATE_SET)
             .withDescription("Automatically switch ON/OFF, make sure manual mode is turned OFF otherwise auto settings are not applied.")
-            .withFeature(e.binary("enabled", ea.STATE_SET, true, false).withDescription("Enable auto settings"))
-            .withFeature(e.enum("temp_greater_then", ea.STATE_SET, ["ON", "OFF"]).withDescription("Greater action"))
+            .withTranslations(i18n("auto_settings"))
+            .withFeature(e.binary("enabled", ea.STATE_SET, true, false).withDescription("Enable auto settings").withTranslations(i18n("enabled")))
+            .withFeature(
+                e
+                    .enum("temp_greater_then", ea.STATE_SET, ["ON", "OFF"])
+                    .withDescription("Greater action")
+                    .withTranslations(i18n("temp_greater_then")),
+            )
             .withFeature(
                 e
                     .numeric("temp_greater_value", ea.STATE_SET)
@@ -4393,9 +4697,12 @@ const tuyaModernExtend = {
                     .withValueMax(80)
                     .withValueStep(0.1)
                     .withUnit("°C")
-                    .withDescription("Temperature greater than value"),
+                    .withDescription("Temperature greater than value")
+                    .withTranslations(i18n("temp_greater_value")),
             )
-            .withFeature(e.enum("temp_lower_then", ea.STATE_SET, ["ON", "OFF"]).withDescription("Lower action"))
+            .withFeature(
+                e.enum("temp_lower_then", ea.STATE_SET, ["ON", "OFF"]).withDescription("Lower action").withTranslations(i18n("temp_lower_then")),
+            )
             .withFeature(
                 e
                     .numeric("temp_lower_value", ea.STATE_SET)
@@ -4403,7 +4710,8 @@ const tuyaModernExtend = {
                     .withValueMax(80)
                     .withValueStep(0.1)
                     .withUnit("°C")
-                    .withDescription("Temperature lower than value"),
+                    .withDescription("Temperature lower than value")
+                    .withTranslations(i18n("temp_lower_value")),
             );
 
         const handlers = getHandlersForDP("auto_settings", 0x77, dataTypes.string, {
@@ -4621,7 +4929,9 @@ const tuyaModernExtend = {
         if (expose) {
             exp = expose;
         } else {
-            exp = new exposes.Enum(name, readOnly ? ea.STATE : ea.STATE_SET, Object.keys(lookup)).withDescription(description);
+            exp = new exposes.Enum(name, readOnly ? ea.STATE : ea.STATE_SET, Object.keys(lookup))
+                .withDescription(description)
+                .withTranslations(i18n(name));
         }
         if (endpoint) exp = exp.withEndpoint(endpoint);
 
@@ -4646,7 +4956,10 @@ const tuyaModernExtend = {
         if (expose) {
             exp = expose;
         } else {
-            exp = e.binary(name, readOnly ? ea.STATE : ea.STATE_SET, valueOn[0], valueOff[0]).withDescription(description);
+            exp = e
+                .binary(name, readOnly ? ea.STATE : ea.STATE_SET, valueOn[0], valueOff[0])
+                .withDescription(description)
+                .withTranslations(i18n(name));
         }
         if (endpoint) exp = exp.withEndpoint(endpoint);
 
@@ -4671,7 +4984,10 @@ const tuyaModernExtend = {
         if (expose) {
             exp = expose;
         } else {
-            exp = e.numeric(name, readOnly ? ea.STATE : ea.STATE_SET).withDescription(description);
+            exp = e
+                .numeric(name, readOnly ? ea.STATE : ea.STATE_SET)
+                .withDescription(description)
+                .withTranslations(i18n(name));
         }
         if (endpoint) exp = exp.withEndpoint(endpoint);
         if (unit) exp = exp.withUnit(unit);
@@ -5150,7 +5466,7 @@ const tuyaModernExtend = {
         }
 
         // create single enum-expose
-        const exp = new exposes.Enum("action", ea.STATE, newValues).withDescription(description);
+        const exp = new exposes.Enum("action", ea.STATE, newValues).withDescription(description).withTranslations(i18n("action"));
 
         return {exposes: [exp], fromZigbee: newFromZigbee, isModernExtend: true};
     },

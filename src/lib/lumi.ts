@@ -6,6 +6,7 @@ import * as exposes from "./exposes";
 import {logger} from "./logger";
 import * as modernExtend from "./modernExtend";
 import * as globalStore from "./store";
+import {i18n} from "./translations";
 import type {
     BatteryLinearVoltage,
     BatteryNonLinearVoltage,
@@ -2268,7 +2269,8 @@ export const lumiModernExtend = {
                     .withDescription("Array of RGB color objects for dynamic effects (1-8 colors).")
                     .withLengthMin(1)
                     .withLengthMax(8)
-                    .withCategory("config"),
+                    .withCategory("config")
+                    .withTranslations(i18n("effect_colors")),
             ],
         };
     },
@@ -2303,7 +2305,8 @@ export const lumiModernExtend = {
                 exposes
                     .enum("effect", ea.SET, ["flow1", "flow2", "fading", "hopping", "breathing", "rolling"])
                     .withDescription("RGB dynamic effect type")
-                    .withCategory("config"),
+                    .withCategory("config")
+                    .withTranslations(i18n("effect")),
             ],
         };
     },
@@ -2402,7 +2405,8 @@ export const lumiModernExtend = {
                             ),
                     )
                     .withDescription("Set individual segment colors.")
-                    .withCategory("config"),
+                    .withCategory("config")
+                    .withTranslations(i18n("segment_colors")),
             ],
         };
     },
@@ -2442,7 +2446,8 @@ export const lumiModernExtend = {
                             "'odd/even/first-half/last-half/first-third/middle-third/last-third' (patterns). " +
                             "Empty = all segments. Each meter = 5 segments (20cm each).",
                     )
-                    .withCategory("config"),
+                    .withCategory("config")
+                    .withTranslations(i18n("effect_segments")),
             ],
         };
     },
@@ -2945,8 +2950,14 @@ export const lumiModernExtend = {
         return {
             isModernExtend: true,
             exposes: [
-                e.text("schedule_start_time", ea.ALL).withDescription("LED disable schedule start time (HH:MM format)"),
-                e.text("schedule_end_time", ea.ALL).withDescription("LED disable schedule end time (HH:MM format)"),
+                e
+                    .text("schedule_start_time", ea.ALL)
+                    .withDescription("LED disable schedule start time (HH:MM format)")
+                    .withTranslations(i18n("schedule_start_time")),
+                e
+                    .text("schedule_end_time", ea.ALL)
+                    .withDescription("LED disable schedule end time (HH:MM format)")
+                    .withTranslations(i18n("schedule_end_time")),
             ],
             fromZigbee: [
                 {
@@ -3260,18 +3271,44 @@ export const lumiModernExtend = {
         const withButtonState = args?.withButtonState || true;
         const exposes: Expose[] = [
             e.action(["start_rotating", "rotation", "stop_rotating"]),
-            e.numeric("action_rotation_angle", ea.STATE).withUnit("*").withDescription("Rotation angle").withCategory("diagnostic"),
-            e.numeric("action_rotation_angle_speed", ea.STATE).withUnit("*").withDescription("Rotation angle speed").withCategory("diagnostic"),
-            e.numeric("action_rotation_percent", ea.STATE).withUnit("%").withDescription("Rotation percent").withCategory("diagnostic"),
-            e.numeric("action_rotation_percent_speed", ea.STATE).withUnit("%").withDescription("Rotation percent speed").withCategory("diagnostic"),
-            e.numeric("action_rotation_time", ea.STATE).withUnit("ms").withDescription("Rotation time").withCategory("diagnostic"),
+            e
+                .numeric("action_rotation_angle", ea.STATE)
+                .withUnit("*")
+                .withDescription("Rotation angle")
+                .withCategory("diagnostic")
+                .withTranslations(i18n("action_rotation_angle")),
+            e
+                .numeric("action_rotation_angle_speed", ea.STATE)
+                .withUnit("*")
+                .withDescription("Rotation angle speed")
+                .withCategory("diagnostic")
+                .withTranslations(i18n("action_rotation_angle_speed")),
+            e
+                .numeric("action_rotation_percent", ea.STATE)
+                .withUnit("%")
+                .withDescription("Rotation percent")
+                .withCategory("diagnostic")
+                .withTranslations(i18n("action_rotation_percent")),
+            e
+                .numeric("action_rotation_percent_speed", ea.STATE)
+                .withUnit("%")
+                .withDescription("Rotation percent speed")
+                .withCategory("diagnostic")
+                .withTranslations(i18n("action_rotation_percent_speed")),
+            e
+                .numeric("action_rotation_time", ea.STATE)
+                .withUnit("ms")
+                .withDescription("Rotation time")
+                .withCategory("diagnostic")
+                .withTranslations(i18n("action_rotation_time")),
         ];
         if (withButtonState) {
             exposes.push(
                 e
                     .enum("action_rotation_button_state", ea.STATE, ["released", "pressed"])
                     .withDescription("Button state during rotation")
-                    .withCategory("diagnostic"),
+                    .withCategory("diagnostic")
+                    .withTranslations(i18n("action_rotation_button_state")),
             );
         }
 
@@ -3304,7 +3341,8 @@ export const lumiModernExtend = {
         const exposes: Expose[] = [
             e
                 .enum("operation_mode", ea.ALL, ["event", "command"])
-                .withDescription("Command mode is useful for binding. Event mode is useful for processing."),
+                .withDescription("Command mode is useful for binding. Event mode is useful for processing.")
+                .withTranslations(i18n("operation_mode")),
         ];
 
         const toZigbee: Tz.Converter[] = [
@@ -3433,7 +3471,8 @@ export const lumiModernExtend = {
 
         let detectionRangeComposite = e
             .composite("detection_range_composite", "detection_range_composite", ea.ALL)
-            .withDescription("Specifies the detection range using set of boolean settings.");
+            .withDescription("Specifies the detection range using set of boolean settings.")
+            .withTranslations(i18n("detection_range_composite"));
         for (let i = 0; i < args.rangesCount; ++i) {
             detectionRangeComposite = detectionRangeComposite.withFeature(
                 e
@@ -3452,7 +3491,8 @@ export const lumiModernExtend = {
                     .withValueStep(1)
                     .withDescription(
                         "Specifies the range that is being detected. Requires mmWave radar mode. Press the on-device button to wake the device up and refresh its' settings.",
-                    ),
+                    )
+                    .withTranslations(i18n("detection_range")),
                 detectionRangeComposite,
             ],
             fromZigbee: [
@@ -3546,7 +3586,10 @@ export const lumiModernExtend = {
         return {
             isModernExtend: true,
             exposes: [
-                e.enum("track_target_distance", ea.SET, ["start_tracking_distance"]).withDescription("Initiate current target distance tracking."),
+                e
+                    .enum("track_target_distance", ea.SET, ["start_tracking_distance"])
+                    .withDescription("Initiate current target distance tracking.")
+                    .withTranslations(i18n("track_target_distance")),
             ],
             toZigbee: [
                 {
@@ -3640,7 +3683,12 @@ export const lumiModernExtend = {
     fp1eSpatialLearning: () => {
         return {
             isModernExtend: true,
-            exposes: [e.enum("spatial_learning", ea.SET, ["Start Learning"]).withDescription("Initiate AI Spatial Learning.")],
+            exposes: [
+                e
+                    .enum("spatial_learning", ea.SET, ["Start Learning"])
+                    .withDescription("Initiate AI Spatial Learning.")
+                    .withTranslations(i18n("spatial_learning")),
+            ],
             toZigbee: [
                 {
                     key: ["spatial_learning"],
@@ -3658,7 +3706,9 @@ export const lumiModernExtend = {
     fp1eRestartDevice: () => {
         return {
             isModernExtend: true,
-            exposes: [e.enum("restart_device", ea.SET, ["Restart Device"]).withDescription("Restarts the device.")],
+            exposes: [
+                e.enum("restart_device", ea.SET, ["Restart Device"]).withDescription("Restarts the device.").withTranslations(i18n("restart_device")),
+            ],
             toZigbee: [
                 {
                     key: ["restart_device"],
@@ -3714,7 +3764,8 @@ export const lumiModernExtend = {
                 e
                     .enum("sensor", ea.ALL, ["internal", "external"])
                     .withDescription("Select mode to display sensor: internal or both with external")
-                    .withCategory("config"),
+                    .withCategory("config")
+                    .withTranslations(i18n("sensor")),
                 e
                     .numeric("external_temperature", ea.STATE_SET)
                     .withUnit("°C")
@@ -3722,14 +3773,16 @@ export const lumiModernExtend = {
                     .withValueMax(100)
                     .withValueStep(0.1)
                     .withDescription("Value for external temperature sensor")
-                    .withCategory("config"),
+                    .withCategory("config")
+                    .withTranslations(i18n("external_temperature")),
                 e
                     .numeric("external_humidity", ea.STATE_SET)
                     .withUnit("%")
                     .withValueMin(0)
                     .withValueMax(100)
                     .withDescription("Value for external humidity sensor")
-                    .withCategory("config"),
+                    .withCategory("config")
+                    .withTranslations(i18n("external_humidity")),
             ],
             toZigbee: [
                 {
@@ -4370,17 +4423,38 @@ function createLumiBathroomHeaterT1(): ModernExtend {
                 .withRunningState(["idle", "heat", "fan_only"], ea.STATE)
                 .withFanMode(["low", "medium", "high"], ea.ALL)
                 .withSwingMode(["off", "on"], ea.ALL)
-                .withDescription("Aqara bathroom heater climate controls"),
-            e.binary("heater_power", ea.STATE_GET, true, false).withDescription("Bathroom heater power"),
-            e.enum("operating_mode", ea.ALL, ["off", ...Object.keys(YUBA_MODE_LOOKUP)]).withDescription("Bathroom heater operating mode"),
-            e.binary("night_light_mode", ea.ALL, "ON", "OFF").withDescription("Enable scheduled night-light mode").withCategory("config"),
-            e.binary("mute_prompt_tone", ea.ALL, "ON", "OFF").withDescription("Mute device operation prompt tones").withCategory("config"),
-            e.text("mute_prompt_start_time", ea.ALL).withDescription("Prompt-tone mute start time in HH:MM format").withCategory("config"),
-            e.text("mute_prompt_end_time", ea.ALL).withDescription("Prompt-tone mute end time in HH:MM format").withCategory("config"),
+                .withDescription("Aqara bathroom heater climate controls")
+                .withTranslations(i18n("climate")),
+            e.binary("heater_power", ea.STATE_GET, true, false).withDescription("Bathroom heater power").withTranslations(i18n("heater_power")),
+            e
+                .enum("operating_mode", ea.ALL, ["off", ...Object.keys(YUBA_MODE_LOOKUP)])
+                .withDescription("Bathroom heater operating mode")
+                .withTranslations(i18n("operating_mode")),
+            e
+                .binary("night_light_mode", ea.ALL, "ON", "OFF")
+                .withDescription("Enable scheduled night-light mode")
+                .withCategory("config")
+                .withTranslations(i18n("night_light_mode")),
+            e
+                .binary("mute_prompt_tone", ea.ALL, "ON", "OFF")
+                .withDescription("Mute device operation prompt tones")
+                .withCategory("config")
+                .withTranslations(i18n("mute_prompt_tone")),
+            e
+                .text("mute_prompt_start_time", ea.ALL)
+                .withDescription("Prompt-tone mute start time in HH:MM format")
+                .withCategory("config")
+                .withTranslations(i18n("mute_prompt_start_time")),
+            e
+                .text("mute_prompt_end_time", ea.ALL)
+                .withDescription("Prompt-tone mute end time in HH:MM format")
+                .withCategory("config")
+                .withTranslations(i18n("mute_prompt_end_time")),
             e
                 .binary("constant_temperature_mode", ea.ALL, "ON", "OFF")
                 .withDescription("Automatically regulate warm-air speed at the target temperature")
-                .withCategory("config"),
+                .withCategory("config")
+                .withTranslations(i18n("constant_temperature_mode")),
         ],
         configure: [
             async (device) => {
@@ -4887,9 +4961,15 @@ function buildW600ExternalTemperaturePayload(entity: Zh.Endpoint, centiDegrees: 
 function createW600Heartbeat(): ModernExtend {
     return {
         exposes: [
-            e.battery().withDescription("Battery percentage"),
-            e.valve_alarm().withDescription("Indicates whether temperature control abnormal notification has reported an active alert"),
-            e.binary("window_open", ea.STATE, true, false).withDescription("Indicates whether open window detection has reported an open window"),
+            e.battery().withDescription("Battery percentage").withTranslations(i18n("battery")),
+            e
+                .valve_alarm()
+                .withDescription("Indicates whether temperature control abnormal notification has reported an active alert")
+                .withTranslations(i18n("valve_alarm")),
+            e
+                .binary("window_open", ea.STATE, true, false)
+                .withDescription("Indicates whether open window detection has reported an open window")
+                .withTranslations(i18n("window_open")),
         ],
         fromZigbee: [
             {
@@ -5520,14 +5600,16 @@ function createW600ExternalTempSensor(): ModernExtend {
                 .temperature_sensor_select(["internal", "external"])
                 .withAccess(ea.ALL)
                 .withLabel("Temperature source")
-                .withDescription("Choose whether the thermostat uses its internal sensor or data provided via 'External Sensor Temperature'"),
+                .withDescription("Choose whether the thermostat uses its internal sensor or data provided via 'External Sensor Temperature'")
+                .withTranslations(i18n("temperature_sensor_select")),
             e
                 .external_temperature_input()
                 .withValueMin(-40)
                 .withValueMax(125)
                 .withValueStep(0.01)
                 .withDescription("Manual external temperature forwarded to the W600 when temperature source is external")
-                .withCategory("config"),
+                .withCategory("config")
+                .withTranslations(i18n("external_temperature_input")),
         ],
         fromZigbee: [
             {
@@ -5656,15 +5738,21 @@ function createW600Thermostat(): ModernExtend {
         ?.withLabel("Manual Override Duration")
         .withUnit("min")
         .withCategory("config")
-        .withDescription("Duration in minutes for the current manual override. 0 means until next schedule event, 65535 means indefinitely.");
+        .withDescription("Duration in minutes for the current manual override. 0 means until next schedule event, 65535 means indefinitely.")
+        .withTranslations(i18n("temperature_setpoint_hold_duration"));
     extend.exposes?.push(
-        e.binary("override_active", ea.STATE, true, false).withLabel("Manual Override").withDescription("Temporary manual override active"),
+        e
+            .binary("override_active", ea.STATE, true, false)
+            .withLabel("Manual Override")
+            .withDescription("Temporary manual override active")
+            .withTranslations(i18n("override_active")),
         e
             .numeric("local_temperature_internal", ea.STATE)
             .withUnit("°C")
             .withLabel("Internal sensor temperature")
             .withDescription("Temperature measured by the thermostat's internal sensor")
-            .withCategory("diagnostic"),
+            .withCategory("diagnostic")
+            .withTranslations(i18n("local_temperature_internal")),
     );
 
     const thermostatConverter = {
@@ -6064,23 +6152,31 @@ function createW600WeeklySchedule(): ModernExtend {
     return {
         exposes: [
             ...W600_WEEKLY_SCHEDULE_DAY_DEFINITIONS.map(({label, property}) =>
-                e.text(property, ea.STATE_SET).withLabel(`${label} schedule`).withDescription(dayDescription).withCategory("config"),
+                e
+                    .text(property, ea.STATE_SET)
+                    .withLabel(`${label} schedule`)
+                    .withDescription(dayDescription)
+                    .withCategory("config")
+                    .withTranslations(i18n(property)),
             ),
             e
                 .enum("schedule_upload_status", ea.STATE, [...W600_WEEKLY_SCHEDULE_UPLOAD_STATUSES])
                 .withLabel("Schedule upload status")
                 .withDescription(uploadStatusDescription)
-                .withCategory("diagnostic"),
+                .withCategory("diagnostic")
+                .withTranslations(i18n("schedule_upload_status")),
             e
                 .enum("save_schedule", ea.SET, ["trigger"])
                 .withLabel("Save schedule")
                 .withDescription("Upload the weekly schedule to the thermostat")
-                .withCategory("config"),
+                .withCategory("config")
+                .withTranslations(i18n("save_schedule")),
             e
                 .enum("clear_schedule", ea.SET, ["trigger"])
                 .withLabel("Clear schedule")
                 .withDescription("Clear all weekly schedule inputs and upload an empty schedule to the thermostat")
-                .withCategory("config"),
+                .withCategory("config")
+                .withTranslations(i18n("clear_schedule")),
         ],
         fromZigbee: [
             {
@@ -6342,7 +6438,8 @@ function createW600PresetTemperatureTable(): ModernExtend {
                 .withValueStep(0.5)
                 .withUnit("°C")
                 .withDescription(description)
-                .withCategory("config"),
+                .withCategory("config")
+                .withTranslations(i18n(property)),
         ),
         fromZigbee: [
             {
@@ -9479,7 +9576,10 @@ export const toZigbee = {
     lumi_curtain_limits_calibration_ZNCLDJ14LM: {
         key: ["limits_calibration"],
         options: [
-            e.enum("limits_calibration", ea.ALL, ["calibrated", "recalibrate", "open", "close"]).withDescription("Recalibrate the position limits"),
+            e
+                .enum("limits_calibration", ea.ALL, ["calibrated", "recalibrate", "open", "close"])
+                .withDescription("Recalibrate the position limits")
+                .withTranslations(i18n("limits_calibration")),
         ],
         convertSet: async (entity, key, value, meta) => {
             switch (value) {
