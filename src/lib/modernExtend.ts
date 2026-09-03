@@ -2856,6 +2856,7 @@ export interface EnumLookupArgs<Cl extends string | number, Custom extends TCust
     entityCategory?: "config" | "diagnostic";
     label?: string;
     fzConvert?: Fz.Converter<Cl, Custom, ["attributeReport", "readResponse"]>["convert"];
+    translations?: Translations;
 }
 export function enumLookup<Cl extends string | number, Custom extends TCustomCluster | undefined = undefined>(
     args: EnumLookupArgs<Cl, Custom>,
@@ -2945,6 +2946,7 @@ export interface NumericArgs<Cl extends string | number, Custom extends TCustomC
     entityCategory?: "config" | "diagnostic";
     precision?: number;
     fzConvert?: Fz.Converter<Cl, Custom, ["attributeReport", "readResponse"]>["convert"];
+    translations?: Translations;
 }
 export function numeric<Cl extends string | number, Custom extends TCustomCluster | undefined = undefined>(
     args: NumericArgs<Cl, Custom>,
@@ -3081,6 +3083,7 @@ export interface BinaryArgs<Cl extends string | number, Custom extends TCustomCl
     access?: "STATE" | "STATE_GET" | "STATE_SET" | "SET" | "ALL";
     label?: string;
     entityCategory?: "config" | "diagnostic";
+    translations?: Translations;
 }
 export function binary<Cl extends string | number, Custom extends TCustomCluster | undefined = undefined>(
     args: BinaryArgs<Cl, Custom>,

@@ -4,10 +4,58 @@ import type {ClusterCommandKeys, ClusterOrRawAttributeKeys, ClusterOrRawPayload,
 import {access as ea} from "../lib/exposes";
 import {logger} from "../lib/logger";
 import * as m from "../lib/modernExtend";
-import type {Configure, DefinitionWithExtend, ModernExtend, OnEvent, Tz} from "../lib/types";
+import {createI18n} from "../lib/translations";
+import type {Configure, DefinitionWithExtend, ModernExtend, OnEvent, Translations, Tz} from "../lib/types";
 import {determineEndpoint, getFromLookup, isString} from "../lib/utils";
 
 const NS = "zhc:yandex";
+
+const yandexTranslations: Translations = {
+    ru: {
+        exposes: {
+            power_type: {
+                label: "Тип питания",
+                description: "Тип питания устройства",
+                values: {full: "Полное", low: "Низкое", medium: "Среднее", high: "Высокое"},
+            },
+            switch_type: {
+                label: "Тип выключателя",
+                description: "Тип внешнего выключателя",
+                values: {rocker: "Клавишный", button: "Кнопочный", decoupled: "Раздельный"},
+            },
+            switch_mode: {
+                label: "Режим выключателя",
+                description: "Режим работы выключателя",
+                values: {control_relay: "Управление реле", decoupled: "Раздельный"},
+            },
+            led_indicator: {label: "Индикатор LED", description: "Индикатор LED"},
+            interlock: {label: "Блокировка", description: "Взаимная блокаировка реле"},
+            button_mode: {
+                label: "Режим кнопки",
+                description: "Режим работы кнопки диммера",
+                values: {on_off: "Вкл/Выкл", dimming: "Диммер", unknown: "Неизвестно"},
+            },
+            display_flip: {label: "Перевернуть дисплей", description: "Перевернуть ориентацию дисплея"},
+            child_lock: {label: "Защита от детей", description: "Блокировка физического ввода на устройстве"},
+            frost_protection: {label: "Защита от замерзания", description: "Включение/выключение функции антифриза"},
+            window_detection: {label: "Обнаружение окна", description: "Включение/выключение обнаружения открытого окна"},
+            scale_protection: {label: "Защита от накипи", description: "Включение/выключение защиты от накипи"},
+            auto_calibration: {label: "Автокалибровка", description: "Включение/выключение автоматической калибровки"},
+            calibrated: {label: "Калибровка", description: "Выключено, если необходима калибровка"},
+            velocity: {label: "Скорость", description: "Скорость движения", values: {slow: "Медленно", normal: "Нормально", fast: "Быстро"}},
+            max_position: {label: "Макс. позиция", description: "Максимальная позиция"},
+            min_position: {label: "Мин. позиция", description: "Минимальная позиция"},
+            sensitivity: {
+                label: "Чувствительность",
+                description: "Чувствительность датчика",
+                values: {low: "Низкая", medium: "Средняя", high: "Высокая"},
+            },
+            pressure: {label: "Давление", description: "Измеренное атмосферное давление"},
+        },
+    },
+};
+
+const yandexI18n = createI18n(yandexTranslations);
 const manufacturerCodeOld = 0x140a;
 const manufacturerCodeNew = 0x132f;
 interface Yandex {
@@ -266,6 +314,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00537",
         vendor: "Yandex",
         description: "Single relay",
+        translations: {
+            ru: {description: "Одинарное реле"},
+        },
         ota: true,
         extend: [
             reinterview(),
@@ -290,6 +341,7 @@ export const definitions: DefinitionWithExtend[] = [
                     high: 0x00,
                 },
                 entityCategory: "config",
+                translations: yandexI18n("power_type"),
             }),
             enumLookupWithSetCommand({
                 name: "switch_type",
@@ -305,6 +357,7 @@ export const definitions: DefinitionWithExtend[] = [
                     decoupled: 0x02,
                 },
                 entityCategory: "config",
+                translations: yandexI18n("switch_type"),
             }),
             m.commandsOnOff({endpointNames: [""]}),
         ],
@@ -314,6 +367,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00538",
         vendor: "Yandex",
         description: "Double relay",
+        translations: {
+            ru: {description: "Двойное реле"},
+        },
         ota: true,
         extend: [
             reinterview(),
@@ -338,6 +394,7 @@ export const definitions: DefinitionWithExtend[] = [
                     high: 0x00,
                 },
                 entityCategory: "config",
+                translations: yandexI18n("power_type"),
             }),
             binaryWithSetCommand<"manuSpecificYandex", Yandex>({
                 name: "interlock",
@@ -349,6 +406,7 @@ export const definitions: DefinitionWithExtend[] = [
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeOld},
                 description: "Interlock",
                 entityCategory: "config",
+                translations: yandexI18n("interlock"),
             }),
             enumLookupWithSetCommand({
                 name: "switch_type",
@@ -364,6 +422,7 @@ export const definitions: DefinitionWithExtend[] = [
                     decoupled: 0x02,
                 },
                 entityCategory: "config",
+                translations: yandexI18n("switch_type"),
             }),
             enumLookupWithSetCommand({
                 name: "switch_type",
@@ -379,6 +438,7 @@ export const definitions: DefinitionWithExtend[] = [
                     decoupled: 0x02,
                 },
                 entityCategory: "config",
+                translations: yandexI18n("switch_type"),
             }),
             m.commandsOnOff({endpointNames: ["b1", "b2"]}),
         ],
@@ -388,6 +448,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00534",
         vendor: "Yandex",
         description: "Single gang wireless switch",
+        translations: {
+            ru: {description: "Одноклавишный беспроводной выключатель"},
+        },
         ota: true,
         extend: [
             YandexCluster(manufacturerCodeOld),
@@ -403,6 +466,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00535",
         vendor: "Yandex",
         description: "Double gang wireless switch",
+        translations: {
+            ru: {description: "Двухклавишный беспроводной выключатель"},
+        },
         ota: true,
         extend: [
             YandexCluster(manufacturerCodeOld),
@@ -418,6 +484,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00531",
         vendor: "Yandex",
         description: "Single gang switch",
+        translations: {
+            ru: {description: "Одноклавишный выключатель"},
+        },
         ota: true,
         extend: [
             reinterview(),
@@ -442,6 +511,7 @@ export const definitions: DefinitionWithExtend[] = [
                     high: 0x00,
                 },
                 entityCategory: "config",
+                translations: yandexI18n("power_type"),
             }),
             m.commandsOnOff({endpointNames: ["up", "down"]}),
             enumLookupWithSetCommand({
@@ -459,6 +529,7 @@ export const definitions: DefinitionWithExtend[] = [
                 },
                 entityCategory: "config",
                 endpointName: "1",
+                translations: yandexI18n("switch_mode"),
             }),
             m.binary<"manuSpecificYandex", Yandex>({
                 name: "led_indicator",
@@ -469,6 +540,7 @@ export const definitions: DefinitionWithExtend[] = [
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeOld},
                 description: "Led indicator",
                 entityCategory: "config",
+                translations: yandexI18n("led_indicator"),
             }),
         ],
     },
@@ -477,6 +549,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00532",
         vendor: "Yandex",
         description: "Double gang switch",
+        translations: {
+            ru: {description: "Двухклавишный выключатель"},
+        },
         ota: true,
         extend: [
             reinterview(),
@@ -501,6 +576,7 @@ export const definitions: DefinitionWithExtend[] = [
                     high: 0x00,
                 },
                 entityCategory: "config",
+                translations: yandexI18n("power_type"),
             }),
             m.commandsOnOff({endpointNames: ["b1_up", "b1_down", "b2_up", "b2_down"]}),
             enumLookupWithSetCommand({
@@ -518,6 +594,7 @@ export const definitions: DefinitionWithExtend[] = [
                 },
                 entityCategory: "config",
                 endpointName: "1",
+                translations: yandexI18n("switch_mode"),
             }),
             enumLookupWithSetCommand({
                 name: "operation_mode",
@@ -534,6 +611,7 @@ export const definitions: DefinitionWithExtend[] = [
                 },
                 entityCategory: "config",
                 endpointName: "2",
+                translations: yandexI18n("switch_mode"),
             }),
             m.binary<"manuSpecificYandex", Yandex>({
                 name: "led_indicator",
@@ -544,6 +622,7 @@ export const definitions: DefinitionWithExtend[] = [
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeOld},
                 description: "Led indicator",
                 entityCategory: "config",
+                translations: yandexI18n("led_indicator"),
             }),
         ],
     },
@@ -552,6 +631,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00530",
         vendor: "Yandex",
         description: "Dimmer",
+        translations: {
+            ru: {description: "Диммер"},
+        },
         ota: true,
         extend: [
             YandexCluster(manufacturerCodeOld),
@@ -572,6 +654,7 @@ export const definitions: DefinitionWithExtend[] = [
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeOld},
                 description: "Led indicator",
                 entityCategory: "config",
+                translations: yandexI18n("led_indicator"),
             }),
             enumLookupWithSetCommand({
                 name: "button_mode",
@@ -585,6 +668,7 @@ export const definitions: DefinitionWithExtend[] = [
                     alternative: 0x01,
                 },
                 entityCategory: "config",
+                translations: yandexI18n("button_mode"),
             }),
         ],
     },
@@ -593,6 +677,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX-00518",
         vendor: "Yandex",
         description: "Thermostatic radiator valve",
+        translations: {
+            ru: {description: "Термостатический клапан радиатора"},
+        },
         ota: true,
         extend: [
             YandexCluster(manufacturerCodeNew),
@@ -622,6 +709,7 @@ export const definitions: DefinitionWithExtend[] = [
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeNew},
                 description: "Flip display orientation",
                 entityCategory: "config",
+                translations: yandexI18n("display_flip"),
             }),
             m.binary({
                 name: "child_lock",
@@ -632,6 +720,7 @@ export const definitions: DefinitionWithExtend[] = [
                 description: "Enables/disables physical input on the device",
                 access: "ALL",
                 reporting: {min: 0, max: 3600, change: 0},
+                translations: yandexI18n("child_lock"),
             }),
             m.binary<"manuSpecificYandex", Yandex>({
                 name: "frost_protection",
@@ -642,6 +731,7 @@ export const definitions: DefinitionWithExtend[] = [
                 description: "Enables/disables antifreeze function",
                 access: "ALL",
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeNew},
+                translations: yandexI18n("frost_protection"),
             }),
             binaryWithSetCommand<"manuSpecificYandex", Yandex>({
                 name: "window_detection",
@@ -653,6 +743,7 @@ export const definitions: DefinitionWithExtend[] = [
                 description: "Enables/disables window detection on the device",
                 access: "ALL",
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeNew},
+                translations: yandexI18n("window_detection"),
             }),
             m.binary<"manuSpecificYandex", Yandex>({
                 name: "scale_protection",
@@ -663,6 +754,7 @@ export const definitions: DefinitionWithExtend[] = [
                 description: "Enables/disables anti-scale protection",
                 access: "ALL",
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeNew},
+                translations: yandexI18n("scale_protection"),
             }),
             m.binary<"manuSpecificYandex", Yandex>({
                 name: "auto_calibration",
@@ -673,6 +765,7 @@ export const definitions: DefinitionWithExtend[] = [
                 description: "Enables/disables auto calibration",
                 access: "ALL",
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeNew},
+                translations: yandexI18n("auto_calibration"),
             }),
             binaryWithSetCommand<"hvacThermostat", YandexThermostat>({
                 name: "calibrated",
@@ -685,6 +778,7 @@ export const definitions: DefinitionWithExtend[] = [
                 description: "OFF if calibration needs to be performed",
                 entityCategory: "config",
                 reporting: {min: 0, max: 3600, change: 0},
+                translations: yandexI18n("calibrated"),
             }),
             m.battery({
                 voltage: true,
@@ -696,6 +790,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX-00591",
         vendor: "Yandex",
         description: "Window cover",
+        translations: {
+            ru: {description: "Штора/жалюзи"},
+        },
         ota: true,
         extend: [
             m.windowCovering({
@@ -711,6 +808,7 @@ export const definitions: DefinitionWithExtend[] = [
                 attribute: "velocityLift",
                 description: "Velocity",
                 access: "ALL",
+                translations: yandexI18n("velocity"),
             }),
             m.numeric({
                 name: "max_position",
@@ -722,6 +820,7 @@ export const definitions: DefinitionWithExtend[] = [
                 description: "Max position",
                 access: "ALL",
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeNew},
+                translations: yandexI18n("max_position"),
             }),
             m.numeric({
                 name: "min_position",
@@ -733,6 +832,7 @@ export const definitions: DefinitionWithExtend[] = [
                 description: "Min position",
                 access: "ALL",
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeNew},
+                translations: yandexI18n("min_position"),
             }),
         ],
     },
@@ -741,6 +841,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00526",
         vendor: "Yandex",
         description: "Contact sensor",
+        translations: {
+            ru: {description: "Датчик контакта"},
+        },
         ota: true,
         extend: [
             m.iasZoneAlarm({
@@ -757,6 +860,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00527",
         vendor: "Yandex",
         description: "Leak sensor",
+        translations: {
+            ru: {description: "Датчик протечки"},
+        },
         ota: true,
         extend: [
             m.iasZoneAlarm({
@@ -773,6 +879,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00528",
         vendor: "Yandex",
         description: "Motion and illuminance sensor",
+        translations: {
+            ru: {description: "Датчик движения и освещённости"},
+        },
         ota: true,
         extend: [
             m.enumLookup({
@@ -783,6 +892,7 @@ export const definitions: DefinitionWithExtend[] = [
                 description: "Sensor sensitivity",
                 access: "ALL",
                 zigbeeCommandOptions: {manufacturerCode: manufacturerCodeNew},
+                translations: yandexI18n("sensitivity"),
             }),
             m.occupancy(),
             m.illuminance(),
@@ -796,6 +906,9 @@ export const definitions: DefinitionWithExtend[] = [
         model: "YNDX_00529",
         vendor: "Yandex",
         description: "Temperature and humidity and pressure sensor",
+        translations: {
+            ru: {description: "Датчик температуры, влажности и давления"},
+        },
         ota: true,
         extend: [
             m.temperature(),
