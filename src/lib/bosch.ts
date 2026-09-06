@@ -2997,8 +2997,8 @@ export const boschSmokeAlarmExtend = {
         }),
     alarmControl: (): ModernExtend => {
         const alarmModeLookup = {
-            manual_smoke_alarm: 0x00,
-            manual_burglar_alarm: 0x01,
+            smoke: 0x00,
+            burglar: 0x01,
         };
 
         const onOffLookup = {
@@ -3058,7 +3058,8 @@ export const boschSmokeAlarmExtend = {
                         "To achieve that, you must set up an automation, e.g., in Home Assistant.",
                 )
                 .withTranslations(i18n("broadcast_alarms"))
-                .withCategory("config"),
+                .withCategory("config")
+                .withHomeAssistant({icon: "mdi:broadcast"}),
         ];
 
         const fromZigbee = [
@@ -3075,10 +3076,18 @@ export const boschSmokeAlarmExtend = {
                     const result: KeyValue = {};
 
                     const smokeAlarmEnabled = (zoneStatus & (1 << 1)) > 0;
-                    result.manual_smoke_alarm = utils.getFromLookupByValue(smokeAlarmEnabled, onOffLookup);
-
                     const burglarAlarmEnabled = (zoneStatus & (1 << 7)) > 0;
-                    result.manual_burglar_alarm = utils.getFromLookupByValue(burglarAlarmEnabled, onOffLookup);
+
+                    // The smoke and burglar alarms are mutually exclusive on the device.
+                    // If both are reported as enabled (which shouldn't happen during normal
+                    // operation), we prioritise the smoke alarm for safety reasons.
+                    if (smokeAlarmEnabled) {
+                        result.alarm_control = "smoke";
+                    } else if (burglarAlarmEnabled) {
+                        result.alarm_control = "burglar";
+                    } else {
+                        result.alarm_control = "off";
+                    }
 
                     return result;
                 },
@@ -3087,9 +3096,9 @@ export const boschSmokeAlarmExtend = {
 
         const toZigbee: Tz.Converter[] = [
             {
-                key: ["manual_smoke_alarm", "manual_burglar_alarm", "broadcast_alarms"],
+                key: ["alarm_control", "broadcast_alarms"],
                 convertSet: async (entity, key, value, meta) => {
-                    if (key === "manual_smoke_alarm" || key === "manual_burglar_alarm") {
+                    if (key === "alarm_control") {
                         let broadcastAlarm: boolean;
 
                         try {
@@ -3099,28 +3108,48 @@ export const boschSmokeAlarmExtend = {
                             broadcastAlarm = defaultBroadcastAlarms;
                         }
 
-                        const alarmMode = utils.getFromLookup(key, alarmModeLookup);
-                        const enableAlarm = utils.getFromLookup(value, onOffLookup);
-                        const timeoutInSeconds = enableAlarm ? 0xf0 : 0;
-
+                        utils.assertString(value, "alarm_control");
+                        utils.validateValue(value, ["off", "smoke", "burglar"]);
                         utils.assertEndpoint(entity);
-                        await sendAlarmControlMessage(entity, broadcastAlarm, alarmMode, timeoutInSeconds);
-                        clearTimeout(globalStore.getValue("boschSmokeAlarm", "alarmTimer"));
 
-                        if (enableAlarm) {
+                        if (value === "off") {
+                            const existingAlarmTimer = globalStore.getValue("boschSmokeAlarm", "alarmTimer");
+                            clearTimeout(existingAlarmTimer);
+                            globalStore.clearValue("boschSmokeAlarm", "alarmTimer");
+
+                            const activeAlarm = meta.state?.alarm_control;
+                            const alarmModesToStop =
+                                typeof activeAlarm === "string" && activeAlarm in alarmModeLookup
+                                    ? [alarmModeLookup[activeAlarm as keyof typeof alarmModeLookup]]
+                                    : Object.values(alarmModeLookup);
+
+                            for (const alarmMode of alarmModesToStop) {
+                                await sendAlarmControlMessage(entity, broadcastAlarm, alarmMode, 0);
+                            }
+                        } else {
+                            const existingAlarmTimer = globalStore.getValue("boschSmokeAlarm", "alarmTimer");
+                            clearTimeout(existingAlarmTimer);
+                            globalStore.clearValue("boschSmokeAlarm", "alarmTimer");
+
+                            const alarmMode = utils.getFromLookup(value, alarmModeLookup);
+                            const timeoutInSeconds = 0xf0;
+
+                            await sendAlarmControlMessage(entity, broadcastAlarm, alarmMode, timeoutInSeconds);
                             const alarmTimer = setTimeout(
                                 async () => await sendAlarmControlMessage(entity, broadcastAlarm, alarmMode, timeoutInSeconds),
                                 (timeoutInSeconds - 60) * 1000,
                             ).unref();
                             globalStore.putValue("boschSmokeAlarm", "alarmTimer", alarmTimer);
                         }
+
+                        return {state: {alarm_control: value}};
                     }
                     if (key === "broadcast_alarms") {
                         return {state: {broadcast_alarms: value}};
                     }
                 },
                 convertGet: async (entity, key, meta) => {
-                    if (key === "manual_smoke_alarm" || key === "manual_burglar_alarm") {
+                    if (key === "alarm_control") {
                         await entity.read("ssIasZone", ["zoneStatus"]);
                     }
                     if (key === "broadcast_alarms" && meta.state[key] === undefined) {
@@ -3351,6 +3380,8 @@ export interface BoschThermostatCluster {
         heatingDemand: number;
         /** ID: 16418 | Type: ENUM8 | Only used on BTH-RA */
         valveAdaptStatus: number;
+        /** ID: 16419 | Type: ENUM8 | Only used on BTH-RM230Z, controls humidity/temperature warning LEDs */
+        humidityAlarmLed: number;
         /** ID: 16421 | Type: ENUM8 | Only used on BTH-RM230Z with value depending on heaterType */
         unknownAttribute0: number;
         /** ID: 16448 | Type: INT16 | Only used on BTH-RA */
@@ -3440,6 +3471,14 @@ export const boschThermostatExtend = {
                 valveAdaptStatus: {
                     name: "valveAdaptStatus",
                     ID: 0x4022,
+                    type: Zcl.DataType.ENUM8,
+                    manufacturerCode: manufacturerOptions.manufacturerCode,
+                    write: true,
+                    max: 0xff,
+                },
+                humidityAlarmLed: {
+                    name: "humidityAlarmLed",
+                    ID: 0x4023,
                     type: Zcl.DataType.ENUM8,
                     manufacturerCode: manufacturerOptions.manufacturerCode,
                     write: true,
@@ -3683,6 +3722,22 @@ export const boschThermostatExtend = {
             valueOn: ["ON", 0x01],
             valueOff: ["OFF", 0x00],
             reporting: args?.enableReporting ? {min: "MIN", max: "MAX", change: null} : false,
+        }),
+    humidityAlarmLed: () =>
+        m.binary<"hvacThermostat", BoschThermostatCluster>({
+            name: "humidity_alarm_led",
+            cluster: "hvacThermostat",
+            attribute: "humidityAlarmLed",
+            description:
+                "Enables/disables the LED warning when measured humidity is outside the comfortable range " +
+                "(below 30% or above 70%). Only the two observed raw values (0x07 on / 0x06 off) are supported; " +
+                "the meaning of the other bits of this attribute is not confirmed. The attribute is present on " +
+                "firmware 0x03086a90 (0.3.8) as well (confirmed by reading it on an unupgraded device); seemd the Bosch app " +
+                "only added a UI toggle for it in 0x03096a90 (0.3.9).",
+            valueOn: ["ON", 0x07],
+            valueOff: ["OFF", 0x06],
+            reporting: false,
+            entityCategory: "config",
         }),
     childLock: () =>
         m.binary({
