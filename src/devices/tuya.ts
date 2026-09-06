@@ -11914,7 +11914,7 @@ export const definitions: DefinitionWithExtend[] = [
                 divisor: 100,
                 multiplier: 1,
             });
-            utils.attachOutputCluster(device, "genOta");
+            utils.attachOutputCluster(device, endpoint, "genOta");
             device.save();
         },
     },
@@ -12007,7 +12007,7 @@ export const definitions: DefinitionWithExtend[] = [
                 divisor: 100,
                 multiplier: 1,
             });
-            utils.attachOutputCluster(device, "genOta");
+            utils.attachOutputCluster(device, endpoint, "genOta");
             device.save();
         },
     },
