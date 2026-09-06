@@ -375,7 +375,7 @@ export const numericAttributes2Payload = async (
                 } else if (["ZNJLBL01LM"].includes(model.model)) {
                     // This is a cover, it should report OPEN/CLOSE instead of ON/OFF
                     // https://github.com/Koenkk/zigbee2mqtt/issues/33001
-                    payload.state = value === 1 ? "CLOSE" : "OPEN";
+                    payload.state = value === 1 ? "OPEN" : "CLOSE";
                 } else if (["RTCGQ15LM"].includes(model.model)) {
                     payload.occupancy = value;
                 } else if (["PS-S04D"].includes(model.model)) {
