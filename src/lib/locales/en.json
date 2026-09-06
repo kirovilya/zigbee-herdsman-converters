@@ -5,10 +5,47 @@
     },
     "color_temp": {
         "label": "Color temp",
-        "description": "Color temperature of this light"
+        "description": "Color temperature of this light",
+        "presets": {
+            "coolest": {
+                "name": "Coolest"
+            },
+            "cool": {
+                "name": "Cool"
+            },
+            "neutral": {
+                "name": "Neutral"
+            },
+            "warm": {
+                "name": "Warm"
+            },
+            "warmest": {
+                "name": "Warmest"
+            }
+        }
     },
     "color_temp_startup": {
-        "label": "Color temp startup"
+        "label": "Color temp startup",
+        "presets": {
+            "previous": {
+                "name": "Previous"
+            },
+            "coolest": {
+                "name": "Coolest"
+            },
+            "cool": {
+                "name": "Cool"
+            },
+            "neutral": {
+                "name": "Neutral"
+            },
+            "warm": {
+                "name": "Warm"
+            },
+            "warmest": {
+                "name": "Warmest"
+            }
+        }
     },
     "hue": {
         "label": "Hue"
@@ -2294,15 +2331,30 @@
     },
     "on_off_transition_time": {
         "label": "ON/OFF transition time",
-        "description": "Seconds taken to move to or from the target level"
+        "description": "Seconds taken to move to or from the target level",
+        "presets": {
+            "disabled": {
+                "name": "Disabled"
+            }
+        }
     },
     "on_transition_time": {
         "label": "ON transition time",
-        "description": "Seconds taken to move level up when On command is received"
+        "description": "Seconds taken to move level up when On command is received",
+        "presets": {
+            "disabled": {
+                "name": "Disabled"
+            }
+        }
     },
     "off_transition_time": {
         "label": "OFF transition time",
-        "description": "Seconds taken to move level down when Off command is received"
+        "description": "Seconds taken to move level down when Off command is received",
+        "presets": {
+            "disabled": {
+                "name": "Disabled"
+            }
+        }
     },
     "execute_if_off": {
         "label": "Execute if off",
@@ -2310,11 +2362,24 @@
     },
     "on_level": {
         "label": "On level",
-        "description": "Specifies the level applied when an on/toggle command causes the light to turn on"
+        "description": "Specifies the level applied when an on/toggle command causes the light to turn on",
+        "presets": {
+            "previous": {
+                "name": "Previous"
+            }
+        }
     },
     "current_level_startup": {
         "label": "Current level startup",
-        "description": "Defines the desired startup level for a device when it is supplied with power"
+        "description": "Defines the desired startup level for a device when it is supplied with power",
+        "presets": {
+            "minimum": {
+                "name": "Minimum"
+            },
+            "previous": {
+                "name": "Previous"
+            }
+        }
     },
     "min_level": {
         "label": "Min level",

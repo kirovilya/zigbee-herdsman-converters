@@ -32,6 +32,7 @@ type LocaleTranslations = Record<
         label?: string;
         description?: string;
         values?: Record<string, string>;
+        presets?: Record<string, {name?: string; description?: string}>;
     }
 >;
 
